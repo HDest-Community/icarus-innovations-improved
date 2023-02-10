@@ -1,8 +1,0 @@
-version "4.10"
-
-#import "zscript/HEV Armor/hevArmor.zs"
-#import "zscript/PD-42/pd42.zs"
-#import "zscript/Barracuda/barracuda.zs"
-#import "zscript/Flamenwerfer 77/flamenwerfer77.zs"
-#import "zscript/Frontiersman/frontiersman.zs"
-#import "zscript/Six12/six12.zs"
