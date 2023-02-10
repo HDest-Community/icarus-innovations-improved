@@ -1,4 +1,5 @@
 GameInfo
 {
-	AddEventHandlers = "HEVArmorHandler"
+    AddEventHandlers = "HEVArmorHandler",
+                       "PDFourHandler"
 }
