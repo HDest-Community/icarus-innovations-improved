@@ -3,5 +3,6 @@ GameInfo
     AddEventHandlers = "HEVArmorHandler",
                        "PDFourHandler",
                        "BarracudaHandler",
-                       "FlamethrowerHandler"
+                       "FlamethrowerHandler",
+                       "FrontierHandler"
 }

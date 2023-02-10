@@ -4,4 +4,4 @@ version "4.10"
 #import "zscript/PD-42/pd42.zs"
 #import "zscript/Barracuda/barracuda.zs"
 #import "zscript/Flamenwerfer 77/flamenwerfer77.zs"
-
+#import "zscript/Frontiersman/frontiersman.zs"
