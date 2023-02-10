@@ -4,5 +4,6 @@ GameInfo
                        "PDFourHandler",
                        "BarracudaHandler",
                        "FlamethrowerHandler",
-                       "FrontierHandler"
+                       "FrontierHandler",
+                       "Six12Handler"
 }

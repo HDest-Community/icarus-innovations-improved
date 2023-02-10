@@ -1,0 +1,11 @@
+Code:
+- Accensus for like 90% of the code. I was just a glorified keyboard monkey.
+
+Sprites:
+- Weapon Sprites based on sprites by Sonik.O
+- World Sprites based on sprites by Railgunner
+- Some tweaking, editing, shading and frankenspriting by myself
+
+Sounds:
+- Firing Sound: https://gamebanana.com/skins/124930
+- Mag Sound: https://gamebanana.com/sounds/39196
