@@ -1,5 +1,3 @@
-version "4.8"
-
 class FlamethrowerHandler : EventHandler
 {
 	Override Void CheckReplacement(ReplaceEvent e)
@@ -12,27 +10,27 @@ class FlamethrowerHandler : EventHandler
 		switch (e.Replacement.GetClassName())
 		{
 			case 'BFG9K':
-				if (random[flamerand]() <= 48)
+				if (random[flamerand]() <= AceCore.GetScaledChance(12, 48, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "FlamethrowerSpawner";
 				}
 				break;
 			case 'RLReplaces':
-				if (random[flamerand]() <= 12)
+				if (random[flamerand]() <= AceCore.GetScaledChance(-6, 12, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "FlamethrowerSpawner";
 				}
 				break;
 			case 'RocketBoxRandom':
 			case 'CellPackReplacer':
-				if (random[flamerand]() <= 12)
+				if (random[flamerand]() <= AceCore.GetScaledChance(-6, 12, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "HDGasTank";
 				}
 				break;
 			case 'RocketAmmo':
 			case 'CellRandom':
-				if (random[flamerand]() <= 8)
+				if (random[flamerand]() <= AceCore.GetScaledChance(-8, 8, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "HDGasTank";
 				}

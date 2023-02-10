@@ -1,5 +1,3 @@
-version "4.8"
-
 class PDFourHandler : EventHandler
 {
 	override void CheckReplacement(ReplaceEvent e)
@@ -12,7 +10,7 @@ class PDFourHandler : EventHandler
 		switch (e.Replacement.GetClassName())
 		{
 			case 'ClipBoxPickup':
-				if (random[pdfrand]() <= 64)
+				if (random[pdfrand]() <= AceCore.GetScaledChance(16, 64, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = randompick[pdfrand](0,0,0,0,1) ? "PDFourRandom" : "HDPDFourMag";
 				}

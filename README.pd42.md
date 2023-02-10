@@ -1,3 +1,8 @@
+### Important
+---
+- This mod requires [AceCoreLib](https://gitlab.com/accensi/hd-addons/acecorelib).
+- Supports ACL's spawn scaling.
+
 ### Notes
 ---
 - The PD-42 is an integrally suppressed 4.26mm PDW with select fire (Semi, Hyper-Burst™️, and Full Auto) and a 36 round mag.

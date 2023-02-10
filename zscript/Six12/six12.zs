@@ -1,5 +1,3 @@
-version "4.8"
-
 class Six12Handler : EventHandler
 {
 	override void CheckReplacement(ReplaceEvent e)
@@ -12,25 +10,25 @@ class Six12Handler : EventHandler
 		switch (e.Replacement.GetClassName())
 		{
 			case 'ShotgunReplaces':
-				if (random[sxtwlvrand]() <= 32)
+				if (random[sxtwlvrand]() <= AceCore.GetScaledChance(8, 32, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "Six12Random";
 				}
 				break;
 			case 'SSGReplaces':
-				if (random[sxtwlvrand]() <= 48)
+				if (random[sxtwlvrand]() <= AceCore.GetScaledChance(12, 48, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "Six12Random";
 				}
 				break;
 			case 'ShellRandom':
-				if (random[sxtwlvrand]() <= 16)
+				if (random[sxtwlvrand]() <= AceCore.GetScaledChance(4, 16, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "HDSix12MagSlugs";
 				}
 				break;
 			case 'ShellRandom':
-				if (random[sxtwlvrand]() <= 16)
+				if (random[sxtwlvrand]() <= AceCore.GetScaledChance(4, 16, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "HDSix12MagShells";
 				}

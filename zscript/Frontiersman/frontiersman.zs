@@ -1,5 +1,3 @@
-version "4.8"
-
 class FrontierHandler : EventHandler
 {
 	override void CheckReplacement(ReplaceEvent e)
@@ -12,19 +10,19 @@ class FrontierHandler : EventHandler
 		switch (e.Replacement.GetClassName())
 		{
 			case 'ClipBoxPickup':
-				if (random[frontrand]() <= 32)
+				if (random[frontrand]() <= AceCore.GetScaledChance(8, 32, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "FrontierSpawner";
 				}
 				break;
 			case 'ShotgunReplaces':
-				if (random[frontrand]() <= 16)
+				if (random[frontrand]() <= AceCore.GetScaledChance(4, 16, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "FrontierSpawner";
 				}
 				break;
 			case 'SSGReplaces':
-				if (random[frontrand]() <= 24)
+				if (random[frontrand]() <= AceCore.GetScaledChance(6, 24, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "FrontierSpawner";
 				}
@@ -65,7 +63,7 @@ class FrontierSpawner : IdleDummy
 				{
 					return;
 				}
-				
+
 				HDF.TransferSpecials(self, wpn);
 				wpn.InitializeWepStats(false);
 			}
@@ -90,7 +88,7 @@ class HDFrontier : HDWeapon
 		FMProp_Tube,
 		FMProp_SideSaddles,
 		FMProp_Mode
-		
+
 	}
 
 	override void PostBeginPlay()
@@ -260,7 +258,7 @@ class HDFrontier : HDWeapon
 			}
 		}
 		else if(chm > 0)
-		{	
+		{
 			cockdir *= frandom(1, 1.3);
 		}
 		if(!pocketed && chm >= 1)
@@ -403,10 +401,10 @@ class HDFrontier : HDWeapon
 			{
 				A_ZoomRecoil(1.05);
 				A_Light1();
-				if(invoker.WeaponStatus[FMProp_Mode] == 1 && CountInv("HDBlues") > 0)
+				if(invoker.WeaponStatus[FMProp_Mode] == 1 && CountInv("HealingMagic") > 0)
 				{
 					HDBulletActor.FireBullet(self, "HDB_776_Holy");
-					A_TakeInventory("HDBlues", 7);
+					A_TakeInventory("HealingMagic", 7);
 					A_StartSound("Weapons/BigRifle2", CHAN_WEAPON, pitch: 0.85);
 				}
 				else

@@ -1,5 +1,3 @@
-version "4.8"
-
 class BarracudaHandler : EventHandler
 {
 	override void CheckReplacement(ReplaceEvent e)
@@ -12,7 +10,7 @@ class BarracudaHandler : EventHandler
 		switch (e.Replacement.GetClassName())
 		{
 			case 'SSGReplaces':
-				if (random[barracrand]() <= 12)
+				if (random[barracrand]() <= AceCore.GetScaledChance(-6, 12, acl_spawnscale_min, acl_spawnscale_max))
 				{
 					e.Replacement = "BarracudaRandom";
 				}
