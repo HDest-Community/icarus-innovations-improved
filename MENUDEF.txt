@@ -1,0 +1,11 @@
+OptionMenu "FlamerMenu"
+{
+	Title "Flammenwerfer Options"
+
+	Option "Enable Dynamic Lighting", "Flamer_PrettyLights", "YesNo"
+}
+
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "Flammenwerfer", "FlamerMenu"
+}

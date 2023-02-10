@@ -1,0 +1,1 @@
+server bool Flamer_PrettyLights = false;

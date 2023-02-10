@@ -1,0 +1,9 @@
+Flamer/CanIn 	FLMRCIN
+Flamer/CanOut 	FLMRCOT
+Flamer/Start 	FLMRSTRT
+Flamer/Loop		FLMRLOOP
+Flamer/Stop		FLMRSTOP
+Flamer/Empty	FLAMMPTY
+Flamer/Blast	FLMRBLST
+
+$Limit Flamer/Loop 3
