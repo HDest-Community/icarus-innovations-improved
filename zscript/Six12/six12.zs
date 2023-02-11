@@ -99,8 +99,7 @@ class HDSix12 : HDWeapon
 	override string, double GetPickupSprite()
 	{
 		string PrimMagFrame = WeaponStatus[STProp_MagType] == 0 ? "B" : "S";
-		string SecMagFrame = WeaponStatus[STProp_Mag] == -1 ? "E" : "F";
-		return "ST"..PrimMagFrame..SecMagFrame.."A0", 1.0;
+		return WeaponStatus[STProp_Mag] == -1 ? "STPEA0" : "ST"..PrimMagFrame.."FA0", 1.0;
 	}
 	override void LoadoutConfigure(string input)
 	{
@@ -227,7 +226,12 @@ class HDSix12 : HDWeapon
 	States
 	{
 		RegisterSprites:
-			STBE A 0; STBF A 0; STSE A 0; STSF A 0;
+		    // Empty Pickup
+			STPE A 0;
+
+			// Full Pickups
+			STBF A 0;
+			STSF A 0;
 
 		Spawn:
 			STBF A 0 NoDelay
