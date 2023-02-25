@@ -1,11 +1,22 @@
-OptionMenu "FlamerMenu"
-{
-	Title "Flammenwerfer Options"
+OptionMenu "ILCMenu" {
+	Title "$ILCMenu"
 
-	Option "Enable Dynamic Lighting", "Flamer_PrettyLights", "YesNo"
+	SubMenu "$ILCFlamerMenu", "ILCFlamerMenu"
+}
+
+OptionMenu "ILCFlamerMenu"
+{
+	Title "$ILCFlamerMenu"
+
+	Option "$ILCFlamerPrettyLights", "Flamer_PrettyLights", "YesNo"
 }
 
 AddOptionMenu "OptionsMenu"
 {
-	Submenu "Flammenwerfer", "FlamerMenu"
+	Submenu "$ILCMenu", "ILCMenu"
+}
+
+AddOptionMenu "HDAddonMenu"
+{
+	Submenu "$ILCMenu", "ILCMenu"
 }
