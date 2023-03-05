@@ -1,13 +1,19 @@
-GameInfo
-{
-    AddEventHandlers = "HEVArmorHandler",
-                       "PDFourHandler",
-                       "BarracudaHandler",
+GameInfo {
+    AddEventHandlers = "BarracudaHandler",
+                       "BitchHandler",
+                       "GFBlasterHandler",
+                       "FenrisHandler",
                        "FlamethrowerHandler",
                        "FrontierHandler",
                        "HammerheadHandler",
+                       "HEVArmorHandler",
+                       "NCTHandler",
+                       "NyxHandler",
+                       "PDFourHandler",
                        "ScorpionHandler",
                        "Six12Handler",
+                       "UMPHandler",
+                       "USPHandler",
                        "ViperHandler",
                        "WyvernHandler"
 }

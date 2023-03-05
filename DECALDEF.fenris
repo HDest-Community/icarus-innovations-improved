@@ -1,0 +1,22 @@
+decal FenrisScorchBlack
+{
+	pic FNRSCR1
+	shade "00 00 00"
+	x-scale 0.02
+	y-scale 0.02
+	randomflipx
+	randomflipy
+}
+
+decal FenrisScorch
+{
+	pic FNRSCR1
+	shade "93 D3 FF"
+	x-scale 0.025
+	y-scale 0.025
+	randomflipx
+	randomflipy
+	Fullbright
+	animator GoAway
+	LowerDecal "FenrisScorchBlack"
+}

@@ -1,0 +1,6 @@
+OptionMenu "ILCFlamerMenu"
+{
+	Title "$ILCFlamerMenu"
+
+	Option "$ILCFlamerPrettyLights", "Flamer_PrettyLights", "YesNo"
+}

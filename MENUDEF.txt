@@ -4,19 +4,10 @@ OptionMenu "ILCMenu" {
 	SubMenu "$ILCFlamerMenu", "ILCFlamerMenu"
 }
 
-OptionMenu "ILCFlamerMenu"
-{
-	Title "$ILCFlamerMenu"
-
-	Option "$ILCFlamerPrettyLights", "Flamer_PrettyLights", "YesNo"
-}
-
-AddOptionMenu "OptionsMenu"
-{
+AddOptionMenu "OptionsMenu" {
 	Submenu "$ILCMenu", "ILCMenu"
 }
 
-AddOptionMenu "HDAddonMenu"
-{
+AddOptionMenu "HDAddonMenu" {
 	Submenu "$ILCMenu", "ILCMenu"
 }

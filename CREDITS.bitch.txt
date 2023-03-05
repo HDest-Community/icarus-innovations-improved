@@ -1,0 +1,5 @@
+Code:
+- Icarus, Accensus
+
+Sprites:
+- Pillowblaster, DoomNukem (From FinalDoomer https://forum.zdoom.org/viewtopic.php?t=55061)

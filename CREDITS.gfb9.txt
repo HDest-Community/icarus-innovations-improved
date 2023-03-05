@@ -1,0 +1,3 @@
+Weapon Sprites: Typical Sonik.O.Fan and edits by yours truly (Me)
+Sounds: Mechadon (Karasawa weapon mod), Doom 2016 (with edits)
+Code: Mostly me, based on code originally by Ace (Gungnir) with assistance from Sledge and Melodica.

@@ -1,0 +1,8 @@
+Code:
+- Accensus
+
+Sprites:
+- Weapon Sprites from Eriance, Gothic, Blox, ClonedPickle, MidoriMan, PillowBlaster, Sonik.o.fan, Captain Nurbles with personal edits
+
+Sounds:
+- Sounds from various sources, compiled by Navaro. (https://gamebanana.com/sounds/33280)
