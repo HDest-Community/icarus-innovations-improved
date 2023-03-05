@@ -1,0 +1,8 @@
+Code:
+- Accensus
+
+Sprites:
+- Accensus
+
+Sounds:
+- Fire, Bolt (https://gamebanana.com/sounds/18650)

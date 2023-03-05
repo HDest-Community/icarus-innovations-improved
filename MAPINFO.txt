@@ -5,5 +5,9 @@ GameInfo
                        "BarracudaHandler",
                        "FlamethrowerHandler",
                        "FrontierHandler",
-                       "Six12Handler"
+                       "HammerheadHandler",
+                       "ScorpionHandler",
+                       "Six12Handler",
+                       "ViperHandler",
+                       "WyvernHandler"
 }

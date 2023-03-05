@@ -1,0 +1,9 @@
+Code:
+- Accensus
+
+Sprites:
+- DoomNukem, heavily edited by PillowBaster. Ultra based.
+
+Sounds:
+- Took 'em from Guncaster. The firing sound, that is.
+- Reload-related sounds are by magmacow.

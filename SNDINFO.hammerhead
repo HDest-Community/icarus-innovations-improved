@@ -1,0 +1,20 @@
+Hammerhead/Fire HMHDFIRE
+$limit Hammerhead/Fire 0
+
+Hammerhead/PlasmaHit HMHDPLHT
+$limit Hammerhead/PlasmaHit 0
+
+Hammerhead/BatteryIn HMHDBTIN
+Hammerhead/BatteryOut HMHDBTOT
+
+Hammerhead/SwitchMode HMHDMODE
+
+Hammerhead/HandlePull HMHDPULL
+Hammerhead/HandlePush HMHDPUSH
+$pitchset Hammerhead/HandlePush 1.6
+
+Hammerhead/PressureRelease HMHDPSRR
+$pitchset Hammerhead/Pressure 1.2
+
+Hammerhead/Pressure HMHDPRSR
+$pitchset Hammerhead/Pressure 1.2

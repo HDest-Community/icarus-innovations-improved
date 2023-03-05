@@ -1,0 +1,8 @@
+Scorpion/Fire SCRPFIRE
+Scorpion/BoltBack SCRPBBCK
+Scorpion/BoltFwd SCRPBFWD
+
+$alias Scorpion/BossLoad weapons/bossload
+$alias Scorpion/RifleLoad weapons/rifleload
+$alias Scorpion/RifleClick2 weapons/rifleclick2
+$alias Scorpion/RifleClick weapons/rifleclick

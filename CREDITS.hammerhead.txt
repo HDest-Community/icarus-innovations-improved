@@ -1,0 +1,6 @@
+Idea:
+- Icarus
+
+Sprites:
+- No idea, first person sprites frankensprited by Icarus.
+- Pillowblaster for the pickup sprite.

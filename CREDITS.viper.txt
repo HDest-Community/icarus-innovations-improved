@@ -1,0 +1,9 @@
+Code:
+- Accensus
+
+Sprites:
+- Base by DoomNukem, edits by iamcarrotmaster. Taken from Project Brutality. Some sprites reshaded by Mor'ladim.
+
+Sounds:
+- Firing sound by RUS[PROTOTYPE], edited by a1337spy. (https://gamebanana.com/sounds/18109)
+- Rest of the sounds by various sources, compiled by Magmacow. (https://gamebanana.com/sounds/31009)
