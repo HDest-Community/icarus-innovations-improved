@@ -65,14 +65,4 @@ Sprite "FNRSZ0", 74, 21
 	Patch "FWRLDE", 0, 0
 }
 
-Graphic "FENBURST", 14, 7
-{
-	Patch "RBRSA3A7", 10, 3
-	Patch "RBRSA3A7", 5, 1
-	Patch "RBRSA3A7", 5, 5
-	Patch "RBRSA3A7", 0, 0
-	Patch "RBRSA3A7", 0, 6
-	Patch "RBRSA3A7", 0, 3
-}
-
 // End of texture definitions
