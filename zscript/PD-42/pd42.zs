@@ -115,6 +115,11 @@ class HDPDFour : HDWeapon
 		}
 		return IconString, 1.0;
 	}
+
+	override void DoEffect()
+	{
+		owner.player.GetPSprite(PSP_WEAPON).Translation = owner.translation;
+	}
 	
 	override void InitializeWepStats(bool idfa)
 	{
@@ -234,6 +239,7 @@ class HDPDFour : HDWeapon
 
 	Default
 	{
+		+HDWEAPON.DROPTRANSLATION
 		+HDWEAPON.FITSINBACKPACK
 		Weapon.SelectionOrder 300;
 		Weapon.SlotNumber 4;
