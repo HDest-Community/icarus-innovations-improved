@@ -236,9 +236,12 @@ class HDSix12 : HDWeapon
 		Spawn:
 			STBF A 0 NoDelay
 			{
-				string PrimMagFrame = invoker.WeaponStatus[STProp_MagType] == 0 ? "B" : "S";
-				string SecMagFrame = invoker.WeaponStatus[STProp_Mag] == -1 ? "E" : "F";
-				sprite = GetSpriteIndex("ST"..PrimMagFrame..SecMagFrame);
+				if (invoker.WeaponStatus[STProp_Mag] == -1) {
+					sprite = GetSpriteIndex("STPE");
+				} else {
+					string PrimMagFrame = invoker.WeaponStatus[STProp_MagType] == 0 ? "B" : "S";
+					sprite = GetSpriteIndex("ST"..PrimMagFrame.."F");
+				}
 			}
 		RealSpawn:
 			#### A -1;
