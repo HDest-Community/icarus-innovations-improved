@@ -1,33 +1,3 @@
-class HammerheadHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'ChaingunReplaces':
-				if (random[hamheadrand]() <= AceCore.GetScaledChance(8, 32, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "HammerheadRandom";
-				}
-				break;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		HDBattery bat = HDBattery(e.Thing);
-		if (bat)
-		{
-			bat.ItemsThatUseThis.Push("HDHammerhead");
-		}
-	}
-}
-
 class HDHammerhead : HDCellWeapon
 {
 	enum HammerheadProperties

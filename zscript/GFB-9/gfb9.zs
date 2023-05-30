@@ -1,24 +1,3 @@
-class GFBlasterHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'HDPistol':
-				if (random[gfbrand]() <= AceCore.GetScaledChance(16, 64, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "GFBlasterRandom";
-				}
-				break;
-		}
-	}
-}
-
 class HDGFBlaster : HDHandgun
 {
 	enum GFBlasterFlags

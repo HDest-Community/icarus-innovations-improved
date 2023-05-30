@@ -1,33 +1,3 @@
-class ScorpionHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'CellPackReplacer':
-				if (random[scorprand]() <= AceCore.GetScaledChance(-8, 8, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "ScorpionSpawner";
-				}
-				break;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		let ScorpionAmmo = BrontornisRound(e.Thing);
-		if (ScorpionAmmo)
-		{
-			ScorpionAmmo.ItemsThatUseThis.Push("HDScorpion");
-		}
-	}
-}
-
 class ScorpionSpawner : IdleDummy
 {
 	states

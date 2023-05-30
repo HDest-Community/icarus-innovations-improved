@@ -1,33 +1,3 @@
-class FenrisHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'PlasmaReplaces':
-				if (random[fenrand]() <= 32)
-				{
-					e.Replacement = "FenrisRandom";
-				}
-				break;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		let FenrisAmmo = HDBattery(e.Thing);
-		if (FenrisAmmo)
-		{
-			FenrisAmmo.ItemsThatUseThis.Push("HDFenris");
-		}
-	}
-}
-
 class HDFenris : HDCellWeapon
 {
 	enum FenrisFlags

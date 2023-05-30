@@ -1,8 +1,9 @@
 [enu default]
 
 // Options Menu Titles
-ILCMenu       = "\c[Fire]Ⓘ\c- Icarus Innovations Improved";
-ILCFlamerMenu = "Flammenwerfer Options";
+IcarusMenu       = "\c[Fire]Ⓘ\c- Icarus Innovations Improved";
+IcarusFlamerMenu = "Flammenwerfer 77 Options";
+IcarusSpawnMenu  = "Spawn Controls";
 
 // Flammenwerfer Options
-ILCFlamerPrettyLights = "Enable Dynamic Lighting";
+IcarusFlamerPrettyLights = "Enable Dynamic Lighting";

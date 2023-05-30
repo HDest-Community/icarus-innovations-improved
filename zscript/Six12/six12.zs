@@ -1,59 +1,3 @@
-class Six12Handler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'ShotgunReplaces':
-				if (random[sxtwlvrand]() <= AceCore.GetScaledChance(8, 32, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "Six12Random";
-				}
-				break;
-			case 'SSGReplaces':
-				if (random[sxtwlvrand]() <= AceCore.GetScaledChance(12, 48, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "Six12Random";
-				}
-				break;
-			case 'ShellRandom':
-				if (random[sxtwlvrand]() <= AceCore.GetScaledChance(4, 16, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "HDSix12MagSlugs";
-				}
-				break;
-			case 'ShellRandom':
-				if (random[sxtwlvrand]() <= AceCore.GetScaledChance(4, 16, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "HDSix12MagShells";
-				}
-				break;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		let Six12Ammo = HDAmmo(e.Thing);
-		if (!Six12Ammo)
-		{
-			return;
-		}
-		if (Six12Ammo.GetClassName() == 'HDSlugAmmo')
-		{
-			Six12Ammo.ItemsThatUseThis.Push("HDSix12");
-		}
-		if (Six12Ammo.GetClassName() == 'HDShellAmmo')
-		{
-			Six12Ammo.ItemsThatUseThis.Push("HDSix12");
-		}
-	}
-}
-
 class HDSix12 : HDWeapon
 {
 	enum Six12Flags
@@ -473,6 +417,7 @@ class HDSix12MagShells : HDMagAmmo
 
 	override void GetItemsThatUseThis()
 	{
+		ItemsThatUseThis.Push("HDBarracuda");
 		ItemsThatUseThis.Push("HDSix12");
 	}
 
@@ -527,6 +472,7 @@ class HDSix12MagSlugs : HDMagAmmo
 
 	override void GetItemsThatUseThis()
 	{
+		ItemsThatUseThis.Push("HDBarracuda");
 		ItemsThatUseThis.Push("HDSix12");
 	}
 

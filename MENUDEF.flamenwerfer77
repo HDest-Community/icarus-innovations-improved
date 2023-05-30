@@ -1,6 +1,6 @@
-OptionMenu "ILCFlamerMenu"
+OptionMenu "IcarusFlamerMenu"
 {
-	Title "$ILCFlamerMenu"
+	Title "$IcarusFlamerMenu"
 
-	Option "$ILCFlamerPrettyLights", "Flamer_PrettyLights", "YesNo"
+	Option "$IcarusFlamerPrettyLights", "Flamer_PrettyLights", "YesNo"
 }

@@ -1,31 +1,3 @@
-Class HEVArmorHandler : EventHandler
-{
-	Override Void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'BattleArmour':
-				if (random[hevrand]() <= 48)
-				{
-					e.Replacement = "HEVArmour";
-				}
-				break;
-
-			case 'GarrisonArmour':
-				if (random[hevrand]() <= 48)
-				{
-					e.Replacement = "HEVArmour";
-				}
-				break;
-		}
-	}
-}
-
 CONST HDCONST_HEVARMOUR = 107;
 CONST ENC_HEVARMOUR = 530;
 

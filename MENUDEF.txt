@@ -1,13 +1,559 @@
-OptionMenu "ILCMenu" {
-	Title "$ILCMenu"
+// Spawn Bias (for items that do replace)
+OptionValue "SpawnBias" {
+	-1,    "Disabled"
+	 0,    "Replace All"
+	 2,    "1 in 3"
+	 4,    "1 in 5"
+	 9,    "1 in 10"
+	 14,   "1 in 15"
+	 19,   "1 in 20"
+	 24,   "1 in 25"
+	 49,   "1 in 50"
+	 99,   "1 in 100"
+	 149,  "1 in 150"
+	 199,  "1 in 200"
+}
 
-	SubMenu "$ILCFlamerMenu", "ILCFlamerMenu"
+OptionMenu "IcarusSpawningMenu" {
+
+    Title "------ Icarus Innovations Improved ------"
+
+	StaticText "--- Pistols ---", "yellow"
+	StaticText ""
+    Submenu "CM-3 'Nyx' .355 Burst-Fire Magnum", "nyxSpawning", 0, 1
+	StaticText ""
+    Submenu "USP-45 .45 ACP Handgun", "usp45Spawning", 0, 1
+	StaticText ""
+    Submenu "'Viper' .50 AE Handgun", "viperSpawning", 0, 1
+	StaticText ""
+
+	StaticText "--- Shotguns ---", "red"
+    StaticText ""
+    Submenu "'Barracuda'", "barracudaSpawning", 0, 1
+    StaticText ""
+    Submenu "Six-12", "six12Spawning", 0, 1
+	StaticText ""
+
+	StaticText "--- Machine Guns ---", "green"
+	StaticText ""
+	Submenu "'Bitch' 4.26mm LMG", "bitchSpawning", 0, 1
+	StaticText ""
+	Submenu "PD-42 Suppressed 4.26mm PDW", "pd42Spawning", 0, 1
+    StaticText ""
+    Submenu "UMP-45 .45 ACP PDW", "ump45Spawning", 0, 1
+    StaticText ""
+
+	StaticText "--- Explosives ---", "Brown"
+	StaticText ""
+	Submenu "Flamenwerfer 77", "flamenwerferSpawning", 0, 1
+	StaticText ""
+
+	StaticText "--- Rifles ---", "orange"
+	StaticText ""
+    Submenu "'Frontiersman' 7.76mm Lever-Action Rifle", "frontiersmanSpawning", 0, 1
+	StaticText ""
+    Submenu "'Wyvern' .50 OMG Double-Barrel Rifle", "wyvernSpawning", 0, 1
+	StaticText ""
+    Submenu "'Scorpion' 35mm Sniper Rifle", "scorpionSpawning", 0, 1
+	StaticText ""
+
+    StaticText "--- Energy Weapons ---", "cyan"
+	StaticText ""
+    Submenu "CFL-21 'Fenris' Cold Fusion Laser", "fenrisSpawning", 0, 1
+	StaticText ""
+    Submenu "GFB-9 'The Backup Plan' Rechargeable Energy Handgun", "gfb9Spawning", 0, 1
+	StaticText ""
+    Submenu "CIR-37 'Hammerhead' Plasma Minigun", "hammerheadSpawning", 0, 1
+	StaticText ""
+    Submenu "NS3-Cr.KT", "nctSpawning", 0, 1
+	StaticText ""
+	
+    StaticText "--- Armour ---", "Green"
+    StaticText ""
+    Submenu "HEV Armour", "hevArmourSpawning", 0, 1
+
+	StaticText "--- Reset Options ---", "red"
+	StaticText ""
+	SafeCommand "Reset all options for Icarus Innovations Improved", "Icarus_Reset_Cvars"
+}
+
+// Pistols
+
+OptionMenu "nyxSpawning" {
+    Title "------ CM-3 'Nyx' .355 Burst-Fire Magnum Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the Nyx on Pistols:", "white"
+	Option "Nyx Spawn Rate: ", "nyx_pistol_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Nyx options", "resetcvar nyx_pistol_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control the spawn rate of the Nyx's Magazine on:", "white"
+	Option "Clip Magazines: ", "nyxmag_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Clip Magazine options", "resetcvar nyxmag_clipmag_spawn_bias"
+	Option "Shell Boxes: ", "nyxmag_shellbox_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Shell Box options", "resetcvar nyxmag_shellbox_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns (Handgun): ", "nyx_persistent_spawning", "OnOff"
+	Option "Persistent Spawns (Magazine): ", "nyxmag_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar nyxmag_persistent_spawning; resetcvar nyxmag_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "nyx_reset_cvars"
+}
+
+OptionMenu "usp45Spawning" {
+    Title "------ USP-45 .45 ACP Handgun Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the USP-45 on Pistols:", "white"
+	Option "USP-45 Spawn Rate: ", "usp45_pistol_spawn_bias", "SpawnBias"
+	SafeCommand "Reset USP-45 options", "resetcvar usp45_pistol_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control the spawn rate of the USP-45's Magazine on Clip Magazines:", "white"
+	Option "USP-45 Magazine Spawn Rate: ", "usp45mag_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "Reset USP-45 Magazine option", "resetcvar usp45mag_clipmag_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns (Gun): ", "usp45_persistent_spawning", "OnOff"
+    Option "Persistent Spawns (Magazine): ", "usp45mag_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar usp45_persistent_spawning; usp45mag_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "usp45_reset_cvars"
+}
+
+OptionMenu "viperSpawning" {
+    Title "------ 'Viper' .50 AE Handgun Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the Viper on:", "white"
+	Option "Pistols: ", "viper_pistol_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Pistol option", "resetcvar viper_pistol_spawn_bias"
+	Option "Hunter shotguns: ", "viper_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Hunter option", "resetcvar viper_hunter_spawn_bias"
+	Option "Slayer shotguns: ", "viper_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Slayer option", "resetcvar viper_slayer_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control the spawn rate of the Viper's Magazine on:", "white"
+	Option "Clip Magazines: ", "vipermag_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Clip Magazine option", "resetcvar vipermag_clipmag_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns (Gun): ", "viper_persistent_spawning", "OnOff"
+    Option "Persistent Spawns (Magazine): ", "vipermag_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar viper_persistent_spawning; vipermag_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "viper_reset_cvars"
+}
+
+// Shotguns
+
+OptionMenu "barracudaSpawning" {
+    Title "------ Barracuda Options ------"
+   	StaticText "Notice:", "Red"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Red"
+    StaticText  "Control the spawn rate of the Barracuda on:", "white"
+	Option "Hunter shotguns: ", "barracuda_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Hunter shotgun options", "resetcvar barracuda_hunter_spawn_bias"
+	Option "Slayer shotguns: ", "barracuda_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Slayer shotgun options", "resetcvar barracuda_slayer_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "barracuda_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar barracuda_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Red"
+	SafeCommand "Reset all options", "barracuda_reset_cvars"
+}
+
+OptionMenu "six12Spawning" {
+    Title "------ Six-12 Options ------"
+   	StaticText "Notice:", "Red"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Red"
+    StaticText  "Control the spawn rate of the Six-12 on:", "white"
+	Option "Hunter shotguns: ", "six12_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Hunter shotgun options", "resetcvar six12_hunter_spawn_bias"
+	Option "Slayer shotguns: ", "six12_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Slayer shotgun options", "resetcvar six12_slayer_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control the spawn rate of the Six12's Shell Magazine on Shell Pickups", "white"
+	Option "Shell Magazine Spawn Rate: ", "six12shellmag_shell_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Shell Magazine option", "resetcvar six12shellmag_shell_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control the spawn rate of the Six12's Slug Magazine on Slug Pickups", "white"
+	Option "Slug Magazine Spawn Rate: ", "six12slugmag_slug_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Slug Magazine option", "resetcvar six12slugmag_slug_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns (Gun): ", "six12_persistent_spawning", "OnOff"
+	Option "Persistent Spawns (Shell Magazine): ", "six12shellmag_persistent_spawning", "OnOff"
+	Option "Persistent Spawns (Slug Magazine): ", "six12slugmag_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar six12_persistent_spawning; resetcvar six12shellmag_persistent_spawning; resetcvar six12slugmag_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Red"
+	SafeCommand "Reset all options", "six12_reset_cvars"
+}
+
+// Machine Guns
+
+OptionMenu "bitchSpawning" {
+    Title "------ 'Bitch' 4.26mm LMG Options ------"
+   	StaticText "Notice:", "Green"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Green"
+    StaticText  "Control the spawn rate of The Bitch on the Vulcanette", "white"
+	Option "The Bitch Spawn Rate: ", "bitch_chaingun_spawn_bias", "SpawnBias"
+	SafeCommand "Reset The Bitch options", "resetcvar bitch_chaingun_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "bitch_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar bitch_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Green"
+	SafeCommand "Reset all options", "deuce_reset_cvars"
+}
+
+OptionMenu "pd42Spawning" {
+    Title "------ PD-42 4.26mm Suppressed PDW Options ------"
+   	StaticText "Notice:", "Green"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Green"
+    StaticText  "Control the spawn rate of the PD-42 on Clip Boxes", "white"
+	Option "PD-42 Spawn Rate: ", "pd42_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Kelenken options", "resetcvar pd42_clipbox_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "pd42_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar pd42_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Green"
+	SafeCommand "Reset all options", "pd42_reset_cvars"
+}
+
+OptionMenu "ump45Spawning" {
+    Title "------ UMP-45 .45 ACP PDW Options ------"
+   	StaticText "Notice:", "Green"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Green"
+    StaticText  "Control the spawn rate of the UMP-45 on Clip Boxes", "white"
+	Option "UMP-45 Spawn Rate: ", "ump45_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "Reset UMP-45 options", "resetcvar ump45_clipbox_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control the spawn rate of the UMP-45's Magazine on Clip Magazines", "white"
+	Option "UMP-45 Mag Spawn Rate: ", "ump45mag_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "Reset UMP-45 Mag options", "resetcvar ump45mag_clipmag_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns (Gun): ", "ump45_persistent_spawning", "OnOff"
+	Option "Persistent Spawns (Magazine): ", "ump45mag_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar ump45_persistent_spawning; resetcvar ump45mag_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Green"
+	SafeCommand "Reset all options", "ump45_reset_cvars"
+}
+
+// Explosives
+
+OptionMenu "flamenwerferSpawning" {
+    Title "------ Flamenwerfer 77 Options ------"
+   	StaticText "Notice:", "Brown"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Brown"
+    StaticText  "Control the spawn rate of the Flamenwerfer 77 on:", "white"
+	Option "Rocket Launcher Spawns: ", "flamenwerfer_launcher_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Shell Box option", "resetcvar flamenwerfer_launcher_spawn_bias"
+	Option "BFG-9000: ", "flamenwerfer_bfg_spawn_bias", "SpawnBias"
+	SafeCommand "Reset BFG-9000 option", "resetcvar flamenwerfer_bfg_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control the spawn rate of Gas Tanks on:", "white"
+	Option "Rocket Grenades: ", "gastank_rocket_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Armor Bonus option", "resetcvar gastank_rocket_spawn_bias"
+	Option "Rocket Boxes: ", "gastank_rocketbox_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Health Bonus option", "resetcvar gastank_rocketbox_spawn_bias"
+	Option "Batteries: ", "gastank_battery_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Grenade Pack option", "resetcvar gastank_battery_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Flamenwerfer Persistent Spawns: ", "flamenwerfer_persistent_spawning", "OnOff"
+	Option "Gas Tank Persistent Spawns: ", "gastank_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar flamenwerfer_persistent_spawning; resetcvar gastank_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Brown"
+	SafeCommand "Reset all options", "flamenwerfer_reset_cvars"
+}
+
+// Rifles
+
+OptionMenu "frontiersmanSpawning" {
+    Title "------ 'Frontiersman' 7.76mm Lever-Action Rifle Options ------"
+   	StaticText "Notice:", "Orange"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Orange"
+    StaticText  "Control the spawn rate of the Frontiersman on:", "white"
+	Option "Hunter shotguns: ", "frontiersman_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Frontiersman options", "resetcvar frontiersman_hunter_spawn_bias"
+	Option "Slayer shotguns: ", "frontiersman_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Frontiersman options", "resetcvar frontiersman_slayer_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "frontiersman_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar frontiersman_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Orange"
+	SafeCommand "Reset all options", "frontiersman_reset_cvars"
+}
+
+OptionMenu "wyvernSpawning" {
+    Title "------ 'Wyvern' .50 OMG Double-Barrel Rifle Options ------"
+   	StaticText "Notice:", "Orange"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Orange"
+    StaticText  "Control the spawn rate of the Wyvern on:", "white"
+	Option "Hunter shotguns: ", "wyvern_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Wyvern options", "resetcvar wyvern_hunter_spawn_bias"
+	Option "Slayer shotguns: ", "wyvern_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Wyvern options", "resetcvar wyvern_slayer_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "wyvern_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar wyvern_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Orange"
+	SafeCommand "Reset all options", "wyvern_reset_cvars"
+}
+
+OptionMenu "scorpionSpawning" {
+    Title "------ 'Scorpion' 35mm Sniper Rifle Options ------"
+   	StaticText "Notice:", "Orange"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Orange"
+    StaticText  "Control the spawn rate of the scorpion on the Brontornis Rifle:", "white"
+	Option "Scorpion Spawn Rate: ", "scorpion_bronto_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Scorpion options", "resetcvar scorpion_bronto_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "scorpion_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar scorpion_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Orange"
+	SafeCommand "Reset all options", "scorpion_reset_cvars"
+}
+
+// Energy weapons
+
+OptionMenu "fenrisSpawning" {
+    Title "------ CFL-21 'Fenris' Cold Fusion Laser Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the Fenris on Thunderbusters", "white"
+	Option "Fenris Spawn Rate: ", "fenris_thunderbuster_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Fenris options", "resetcvar fenris_thunderbuster_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "fenris_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar fenris_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "fenris_reset_cvars"
+}
+
+OptionMenu "gfb9Spawning" {
+    Title "------ GFB-9 'The Backup Plan' Rechargeable Energy Handgun Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the GFB-9 on Pistols", "white"
+	Option "GFB-9 Spawn Rate: ", "gfb9_pistol_spawn_bias", "SpawnBias"
+	SafeCommand "Reset GFB-9 options", "resetcvar gfb9_pistol_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "gfb9_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar gfb9_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "gfb9_reset_cvars"
+}
+
+OptionMenu "hammerheadSpawning" {
+    Title "------ CIR-37 'Hammerhead' Plasma Minigun Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the Hammerhead on Vulcanettes", "white"
+	Option "Hammerhead Spawn Rate: ", "hammerhead_chaingun_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Hammerhead options", "resetcvar hammerhead_chaingun_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "hammerhead_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar hammerhead_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "hammerhead_reset_cvars"
+}
+
+OptionMenu "nctSpawning" {
+    Title "------ NS3-Cr.KT Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the NS3-Cr.KT on the BFG-9000", "white"
+	Option "NS3-Cr.KT Spawn Rate: ", "nct_bfg_spawn_bias", "SpawnBias"
+	SafeCommand "Reset NS3-Cr.KT options", "resetcvar nct_bfg_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "nct_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar nct_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "nct_reset_cvars"
+}
+
+OptionMenu "hevArmourSpawning" {
+    Title "------ HEV Armour Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Green"
+    StaticText  "Control the spawn rate of the HEV Armour on Garrison and Battle Armour", "white"
+	Option "HEV Armour Spawn Rate: ", "hevarmour_spawn_bias", "SpawnBias"
+	SafeCommand "Reset HEV Armour options", "resetcvar hevarmour_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "hevarmour_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar hevarmour_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "green"
+	SafeCommand "Reset all options", "hevarmour_reset_cvars"
+}
+
+OptionMenu "IcarusMenu" {
+	Title "$IcarusMenu"
+
+	SubMenu "$IcarusFlamerMenu", "IcarusFlamerMenu"
+   	StaticText ""
+	SubMenu "$IcarusSpawnMenu", "IcarusSpawningMenu"
 }
 
 AddOptionMenu "OptionsMenu" {
-	Submenu "$ILCMenu", "ILCMenu"
+	Submenu "$IcarusMenu", "IcarusMenu"
 }
 
 AddOptionMenu "HDAddonMenu" {
-	Submenu "$ILCMenu", "ILCMenu"
+	Submenu "$IcarusMenu", "IcarusMenu"
 }

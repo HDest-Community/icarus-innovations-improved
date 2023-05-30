@@ -17,3 +17,5 @@ version "4.10"
 #include "zscript/USP/usp.zs"
 #include "zscript/Viper/viper.zs"
 #include "zscript/Wyvern/wyvern.zs"
+
+#include "zscript/SpawnHandler.zs"

@@ -1,39 +1,3 @@
-class WyvernHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'RLReplaces':
-				if (random[wyvernrand]() <= AceCore.GetScaledChance(0, 40, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "WyvernRandom";
-				}
-				break;
-			case 'CellRandom':
-				if (random[wyvernrand]() <= AceCore.GetScaledChance(16, 32, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "HD50OMGBoxPickup";
-				}
-				break;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		let WyvernAmmo = HD50OMGAmmo(e.Thing);
-		if (WyvernAmmo)
-		{
-			WyvernAmmo.ItemsThatUseThis.Push("HDWyvern");
-		}
-	}
-}
-
 class HDWyvern : HDWeapon
 {
 	enum WyvernFlags

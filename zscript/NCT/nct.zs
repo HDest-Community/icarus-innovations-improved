@@ -1,33 +1,3 @@
-class NCTHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'BFG9K':
-				if (random[nctrand]() <= 12)
-				{
-					e.Replacement = "NCTRandom";
-				}
-				break;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		let NCTAmmo = HDBattery(e.Thing);
-		if (NCTAmmo)
-		{
-			NCTAmmo.ItemsThatUseThis.Push("HDNCT");
-		}
-	}
-}
-
 class HDNCT : HDCellWeapon
 {
 	enum NCTProperties
