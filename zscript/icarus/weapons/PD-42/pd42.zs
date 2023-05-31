@@ -189,9 +189,9 @@ class HDPDFour : HDWeapon {
 
 	action void A_CheckReflexSight() {
 		if(invoker.weaponStatus[PDS_FLAGS] & PDF_REFLEXSIGHT) {
-			Player.GetPSprite(PSP_WEAPON).sprite=getspriteindex("PDFSA0");
-		} else {
 			Player.GetPSprite(PSP_WEAPON).sprite=getspriteindex("PDFGA0");
+		} else {
+			Player.GetPSprite(PSP_WEAPON).sprite=getspriteindex("PDFSA0");
 		}
 	}
 
