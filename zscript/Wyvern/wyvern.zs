@@ -334,13 +334,13 @@ class HDWyvern : HDWeapon {
 			WYVG # 2 Offset(0, 34);
 			WYVG # 1 Offset(0, 40);
 			WYVG # 3 Offset(0, 46);
-			WYVG # 5 Offset(0, 47) A_StartSound("Wyvern/Open", 8);
-			WYVR A 4 Offset(0, 46) A_MuzzleClimb(
+			WYVR A 5 Offset(0, 47) A_StartSound("Wyvern/Open", 8);
+			WYVR B 4 Offset(0, 46) A_MuzzleClimb(
 				frandom(0.6, 1.2), frandom(0.6, 1.2),
 				frandom(0.6, 1.2), frandom(0.6, 1.2),
 				frandom(1.2, 2.4), frandom(1.2, 2.4)
 			);
-			WYVR B 3 Offset(0, 36) {
+			WYVR C 3 Offset(0, 36) {
 				// Eject whatever is already loaded
 				for (int i = 0; i < 2; ++i) {
 					int chamber = invoker.weaponStatus[WYVS_CHAMBER1 + i];
@@ -367,10 +367,10 @@ class HDWyvern : HDWeapon {
 					}
 				}
 			}
-			WYVR B 2 Offset(1, 34);
-			WYVR B 2 Offset(2, 34);
-			WYVR B 2 Offset(4, 34);
-			WYVR B 8 Offset(0, 36)
+			WYVR C 2 Offset(1, 34);
+			WYVR C 2 Offset(2, 34);
+			WYVR C 2 Offset(4, 34);
+			WYVR C 8 Offset(0, 36)
 			{
 				if (invoker.weaponStatus[WYVS_FLAGS] & WYVF_JUSTUNLOAD) {
 					SetWeaponState('UnloadEnd');
@@ -393,9 +393,9 @@ class HDWyvern : HDWeapon {
 					SetWeaponState('ReloadContinue');
 				}
 			}
-			WYVR B 4 Offset(2, 35);
-			WYVR B 4 Offset(0, 35);
-			WYVR B 4 Offset(0, 34);
+			WYVR C 4 Offset(2, 35);
+			WYVR C 4 Offset(0, 35);
+			WYVR C 4 Offset(0, 34);
 		ReloadContinue:
 			WYVR C 5 Offset(1, 35);
 			WYVR C 2 Offset(0, 36);
