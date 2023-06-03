@@ -67,10 +67,12 @@ class IcarusWepsHandler : EventHandler {
 	array<IcarusSpawnItem> itemspawnlist;
 	int itemspawnlistsize;
 
+	override void onRegister() {
+		init();
+	}
 
 	// appends an entry to itemspawnlist;
-	void additem(string name, Array<IcarusSpawnItemEntry> replacees, bool persists, bool rep=true)
-	{
+	void additem(string name, Array<IcarusSpawnItemEntry> replacees, bool persists, bool rep=true) {
 		// Creates a new struct;
 		IcarusSpawnItem spawnee = IcarusSpawnItem(new('IcarusSpawnItem'));
 
@@ -89,8 +91,7 @@ class IcarusWepsHandler : EventHandler {
 		itemspawnlistsize++;
 	}
 
-	IcarusSpawnItemEntry additementry(string name, int chance)
-	{
+	IcarusSpawnItemEntry additementry(string name, int chance) {
 		// Creates a new struct;
 		IcarusSpawnItemEntry spawnee = IcarusSpawnItemEntry(new('IcarusSpawnItemEntry'));
 		spawnee.name = name.makelower();
@@ -100,8 +101,7 @@ class IcarusWepsHandler : EventHandler {
 
 
 	// appends an entry to ammospawnlist;
-	void addammo(string name, Array<string> weapons)
-	{
+	void addammo(string name, Array<string> weapons) {
 
 		// Creates a new struct;
 		IcarusSpawnAmmo spawnee = IcarusSpawnAmmo(new('IcarusSpawnAmmo'));
@@ -118,13 +118,9 @@ class IcarusWepsHandler : EventHandler {
 		ammospawnlistsize++;
 	}
 
-	bool cvarsAvailable;
 
 	// Populates the replacement and association arrays.
-	void init()
-	{
-		cvarsAvailable = true;
-
+	void init() {
 		//------------
 		// Ammunition
 		//------------
@@ -349,126 +345,76 @@ class IcarusWepsHandler : EventHandler {
 	}
 
 	// Random stuff, stores it and forces negative values just to be 0.
-	bool giverandom(int chance)
-	{
-		bool result = false;
-		int iii = random(0, chance);
-		if(iii < 0)
-			iii = 0;
-		if (iii == 0)
-		{
-			if(chance > -1)
-				result = true;
-		}
-
-		return result;
+	bool giverandom(int chance) {
+		return chance > -1 && random(0, chance) == 0;
 	}
 
 	// Tries to create the item via random spawning.
-	bool trycreateitem(worldevent e, IcarusSpawnItem f, int g, bool rep)
-	{
-		bool result = false;
-		if(giverandom(f.spawnreplaces[g].chance))
-		{
-			if (hd_debug) { console.printf(e.thing.GetClassName().." -> "..f.spawnname); }
-			let spawnitem = Actor.Spawn(f.spawnname, e.thing.pos);
-			if(spawnitem)
-			{
-				if(rep)
-				{
-					e.thing.destroy();
-					result = true;
-				}
-			}
+	bool trycreateitem(Inventory item, IcarusSpawnItem f, int g, bool rep) {
+		if(giverandom(f.spawnreplaces[g].chance)) {
+			if (hd_debug) console.printf(item.GetClassName().." -> "..f.spawnname);
 
+			if(Actor.Spawn(f.spawnname, item.pos) && rep) {
+				item.destroy();
+
+				return true;
+			}
 		}
-		return result;
+
+		return false;
 	}
 
-	override void worldthingspawned(worldevent e)
-	{
-		string candidatename;
+	override void worldthingspawned(worldevent e) {
+		// If thing spawned doesn't exist, quit
+		if(!e.Thing) return;
 
-		// loop controls.
-		int i, j;
-		bool isAmmo = false;
+		// If thing spawned is blacklisted, quit
+		for(let i = 0; i < blacklist.size(); i++) if (e.thing is blacklist[i]) return;
 
-		// Populates the main arrays if they haven't been already.
-		if(!cvarsAvailable)
-			init();
-
-		for(i = 0; i < blacklist.size(); i++)
-		{
-			if (e.thing is blacklist[i])
-				return;
-		}
-
-		// Checks for null events.
-		if(!e.Thing)
-		{
-			return;
-		}
-
-		candidatename  = e.Thing.GetClassName();
-		candidatename = candidatename.makelower();
+		string candidateName = e.Thing.GetClassName();
+		candidateName = candidateName.makelower();
 
 		// Pointers for specific classes.
-		let ammo_ptr   = HDAmmo(e.Thing);
+		let ammo = HDAmmo(e.Thing);
+		let item = Inventory(e.Thing);
 
-		// Whether or not an item can use this.
-		if(ammo_ptr)
-		{
-			// Goes through the entire ammospawn array.
-			for(i = 0; i < ammospawnlistsize; i++)
-			{
-				if(candidatename == ammospawnlist[i].ammoname)
-				{
-					// Appends each entry in that ammo's subarray.
-					for(j = 0; j < ammospawnlist[i].weaponnamessize; j++)
-					{
-						// Actual pushing to itemsthatusethis().
-						if(ammo_ptr)
-							ammo_ptr.ItemsThatUseThis.Push(ammospawnlist[i].weaponnames[j]);
-					}
+		// If the thing spawned is an ammunition, add any and all items that can use this.
+		if (ammo) handleAmmoUses(ammo, candidateName);
+
+		// Return if range before replacing things.
+		if(level.MapName ~== "RANGE") return;
+
+		if (item) handleWeaponReplacements(item, ammo, candidateName);
+	}
+
+	private void handleAmmoUses(HDAmmo ammo, string candidateName) {
+		// Goes through the entire ammospawn array.
+		for(let i = 0; i < ammospawnlistsize; i++) {
+			if(candidateName == ammospawnlist[i].ammoname) {
+				// Appends each entry in that ammo's subarray.
+				for(let j = 0; j < ammospawnlist[i].weaponnamessize; j++) {
+					// Actual pushing to itemsthatusethis().
+					if(ammo) ammo.ItemsThatUseThis.Push(ammospawnlist[i].weaponnames[j]);
 				}
 			}
 		}
+	}
 
-		// Return if range before replacing things.
-		if(level.MapName ~== "RANGE")
-		{
-			return;
-		}
+	private void handleWeaponReplacements(Inventory item, HDAmmo ammo, string candidateName) {
+
+		// Checks if the level has been loaded more than 1 tic.
+		bool prespawn = !(level.maptime > 1);
 
 		// Iterates through the list of item candidates for e.thing.
-		for(i = 0; i < itemspawnlistsize; i++)
-		{
-			// Tries to cast the item as an inventory.
-			let thing_inv_ptr = Inventory(e.thing);
-
-			// Checks if the item in question is owned.
-			bool owned    = thing_inv_ptr && (thing_inv_ptr.owner);
-
-			// Checks if the level has been loaded more than 1 tic.
-			bool prespawn = !(level.maptime > 1);
-
-			// Checks if persistent spawning is on.
-			bool persist  = (itemspawnlist[i].isPersistent);
+		for(let i = 0; i < itemspawnlistsize; i++) {
 
 			// if an item is owned or is an ammo (doesn't retain owner ptr),
 			// do not replace it.
-			if ((prespawn || persist) && (!owned && (!ammo_ptr || prespawn)))
-			{
-				int original_i = i;
-				for(j = 0; j < itemspawnlist[original_i].spawnreplacessize; j++)
-				{
-					if(itemspawnlist[i].spawnreplaces[j].name == candidatename)
-					{
-						if(trycreateitem(e, itemspawnlist[i], j, itemspawnlist[i].replaceitem))
-						{
-							j = itemspawnlist[i].spawnreplacessize;
-							i = itemspawnlistsize;
-						}
+			if ((prespawn || itemspawnlist[i].isPersistent) && (!item.owner && (!ammo || prespawn))) {
+				for(let j = 0; j < itemspawnlist[i].spawnreplacessize; j++) {
+					if(itemspawnlist[i].spawnreplaces[j].name == candidateName
+						&& trycreateitem(item, itemspawnlist[i], j, itemspawnlist[i].replaceitem)) {
+						return;
 					}
 				}
 			}
