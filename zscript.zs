@@ -1,5 +1,7 @@
 version "4.10"
 
+#include "zscript/icarus/SpawnHandler.zs"
+
 #include "zscript/icarus/weapons/Barracuda/barracuda.zs"
 #include "zscript/icarus/weapons/Bitch/bitch.zs"
 #include "zscript/icarus/weapons/Fenris/fenris.zs"
@@ -17,5 +19,3 @@ version "4.10"
 #include "zscript/icarus/weapons/USP/usp.zs"
 #include "zscript/icarus/weapons/Viper/viper.zs"
 #include "zscript/icarus/weapons/Wyvern/wyvern.zs"
-
-#include "zscript/icarus/SpawnHandler.zs"

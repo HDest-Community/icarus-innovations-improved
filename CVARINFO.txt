@@ -38,7 +38,8 @@ server int gfb9_pistol_spawn_bias = 9;
 server bool gfb9_persistent_spawning = false;
 
 // Hammerhead
-server int hammerhead_chaingun_spawn_bias = 9;
+server int hammerhead_chaingun_spawn_bias = 14;
+server int hammerhead_thunderbuster_spawn_bias = 9;
 server bool hammerhead_persistent_spawning = false;
 
 // NCT
