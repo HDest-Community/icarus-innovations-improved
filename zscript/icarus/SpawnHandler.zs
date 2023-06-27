@@ -38,8 +38,7 @@ class IcarusSpawnItemEntry play {
 }
 
 // Struct for passing useinformation to ammunition.
-class IcarusSpawnAmmo play
-{
+class IcarusSpawnAmmo play {
 	// ID by string for the header ammo.
 	string ammoName;
 	
@@ -95,10 +94,6 @@ class IcarusWepsHandler : EventHandler {
 	array<IcarusSpawnItem> itemSpawnList;
 
 	bool cvarsAvailable;
-
-	// override void onRegister() {
-	// 	init();
-	// }
 
 	// appends an entry to itemSpawnList;
 	void addItem(string name, Array<IcarusSpawnItemEntry> replacees, bool persists, bool rep=true) {
@@ -400,12 +395,12 @@ class IcarusWepsHandler : EventHandler {
 	}
 
 	// Tries to create the item via random spawning.
-	bool tryCreateItem(Inventory item, IcarusSpawnItem f, int g, bool rep) {
+	bool tryCreateItem(Actor thing, IcarusSpawnItem f, int g, bool rep) {
 		if (giveRandom(f.spawnReplaces[g].chance)) {
-			if (Actor.Spawn(f.spawnName, item.pos) && rep) {
-				if (hd_debug) console.printf(item.GetClassName().." -> "..f.spawnName);
+            if (Actor.Spawn(f.spawnName, thing.pos) && rep) {
+                if (hd_debug) console.printf(thing.GetClassName().." -> "..f.spawnName);
 
-				item.destroy();
+                thing.destroy();
 
 				return true;
 			}
@@ -429,7 +424,6 @@ class IcarusWepsHandler : EventHandler {
 
 		// Pointers for specific classes.
 		let ammo = HDAmmo(e.Thing);
-		let item = Inventory(e.Thing);
 
 		// If the thing spawned is an ammunition, add any and all items that can use this.
 		if (ammo) handleAmmoUses(ammo, candidateName);
@@ -437,7 +431,7 @@ class IcarusWepsHandler : EventHandler {
 		// Return if range before replacing things.
 		if (level.MapName ~== "RANGE") return;
 
-		if (item) handleWeaponReplacements(item, ammo, candidateName);
+        handleWeaponReplacements(e.Thing, ammo, candidateName);
 	}
 
 	private void handleAmmoUses(HDAmmo ammo, string candidateName) {
@@ -447,13 +441,13 @@ class IcarusWepsHandler : EventHandler {
 				// Appends each entry in that ammo's subarray.
 				for (let j = 0; j < ammoSpawnList[i].weaponNames.size(); j++) {
 					// Actual pushing to itemsthatusethis().
-					if (ammo) ammo.ItemsThatUseThis.Push(ammoSpawnList[i].weaponNames[j]);
+					ammo.ItemsThatUseThis.Push(ammoSpawnList[i].weaponNames[j]);
 				}
 			}
 		}
 	}
 
-	private void handleWeaponReplacements(Inventory item, HDAmmo ammo, string candidateName) {
+    private void handleWeaponReplacements(Actor thing, HDAmmo ammo, string candidateName) {
 
 		// Checks if the level has been loaded more than 1 tic.
 		bool prespawn = !(level.maptime > 1);
@@ -463,12 +457,13 @@ class IcarusWepsHandler : EventHandler {
 
 			// if an item is owned or is an ammo (doesn't retain owner ptr),
 			// do not replace it.
-			if ((prespawn || itemSpawnList[i].isPersistent) && (!item.owner && (!ammo || prespawn))) {
+            let item = Inventory(thing);
+            if ((prespawn || itemSpawnList[i].isPersistent) && (!(item && item.owner) && (!ammo || prespawn))) {
 				for (let j = 0; j < itemSpawnList[i].spawnReplaces.size(); j++) {
 					if (itemSpawnList[i].spawnReplaces[j].name == candidateName) {
 						if (hd_debug) console.printf("Attempting to replace "..candidateName.." with "..itemSpawnList[i].spawnName.."...");
 
-						if (tryCreateItem(item, itemSpawnList[i], j, itemSpawnList[i].replaceItem)) return;
+                        if (tryCreateItem(thing, itemSpawnList[i], j, itemSpawnList[i].replaceItem)) return;
 					}
 				}
 			}
