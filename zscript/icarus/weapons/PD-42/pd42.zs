@@ -514,7 +514,7 @@ class HDPDFour : HDWeapon {
 		
 		spawn:
 			TNT1 A 1;
-			PDWS A 0 NoDelay A_JumpIf(invoker.weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER, 2);
+			PDWS A 0 A_JumpIf(invoker.weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER, 2);
 			PDWG A 0;
 			#### # -1
 			{
