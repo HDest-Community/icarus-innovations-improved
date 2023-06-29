@@ -9,6 +9,7 @@ class IcarusSpawnItem play {
 	// Whether or not to persistently spawn.
 	bool isPersistent;
 	
+	// Whether or not to replace the original item.
 	bool replaceItem;
 
 	string toString() {
@@ -17,9 +18,7 @@ class IcarusSpawnItem play {
 		if (spawnReplaces.size()) {
 			replacements = replacements..spawnReplaces[0].toString();
 
-			for (let i = 1; i < spawnReplaces.size(); i++) {
-				replacements = replacements..", "..spawnReplaces[i].toString();
-			}
+			foreach (spawnReplace : spawnReplaces) replacements = replacements..", "..spawnReplace.toString();
 		}
 		replacements = replacements.."]";
 
@@ -51,9 +50,7 @@ class IcarusSpawnAmmo play {
 		if (weaponNames.size()) {
 			weapons = weapons..weaponNames[0];
 
-			for (let i = 1; i < weaponNames.size(); i++) {
-				weapons = weapons..", "..weaponNames[i];
-			}
+			foreach (weaponName : weaponNames) weapons = weapons..", "..weaponName;
 		}
 		weapons = weapons.."]";
 
@@ -68,7 +65,7 @@ class IcarusWepsHandler : EventHandler {
 
 	// List of persistent classes to completely ignore.
 	// This -should- mean this mod has no performance impact.
-	static const class<actor> blacklist[] = {
+	static const string blacklist[] = {
 		"HDSmoke",
 		"BloodTrail",
 		"CheckPuff",
@@ -101,9 +98,7 @@ class IcarusWepsHandler : EventHandler {
 		if (hd_debug) {
 			let msg = "Adding "..(persists ? "Persistent" : "Non-Persistent").." Replacement Entry for "..name..": ["..replacees[0].toString();
 
-			if (replacees.size() > 1) {
-				for (let i = 1; i < replacees.size(); i++) msg = msg..", "..replacees[i].toString();
-			}
+			if (replacees.size() > 1) foreach (replacee : replacees) msg = msg..", "..replacee.toString();
 
 			console.printf(msg.."]");
 		}
@@ -116,9 +111,7 @@ class IcarusWepsHandler : EventHandler {
 		spawnee.isPersistent = persists;
 		spawnee.replaceItem = rep;
 
-		for (int i = 0; i < replacees.size(); i++) {
-			spawnee.spawnReplaces.push(replacees[i]);
-		}
+		foreach (replacee : replacees) spawnee.spawnReplaces.push(replacee);
 
 		// Pushes the finished struct to the array.
 		itemSpawnList.push(spawnee);
@@ -127,7 +120,7 @@ class IcarusWepsHandler : EventHandler {
 	IcarusSpawnItemEntry addItemEntry(string name, int chance) {
 		// Creates a new struct;
 		IcarusSpawnItemEntry spawnee = IcarusSpawnItemEntry(new('IcarusSpawnItemEntry'));
-		spawnee.name = name.makelower();
+		spawnee.name = name.makeLower();
 		spawnee.chance = chance;
 		return spawnee;
 	}
@@ -137,12 +130,10 @@ class IcarusWepsHandler : EventHandler {
 
 		// Creates a new struct;
 		IcarusSpawnAmmo spawnee = IcarusSpawnAmmo(new('IcarusSpawnAmmo'));
-		spawnee.ammoName = name.makelower();
+		spawnee.ammoName = name.makeLower();
 
 		// Populates the struct with relevant information,
-		for (int i = 0; i < weapons.size(); i++) {
-			spawnee.weaponNames.push(weapons[i].makelower());
-		}
+		foreach (weapon : weapons) spawnee.weaponNames.push(weapon.makeLower());
 
 		// Pushes the finished struct to the array.
 		ammoSpawnList.push(spawnee);
@@ -386,7 +377,7 @@ class IcarusWepsHandler : EventHandler {
 		if (chance > -1) {
 			let result = random(0, chance);
 
-			if (hd_debug) console.printf("Rolled a "..result.." out of "..(chance + 1));
+			if (hd_debug) console.printf("Rolled a "..(result + 1).." out of "..(chance + 1));
 
 			return result == 0;
 		}
@@ -395,10 +386,10 @@ class IcarusWepsHandler : EventHandler {
 	}
 
 	// Tries to create the item via random spawning.
-	bool tryCreateItem(Actor thing, IcarusSpawnItem f, int g, bool rep) {
-		if (giveRandom(f.spawnReplaces[g].chance)) {
-            if (Actor.Spawn(f.spawnName, thing.pos) && rep) {
-                if (hd_debug) console.printf(thing.GetClassName().." -> "..f.spawnName);
+	bool tryCreateItem(Actor thing, string spawnName, int chance, bool rep) {
+		if (giveRandom(chance)) {
+            if (Actor.Spawn(spawnName, thing.pos) && rep) {
+                if (hd_debug) console.printf(thing.getClassName().." -> "..spawnName);
 
                 thing.destroy();
 
@@ -409,21 +400,21 @@ class IcarusWepsHandler : EventHandler {
 		return false;
 	}
 
-	override void worldthingspawned(worldevent e) {
+	override void worldThingSpawned(WorldEvent e) {
 		// Populates the main arrays if they haven't been already. 
 		if (!cvarsAvailable) init();
 
 		// If thing spawned doesn't exist, quit
-		if (!e.Thing) return;
+		if (!e.thing) return;
 
 		// If thing spawned is blacklisted, quit
-		for (let i = 0; i < blacklist.size(); i++) if (e.thing is blacklist[i]) return;
+		foreach (bl : blacklist) if (e.thing is bl) return;
 
-		string candidateName = e.Thing.GetClassName();
-		candidateName = candidateName.makelower();
+		string candidateName = e.thing.getClassName();
+		candidateName = candidateName.makeLower();
 
 		// Pointers for specific classes.
-		let ammo = HDAmmo(e.Thing);
+		let ammo = HDAmmo(e.thing);
 
 		// If the thing spawned is an ammunition, add any and all items that can use this.
 		if (ammo) handleAmmoUses(ammo, candidateName);
@@ -431,20 +422,11 @@ class IcarusWepsHandler : EventHandler {
 		// Return if range before replacing things.
 		if (level.MapName ~== "RANGE") return;
 
-        handleWeaponReplacements(e.Thing, ammo, candidateName);
+        handleWeaponReplacements(e.thing, ammo, candidateName);
 	}
 
 	private void handleAmmoUses(HDAmmo ammo, string candidateName) {
-		// Goes through the entire ammospawn array.
-		for (let i = 0; i < ammoSpawnList.size(); i++) {
-			if (candidateName == ammoSpawnList[i].ammoName) {
-				// Appends each entry in that ammo's subarray.
-				for (let j = 0; j < ammoSpawnList[i].weaponNames.size(); j++) {
-					// Actual pushing to itemsthatusethis().
-					ammo.ItemsThatUseThis.Push(ammoSpawnList[i].weaponNames[j]);
-				}
-			}
-		}
+		foreach (ammoSpawn : ammoSpawnList) if (candidateName == ammoSpawn.ammoName) ammo.itemsThatUseThis.copy(ammoSpawn.weaponNames);
 	}
 
     private void handleWeaponReplacements(Actor thing, HDAmmo ammo, string candidateName) {
@@ -453,17 +435,17 @@ class IcarusWepsHandler : EventHandler {
 		bool prespawn = !(level.maptime > 1);
 
 		// Iterates through the list of item candidates for e.thing.
-		for (let i = 0; i < itemSpawnList.size(); i++) {
+		foreach (itemSpawn : itemSpawnList) {
 
 			// if an item is owned or is an ammo (doesn't retain owner ptr),
 			// do not replace it.
             let item = Inventory(thing);
-            if ((prespawn || itemSpawnList[i].isPersistent) && (!(item && item.owner) && (!ammo || prespawn))) {
-				for (let j = 0; j < itemSpawnList[i].spawnReplaces.size(); j++) {
-					if (itemSpawnList[i].spawnReplaces[j].name == candidateName) {
-						if (hd_debug) console.printf("Attempting to replace "..candidateName.." with "..itemSpawnList[i].spawnName.."...");
+            if ((prespawn || itemSpawn.isPersistent) && (!(item && item.owner) && (!ammo || prespawn))) {
+				foreach (spawnReplace : itemSpawn.spawnReplaces) {
+					if (spawnReplace.name == candidateName) {
+						if (hd_debug) console.printf("Attempting to replace "..candidateName.." with "..itemSpawn.spawnName.."...");
 
-                        if (tryCreateItem(thing, itemSpawnList[i], j, itemSpawnList[i].replaceItem)) return;
+                        if (tryCreateItem(thing, itemSpawn.spawnName, spawnReplace.chance, itemSpawn.replaceItem)) return;
 					}
 				}
 			}
