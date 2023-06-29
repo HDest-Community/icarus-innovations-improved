@@ -102,7 +102,7 @@ OptionMenu "nyxSpawning" {
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns (Handgun): ", "nyx_persistent_spawning", "OnOff"
 	Option "Persistent Spawns (Magazine): ", "nyxmag_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar nyxmag_persistent_spawning; resetcvar nyxmag_persistent_spawning"
+	SafeCommand "Reset persistence options", "resetcvar nyx_persistent_spawning; resetcvar nyxmag_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
