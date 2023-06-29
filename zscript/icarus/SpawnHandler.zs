@@ -239,7 +239,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// Flamenwerfer77
 		Array<IcarusSpawnItemEntry> spawns_flamenwerfer;
-		spawns_flamenwerfer.push(addItemEntry("RLReplaces", flamenwerfer_launcher_spawn_bias));
+		spawns_flamenwerfer.push(addItemEntry("HDRL", flamenwerfer_launcher_spawn_bias));
 		spawns_flamenwerfer.push(addItemEntry("BFG9K", flamenwerfer_bfg_spawn_bias));
 		addItem("FlamethrowerSpawner", spawns_flamenwerfer, flamenwerfer_persistent_spawning);
 
