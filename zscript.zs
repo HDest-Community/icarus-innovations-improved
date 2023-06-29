@@ -2,6 +2,8 @@ version "4.10"
 
 #include "zscript/icarus/SpawnHandler.zs"
 
+#include "zscript/icarus/items/HEV Armor/hevArmor.zs"
+
 #include "zscript/icarus/weapons/Barracuda/barracuda.zs"
 #include "zscript/icarus/weapons/Bitch/bitch.zs"
 #include "zscript/icarus/weapons/Fenris/fenris.zs"
@@ -9,7 +11,6 @@ version "4.10"
 #include "zscript/icarus/weapons/Frontiersman/frontiersman.zs"
 #include "zscript/icarus/weapons/GFB-9/gfb9.zs"
 #include "zscript/icarus/weapons/Hammerhead/hammerhead.zs"
-#include "zscript/icarus/weapons/HEV Armor/hevArmor.zs"
 #include "zscript/icarus/weapons/NCT/nct.zs"
 #include "zscript/icarus/weapons/Nyx/nyx.zs"
 #include "zscript/icarus/weapons/PD-42/pd42.zs"
