@@ -160,11 +160,6 @@ class IcarusWepsHandler : EventHandler {
 		wep_45acp.push("HDUSP");
 		addAmmo("HD45ACPAmmo", wep_45acp);
 
-		// .50 AE
-		Array<string> wep_50ae;
-		wep_50ae.push("HDViper");
-		addAmmo("HD50AEAmmo", wep_50ae);
-
 		// 12 gauge Buckshot Ammo.
 		Array<string> wep_12gaShell;
 		wep_12gaShell.push("HDBarracuda");
@@ -197,7 +192,6 @@ class IcarusWepsHandler : EventHandler {
 		// HDBattery. 
 		Array<string> wep_battery;  
 		wep_battery.push("HDFenris");
-		wep_battery.push("HDHammerhead");
 		wep_battery.push("HDNCT");
 		addAmmo('HDBattery', wep_battery);
 
@@ -205,16 +199,6 @@ class IcarusWepsHandler : EventHandler {
 		Array<string> wep_7mm;
 		wep_7mm.push("HDFrontier");
 		addAmmo("SevenMilAmmo", wep_7mm);
-
-		// 35mm
-		Array<string> wep_35mm;
-		wep_35mm.push("HDScorpion");
-		addAmmo("BrontornisRound", wep_35mm);
-
-		// .50 OMG
-		Array<string> wep_OMG;
-		wep_OMG.push("HDWyvern");
-		addAmmo("HD50OMGAmmo", wep_OMG);
 
 
 		//------------
@@ -256,12 +240,6 @@ class IcarusWepsHandler : EventHandler {
 		spawns_gfb9.push(addItemEntry("HDPistol", gfb9_pistol_spawn_bias));
 		addItem("GFBlasterRandom", spawns_gfb9, gfb9_persistent_spawning);
 
-		// Hammerhead
-		Array<IcarusSpawnItemEntry> spawns_hammerhead;
-		spawns_hammerhead.push(addItemEntry("Vulcanette", hammerhead_chaingun_spawn_bias));
-		spawns_hammerhead.push(addItemEntry("Thunderbuster", hammerhead_thunderbuster_spawn_bias));
-		addItem("HammerheadRandom", spawns_hammerhead, hammerhead_persistent_spawning);
-
 		// NCT
 		Array<IcarusSpawnItemEntry> spawns_nct;
 		spawns_nct.push(addItemEntry("BFG9K", nct_bfg_spawn_bias));
@@ -279,11 +257,6 @@ class IcarusWepsHandler : EventHandler {
 		spawns_pd42.push(addItemEntry("HdAmBox", pd42_clipbox_spawn_bias));
 		addItem("PDFourRandom", spawns_pd42, pd42_persistent_spawning);
 
-		// Scorpion
-		Array<IcarusSpawnItemEntry> spawns_scorpion;
-		spawns_scorpion.push(addItemEntry("Brontornis", scorpion_bronto_spawn_bias));
-		addItem("ScorpionSpawner", spawns_scorpion, scorpion_persistent_spawning);
-
 		// Six-12
 		Array<IcarusSpawnItemEntry> spawns_six12;
 		spawns_six12.push(addItemEntry("Hunter", six12_hunter_spawn_bias));
@@ -300,18 +273,6 @@ class IcarusWepsHandler : EventHandler {
 		Array<IcarusSpawnItemEntry> spawns_usp;
 		spawns_usp.push(addItemEntry("HDPistol", usp45_pistol_spawn_bias));
 		addItem("USPRandom", spawns_usp, usp45_persistent_spawning);
-
-		// Viper
-		Array<IcarusSpawnItemEntry> spawns_viper;
-		spawns_viper.push(addItemEntry("HDPistol", viper_pistol_spawn_bias));
-		spawns_viper.push(addItemEntry("Hunter", viper_hunter_spawn_bias));
-		addItem("ViperRandom", spawns_viper, viper_persistent_spawning);
-
-		// Wyvern
-		Array<IcarusSpawnItemEntry> spawns_wyvern;
-		spawns_wyvern.push(addItemEntry("Hunter", wyvern_hunter_spawn_bias));
-		spawns_wyvern.push(addItemEntry("Slayer", wyvern_slayer_spawn_bias));
-		addItem("WyvernRandom", spawns_wyvern, wyvern_persistent_spawning);
 
 
 		//------------
@@ -356,11 +317,6 @@ class IcarusWepsHandler : EventHandler {
 		spawns_uspmag.push(addItemEntry("HD9mMag15", usp45mag_clipmag_spawn_bias));
 		addItem("HDUSPMag", spawns_uspmag, usp45mag_persistent_spawning);
 
-		// Viper Magazine
-		Array<IcarusSpawnItemEntry> spawns_vipermag;
-		spawns_vipermag.push(addItemEntry("HD9mMag15", vipermag_clipmag_spawn_bias));
-		addItem("HDViperMag", spawns_vipermag, vipermag_persistent_spawning);
-        
 
 		// --------------------
 		// Item Spawns

@@ -37,11 +37,6 @@ server bool frontiersman_persistent_spawning = false;
 server int gfb9_pistol_spawn_bias = 9;
 server bool gfb9_persistent_spawning = false;
 
-// Hammerhead
-server int hammerhead_chaingun_spawn_bias = 14;
-server int hammerhead_thunderbuster_spawn_bias = 9;
-server bool hammerhead_persistent_spawning = false;
-
 // NCT
 server int nct_bfg_spawn_bias = 24;
 server bool nct_persistent_spawning = false;
@@ -55,10 +50,6 @@ server bool nyx_persistent_spawning = false;
 server int pd42_clipbox_spawn_bias = 14;
 server bool pd42_persistent_spawning = false;
 
-// Scorpion
-server int scorpion_bronto_spawn_bias = 9;
-server bool scorpion_persistent_spawning = false;
-
 // Six-12
 server int six12_hunter_spawn_bias = 19;
 server int six12_slayer_spawn_bias = 49;
@@ -71,17 +62,6 @@ server bool ump45_persistent_spawning = false;
 // USP
 server int usp45_pistol_spawn_bias = 9;
 server bool usp45_persistent_spawning = false;
-
-// Viper
-server int viper_pistol_spawn_bias = 19;
-server int viper_hunter_spawn_bias = 49;
-server int viper_slayer_spawn_bias = 49;
-server bool viper_persistent_spawning = false;
-
-// Wyvern
-server int wyvern_hunter_spawn_bias = 99;
-server int wyvern_slayer_spawn_bias = 49;
-server bool wyvern_persistent_spawning = false;
 
 
 //------------
@@ -118,10 +98,6 @@ server bool ump45mag_persistent_spawning = false;
 // USP Magazine
 server int usp45mag_clipmag_spawn_bias = 14;
 server bool usp45mag_persistent_spawning = false;
-
-// Viper Magazine
-server int vipermag_clipmag_spawn_bias = 24;
-server bool vipermag_persistent_spawning = false;
 
 
 //------------
