@@ -110,7 +110,108 @@ This mod aims to maintain and improve Icarus's Innovations, by updating them to 
 ---
 
 ### HEV Armor
+---
 - HEV Armor is designed to be an effective combat suit built to withstand the elemental hazards of both the Tyrant's forces and the realm from which they came. It's slightly more protective and reliable than Garrison Armor but with added elemental protection at the cost of increased weight and movement speed.
 - Loadout code is `hve` to start with the armor equipped.
 - Loadout code is `hva` to start with a spare in your inventory.
+
+## Credits
 ---
+
+### Barracuda
+---
+Code:
+- Icarus, Accensus
+
+Sprites:
+- First Person Sprites originally by Mr.Enchanter.
+
+### Bitch
+---
+Code:
+- Icarus, Accensus
+
+Sprites:
+- Pillowblaster, DoomNukem (From [FinalDoomer](https://forum.zdoom.org/viewtopic.php?t=55061))
+
+### Fenris
+---
+Sprites:
+- World Sprite: Icarus, Railgunner, Sonik.O
+- First Person Sprite: Icarus, Dimoshunter
+- Muzzle Flashes: Moa Dixon
+
+Sounds:
+- Laser Sounds: Zapsplat.com (firing sound), a1337spy's Insurgency FX for HDest
+- Blast and Charge Sounds: Capcom (Mega Man X4)
+  
+### Flamenwerfer-77
+---
+Code:
+- Icarus, Accensus, Potetobloke
+
+Sprites:
+- Fuel Canister: Eriance, 3d Realms
+- World Sprite: Icarus, Railgunner
+- First Person: Icarus, Eriance
+
+Sounds:
+- Dennaton (Hotline Miami 2), Dice (Battlefield 4), and Bethesda (Fallout 3). Compiled by [Magmacow](https://gamebanana.com/sounds/26593).
+
+### GFB-9
+---
+Code:
+- Icarus, Accensus, Sledge, Melodica
+
+Sprites:
+- Icarus, Sonik.O
+
+Sounds:
+- Icarus, Mechadon (Karasawa weapon mod), Doom 2016
+
+### NS3-Cr.Kt
+---
+Code:
+- Accensus, Icarus, Melodica
+
+Sprites:
+- Icarus
+
+### Nyx
+---
+Code:
+- Accensus
+
+Sprites:
+- Weapon Sprites: Icarus, Eriance, Gothic, Blox, ClonedPickle, MidoriMan, PillowBlaster, Sonik.o.fan, Captain Nurbles
+
+Sounds:
+- Sounds from various sources, compiled by [Navaro](https://gamebanana.com/sounds/33280).
+
+### PD-42
+---
+Code:
+- Icarus, Accensus, Prettyfist, Sledge
+
+Sprites:
+- Weapon Sprite: Icarus, a1337spy
+- Weapon Sights: Bryan, Ultra64, and Clay from [Bryan's Extensions](https://github.com/abramsba/hdest-weapons)
+- Pickup sprite: Icarus, Railgunner
+
+Sounds:
+- Fire Sounds: [Seven Zero, SkullBlade](https://gamebanana.com/sounds/16695)
+- Reloading Sounds: [!Alex!](https://gamebanana.com/sounds/22068)
+- Miscellaneous Sounds: [KenLV, DeathCold](https://gamebanana.com/sounds/50612)
+
+### Six-12
+---
+Code:
+- Icarus, Accensus
+
+Sprites:
+- Weapon Sprites: Icarus, Sonik.O
+- World Sprites: Icarus, Railgunner
+
+Sounds:
+- Firing Sound: https://gamebanana.com/skins/124930
+- Mag Sound: https://gamebanana.com/sounds/39196
