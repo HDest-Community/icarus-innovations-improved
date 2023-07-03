@@ -82,6 +82,9 @@ class IcarusWepsHandler : EventHandler {
 		"HDLadderSection"
 	};
 
+	// List of CVARs for Backpack Spawns
+	array<Class <Inventory> > backpackBlacklist;
+
 	// List of weapon-ammo associations.
 	// Used for ammo-use association on ammo spawn (happens very often).
 	array<IcarusSpawnAmmo> ammoSpawnList;
@@ -144,6 +147,32 @@ class IcarusWepsHandler : EventHandler {
 	void init() {
 		
 		cvarsAvailable = true;
+
+		//-----------------
+		// Backpack Spawns
+		//-----------------
+
+        if (!barracuda_allowBackpacks)     backpackBlacklist.push((Class<Inventory>)("HDBarracuda"));
+        if (!bitch_allowBackpacks)         backpackBlacklist.push((Class<Inventory>)("HDBitch"));
+        if (!fenris_allowBackpacks)        backpackBlacklist.push((Class<Inventory>)("HDFenris"));
+        if (!flamenwerfer_allowBackpacks)  backpackBlacklist.push((Class<Inventory>)("HDFlamethrower"));
+        if (!frontiersman_allowBackpacks)  backpackBlacklist.push((Class<Inventory>)("HDFrontier"));
+        if (!gfb9_allowBackpacks)          backpackBlacklist.push((Class<Inventory>)("HDGFBlaster"));
+        if (!nct_allowBackpacks)           backpackBlacklist.push((Class<Inventory>)("HDNCT"));
+        if (!nyx_allowBackpacks)           backpackBlacklist.push((Class<Inventory>)("HDNyx"));
+        if (!pd42_allowBackpacks)          backpackBlacklist.push((Class<Inventory>)("HDPDFour"));
+        if (!six12_allowBackpacks)         backpackBlacklist.push((Class<Inventory>)("HDSix12"));
+        if (!ump45_allowBackpacks)         backpackBlacklist.push((Class<Inventory>)("HDUMP"));
+        if (!usp45_allowBackpacks)         backpackBlacklist.push((Class<Inventory>)("HDUSP"));
+		
+        if (!gastank_allowBackpacks)       backpackBlacklist.push((Class<Inventory>)("HDGasTank"));
+        if (!nyxmag_allowBackpacks)        backpackBlacklist.push((Class<Inventory>)("HDNyxMag"));
+        if (!pd42mag_allowBackpacks)       backpackBlacklist.push((Class<Inventory>)("HDPDFourMag"));
+        if (!six12shellmag_allowBackpacks) backpackBlacklist.push((Class<Inventory>)("HDSix12MagShells"));
+        if (!six12slugmag_allowBackpacks)  backpackBlacklist.push((Class<Inventory>)("HDSix12MagSlugs"));
+        if (!ump45mag_allowBackpacks)      backpackBlacklist.push((Class<Inventory>)("HDUMPMag"));
+        if (!usp45mag_allowBackpacks)      backpackBlacklist.push((Class<Inventory>)("HDUSPMag"));
+
 
 		//------------
 		// Ammunition
@@ -356,9 +385,19 @@ class IcarusWepsHandler : EventHandler {
 		return false;
 	}
 
-	override void worldThingSpawned(WorldEvent e) {
+	override void worldLoaded(WorldEvent e) {
+
 		// Populates the main arrays if they haven't been already. 
 		if (!cvarsAvailable) init();
+
+        foreach (bl : backpackBlacklist) {
+			if (hd_debug) console.printf("Removing "..bl.getClassName().." from Backpack Spawn Pool");
+                
+			BPSpawnPool.removeItem(bl);
+        }
+	}
+
+	override void worldThingSpawned(WorldEvent e) {
 
 		// If thing spawned doesn't exist, quit
 		if (!e.thing) return;

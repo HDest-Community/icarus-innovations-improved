@@ -73,12 +73,12 @@ OptionMenu "IcarusSpawningMenu" {
 
 OptionMenu "nyxSpawning" {
     Title "------ CM-3 'Nyx' .355 Burst-Fire Magnum Options ------"
-   	StaticText "Notice:", "cyan"
+   	StaticText "Notice:", "yellow"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
+	StaticText "Spawn Options", "yellow"
     StaticText  "Control the spawn rate of the Nyx on Pistols:", "white"
 	Option "Nyx Spawn Rate: ", "nyx_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Nyx options", "resetcvar nyx_pistol_spawn_bias"
@@ -90,6 +90,11 @@ OptionMenu "nyxSpawning" {
 	Option "Shell Boxes: ", "nyxmag_shellbox_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Shell Box options", "resetcvar nyxmag_shellbox_spawn_bias"
  	StaticText ""
+	
+	StaticText "Enable/Disable the Nyx from spawning in Backpacks.", "yellow"
+	Option "Nyx:", "nyx_allowBackpacks", "OnOff"
+	Option "Nyx Magazines:", "nyxmag_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns (Handgun): ", "nyx_persistent_spawning", "OnOff"
@@ -98,18 +103,18 @@ OptionMenu "nyxSpawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
+	StaticText "Reset Options", "yellow"
 	SafeCommand "Reset all options", "nyx_reset_cvars"
 }
 
 OptionMenu "usp45Spawning" {
     Title "------ USP-45 .45 ACP Handgun Options ------"
-   	StaticText "Notice:", "cyan"
+   	StaticText "Notice:", "yellow"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
+	StaticText "Spawn Options", "yellow"
     StaticText  "Control the spawn rate of the USP-45 on Pistols:", "white"
 	Option "USP-45 Spawn Rate: ", "usp45_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "Reset USP-45 options", "resetcvar usp45_pistol_spawn_bias"
@@ -119,6 +124,11 @@ OptionMenu "usp45Spawning" {
 	Option "USP-45 Magazine Spawn Rate: ", "usp45mag_clipmag_spawn_bias", "SpawnBias"
 	SafeCommand "Reset USP-45 Magazine option", "resetcvar usp45mag_clipmag_spawn_bias"
     StaticText ""
+	
+	StaticText "Enable/Disable the USP-45 from spawning in Backpacks.", "yellow"
+	Option "USP-45:", "usp45_allowBackpacks", "OnOff"
+	Option "USP-45 Magazines:", "usp45mag_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns (Gun): ", "usp45_persistent_spawning", "OnOff"
@@ -127,7 +137,7 @@ OptionMenu "usp45Spawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
+	StaticText "Reset Options", "yellow"
 	SafeCommand "Reset all options", "usp45_reset_cvars"
 }
 
@@ -147,6 +157,10 @@ OptionMenu "barracudaSpawning" {
 	SafeCommand "Reset Hunter shotgun options", "resetcvar barracuda_hunter_spawn_bias"
 	Option "Slayer shotguns: ", "barracuda_slayer_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Slayer shotgun options", "resetcvar barracuda_slayer_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "Enable/Disable the Nyx from spawning in Backpacks.", "red"
+	Option "Barracuda:", "barracuda_allowBackpacks", "OnOff"
  	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
@@ -174,15 +188,21 @@ OptionMenu "six12Spawning" {
 	SafeCommand "Reset Slayer shotgun options", "resetcvar six12_slayer_spawn_bias"
  	StaticText ""
 
-    StaticText  "Control the spawn rate of the Six12's Shell Magazine on Shell Pickups", "white"
+    StaticText  "Control the spawn rate of the Six-12's Shell Magazine on Shell Pickups", "white"
 	Option "Shell Magazine Spawn Rate: ", "six12shellmag_shell_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Shell Magazine option", "resetcvar six12shellmag_shell_spawn_bias"
     StaticText ""
 
-    StaticText  "Control the spawn rate of the Six12's Slug Magazine on Slug Pickups", "white"
+    StaticText  "Control the spawn rate of the Six-12's Slug Magazine on Slug Pickups", "white"
 	Option "Slug Magazine Spawn Rate: ", "six12slugmag_slug_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Slug Magazine option", "resetcvar six12slugmag_slug_spawn_bias"
     StaticText ""
+	
+	StaticText "Enable/Disable the Six-12 from spawning in Backpacks.", "red"
+	Option "Six-12:", "six12_allowBackpacks", "OnOff"
+	Option "Six-12 Shell Magazines:", "six12shellmag_allowBackpacks", "OnOff"
+	Option "Six-12 Slug Magazines:", "six12slugmag_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns (Gun): ", "six12_persistent_spawning", "OnOff"
@@ -211,6 +231,10 @@ OptionMenu "bitchSpawning" {
 	Option "The Bitch Spawn Rate: ", "bitch_chaingun_spawn_bias", "SpawnBias"
 	SafeCommand "Reset The Bitch options", "resetcvar bitch_chaingun_spawn_bias"
  	StaticText ""
+	
+	StaticText "Enable/Disable the Bitch from spawning in Backpacks.", "green"
+	Option "Bitch:", "bitch_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns: ", "bitch_persistent_spawning", "OnOff"
@@ -233,6 +257,11 @@ OptionMenu "pd42Spawning" {
     StaticText  "Control the spawn rate of the PD-42 on Clip Boxes", "white"
 	Option "PD-42 Spawn Rate: ", "pd42_clipbox_spawn_bias", "SpawnBias"
 	SafeCommand "Reset PD-42 options", "resetcvar pd42_clipbox_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "Enable/Disable the PD-42 from spawning in Backpacks.", "green"
+	Option "PD-42:", "pd42_allowBackpacks", "OnOff"
+	Option "PD-42 Magazines:", "pd42mag_allowBackpacks", "OnOff"
  	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
@@ -261,6 +290,11 @@ OptionMenu "ump45Spawning" {
     StaticText  "Control the spawn rate of the UMP-45's Magazine on Clip Magazines", "white"
 	Option "UMP-45 Mag Spawn Rate: ", "ump45mag_clipmag_spawn_bias", "SpawnBias"
 	SafeCommand "Reset UMP-45 Mag options", "resetcvar ump45mag_clipmag_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "Enable/Disable the UMP-45 from spawning in Backpacks.", "green"
+	Option "UMP-45:", "ump45_allowBackpacks", "OnOff"
+	Option "UMP-45 Magazines:", "ump45mag_allowBackpacks", "OnOff"
  	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
@@ -300,6 +334,11 @@ OptionMenu "flamenwerferSpawning" {
 	Option "Batteries: ", "gastank_battery_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Grenade Pack option", "resetcvar gastank_battery_spawn_bias"
  	StaticText ""
+	
+	StaticText "Enable/Disable the Flamenwerfer 77 from spawning in Backpacks.", "brown"
+	Option "Flamenwerfer 77:", "flamenwerfer_allowBackpacks", "OnOff"
+	Option "Gas Tanks:", "gastank_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Flamenwerfer Persistent Spawns: ", "flamenwerfer_persistent_spawning", "OnOff"
@@ -329,6 +368,10 @@ OptionMenu "frontiersmanSpawning" {
 	Option "Slayer shotguns: ", "frontiersman_slayer_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Frontiersman options", "resetcvar frontiersman_slayer_spawn_bias"
  	StaticText ""
+	
+	StaticText "Enable/Disable the Frontiersman from spawning in Backpacks.", "orange"
+	Option "Frontiersman:", "frontiersman_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns: ", "frontiersman_persistent_spawning", "OnOff"
@@ -355,6 +398,10 @@ OptionMenu "fenrisSpawning" {
 	Option "Fenris Spawn Rate: ", "fenris_thunderbuster_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Fenris options", "resetcvar fenris_thunderbuster_spawn_bias"
  	StaticText ""
+	
+	StaticText "Enable/Disable the Fenris from spawning in Backpacks.", "cyan"
+	Option "Fenris:", "fenris_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns: ", "fenris_persistent_spawning", "OnOff"
@@ -378,6 +425,10 @@ OptionMenu "gfb9Spawning" {
 	Option "GFB-9 Spawn Rate: ", "gfb9_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "Reset GFB-9 options", "resetcvar gfb9_pistol_spawn_bias"
  	StaticText ""
+	
+	StaticText "Enable/Disable the GFB-9 from spawning in Backpacks.", "cyan"
+	Option "GFB-9:", "gfb9_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns: ", "gfb9_persistent_spawning", "OnOff"
@@ -400,6 +451,10 @@ OptionMenu "nctSpawning" {
     StaticText  "Control the spawn rate of the NS3-Cr.KT on the BFG-9000", "white"
 	Option "NS3-Cr.KT Spawn Rate: ", "nct_bfg_spawn_bias", "SpawnBias"
 	SafeCommand "Reset NS3-Cr.KT options", "resetcvar nct_bfg_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "Enable/Disable the NS3-Cr.Kt from spawning in Backpacks.", "cyan"
+	Option "NS3-Cr.Kt:", "nct_allowBackpacks", "OnOff"
  	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
