@@ -18,21 +18,21 @@ OptionMenu "IcarusSpawningMenu" {
 
     Title "------ Icarus Innovations Improved ------"
 
-	StaticText "--- Pistols ---", "yellow"
+	StaticText "--- Pistols ---", "Yellow"
 	StaticText ""
     Submenu "CM-3 'Nyx' .355 Burst-Fire Magnum", "nyxSpawning", 0, 1
 	StaticText ""
     Submenu "USP-45 .45 ACP Handgun", "usp45Spawning", 0, 1
 	StaticText ""
 
-	StaticText "--- Shotguns ---", "red"
+	StaticText "--- Shotguns ---", "Red"
     StaticText ""
     Submenu "'Barracuda'", "barracudaSpawning", 0, 1
     StaticText ""
     Submenu "Six-12", "six12Spawning", 0, 1
 	StaticText ""
 
-	StaticText "--- Machine Guns ---", "green"
+	StaticText "--- Machine Guns ---", "Green"
 	StaticText ""
 	Submenu "'Bitch' 4.26mm LMG", "bitchSpawning", 0, 1
 	StaticText ""
@@ -46,12 +46,12 @@ OptionMenu "IcarusSpawningMenu" {
 	Submenu "Flamenwerfer 77", "flamenwerferSpawning", 0, 1
 	StaticText ""
 
-	StaticText "--- Rifles ---", "orange"
+	StaticText "--- Rifles ---", "Orange"
 	StaticText ""
     Submenu "'Frontiersman' 7.76mm Lever-Action Rifle", "frontiersmanSpawning", 0, 1
 	StaticText ""
 
-    StaticText "--- Energy Weapons ---", "cyan"
+    StaticText "--- Energy Weapons ---", "Cyan"
 	StaticText ""
     Submenu "CFL-21 'Fenris' Cold Fusion Laser", "fenrisSpawning", 0, 1
 	StaticText ""
@@ -60,11 +60,11 @@ OptionMenu "IcarusSpawningMenu" {
     Submenu "NS3-Cr.KT", "nctSpawning", 0, 1
 	StaticText ""
 	
-    StaticText "--- Armour ---", "Green"
+    StaticText "--- Armour ---", "Sapphire"
     StaticText ""
     Submenu "HEV Armour", "hevArmourSpawning", 0, 1
 
-	StaticText "--- Reset Options ---", "red"
+	StaticText "--- Reset Options ---", "Red"
 	StaticText ""
 	SafeCommand "Reset all options for Icarus Innovations Improved", "Icarus_Reset_Cvars"
 }
@@ -73,12 +73,12 @@ OptionMenu "IcarusSpawningMenu" {
 
 OptionMenu "nyxSpawning" {
     Title "------ CM-3 'Nyx' .355 Burst-Fire Magnum Options ------"
-   	StaticText "Notice:", "yellow"
+   	StaticText "Notice:", "Yellow"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "yellow"
+	StaticText "Spawn Options", "Yellow"
     StaticText  "Control the spawn rate of the Nyx on Pistols:", "white"
 	Option "Nyx Spawn Rate: ", "nyx_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Nyx options", "resetcvar nyx_pistol_spawn_bias"
@@ -91,7 +91,7 @@ OptionMenu "nyxSpawning" {
 	SafeCommand "Reset Shell Box options", "resetcvar nyxmag_shellbox_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the Nyx from spawning in Backpacks.", "yellow"
+	StaticText "Enable/Disable the Nyx from spawning in Backpacks.", "Yellow"
 	Option "Nyx:", "nyx_allowBackpacks", "OnOff"
 	Option "Nyx Magazines:", "nyxmag_allowBackpacks", "OnOff"
  	StaticText ""
@@ -103,18 +103,18 @@ OptionMenu "nyxSpawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "yellow"
+	StaticText "Reset Options", "Yellow"
 	SafeCommand "Reset all options", "nyx_reset_cvars"
 }
 
 OptionMenu "usp45Spawning" {
     Title "------ USP-45 .45 ACP Handgun Options ------"
-   	StaticText "Notice:", "yellow"
+   	StaticText "Notice:", "Yellow"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "yellow"
+	StaticText "Spawn Options", "Yellow"
     StaticText  "Control the spawn rate of the USP-45 on Pistols:", "white"
 	Option "USP-45 Spawn Rate: ", "usp45_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "Reset USP-45 options", "resetcvar usp45_pistol_spawn_bias"
@@ -125,7 +125,7 @@ OptionMenu "usp45Spawning" {
 	SafeCommand "Reset USP-45 Magazine option", "resetcvar usp45mag_clipmag_spawn_bias"
     StaticText ""
 	
-	StaticText "Enable/Disable the USP-45 from spawning in Backpacks.", "yellow"
+	StaticText "Enable/Disable the USP-45 from spawning in Backpacks.", "Yellow"
 	Option "USP-45:", "usp45_allowBackpacks", "OnOff"
 	Option "USP-45 Magazines:", "usp45mag_allowBackpacks", "OnOff"
  	StaticText ""
@@ -137,7 +137,7 @@ OptionMenu "usp45Spawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "yellow"
+	StaticText "Reset Options", "Yellow"
 	SafeCommand "Reset all options", "usp45_reset_cvars"
 }
 
@@ -159,7 +159,7 @@ OptionMenu "barracudaSpawning" {
 	SafeCommand "Reset Slayer shotgun options", "resetcvar barracuda_slayer_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the Nyx from spawning in Backpacks.", "red"
+	StaticText "Enable/Disable the Nyx from spawning in Backpacks.", "Red"
 	Option "Barracuda:", "barracuda_allowBackpacks", "OnOff"
  	StaticText ""
 
@@ -198,7 +198,7 @@ OptionMenu "six12Spawning" {
 	SafeCommand "Reset Slug Magazine option", "resetcvar six12slugmag_slug_spawn_bias"
     StaticText ""
 	
-	StaticText "Enable/Disable the Six-12 from spawning in Backpacks.", "red"
+	StaticText "Enable/Disable the Six-12 from spawning in Backpacks.", "Red"
 	Option "Six-12:", "six12_allowBackpacks", "OnOff"
 	Option "Six-12 Shell Magazines:", "six12shellmag_allowBackpacks", "OnOff"
 	Option "Six-12 Slug Magazines:", "six12slugmag_allowBackpacks", "OnOff"
@@ -232,7 +232,7 @@ OptionMenu "bitchSpawning" {
 	SafeCommand "Reset The Bitch options", "resetcvar bitch_chaingun_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the Bitch from spawning in Backpacks.", "green"
+	StaticText "Enable/Disable the Bitch from spawning in Backpacks.", "Green"
 	Option "Bitch:", "bitch_allowBackpacks", "OnOff"
  	StaticText ""
 
@@ -259,7 +259,7 @@ OptionMenu "pd42Spawning" {
 	SafeCommand "Reset PD-42 options", "resetcvar pd42_clipbox_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the PD-42 from spawning in Backpacks.", "green"
+	StaticText "Enable/Disable the PD-42 from spawning in Backpacks.", "Green"
 	Option "PD-42:", "pd42_allowBackpacks", "OnOff"
 	Option "PD-42 Magazines:", "pd42mag_allowBackpacks", "OnOff"
  	StaticText ""
@@ -292,7 +292,7 @@ OptionMenu "ump45Spawning" {
 	SafeCommand "Reset UMP-45 Mag options", "resetcvar ump45mag_clipmag_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the UMP-45 from spawning in Backpacks.", "green"
+	StaticText "Enable/Disable the UMP-45 from spawning in Backpacks.", "Green"
 	Option "UMP-45:", "ump45_allowBackpacks", "OnOff"
 	Option "UMP-45 Magazines:", "ump45mag_allowBackpacks", "OnOff"
  	StaticText ""
@@ -335,7 +335,7 @@ OptionMenu "flamenwerferSpawning" {
 	SafeCommand "Reset Grenade Pack option", "resetcvar gastank_battery_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the Flamenwerfer 77 from spawning in Backpacks.", "brown"
+	StaticText "Enable/Disable the Flamenwerfer 77 from spawning in Backpacks.", "Brown"
 	Option "Flamenwerfer 77:", "flamenwerfer_allowBackpacks", "OnOff"
 	Option "Gas Tanks:", "gastank_allowBackpacks", "OnOff"
  	StaticText ""
@@ -369,7 +369,7 @@ OptionMenu "frontiersmanSpawning" {
 	SafeCommand "Reset Frontiersman options", "resetcvar frontiersman_slayer_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the Frontiersman from spawning in Backpacks.", "orange"
+	StaticText "Enable/Disable the Frontiersman from spawning in Backpacks.", "Orange"
 	Option "Frontiersman:", "frontiersman_allowBackpacks", "OnOff"
  	StaticText ""
 
@@ -388,18 +388,18 @@ OptionMenu "frontiersmanSpawning" {
 
 OptionMenu "fenrisSpawning" {
     Title "------ CFL-21 'Fenris' Cold Fusion Laser Options ------"
-   	StaticText "Notice:", "cyan"
+   	StaticText "Notice:", "Cyan"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
+	StaticText "Spawn Options", "Cyan"
     StaticText  "Control the spawn rate of the Fenris on Thunderbusters", "white"
 	Option "Fenris Spawn Rate: ", "fenris_thunderbuster_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Fenris options", "resetcvar fenris_thunderbuster_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the Fenris from spawning in Backpacks.", "cyan"
+	StaticText "Enable/Disable the Fenris from spawning in Backpacks.", "Cyan"
 	Option "Fenris:", "fenris_allowBackpacks", "OnOff"
  	StaticText ""
 
@@ -409,24 +409,24 @@ OptionMenu "fenrisSpawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
+	StaticText "Reset Options", "Cyan"
 	SafeCommand "Reset all options", "fenris_reset_cvars"
 }
 
 OptionMenu "gfb9Spawning" {
     Title "------ GFB-9 'The Backup Plan' Rechargeable Energy Handgun Options ------"
-   	StaticText "Notice:", "cyan"
+   	StaticText "Notice:", "Cyan"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
+	StaticText "Spawn Options", "Cyan"
     StaticText  "Control the spawn rate of the GFB-9 on Pistols", "white"
 	Option "GFB-9 Spawn Rate: ", "gfb9_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "Reset GFB-9 options", "resetcvar gfb9_pistol_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the GFB-9 from spawning in Backpacks.", "cyan"
+	StaticText "Enable/Disable the GFB-9 from spawning in Backpacks.", "Cyan"
 	Option "GFB-9:", "gfb9_allowBackpacks", "OnOff"
  	StaticText ""
 
@@ -436,24 +436,24 @@ OptionMenu "gfb9Spawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
+	StaticText "Reset Options", "Cyan"
 	SafeCommand "Reset all options", "gfb9_reset_cvars"
 }
 
 OptionMenu "nctSpawning" {
     Title "------ NS3-Cr.KT Options ------"
-   	StaticText "Notice:", "cyan"
+   	StaticText "Notice:", "Cyan"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
+	StaticText "Spawn Options", "Cyan"
     StaticText  "Control the spawn rate of the NS3-Cr.KT on the BFG-9000", "white"
 	Option "NS3-Cr.KT Spawn Rate: ", "nct_bfg_spawn_bias", "SpawnBias"
 	SafeCommand "Reset NS3-Cr.KT options", "resetcvar nct_bfg_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the NS3-Cr.Kt from spawning in Backpacks.", "cyan"
+	StaticText "Enable/Disable the NS3-Cr.Kt from spawning in Backpacks.", "Cyan"
 	Option "NS3-Cr.Kt:", "nct_allowBackpacks", "OnOff"
  	StaticText ""
 
@@ -463,7 +463,7 @@ OptionMenu "nctSpawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
+	StaticText "Reset Options", "Cyan"
 	SafeCommand "Reset all options", "nct_reset_cvars"
 }
 
@@ -472,12 +472,12 @@ OptionMenu "nctSpawning" {
 
 OptionMenu "hevArmourSpawning" {
     Title "------ HEV Armour Options ------"
-   	StaticText "Notice:", "cyan"
+   	StaticText "Notice:", "Sapphire"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "Green"
+	StaticText "Spawn Options", "Sapphire"
     StaticText  "Control the spawn rate of the HEV Armour on Garrison and Battle Armour", "white"
 	Option "HEV Armour Spawn Rate: ", "hevarmour_spawn_bias", "SpawnBias"
 	SafeCommand "Reset HEV Armour options", "resetcvar hevarmour_spawn_bias"
@@ -489,7 +489,7 @@ OptionMenu "hevArmourSpawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "green"
+	StaticText "Reset Options", "Sapphire"
 	SafeCommand "Reset all options", "hevarmour_reset_cvars"
 }
 
