@@ -5,17 +5,13 @@ class FrontierSpawner : IdleDummy
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				A_SpawnItemEx("HD7mClip", 3,flags: SXF_NOCHECKPOSITION);
-				A_SpawnItemEx("HD7mClip", 1, flags: SXF_NOCHECKPOSITION);
-				A_SpawnItemEx("HD7mClip", -3,flags: SXF_NOCHECKPOSITION);
 				let wpn = HDWeapon(Spawn('HDFrontier', pos, ALLOW_REPLACE));
-				if (!wpn)
-				{
-					return;
-				}
+				if (!wpn) return;
 
 				HDF.TransferSpecials(self, wpn);
 				wpn.InitializeWepStats(false);
+
+				spawn("HD7mBoxPickup",pos,ALLOW_REPLACE);
 			}
 			Stop;
 	}
