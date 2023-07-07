@@ -58,7 +58,7 @@ class HDFlamethrower : HDWeapon
 		weapon.slotnumber 7;
 		Weapon.SlotPriority 1.5;
 		scale 0.5;
-		obituary "%o was deep fried by %k.";
+		obituary "$OB_FLAMENWERFER77";
 		HDWeapon.BarrelSize 35, 1.2, 1.2;
 		HDWeapon.refid HDLD_FLAMENWERFER77;
 		tag "$TAG_FLAMENWERFER77";

@@ -246,7 +246,7 @@ class HDB_Chirp : HDBulletActor
 		Scale 0.08;
 		Translation "128:151=%[1,1,1]:[0.2,0.2,0.2]";
 		SeeSound "weapons/riflecrack";
-		Obituary "%o got chirp chirp'd by %k's tny gun.";
+		Obituary "$OB_NCT";
 	}
 
 	Override Actor Puff()

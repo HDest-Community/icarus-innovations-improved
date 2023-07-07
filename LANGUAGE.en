@@ -31,6 +31,10 @@ TAG_UMPMAG         = "UMP Magazine";
 TAG_USP            = "USP-45";
 TAG_USPMAG         = "USP Magazine";
 
+// Obituaries
+OB_FLAMENWERFER77 = "%o was deep fried by %k.";
+OB_NCT            = "%o got chirp chirp'd by %k's tny gun.";
+
 // Item Pickup Messages
 PICKUP_BARRACUDA_PREFIX      = "You got the ";
 PICKUP_BARRACUDA_SUFFIX      = ". Watch out. It's got a bite!";
