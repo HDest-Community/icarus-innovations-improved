@@ -11,7 +11,17 @@ class HDNCT : HDCellWeapon
 	override HDWeapon GetSpareWeapon(actor newowner, bool reverse, bool doselect) { return GetSpareWeaponRegular(newowner, reverse, doselect); }
 	override double GunMass() { return WeaponStatus[NCProp_Battery] >= 0 ? 10 : 8; }
 	override double WeaponBulk() { return 20 + (WeaponStatus[NCProp_Battery] >= 0 ? ENC_BATTERY_LOADED : 0); }
-	override string, double GetPickupSprite() { return "NCTPA0", 0.8; }
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_NCT_PREFIX")..Stringtable.localize("$TAG_NCT")..Stringtable.localize("$PICKUP_NCT_SUFFIX");
+	}
+
+	override string, double GetPickupSprite()
+	{
+		return "NCTPA0", 0.8;
+	}
+
 	override void InitializeWepStats(bool idfa)
 	{
 		WeaponStatus[NCProp_Battery] = 20;
@@ -22,11 +32,6 @@ class HDNCT : HDCellWeapon
 		return WEPHELP_FIRE.."  Shoot\n"
 		..WEPHELP_RELOAD.."  Reload battery\n"
 		..WEPHELP_UNLOADUNLOAD;
-	}
-
-	override string PickupMessage()
-	{
-		return "You found a weird tiny ... gun? thing?";
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -78,8 +83,8 @@ class HDNCT : HDCellWeapon
 		Weapon.SlotPriority 0.5;
 		HDWeapon.BarrelSize 6, 0.15, 0.25;
 		Scale 0.5;
-		Tag "NS3-Cr.KT";
-		HDWeapon.Refid "tny";
+		Tag "$TAG_NCT";
+		HDWeapon.Refid HDLD_NCT;
 	}
 
 	States

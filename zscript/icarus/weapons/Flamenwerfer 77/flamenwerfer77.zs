@@ -58,11 +58,10 @@ class HDFlamethrower : HDWeapon
 		weapon.slotnumber 7;
 		Weapon.SlotPriority 1.5;
 		scale 0.5;
-		inventory.pickupmessage "Picked up the Flammenwerfer 77. It werfs flammen.";
 		obituary "%o was deep fried by %k.";
 		HDWeapon.BarrelSize 35, 1.2, 1.2;
-		HDWeapon.refid "fw7";
-		tag "Flammenwerfer 77";
+		HDWeapon.refid HDLD_FLAMENWERFER77;
+		tag "$TAG_FLAMENWERFER77";
 	}
 	
 	Override bool AddSpareWeapon(actor newowner)
@@ -73,6 +72,11 @@ class HDFlamethrower : HDWeapon
 	Override hdweapon GetSpareWeapon(actor newowner,bool reverse)
 	{
 		return GetSpareWeaponRegular(newowner,reverse);
+	}
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_FLAMENWERFER77_PREFIX")..Stringtable.localize("$TAG_FLAMENWERFER77")..Stringtable.localize("$PICKUP_FLAMENWERFER77_SUFFIX");
 	}
 
 	Override string, double GetPickupSprite()
@@ -358,6 +362,11 @@ class HDFlamethrower : HDWeapon
 
 class HDGasTank : HDMagAmmo
 {
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_GASTANK_PREFIX")..Stringtable.localize("$TAG_GASTANK")..Stringtable.localize("$PICKUP_GASTANK_SUFFIX");
+	}
+
 	Override string,string,name,double getmagsprite(int thismagamt)
 	{
 		String magsprite=(thismagamt > 0) ? "AGASA0" : "AGASB0";
@@ -423,9 +432,9 @@ class HDGasTank : HDMagAmmo
 		HDMagAmmo.RoundType "";
 		HDMagAmmo.RoundBulk TankFuel;
 		HDMagAmmo.MagBulk EncTankEmpty;
-		Tag "Fuel Tank";
-		Inventory.PickupMessage "Picked up a Fuel Tank. The cheap chineseum casing might react violently to extreme heat, pressure or sudden shock.";
-		HDPickup.RefID "gas";
+		Tag "$TAG_GASTANK";
+		Inventory.PickupMessage "$PICKUP_GASTANK";
+		HDPickup.RefID HDLD_GASTANK;
 		Scale 0.4;
 	}
 	

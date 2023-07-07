@@ -39,6 +39,11 @@ class HDSix12 : HDWeapon
 		}
 		return BaseBulk;
 	}
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_SIX12_PREFIX")..Stringtable.localize("$TAG_SIX12")..Stringtable.localize("$PICKUP_NYX_SIX12");
+	}
 	
 	override string, double GetPickupSprite()
 	{
@@ -160,9 +165,9 @@ class HDSix12 : HDWeapon
 		Weapon.SlotPriority 3;
 		HDWeapon.BarrelSize 24, 1, 2;
 		Scale 0.5;
-		Tag "Six12 Shotgun";
-		HDWeapon.Refid "612";
-		Inventory.PickupMessage "You picked up the Six12 Shotgun";
+		Tag "$TAG_SIX12";
+		HDWeapon.Refid HDLD_SIX12;
+		Inventory.PickupMessage "$PICKUP_SIX12";
 		HDWeapon.Loadoutcodes "
 			\cuslugs - Loaded with Slug Mag";
 	}
@@ -402,6 +407,11 @@ class Six12Random : IdleDummy
 
 class HDSix12MagShells : HDMagAmmo
 {
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_SIX12MAG_SHELL_PREFIX")..Stringtable.localize("$TAG_SIX12MAG_SHELL")..Stringtable.localize("$PICKUP_SIX12MAG_SHELL_SUFFIX");
+	}
+
 	override string, string, name, double GetMagSprite(int thismagamt)
 	{
 		string magsprite;
@@ -433,9 +443,8 @@ class HDSix12MagShells : HDMagAmmo
 		HDMagAmmo.RoundType "HDShellAmmo";
 		HDMagAmmo.RoundBulk ENC_SHELLLOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "Six12 Shell Mag";
-		Inventory.PickupMessage "Picked up a Six12 Shell Magazine.";
-		HDPickup.RefId "6sh";
+		Tag "$TAG_SIX12MAG_SHELL";
+		HDPickup.RefId HDLD_SIX12MAG_SHELL;
 		Scale 0.5;
 	}
 
@@ -457,6 +466,11 @@ class HDSix12MagShells : HDMagAmmo
 
 class HDSix12MagSlugs : HDMagAmmo
 {
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_SIX12MAG_SLUG_PREFIX")..Stringtable.localize("$TAG_SIX12MAG_SLUG")..Stringtable.localize("$PICKUP_SIX12MAG_SLUG_SUFFIX");
+	}
+
 	override string, string, name, double GetMagSprite(int thismagamt)
 	{
 		string magsprite;
@@ -488,9 +502,8 @@ class HDSix12MagSlugs : HDMagAmmo
 		HDMagAmmo.RoundType "HDSlugAmmo";
 		HDMagAmmo.RoundBulk ENC_SHELLLOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "Six12 Slug Mag";
-		Inventory.PickupMessage "Picked up a Six12 Slug Magazine";
-		HDPickup.RefId "6sl";
+		Tag "$TAG_SIX12MAG_SLUG";
+		HDPickup.RefId HDLD_SIX12MAG_SLUG;
 		Scale 0.5;
 	}
 

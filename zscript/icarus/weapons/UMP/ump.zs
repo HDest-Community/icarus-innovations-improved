@@ -40,7 +40,15 @@ class HDUMP : HDWeapon
 		return BaseBulk;
 	}
 
-	override string, double GetPickupSprite() { return WeaponStatus[UMProp_Mag] >= 0 ? "UMPGZ0" : "UMPGY0", 1.0; }
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_UMP_PREFIX")..Stringtable.localize("$TAG_UMP")..Stringtable.localize("$PICKUP_UMP_SUFFIX");
+	}
+
+	override string, double GetPickupSprite()
+	{
+		return WeaponStatus[UMProp_Mag] >= 0 ? "UMPGZ0" : "UMPGY0", 1.0;
+	}
 
 	override void InitializeWepStats(bool idfa)
 	{
@@ -78,11 +86,6 @@ class HDUMP : HDWeapon
 		..WEPHELP_RELOAD.."  Reload mag\n"
 		..WEPHELP_USE.."+"..WEPHELP_RELOAD.."  Reload chamber\n"
 		..WEPHELP_MAGMANAGER;
-	}
-
-	override string PickupMessage()
-	{
-		return String.Format("You found the UMP-45.");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -140,8 +143,9 @@ class HDUMP : HDWeapon
 		Weapon.SlotPriority 1.5;
 		HDWeapon.BarrelSize 20, 2, 3;
 		Scale 0.5;
-		Tag "UMP-45";
-		HDWeapon.Refid "ump";
+		Tag "$TAG_UMP";
+		HDWeapon.Refid HDLD_UMP;
+		Inventory.PickupMessage "$PICKUP_UMP";
 	}
 
 	States
@@ -430,6 +434,12 @@ class UMPrandom : IdleDummy
 
 class HDUMPMag : HDMagAmmo
 {
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_UMPMAG_PREFIX")..Stringtable.localize("$TAG_UMPMAG")..Stringtable.localize("$PICKUP_UMPMAG_SUFFIX");
+	}
+
 	override string, string, name, double GetMagSprite(int thismagamt)
 	{
 		return (thismagamt > 0) ? "UMPMA0" : "UMPMB0", "45RNA0", "HD45ACPAmmo", 0.75;
@@ -453,9 +463,8 @@ class HDUMPMag : HDMagAmmo
 		HDMagAmmo.RoundBulk UMP45ACP_LOADED;
 		//HDMagAmmo.RoundBulk HD45ACPAmmo.UMP45ACP_LOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "UMP Magazine";
-		Inventory.PickupMessage "Picked up a UMP magazine.";
-		HDPickup.RefId "umm";
+		Tag "$TAG_UMPMAG";
+		HDPickup.RefId HDLD_UMPMAG;
 		Scale 0.5;
 	}
 

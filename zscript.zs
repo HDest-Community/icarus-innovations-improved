@@ -1,5 +1,27 @@
 version "4.10"
 
+const HDLD_BARRACUDA      = "ace";
+const HDLD_BITCH          = "bch";
+const HDLD_FENRIS         = "cfl";
+const HDLD_FLAMENWERFER77 = "fw7";
+const HDLD_FRONTIERSMAN   = "fm7";
+const HDLD_GASTANK        = "gas";
+const HDLD_GFB9           = "gfb";
+const HDLD_HEVARMOUR      = "hve";
+const HDLD_HEVARMOURSPARE = "hva";
+const HDLD_NCT            = "tny";
+const HDLD_NYX            = "nyx";
+const HDLD_NYX_MAG        = "nxm";
+const HDLD_PD4            = "pd4";
+const HDLD_PD4MAG         = "436";
+const HDLD_SIX12          = "612";
+const HDLD_SIX12MAG_SHELL = "6sh";
+const HDLD_SIX12MAG_SLUG  = "6sl";
+const HDLD_UMP            = "ump";
+const HDLD_UMPMAG         = "umm";
+const HDLD_USP            = "usp";
+const HDLD_USPMAG         = "usm";
+
 #include "zscript/icarus/SpawnHandler.zs"
 
 #include "zscript/icarus/items/HEV Armor/hevArmor.zs"

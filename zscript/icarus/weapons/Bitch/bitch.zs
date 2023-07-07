@@ -69,7 +69,19 @@ class HDBitch : HDWeapon
 		}
 		return BaseBulk;
 	}
-	override string, double GetPickupSprite() { return WeaponStatus[BTProp_Flags] & BTF_GL ? "BCHGY0" : "BCHGZ0", 1.0; }
+
+	override string PickupMessage()
+	{
+		string RapidStr = WeaponStatus[BTProp_Flags] & BTF_RapidFire ? Stringtable.localize("$PICKUP_BITCH_RAPID") : "";
+		string GLString = WeaponStatus[BTProp_Flags] & BTF_GL ? Stringtable.localize("$PICKUP_BITCH_GL") : "";
+
+		return Stringtable.localize("$PICKUP_BITCH_PREFIX")..RapidStr..Stringtable.Localize("$TAG_BITCH")..GLString..Stringtable.localize("$PICKUP_BITCH_SUFFIX");
+	}
+
+	override string, double GetPickupSprite()
+	{
+		return WeaponStatus[BTProp_Flags] & BTF_GL ? "BCHGY0" : "BCHGZ0", 1.0;
+	}
 
 	override void LoadoutConfigure(string input)
 	{
@@ -102,13 +114,6 @@ class HDBitch : HDWeapon
 		..(WeaponStatus[BTProp_Flags] & BTF_GL ? WEPHELP_FIREMODE.."+"..WEPHELP_UNLOAD.. "  Unload GL\n" : "")
 		..WEPHELP_RELOAD.."  Reload chamber\n"
 		..WEPHELP_MAGMANAGER;
-	}
-
-	override string PickupMessage()
-	{
-		string RapidStr = WeaponStatus[BTProp_Flags] & BTF_RapidFire ? "rapid-fire " : "";
-		string GLString = WeaponStatus[BTProp_Flags] & BTF_GL ? " This one has a grenade launcher." : "";
-		return String.Format("You picked up the %s'Bitch' 4mm LMG.%s", RapidStr, GLString);
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -231,8 +236,8 @@ class HDBitch : HDWeapon
 		Weapon.SlotPriority 1.5;
 		HDWeapon.BarrelSize 25, 2, 4;
 		Scale 0.75;
-		Tag "'Bitch' 4mm LMG";
-		HDWeapon.Refid "bch";
+		Tag "$TAG_BITCH";
+		HDWeapon.Refid HDLD_BITCH;
 		HDWeapon.Loadoutcodes "
 			\curapid - Fuller Auto Firemode
 			\cugl - Grenade Launcher";

@@ -9,8 +9,8 @@ class HDPDFour : HDWeapon {
 		Weapon.SlotPriority 3;
 		HDWeapon.BarrelSize 20,0.5,1;
 		Scale 0.45;
-		Tag "PD-42 4mm PDW";
-		HDWeapon.Refid "pd4";
+		Tag "$TAG_PD42";
+		HDWeapon.Refid HDLD_PD4;
 		inventory.icon "PDWGA0";
 
 		HDWeapon.Loadoutcodes "
@@ -68,13 +68,15 @@ class HDPDFour : HDWeapon {
 		}
 	}
 
-	override string PickupMessage() {
-		return "You picked up the PD-42 4mm PDW"
-		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? " with an Under-Barrel Slug Thrower" : "")
-		..".";
+	override string PickupMessage()
+	{
+		String SlugStr = WeaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? Stringtable.localize("$PICKUP_PD42_SLUGTHROWER") : "";
+
+		return Stringtable.localize("$PICKUP_PD42_PREFIX")..Stringtable.localize("$TAG_PD42")..SlugStr..Stringtable.localize("$PICKUP_PD42_SUFFIX");
 	}
 
-	override string, double GetPickupSprite() {
+	override string, double GetPickupSprite()
+	{
 		string slugFrame = weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? "S" : "G";
 
 		string magFrame = "";
@@ -602,7 +604,14 @@ class PDFourRandom : IdleDummy {
 }
 
 class HDPDFourMag : HDMagAmmo {
-	override string, string, name, double GetMagSprite(int thismagamt) {
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_PD42MAG_PREFIX")..Stringtable.localize("$TAG_PD42MAG")..Stringtable.localize("$PICKUP_PD42MAG_SUFFIX");
+	}
+
+	override string, string, name, double GetMagSprite(int thismagamt)
+	{
 		return (thismagamt > 0) ? "PDMGA0" : "PDMGB0", "RBRSBRN", "FourMilAmmo", 1.0;
 	}
 
@@ -621,9 +630,8 @@ class HDPDFourMag : HDMagAmmo {
 		HDMagAmmo.RoundType "FourMilAmmo";
 		HDMagAmmo.RoundBulk ENC_426_LOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "PD-42 magazine";
-		Inventory.PickupMessage "Picked up a PD-42 magazine.";
-		HDPickup.RefId "436";
+		Tag "$TAG_PD42MAG";
+		HDPickup.RefId HDLD_PD4MAG;
 		Scale 0.35;
 	}
 	

@@ -70,8 +70,9 @@ class HDGFBlaster : HDHandgun
 
 	override string PickupMessage()
 	{
-		string CapStr = WeaponStatus[GBProp_Flags] & GFB_Capacitor ? "high-capacity " : "";
-		return String.Format("You got the %sGretchenfrage Blaster Mk. 9.", CapStr);
+		string CapStr = WeaponStatus[GBProp_Flags] & GFB_Capacitor ? Stringtable.localize("$PICKUP_GFB9_CAPACITOR") : "";
+
+		return Stringtable.localize("$PICKUP_GFB9_PREFIX")..CapStr..Stringtable.localize("$TAG_GFB9")..Stringtable.localize("$PICKUP_GFB9_SUFFIX");
 	}
 
 	protected clearscope int GetMaxCharge()
@@ -106,8 +107,8 @@ class HDGFBlaster : HDHandgun
 		Weapon.SlotPriority 2.0;
 		HDWeapon.BarrelSize 12, 0.3, 0.5;
 		Scale 0.5;
-		Tag "GFB-9";
-		HDWeapon.Refid "gfb";
+		Tag "$TAG_GFB9";
+		HDWeapon.Refid HDLD_GFB9;
 		HDWeapon.Loadoutcodes "
 			\cucap - Extended Capacitor";
 	}

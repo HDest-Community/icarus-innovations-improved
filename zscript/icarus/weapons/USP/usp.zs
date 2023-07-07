@@ -32,6 +32,11 @@ class HDUSP : HDHandgun
 		return BaseBulk;
 	}
 
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_USP_PREFIX")..Stringtable.localize("$TAG_USP")..Stringtable.localize("$PICKUP_USP_SUFFIX");
+	}
+
 	override string, double GetPickupSprite()
 	{
 		string USPChamber = WeaponStatus[USProp_Chamber] <= 0 ? "Z" : "Y";
@@ -73,11 +78,6 @@ class HDUSP : HDHandgun
 		..WEPHELP_RELOAD.."  Reload mag\n"
 		..WEPHELP_USE.."+"..WEPHELP_RELOAD.."  Reload chamber\n"
 		..WEPHELP_MAGMANAGER;
-	}
-
-	override string PickupMessage()
-	{
-		return String.Format("You found the USP-45.");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -139,8 +139,8 @@ class HDUSP : HDHandgun
 		Weapon.SlotPriority 3;
 		HDWeapon.BarrelSize 15, 0.5, 0.5;
 		Scale 0.5;
-		Tag "USP-45";
-		HDWeapon.Refid "usp";
+		Tag "$TAG_USP";
+		HDWeapon.Refid HDLD_USP;
 	}
 
 	States
@@ -398,6 +398,11 @@ class USPrandom : IdleDummy
 
 class HDUSPMag : HDMagAmmo
 {
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_USPMAG_PREFIX")..Stringtable.localize("$TAG_USPMAG")..Stringtable.localize("$PICKUP_USPMAG_SUFFIX");
+	}
+
 	override string, string, name, double GetMagSprite(int thismagamt)
 	{
 		return (thismagamt > 0) ? "USPMA0" : "USPMB0", "45RNA0", "HD45ACPAmmo", 0.75;
@@ -420,9 +425,8 @@ class HDUSPMag : HDMagAmmo
 		HDMagAmmo.RoundType "HD45ACPAmmo";
 		HDMagAmmo.RoundBulk USP45ACP_LOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "USP Magazine";
-		Inventory.PickupMessage "Picked up a USP magazine.";
-		HDPickup.RefId "usm";
+		Tag "$TAG_USPMAG";
+		HDPickup.RefId HDLD_USPMAG;
 		Scale 0.5;
 	}
 

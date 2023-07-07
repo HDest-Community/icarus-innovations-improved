@@ -56,6 +56,11 @@ class HDBarracuda : HDSix12
 	        invoker.WeaponStatus[BRProp_MagType] &= ~(1 << which);
 	    }
 	}
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_BARRACUDA_PREFIX")..Stringtable.localize("$TAG_BARRACUDA")..Stringtable.localize("$PICKUP_BARRACUDA_SUFFIX");
+	}
 	
 	override string, double GetPickupSprite()
 	{
@@ -228,9 +233,8 @@ class HDBarracuda : HDSix12
 		Weapon.SlotPriority 3;
 		HDWeapon.BarrelSize 24, 1, 2;
 		Scale 0.5;
-		Tag "Barracuda";
-		HDWeapon.Refid "ace";
-		Inventory.PickupMessage "You picked up the Barracuda. Watch out. It's got a bite!";
+		Tag "$TAG_BARRACUDA";
+		HDWeapon.Refid HDLD_BARRACUDA;
 		HDWeapon.Loadoutcodes "
 			\culslugs - Left Magzine loaded with Slugs
 			\curslugs - Right Magazine loaded with Slugs";

@@ -34,11 +34,25 @@ class HDFenris : HDCellWeapon
 		+ (WeaponStatus[FNProp_Battery] >= 0 ? ENC_BATTERY_LOADED : 0)
 		+ (WeaponStatus[FNProp_Flags] & FNF_PolyFrame ? -30 : 0);
 	}
-	override string, double GetPickupSprite() { return WeaponStatus[FNProp_Battery] >= 0 ? "FNRSY0" : "FNRSZ0", 1.0; }
+
+	override string PickupMessage()
+	{
+		string FraStr = WeaponStatus[FNProp_Flags] & FNF_PolyFrame ? Stringtable.localize("$PICKUP_FENRIS_POLYFRAME") : "";
+		string PlaStr = WeaponStatus[FNProp_Flags] & FNF_Platinum ? Stringtable.localize("$PICKUP_FENRIS_PLATINUM") : "";
+
+		return Stringtable.localize("$PICKUP_FENRIS_PREFIX")..FraStr..Stringtable.localize("$TAG_FENRIS")..PlaStr..Stringtable.localize("$PICKUP_FENRIS_SUFFIX");
+	}
+
+	override string, double GetPickupSprite()
+	{
+		return WeaponStatus[FNProp_Battery] >= 0 ? "FNRSY0" : "FNRSZ0", 1.0;
+	}
+
 	override void InitializeWepStats(bool idfa)
 	{
 		WeaponStatus[FNProp_Battery] = WeaponStatus[FNProp_Flags] & FNF_Platinum ? 80 : 60;
 	}
+
 	override void LoadoutConfigure(string input)
 	{
 		if (GetLoadoutVar(input, "frame", 1) > 0)
@@ -61,13 +75,6 @@ class HDFenris : HDCellWeapon
 		..WEPHELP_FIREMODE.."  Change Firemode\n"
 		..WEPHELP_RELOAD.."  Load battery\n"
 		..WEPHELP_UNLOAD.."  Unload battery";
-	}
-
-	override string PickupMessage()
-	{
-		string FraStr = WeaponStatus[FNProp_Flags] & FNF_PolyFrame ? "Light-Weight " : "";
-		string PlaStr = WeaponStatus[FNProp_Flags] & FNF_Platinum ? " with Platinum Wiring" : "";
-		return String.Format("You got the Icarus Innovations CFL-21 %s'Fenris' Cold Fusion Laser%s.", FraStr, PlaStr);
 	}
 
 	protected clearscope int GetRealBatteryCharge(bool useUpper)
@@ -140,8 +147,8 @@ class HDFenris : HDCellWeapon
 		Weapon.SlotPriority 1.5;
 		HDWeapon.BarrelSize 35, 1.5, 2;
 		Scale 0.6;
-		Tag "CFL-21 'Fenris' Cold Fusion Laser";
-		HDWeapon.Refid "cfl";
+		Tag "$TAG_FENRIS";
+		HDWeapon.Refid HDLD_FENRIS;
 		HDWeapon.Loadoutcodes "
 			\cuframe - Lighter Weapon Frame (less bulk)
 			\cuplat - Platinum Wiring (more efficient batteries)";

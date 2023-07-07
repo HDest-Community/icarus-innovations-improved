@@ -32,6 +32,11 @@ class HDNyx : HDHandgun
 		return BaseBulk;
 	}
 
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_NYX_PREFIX")..Stringtable.localize("$TAG_NYX")..Stringtable.localize("$PICKUP_NYX_SUFFIX");
+	}
+
 	override string, double GetPickupSprite()
 	{
 		string NChamber = WeaponStatus[NXProp_Chamber] <= 0 ? "E" : "C";
@@ -74,11 +79,6 @@ class HDNyx : HDHandgun
 		..WEPHELP_RELOAD.."  Reload mag\n"
 		..WEPHELP_USE.."+"..WEPHELP_RELOAD.."  Reload chamber\n"
 		..WEPHELP_MAGMANAGER;
-	}
-
-	override string PickupMessage()
-	{
-		return String.Format("You found the CM-3 'Nyx' Burst-Fire Magnum.");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -132,8 +132,9 @@ class HDNyx : HDHandgun
 		Weapon.SlotPriority 3;
 		HDWeapon.BarrelSize 15, 0.5, 0.5;
 		Scale 0.5;
-		Tag "CM-3 'Nyx'";
-		HDWeapon.Refid "nyx";
+		Tag "$TAG_NYX";
+		HDWeapon.Refid HDLD_NYX;
+		Inventory.PickupMessage "$PICKUP_NYX";
 	}
 
 	States
@@ -444,9 +445,9 @@ class HDNyxMag : HDMagAmmo
 		HDMagAmmo.RoundType "HDRevolverAmmo";
 		HDMagAmmo.RoundBulk ENC_355_LOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "Nyx Magazine";
-		Inventory.PickupMessage "Picked up a Nyx magazine.";
-		HDPickup.RefId "nxm";
+		Tag "$TAG_NYXMAG";
+		Inventory.PickupMessage "$PICKUP_NYXMAG";
+		HDPickup.RefId HDLD_NYX_MAG;
 		Scale 0.5;
 	}
 

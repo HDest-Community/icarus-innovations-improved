@@ -55,6 +55,11 @@ class HDFrontier : HDWeapon
 		return 144 + (WeaponStatus[FMProp_SideSaddles] + WeaponStatus[FMProp_Tube]) * ENC_776_LOADED;
 	}
 
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_FRONTIERSMAN_PREFIX")..Stringtable.localize("$TAG_FRONTIERSMAN")..Stringtable.localize("$PICKUP_NYX_SUFFIX");
+	}
+
 	override string, double GetPickupSprite()
 	{
 		string BaseSprite = "FRMZ";
@@ -291,9 +296,8 @@ class HDFrontier : HDWeapon
 		Weapon.BobRangeY 0.7;
 		Scale 0.6;
 		HDWeapon.BarrelSize 30, 1, 1;
-		Tag "Frontiersman";
-		Inventory.PickupMessage "You got the 'Frontiersman' 7mm lever-action rifle.";
-		HDWeapon.Refid "fm7";
+		Tag "$TAG_FRONTIERSMAN";
+		HDWeapon.Refid HDLD_FRONTIERSMAN;
 	}
 
 	States

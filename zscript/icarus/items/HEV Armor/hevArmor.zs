@@ -7,9 +7,9 @@ Class HDHEVArmour : HDArmour
 	{
 		HDMagAmmo.MaxPerUnit HDCONST_HEVARMOUR;
 		HDMagAmmo.MagBulk ENC_HEVARMOUR;
-		Tag "HEV Armor";
+		Tag "$TAG_HEVARMOUR";
 		Inventory.Icon "HEVAA0";
-		Inventory.PickupMessage "Picked up the Hazardous Environment Armor.";
+		Inventory.PickupMessage "$PICKUP_HEVARMOUR";
 	}
 
 	Override Void AddAMag(int AddAmt)
@@ -175,7 +175,7 @@ Class HDHEVArmourWorn : HDArmourWorn
 	{
 		+inventory.isarmor
 		inventory.maxAmount 1;
-		Tag "HEV Armor";
+		Tag "$TAG_HEVARMOUR";
 		HDDamageHandler.priority 0;
 		HDPickup.WornLayer STRIP_ARMOUR;
 	}
@@ -497,9 +497,9 @@ Class HEVArmour : HDPickupGiver
 		inventory.Icon "HEVAA0";
 		hdpickupgiver.pickuptogive "HDHEVArmour";
 		hdpickup.bulk ENC_HEVARMOUR;
-		hdpickup.refid "hva";
-		tag "HEV Armor (spare)";
-		inventory.PickupMessage "Picked up the Hazardous Environment Armor.";
+		hdpickup.refid HDLD_HEVARMOURSPARE;
+		tag "$TAG_HEVARMOURSPARE";
+		inventory.PickupMessage "$PICKUP_HEVARMOUR";
 	}
 	
 	Override Void configureactualpickup()
@@ -519,8 +519,8 @@ Class HEVArmourWorn : HDPickup
 		+missilemore
 		-hdpickup.fitsinbackpack
 		+inventory.isarmor
-		hdpickup.refid "hve";
-		tag "HEV Armor";
+		hdpickup.refid HDLD_HEVARMOUR;
+		tag "$TAG_HEVARMOUR";
 		inventory.maxAmount 1;
 	}
 
