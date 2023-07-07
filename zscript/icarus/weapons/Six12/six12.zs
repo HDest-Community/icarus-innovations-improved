@@ -42,7 +42,7 @@ class HDSix12 : HDWeapon
 
 	override string PickupMessage()
 	{
-		return Stringtable.localize("$PICKUP_SIX12_PREFIX")..Stringtable.localize("$TAG_SIX12")..Stringtable.localize("$PICKUP_NYX_SIX12");
+		return Stringtable.localize("$PICKUP_SIX12_PREFIX")..Stringtable.localize("$TAG_SIX12")..Stringtable.localize("$PICKUP_SIX12_SUFFIX");
 	}
 	
 	override string, double GetPickupSprite()
