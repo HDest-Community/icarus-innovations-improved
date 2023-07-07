@@ -14,9 +14,9 @@ OptionValue "SpawnBias" {
 	 199,  "1 in 200"
 }
 
-OptionMenu "IcarusSpawningMenu" {
+OptionMenu "IcarusMenu" {
 
-    Title "$ICARUS_SPAWN_MENU"
+    Title "$ICARUS_MENU"
 
 	StaticText "$MENU_PISTOLS_TITLE", "Yellow"
 	StaticText ""
@@ -354,6 +354,11 @@ OptionMenu "ump45Spawning" {
 
 OptionMenu "flamenwerferSpawning" {
     Title "$MENU_FLAMENWERFER77_TITLE"
+    StaticText ""
+
+	Option "$MENU_FLAMENWERFER77_PRETTYLIGHTS", "Flamer_PrettyLights", "YesNo"
+    StaticText ""
+	
    	StaticText "$MENU_NOTICE", "Brown"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -546,14 +551,6 @@ OptionMenu "hevArmourSpawning" {
 
 	StaticText "$MENU_RESETOPTIONS", "Sapphire"
 	SafeCommand "$MENU_RESETALLOPTIONS", "hevarmour_reset_cvars"
-}
-
-OptionMenu "IcarusMenu" {
-	Title "$ICARUS_MENU"
-
-	SubMenu "$ICARUS_FLAMER_MENU", "IcarusFlamerMenu"
-   	StaticText ""
-	SubMenu "$ICARUS_SPAWN_MENU", "IcarusSpawningMenu"
 }
 
 AddOptionMenu "OptionsMenu" {

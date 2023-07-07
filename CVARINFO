@@ -6,6 +6,8 @@
 // They'll still function in-game correctly, but the menus won't properly display them.
 // Stick to it please and have less bug reports to explain for pls. - [Ted]
 
+server bool Flamer_PrettyLights = false;
+
 // --------------------
 // Weapons
 // --------------------

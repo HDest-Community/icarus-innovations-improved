@@ -2,11 +2,6 @@
 
 // Options Menu Titles
 ICARUS_MENU                             = "\c[Fire]Ⓘ\c- Icarus Innovations Improved";
-ICARUS_FLAMER_MENU                      = "Flammenwerfer 77 Options";
-ICARUS_SPAWN_MENU                       = "Spawn Controls";
-ICARUS_RESETALLOPTIONS                  = "Reset all options for Icarus Innovations Improved";
-
-// Spawning Menu Headers
 MENU_PISTOLS_TITLE                      = "--- Pistols ---";
 MENU_SHOTGUNS_TITLE                     = "--- Shotguns ---";
 MENU_MACHINEGUNS_TITLE                  = "--- Machine Guns ---";
@@ -43,6 +38,7 @@ MENU_MAGPERSISTENCY                     = "Persistent Magazine Spawns: ";
 MENU_RESETWEP                           = "Reset Weapon Options";
 MENU_RESETMAG                           = "Reset Magazine Options";
 MENU_RESETPERSISTENCY                   = "Reset Persistence Options";
+ICARUS_RESETALLOPTIONS                  = "Reset all options for Icarus Innovations Improved";
 
 // Barracuda Options Text
 MENU_BARRACUDA_TITLE                    = "------ Barracuda Options ------";
@@ -62,6 +58,7 @@ MENU_FENRIS_BACKPACKS                   = "Control whether the Fenris spawns in 
 
 // Flamenwerfer 77 Options Text
 MENU_FLAMENWERFER77_TITLE               = "------ Flamenwerfer 77 Options ------";
+
 MENU_FLAMENWERFER77_LAUNCHER_SPAWNTEXT  = "Control the spawn rate of the Flamenwerfer 77 on Rocket Launchers:";
 MENU_FLAMENWERFER77_BFG_SPAWNTEXT       = "Control the spawn rate of the Flamenwerfer 77 on BFG-9000s:";
 MENU_FLAMENWERFER77_BACKPACKS           = "Control whether the Flamenwerfer 77 spawns in Backpacks:";
@@ -70,6 +67,8 @@ MENU_GASTANK_ROCKET_SPAWNTEXT           = "Control the spawn rate of Fuel Tanks 
 MENU_GASTANK_ROCKETBOX_SPAWNTEXT        = "Control the spawn rate of Fuel Tanks on Rocket Boxes:";
 MENU_GASTANK_BATTERY_SPAWNTEXT          = "Control the spawn rate of Fuel Tanks on Batteries:";
 MENU_GASTANK_BACKPACKS                  = "Control whether Fuel Tanks spawn in Backpacks:";
+
+MENU_FLAMENWERFER_PRETTYLIGHTS          = "Enable Dynamic Lighting";
 
 // Frontiersman Options Text
 MENU_FRONTIERSMAN_TITLE                 = "------ 'Frontiersman' 7.76mm Lever-Action Rifle Options ------";
@@ -138,10 +137,6 @@ MENU_USP_BACKPACKS                      = "Control whether the USP-45 spawns in 
 
 MENU_USPMAG_CLIPMAG_SPAWNTEXT           = "Control the spawn rate of USP-45 Magazines on Clip Magazines:";
 MENU_USPMAG_BACKPACKS                   = "Control whether USP-45 Magazines spawn in Backpacks:";
-
-
-// Flammenwerfer Options
-IcarusFlamerPrettyLights                = "Enable Dynamic Lighting";
 
 
 // Item Tags
