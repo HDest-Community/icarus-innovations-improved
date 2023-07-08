@@ -8,7 +8,7 @@ MENU_MACHINEGUNS_TITLE                  = "--- Machine Guns ---";
 MENU_EXPLOSIVES_TITLE                   = "--- Explosives ---";
 MENU_RIFLES_TITLE                       = "--- Rifles ---";
 MENU_ENERGYWEAPONS_TITLE                = "--- Energy Weapons ---";
-MENU_ARMOUR_TITLE                       = "--- Armour ---";
+MENU_ARMOUR_TITLE                       = "--- Armor ---";
 MENU_RESETOPTIONS_TITLE                 = "--- Reset Options ---";
 
 // Menu Section Headers
@@ -53,7 +53,7 @@ MENU_BITCH_BACKPACKS                    = "Control whether the Bitch spawns in B
 
 // Fenris Options Text
 MENU_FENRIS_TITLE                       = "------ CFL-21 'Fenris' Cold Fusion Laser Options ------";
-MENU_FENRIS_PLASMA_SPAWNTEXT            = "Control the spawn rate of the Bitch on Thunderbusters:";
+MENU_FENRIS_PLASMA_SPAWNTEXT            = "Control the spawn rate of the Fenris on Thunderbusters:";
 MENU_FENRIS_BACKPACKS                   = "Control whether the Fenris spawns in Backpacks:";
 
 // Flamenwerfer 77 Options Text
@@ -68,7 +68,12 @@ MENU_GASTANK_ROCKETBOX_SPAWNTEXT        = "Control the spawn rate of Fuel Tanks 
 MENU_GASTANK_BATTERY_SPAWNTEXT          = "Control the spawn rate of Fuel Tanks on Batteries:";
 MENU_GASTANK_BACKPACKS                  = "Control whether Fuel Tanks spawn in Backpacks:";
 
-MENU_FLAMENWERFER_PRETTYLIGHTS          = "Enable Dynamic Lighting";
+MENU_GASTANK_SPAWNOPTIONS               = "Fuel Tank Spawn Options";
+MENU_GASTANK_SPAWNRATE                  = "Fuel Tank Spawn Rate: ";
+MENU_GASTANK_PERSISTENCY                = "Persistent Fuel Tank Spawns: ";
+MENU_RESETGASTANK                       = "Reset Fuel Tank Options";
+
+MENU_FLAMENWERFER77_PRETTYLIGHTS        = "Enable Dynamic Lighting";
 
 // Frontiersman Options Text
 MENU_FRONTIERSMAN_TITLE                 = "------ 'Frontiersman' 7.76mm Lever-Action Rifle Options ------";
@@ -83,7 +88,7 @@ MENU_GFB9_BACKPACKS                     = "Control whether the GFB-9 spawns in B
 
 // HEV Armour Options Text
 MENU_HEVARMOUR_TITLE                    = "------ HEV Armor Options ------";
-MENU_HEVARMOUR_ARMOUR_SPAWNTEXT         = "Control the spawn rate of the HEV Armour on Garrison and Battle Armour:";
+MENU_HEVARMOUR_ARMOUR_SPAWNTEXT         = "Control the spawn rate of the HEV Armor on Garrison and Battle Armour:";
 
 // NCT Options Text
 MENU_NCT_TITLE                          = "------ NS3-Cr.Kt Options ------";
