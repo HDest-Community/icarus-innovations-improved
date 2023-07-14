@@ -1,0 +1,218 @@
+[enu default]
+
+// Options Menu Titles
+ICARUS_MENU                             = "\c[Fire]Ⓘ\c- Icarus Innovations Improved";
+MENU_PISTOLS_TITLE                      = "--- Pistols ---";
+MENU_SHOTGUNS_TITLE                     = "--- Shotguns ---";
+MENU_MACHINEGUNS_TITLE                  = "--- Machine Guns ---";
+MENU_EXPLOSIVES_TITLE                   = "--- Explosives ---";
+MENU_RIFLES_TITLE                       = "--- Rifles ---";
+MENU_ENERGYWEAPONS_TITLE                = "--- Energy Weapons ---";
+MENU_ARMOUR_TITLE                       = "--- Armor ---";
+MENU_RESETOPTIONS_TITLE                 = "--- Reset Options ---";
+
+// Menu Section Headers
+MENU_SPAWNOPTIONS                       = "Spawn Options";
+MENU_WEPSPAWNOPTIONS                    = "Weapon Spawn Options";
+MENU_MAGSPAWNOPTIONS                    = "Magazine Spawn Options";
+MENU_PERSISTENCYOPTIONS                 = "Spawn Persistence Options";
+MENU_RESETOPTIONS                       = "Reset Options";
+MENU_RESETALLOPTIONS                    = "Reset all Options";
+
+// Menu Static Text
+MENU_SPAWNRATE_TEXT1                    = "Setting 'spawn rate' to Replace All will suppress";
+MENU_SPAWNRATE_TEXT2                    = "spawns of that given type.";
+MENU_PERSISTENCY_TEXT                   = "Control whether replacements happen after a mapload:";
+
+// Menu Option Labels
+MENU_NOTICE                             = "Notice:";
+MENU_BACKPACKSALLOWED                   = "Allowed in Ammo Boxes and/or Backpacks: ";
+MENU_SPAWNRATE                          = "Spawn Rate: ";
+MENU_WEPSPAWNRATE                       = "Weapon Spawn Rate: ";
+MENU_MAGSPAWNRATE                       = "Magazine Spawn Rate: ";
+MENU_PERSISTENCY                        = "Persistent Spawns: ";
+MENU_WEPPERSISTENCY                     = "Persistent Weapon Spawns: ";
+MENU_MAGPERSISTENCY                     = "Persistent Magazine Spawns: ";
+
+// Menu Command Text
+MENU_RESETWEP                           = "Reset Weapon Options";
+MENU_RESETMAG                           = "Reset Magazine Options";
+MENU_RESETPERSISTENCY                   = "Reset Persistence Options";
+ICARUS_RESETALLOPTIONS                  = "Reset all options for Icarus Innovations Improved";
+
+// Barracuda Options Text
+MENU_BARRACUDA_TITLE                    = "------ Barracuda Options ------";
+MENU_BARRACUDA_HUNTER_SPAWNTEXT         = "Control the spawn rate of the Barracuda on Hunter Shotguns:";
+MENU_BARRACUDA_SLAYER_SPAWNTEXT         = "Control the spawn rate of the Barracuda on Slayer Shotguns:";
+MENU_BARRACUDA_BACKPACKS                = "Control whether the Barracuda spawns in Backpacks:";
+
+// Bitch Options Text
+MENU_BITCH_TITLE                        = "------ 'Bitch' 4.26mm LMG Options ------";
+MENU_BITCH_CHAINGUN_SPAWNTEXT           = "Control the spawn rate of the Bitch on Vulcanettes:";
+MENU_BITCH_BACKPACKS                    = "Control whether the Bitch spawns in Backpacks:";
+
+// Fenris Options Text
+MENU_FENRIS_TITLE                       = "------ CFL-21 'Fenris' Cold Fusion Laser Options ------";
+MENU_FENRIS_PLASMA_SPAWNTEXT            = "Control the spawn rate of the Fenris on Thunderbusters:";
+MENU_FENRIS_BACKPACKS                   = "Control whether the Fenris spawns in Backpacks:";
+
+// Flamenwerfer 77 Options Text
+MENU_FLAMENWERFER77_TITLE               = "------ Flamenwerfer 77 Options ------";
+
+MENU_FLAMENWERFER77_LAUNCHER_SPAWNTEXT  = "Control the spawn rate of the Flamenwerfer 77 on Rocket Launchers:";
+MENU_FLAMENWERFER77_BFG_SPAWNTEXT       = "Control the spawn rate of the Flamenwerfer 77 on BFG-9000s:";
+MENU_FLAMENWERFER77_BACKPACKS           = "Control whether the Flamenwerfer 77 spawns in Backpacks:";
+
+MENU_GASTANK_ROCKET_SPAWNTEXT           = "Control the spawn rate of Fuel Tanks on Rockets:";
+MENU_GASTANK_ROCKETBOX_SPAWNTEXT        = "Control the spawn rate of Fuel Tanks on Rocket Boxes:";
+MENU_GASTANK_BATTERY_SPAWNTEXT          = "Control the spawn rate of Fuel Tanks on Batteries:";
+MENU_GASTANK_BACKPACKS                  = "Control whether Fuel Tanks spawn in Backpacks:";
+
+MENU_GASTANK_SPAWNOPTIONS               = "Fuel Tank Spawn Options";
+MENU_GASTANK_SPAWNRATE                  = "Fuel Tank Spawn Rate: ";
+MENU_GASTANK_PERSISTENCY                = "Persistent Fuel Tank Spawns: ";
+MENU_RESETGASTANK                       = "Reset Fuel Tank Options";
+
+MENU_FLAMENWERFER77_PRETTYLIGHTS        = "Enable Dynamic Lighting";
+
+// Frontiersman Options Text
+MENU_FRONTIERSMAN_TITLE                 = "------ 'Frontiersman' 7.76mm Lever-Action Rifle Options ------";
+MENU_FRONTIERSMAN_HUNTER_SPAWNTEXT      = "Control the spawn rate of the Frontiersman on Hunter Shotguns:";
+MENU_FRONTIERSMAN_SLAYER_SPAWNTEXT      = "Control the spawn rate of the Frontiersman on Slayer Shotguns:";
+MENU_FRONTIERSMAN_BACKPACKS             = "Control whether the Frontiersman spawns in Backpacks:";
+
+// GFB-9 Options Text
+MENU_GFB9_TITLE                         = "------ Gretchenfrage Blaster Mk. 9 Options ------";
+MENU_GFB9_PISTOL_SPAWNTEXT              = "Control the spawn rate of the GFB-9 on Pistols:";
+MENU_GFB9_BACKPACKS                     = "Control whether the GFB-9 spawns in Backpacks:";
+
+// HEV Armour Options Text
+MENU_HEVARMOUR_TITLE                    = "------ HEV Armor Options ------";
+MENU_HEVARMOUR_ARMOUR_SPAWNTEXT         = "Control the spawn rate of the HEV Armor on Garrison and Battle Armour:";
+
+// NCT Options Text
+MENU_NCT_TITLE                          = "------ NS3-Cr.Kt Options ------";
+MENU_NCT_BFG_SPAWNTEXT                  = "Control the spawn rate of the NS3-Cr.Kt on BFG-9000s:";
+MENU_NCT_BACKPACKS                      = "Control whether the NS3-Cr.Kt spawns in Backpacks:";
+
+// Nyx Options Text
+MENU_NYX_TITLE                          = "------ CM-3 'Nyx' .355 Burst-Fire Magnum Options ------";
+MENU_NYX_PISTOL_SPAWNTEXT               = "Control the spawn rate of the Nyx on Pistols:";
+MENU_NYX_BACKPACKS                      = "Control whether the Nyx spawns in Backpacks:";
+
+MENU_NYXMAG_CLIPMAG_SPAWNTEXT           = "Control the spawn rate of Nyx Magazines on Clip Magazines:";
+MENU_NYXMAG_SHELLBOX_SPAWNTEXT          = "Control the spawn rate of Nyx Magazines on Shell Boxes:";
+MENU_NYXMAG_BACKPACKS                   = "Control whether Nyx Magazines spawn in Backpacks:";
+
+// PD-42 Options Text
+MENU_PD42_TITLE                         = "------ PD-42 4.26mm Suppressed PDW Options ------";
+MENU_PD42_CLIPBOX_SPAWNTEXT             = "Control the spawn rate of the PD-42 on Clip Boxes:";
+MENU_PD42_BACKPACKS                     = "Control whether the PD-42 spawns in Backpacks:";
+
+MENU_PD42MAG_CLIPMAG_SPAWNTEXT          = "Control the spawn rate of PD-42 Magazines on Clip Magazines:";
+MENU_PD42MAG_BACKPACKS                  = "Control whether Nyx Magazines spawn in Backpacks:";
+
+// Six-12 Options Text
+MENU_SIX12_TITLE                        = "------ Six-12 Options ------";
+MENU_SIX12_HUNTER_SPAWNTEXT             = "Control the spawn rate of the Six-12 on Hunter Shotguns:";
+MENU_SIX12_SLAYER_SPAWNTEXT             = "Control the spawn rate of the Six-12 on Slayer Shotguns:";
+MENU_SIX12_BACKPACKS                    = "Control whether the Six-12 spawns in Backpacks:";
+
+MENU_SIX12MAG_SHELL_SHELL_SPAWNTEXT     = "Control the spawn rate of Six-12 Shell Magazines on Shell Pickups:";
+MENU_SIX12MAG_SHELL_BACKPACKS           = "Control whether Six-12 Shell Magazines spawn in Backpacks:";
+
+MENU_SIX12MAG_SLUG_SLUG_SPAWNTEXT       = "Control the spawn rate of Six-12 Slug Magazines on Slug Pickups:";
+MENU_SIX12MAG_SLUG_BACKPACKS            = "Control whether Six-12 Slug Magazines spawn in Backpacks:";
+
+MENU_SIX12MAG_SHELL_PERSISTENCY         = "Persistent Shell Magazine Spawns: ";
+MENU_SIX12MAG_SLUG_PERSISTENCY          = "Persistent Slug Magazine Spawns: ";
+
+// UMP-45 Options Text
+MENU_UMP_TITLE                          = "------ UMP-45 .45 ACP PDW Options ------";
+MENU_UMP_CLIPBOX_SPAWNTEXT              = "Control the spawn rate of the UMP-45 on Clip Boxes:";
+MENU_UMP_BACKPACKS                      = "Control whether the UMP-45 spawns in Backpacks:";
+
+MENU_UMPMAG_CLIPMAG_SPAWNTEXT           = "Control the spawn rate of UMP-45 Magazines on Clip Magazines:";
+MENU_UMPMAG_BACKPACKS                   = "Control whether UMP-45 Magazines spawn in Backpacks:";
+
+// USP-45 Options Text
+MENU_USP_TITLE                          = "------ USP-45 .45 ACP Handgun Options ------";
+MENU_USP_PISTOL_SPAWNTEXT               = "Control the spawn rate of the USP-45 on Pistols:";
+MENU_USP_BACKPACKS                      = "Control whether the USP-45 spawns in Backpacks:";
+
+MENU_USPMAG_CLIPMAG_SPAWNTEXT           = "Control the spawn rate of USP-45 Magazines on Clip Magazines:";
+MENU_USPMAG_BACKPACKS                   = "Control whether USP-45 Magazines spawn in Backpacks:";
+
+
+// Item Tags
+TAG_BARRACUDA                           = "Barracuda";
+TAG_BITCH                               = "'Bitch' 4mm LMG";
+TAG_FENRIS                              = "CFL-21 'Fenris' Cold Fusion Laser";
+TAG_FLAMENWERFER77                      = "Flammenwerfer 77";
+TAG_FRONTIERSMAN                        = "'Frontiersman' 7.76mm Lever-Action Rifle";
+TAG_GASTANK                             = "Fuel Tank";
+TAG_GFB9                                = "Gretchenfrage Blaster Mk. 9";
+TAG_HEVARMOUR                           = "HEV Armor";
+TAG_HEVARMOURSPARE                      = "HEV Armor (spare)";
+TAG_NCT                                 = "NS3-Cr.Kt";
+TAG_NYX                                 = "CM-3 'Nyx' .355 Burst-Fire Magnum";
+TAG_NYXMAG                              = "Nyx Magazine";
+TAG_PD42                                = "PD-42 Suppressed 4.26mm PDW";
+TAG_PD42MAG                             = "PD-42 Magazine";
+TAG_SIX12                               = "Six-12 Shotgun";
+TAG_SIX12MAG_SHELL                      = "Six-12 Shell Magazine";
+TAG_SIX12MAG_SLUG                       = "Six-12 Slug Magazine";
+TAG_UMP                                 = "UMP-45 .45 ACP PDW";
+TAG_UMPMAG                              = "UMP Magazine";
+TAG_USP                                 = "USP-45 .45 ACP Handgun";
+TAG_USPMAG                              = "USP Magazine";
+
+// Obituaries
+OB_FLAMENWERFER77                       = "%o was deep fried by %k.";
+OB_NCT                                  = "%o got chirp chirp'd by %k's tny gun.";
+
+// Item Pickup Messages
+PICKUP_BARRACUDA_PREFIX                 = "You got the ";
+PICKUP_BARRACUDA_SUFFIX                 = ". Watch out. It's got a bite!";
+PICKUP_BITCH_PREFIX                     = "You got the ";
+PICKUP_BITCH_RAPID                      = "Rapid-Fire ";
+PICKUP_BITCH_GL                         = ". This one has a grenade launcher";
+PICKUP_BITCH_SUFFIX                     = ".";
+PICKUP_FENRIS_PREFIX                    = "You got the ";
+PICKUP_FENRIS_POLYFRAME                 = "Light-Weight ";
+PICKUP_FENRIS_PLATINUM                  = " with Platinum Wiring";
+PICKUP_FENRIS_SUFFIX                    = ".";
+PICKUP_FLAMENWERFER77_PREFIX            = "You got the ";
+PICKUP_FLAMENWERFER77_SUFFIX            = ". If werfs flammen.";
+PICKUP_FRONTIERSMAN_PREFIX              = "You got the ";
+PICKUP_FRONTIERSMAN_SUFFIX              = ".";
+PICKUP_GASTANK_PREFIX                   = "You got a ";
+PICKUP_GASTANK_SUFFIX                   = ". The cheap chineseum casing might react violently to extreme heat, pressure or sudden shock.";
+PICKUP_GFB9_PREFIX                      = "You got the ";
+PICKUP_GFB9_CAPACITOR                   = "High-Capacity ";
+PICKUP_GFB9_SUFFIX                      = ".";
+PICKUP_HEVARMOUR                        = "You got the Hazardous Environment Armor.";
+PICKUP_NCT_PREFIX                       = "You got the ";
+PICKUP_NCT_SUFFIX                       = ". It's some sort of weird tiny ... gun? thing?";
+PICKUP_NYX_PREFIX                       = "You got the ";
+PICKUP_NYX_SUFFIX                       = ".";
+PICKUP_NYXMAG                           = "You got a Nyx magazine.";
+PICKUP_PD42_PREFIX                      = "You got the ";
+PICKUP_PD42_SLUGTHROWER                 = " with an Under-Barrel Slug Thrower";
+PICKUP_PD42_SUFFIX                      = ".";
+PICKUP_PD42MAG_PREFIX                   = "You got a ";
+PICKUP_PD42MAG_SUFFIX                   = ".";
+PICKUP_SIX12_PREFIX                     = "You got the ";
+PICKUP_SIX12_SUFFIX                     = ".";
+PICKUP_SIX12MAG_SHELL_PREFIX            = "You got a ";
+PICKUP_SIX12MAG_SHELL_SUFFIX            = ".";
+PICKUP_SIX12MAG_SLUG_PREFIX             = "You got a ";
+PICKUP_SIX12MAG_SLUG_SUFFIX             = ".";
+PICKUP_UMP_PREFIX                       = "You got the ";
+PICKUP_UMP_SUFFIX                       = ".";
+PICKUP_UMPMAG_PREFIX                    = "You got a ";
+PICKUP_UMPMAG_SUFFIX                    = ".";
+PICKUP_USP_PREFIX                       = "You got the ";
+PICKUP_USP_SUFFIX                       = ".";
+PICKUP_USPMAG_PREFIX                    = "You got a ";
+PICKUP_USPMAG_SUFFIX                    = ".";

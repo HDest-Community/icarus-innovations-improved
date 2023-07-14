@@ -1,0 +1,20 @@
+Fenris/BattIn FENLAOD
+
+Fenris/BattOut FENULOD
+
+Fenris/Charge FENCHRG
+
+Fenris/Fire FENPEWW
+
+Fenris/Empty FENMPTY
+
+Fenris/Impact FENHIT
+
+Fenris/SBCharge FENBCHRG
+
+Fenris/SBFire FENBPEW
+
+Fenris/SBExplode ICBLKBRK
+
+$limit Fenris/Impact 0
+$volume Fenris/Impact 0.5

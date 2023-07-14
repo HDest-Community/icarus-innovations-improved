@@ -1,9 +1,0 @@
-GameInfo
-{
-    AddEventHandlers = "HEVArmorHandler",
-                       "PDFourHandler",
-                       "BarracudaHandler",
-                       "FlamethrowerHandler",
-                       "FrontierHandler",
-                       "Six12Handler"
-}

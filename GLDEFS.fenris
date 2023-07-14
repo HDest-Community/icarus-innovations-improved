@@ -1,0 +1,7 @@
+PointLight ImpactBlueSmall
+{
+	color 0.1 0.1 0.8
+	size 24
+}
+
+Object FenrisRayImpact { Frame TNT1 { Light ImpactBlueSmall } }
