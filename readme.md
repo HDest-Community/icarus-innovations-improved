@@ -47,13 +47,6 @@ This mod aims to maintain and improve Icarus's Innovations, by updating them to 
 - Loadout Configuration Code`cap` gives the weapon an extended capacitor. Hold more rounds but takes longer to recharge.
 ---
 
-### Hammerhead
-- The loadout code is `hhd`.
-- There are 3 firing modes: 1 battery, 2 batteries, and full barrage. Lowest setting is for low-heat sustained fire. Highest setting is for maximizing damage at the expense of much faster heat build-up and battery drain rate.
-- Batteries are cycled after each shot to deplete them evenly.
-- If the heat bar turns orange, vent the gun or you will get set on fire.
----
-
 ### NS3-Cr.Kt
 - The NS3-Cr.KT is a battery powered, single shot pistol.
 - The loadout code is `tny`.
@@ -72,10 +65,6 @@ This mod aims to maintain and improve Icarus's Innovations, by updating them to 
 - Loadout Configuration Code `slugger` for a variant with an under barrels single shot slug launcher.
 - Alternate Black Gloves sprites are included in the addon. Simply remove the `BG - `  from the sprite name and override.
 
-### Scorpion
----
-- The loadout code is `scr`.
-
 ### Six-12
 ---
 - The Six-12 is a 6 shot rotary magazine shotgun.
@@ -92,19 +81,6 @@ This mod aims to maintain and improve Icarus's Innovations, by updating them to 
 ---
 - The USP is a .45 ACP semi auto pistol.
 - The loadout codes are `usp`, `usm` for weapon and magazines, respectively.
-
-### Viper
----
-- The loadout codes are `vpr`, `50m`, and `50r` for weapon, mag, and rounds, respectively.
-- Configuration codes are:
-	- `hframe`: Heavier frame. Gun weighs more but has less recoil.
-	- `extended`: Extended barrel. Higher projectile velocity but heavier gun.
-
-### Wyvern
----
-- The loadout code is `wyv`.
-- Configuration codes are:
-	- `auto`: Autoloader. Makes reloading from side saddles a bit faster.
 
 ## Items
 ---
