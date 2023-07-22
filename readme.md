@@ -171,6 +171,7 @@ Code:
 
 Sprites:
 - Weapon Sprite: Icarus, a1337spy
+  - Iron Sights variant: TommyGalano5, Icarus, a1337spy
 - Weapon Sights: Bryan, Ultra64, and Clay from [Bryan's Extensions](https://github.com/abramsba/hdest-weapons)
 - Pickup sprite: Icarus, Railgunner
 
