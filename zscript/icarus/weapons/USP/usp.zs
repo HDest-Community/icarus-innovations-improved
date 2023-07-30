@@ -201,7 +201,10 @@ class HDUSP : HDHandgun
 			{
 				if (invoker.WeaponStatus[USProp_Chamber] == 1)
 				{
-					A_EjectCasing('HDSpent45ACP',frandom(-1,2),(-frandom(2,3),frandom(0,0.2),frandom(0.4,0.5)),(-2,0,-1));
+					A_EjectCasing('HDSpent45ACP',
+						frandom(-1,2),
+						(frandom(0.4,0.7),-frandom(6,7),frandom(0.8,0.1))
+					);
 					invoker.WeaponStatus[USProp_Chamber] = 0;
 				}
 				
