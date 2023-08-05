@@ -47,6 +47,19 @@ This mod aims to maintain and improve Icarus's Innovations, by updating them to 
 - Loadout Configuration Code`cap` gives the weapon an extended capacitor. Hold more rounds but takes longer to recharge.
 ---
 
+### Modular Battle Rifle
+- The MBR-5 is a Modular Battle Rifle, chambered in .500 S&W, that can load both Factory Loads and the ever popular Wildcat Loads. It also comes with a variety of attachments and accessories. Suitable for all your needs in any situation.
+
+- Loadout code is `mbr`, `mbh`, `mbm` for the weapon, heavy magazines and light magazine, respectively.
+- Loadout Configuration Codes:
+	- `heavy` - The MBR will be loaded with .500 S&W Wildcat rounds.
+	- `cqc` - Comes equipped with a lighter, shortened barrel more suited for close range engagements.
+	- `dmr` - Comes equipped with a cold-hammer forged, Bull Barrel for long range accuracy and precision.
+	- `scope` - Self-explanatory. Adds a variable zoom scope for mid to long range engagements.
+	- `select` - The fun switch. Lets you go full-auto for when you really need things dead NOW!
+	- `gl` - Self-explanatory. Adds a hair trigger Grenade Launcher.
+- Alternate Black Gloves sprites are included in the addon. Simply remove the `BG - `  from the sprite name and override.
+
 ### NS3-Cr.Kt
 - The NS3-Cr.KT is a battery powered, single shot pistol.
 - The loadout code is `tny`.
@@ -145,6 +158,17 @@ Sprites:
 Sounds:
 - Icarus, Mechadon (Karasawa weapon mod), Doom 2016
 
+### Modular Battle Rifle
+Code:
+- Accensus, Icarus
+
+Sprites:
+- World Sprites: Icarus, Railgunner
+- First Person: Mor'Ladim
+
+Sounds:
+- BanananaHead, Aeyon, Strelok and [Killer10312](https://gamebanana.com/sounds/16704)
+
 ### NS3-Cr.Kt
 ---
 Code:
@@ -171,6 +195,7 @@ Code:
 
 Sprites:
 - Weapon Sprite: Icarus, a1337spy
+  - Iron Sights variant: TommyGalano5, Icarus, a1337spy
 - Weapon Sights: Bryan, Ultra64, and Clay from [Bryan's Extensions](https://github.com/abramsba/hdest-weapons)
 - Pickup sprite: Icarus, Railgunner
 

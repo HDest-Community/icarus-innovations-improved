@@ -45,6 +45,11 @@ server bool gfb9_allowBackpacks = true;
 server int gfb9_pistol_spawn_bias = 9;
 server bool gfb9_persistent_spawning = false;
 
+// Modular Battle Rifle
+server bool mbr_allowBackpacks = true;
+server int mbr_chaingun_spawn_bias = 49;
+server bool mbr_persistent_spawning = false;
+
 // NCT
 server bool nct_allowBackpacks = true;
 server int nct_bfg_spawn_bias = 24;
@@ -88,6 +93,16 @@ server int gastank_rocket_spawn_bias = 14;
 server int gastank_rocketbox_spawn_bias = 19;
 server int gastank_battery_spawn_bias = 24;
 server bool gastank_persistent_spawning = false;
+
+// Modular Battle Rifle Heavy Magazine
+server bool mbrmagheavy_allowBackpacks = true;
+server int mbrmagheavy_rocketbox_spawn_bias = 24;
+server bool mbrmagheavy_persistent_spawning = false;
+
+// Modular Battle Rifle light Magazine
+server bool mbrmaglight_allowBackpacks = true;
+server int mbrmaglight_shellbox_spawn_bias = 24;
+server bool mbrmaglight_persistent_spawning = false;
 
 // Nyx Magazine
 server bool nyxmag_allowBackpacks = true;

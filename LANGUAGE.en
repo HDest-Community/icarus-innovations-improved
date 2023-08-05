@@ -86,6 +86,17 @@ MENU_GFB9_TITLE                         = "------ Gretchenfrage Blaster Mk. 9 Op
 MENU_GFB9_PISTOL_SPAWNTEXT              = "Control the spawn rate of the GFB-9 on Pistols:";
 MENU_GFB9_BACKPACKS                     = "Control whether the GFB-9 spawns in Backpacks:";
 
+// Modular Battle Rifle Options Text
+MENU_MBR_TITLE                          = "------ Modular Battle Rifle Options ------";
+MENU_MBR_CHAINGUN_SPAWNTEXT             = "Control the spawn rate of the MBR on Vulcanettes:";
+MENU_MBR_BACKPACKS                      = "Control whether the MBR spawns in Backpacks:";
+
+MENU_MBRMAGHEAVY_ROCKETBOX_SPAWNTEXT    = "Control the spawn rate of MBR Heavy Magazines on Rocket Boxes:";
+MENU_MBRMAGHEAVY_BACKPACKS              = "Control whether MBR Heavy Magazines spawn in Backpacks:";
+
+MENU_MBRMAGLIGHT_SHELLBOX_SPAWNTEXT     = "Control the spawn rate of MBR Light Magazines on Shell Boxes:";
+MENU_MBRMAGLIGHT_BACKPACKS              = "Control whether MBR Light Magazines spawn in Backpacks:";
+
 // HEV Armour Options Text
 MENU_HEVARMOUR_TITLE                    = "------ HEV Armor Options ------";
 MENU_HEVARMOUR_ARMOUR_SPAWNTEXT         = "Control the spawn rate of the HEV Armor on Garrison and Battle Armour:";
@@ -183,7 +194,7 @@ PICKUP_FENRIS_POLYFRAME                 = "Light-Weight ";
 PICKUP_FENRIS_PLATINUM                  = " with Platinum Wiring";
 PICKUP_FENRIS_SUFFIX                    = ".";
 PICKUP_FLAMENWERFER77_PREFIX            = "You got the ";
-PICKUP_FLAMENWERFER77_SUFFIX            = ". If werfs flammen.";
+PICKUP_FLAMENWERFER77_SUFFIX            = ". It werfs flammen.";
 PICKUP_FRONTIERSMAN_PREFIX              = "You got the ";
 PICKUP_FRONTIERSMAN_SUFFIX              = ".";
 PICKUP_GASTANK_PREFIX                   = "You got a ";
@@ -193,7 +204,7 @@ PICKUP_GFB9_CAPACITOR                   = "High-Capacity ";
 PICKUP_GFB9_SUFFIX                      = ".";
 PICKUP_HEVARMOUR                        = "You got the Hazardous Environment Armor.";
 PICKUP_NCT_PREFIX                       = "You got the ";
-PICKUP_NCT_SUFFIX                       = ". It's some sort of weird tiny ... gun? thing?";
+PICKUP_NCT_SUFFIX                       = ". It's some sort of weird tiny... gun? thing?";
 PICKUP_NYX_PREFIX                       = "You got the ";
 PICKUP_NYX_SUFFIX                       = ".";
 PICKUP_NYXMAG                           = "You got a Nyx magazine.";
