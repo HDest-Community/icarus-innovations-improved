@@ -86,6 +86,17 @@ MENU_GFB9_TITLE                         = "------ Gretchenfrage Blaster Mk. 9 Op
 MENU_GFB9_PISTOL_SPAWNTEXT              = "Control the spawn rate of the GFB-9 on Pistols:";
 MENU_GFB9_BACKPACKS                     = "Control whether the GFB-9 spawns in Backpacks:";
 
+// Modular Battle Rifle Options Text
+MENU_MBR_TITLE                          = "------ Modular Battle Rifle Options ------";
+MENU_MBR_CHAINGUN_SPAWNTEXT             = "Control the spawn rate of the MBR on Vulcanettes:";
+MENU_MBR_BACKPACKS                      = "Control whether the MBR spawns in Backpacks:";
+
+MENU_MBRMAGHEAVY_ROCKETBOX_SPAWNTEXT    = "Control the spawn rate of MBR Heavy Magazines on Rocket Boxes:";
+MENU_MBRMAGHEAVY_BACKPACKS              = "Control whether MBR Heavy Magazines spawn in Backpacks:";
+
+MENU_MBRMAGLIGHT_SHELLBOX_SPAWNTEXT     = "Control the spawn rate of MBR Light Magazines on Shell Boxes:";
+MENU_MBRMAGLIGHT_BACKPACKS              = "Control whether MBR Light Magazines spawn in Backpacks:";
+
 // HEV Armour Options Text
 MENU_HEVARMOUR_TITLE                    = "------ HEV Armor Options ------";
 MENU_HEVARMOUR_ARMOUR_SPAWNTEXT         = "Control the spawn rate of the HEV Armor on Garrison and Battle Armour:";

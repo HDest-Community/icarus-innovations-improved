@@ -36,6 +36,8 @@ OptionMenu "IcarusMenu" {
 	StaticText ""
 	Submenu "$TAG_BITCH", "bitchSpawning", 0, 1
 	StaticText ""
+	Submenu "$TAG_MBR", "mbrSpawning", 0, 1
+	StaticText ""
 	Submenu "$TAG_PD42", "pd42Spawning", 0, 1
     StaticText ""
     Submenu "$TAG_UMP", "ump45Spawning", 0, 1
@@ -269,6 +271,55 @@ OptionMenu "bitchSpawning" {
 
 	StaticText "$MENU_RESETOPTIONS", "Green"
 	SafeCommand "$MENU_RESETALLOPTIONS", "bitch_reset_cvars"
+}
+
+OptionMenu "mbrSpawning" {
+    Title "$MENU_MBR_TITLE"
+   	StaticText "$MENU_NOTICE", "Green"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SPAWNOPTIONS", "Green"
+    StaticText "$MENU_MBR_CHAINGUN_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "mbr_chaingun_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar mbr_chaingun_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "$MENU_MBR_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "mbr_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_MAGSPAWNOPTIONS", "Green"
+    StaticText "$MENU_MBRMAGHEAVY_CLIPMAG_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "mbrmagheavy_rocketbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmagheavy_rocketbox_spawn_bias"
+ 	StaticText ""
+	
+    StaticText "$MENU_MBRMAGLIGHT_CLIPMAG_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "mbrmaglight_shellbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmaglight_shellbox_spawn_bias"
+ 	StaticText ""
+
+	StaticText "$MENU_MBRMAGHEAVY_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "mbrmagheavy_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_MBRMAGLIGHT_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "mbrmaglight_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Green"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_WEPPERSISTENCY", "mbr_persistent_spawning", "OnOff"
+	Option "$MENU_MAGPERSISTENCY", "mbrmagheavy_persistent_spawning", "OnOff"
+	Option "$MENU_MAGPERSISTENCY", "mbrmaglight_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar mbr_persistent_spawning; resetcvar mbrmagheavy_persistent_spawning; resetcvar mbrmaglight_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "Green"
+	SafeCommand "$MENU_RESETALLOPTIONS", "mbr_reset_cvars"
 }
 
 OptionMenu "pd42Spawning" {

@@ -162,6 +162,7 @@ class IcarusWepsHandler : EventHandler {
         if (!flamenwerfer_allowBackpacks)  backpackBlacklist.push((Class<Inventory>)('HDFlamethrower'));
         if (!frontiersman_allowBackpacks)  backpackBlacklist.push((Class<Inventory>)('HDFrontier'));
         if (!gfb9_allowBackpacks)          backpackBlacklist.push((Class<Inventory>)('HDGFBlaster'));
+		if (!mbr_allowBackpacks)           backpackBlacklist.push((Class<Inventory>)('HDMBR'));
         if (!nct_allowBackpacks)           backpackBlacklist.push((Class<Inventory>)('HDNCT'));
         if (!nyx_allowBackpacks)           backpackBlacklist.push((Class<Inventory>)('HDNyx'));
         if (!pd42_allowBackpacks)          backpackBlacklist.push((Class<Inventory>)('HDPDFour'));
@@ -193,6 +194,16 @@ class IcarusWepsHandler : EventHandler {
 		wep_45acp.push('HDUSP');
 		addAmmo('HD45ACPAmmo', wep_45acp);
 
+		// .500 S&W Heavy
+		Array<string> wep_swheavy;
+		wep_swheavy.push('HDMBR');
+		addAmmo('HD500SWHeavyAmmo', wep_swheavy);
+
+		// .500 S&W Light
+		Array<string> wep_swlight;
+		wep_swlight.push('HDMBR');
+		addAmmo('HD500SWLightAmmo', wep_swlight);
+
 		// 12 gauge Buckshot Ammo.
 		Array<string> wep_12gaShell;
 		wep_12gaShell.push('HDBarracuda');
@@ -215,6 +226,7 @@ class IcarusWepsHandler : EventHandler {
 		// Rocket (Gyro) Grenades.
 		Array<string> wep_rocket;
 		wep_rocket.push('HDBitch');
+		wep_rocket.push('HDMBR');
 		addAmmo('HDRocketAmmo', wep_rocket);
 
 		// Gas Tank
@@ -273,6 +285,11 @@ class IcarusWepsHandler : EventHandler {
 		spawns_gfb9.push(addItemEntry('HDPistol', gfb9_pistol_spawn_bias));
 		addItem('GFBlasterRandom', spawns_gfb9, gfb9_persistent_spawning);
 
+		// Modular Battle Rifle
+		Array<IcarusSpawnItemEntry> spawns_mbr;
+		spawns_mbr.push(addItemEntry('Vulcanette', mbr_chaingun_spawn_bias));
+		addItem('MBRRandom', spawns_mbr, mbr_persistent_spawning);
+
 		// NCT
 		Array<IcarusSpawnItemEntry> spawns_nct;
 		spawns_nct.push(addItemEntry('BFG9K', nct_bfg_spawn_bias));
@@ -318,6 +335,16 @@ class IcarusWepsHandler : EventHandler {
 		spawns_gastank.push(addItemEntry('RocketBigPickup', gastank_rocketbox_spawn_bias));
 		spawns_gastank.push(addItemEntry('HDBattery', gastank_battery_spawn_bias));
 		addItem('HDGasTank', spawns_gastank, gastank_persistent_spawning);
+
+		// Modular Battle Rifle Heavy Magazine
+		Array<IcarusSpawnItemEntry> spawns_mbrmagheavy;
+		spawns_mbrmagheavy.push(addItemEntry('RocketBigPickup', mbrmagheavy_rocketbox_spawn_bias));
+		addItem('HDMBRMagHeavy', spawns_mbrmagheavy, mbrmagheavy_persistent_spawning);
+
+		// Modular Battle Rifle Light Magazine
+		Array<IcarusSpawnItemEntry> spawns_mbrmaglight;
+		spawns_mbrmaglight.push(addItemEntry('ShellBoxPickup', mbrmaglight_shellbox_spawn_bias));
+		addItem('HDMBRMagLight', spawns_mbrmaglight, mbrmaglight_persistent_spawning);
 
 		// Nyx Magazine
 		Array<IcarusSpawnItemEntry> spawns_nyxmag;

@@ -32,6 +32,7 @@ const HDLD_USPMAG         = "usm";
 #include "zscript/icarus/weapons/Flamenwerfer 77/flamenwerfer77.zs"
 #include "zscript/icarus/weapons/Frontiersman/frontiersman.zs"
 #include "zscript/icarus/weapons/GFB-9/gfb9.zs"
+#include "zscript/icarus/weapons/Modular Battle Rifle/modularBattleRifle.zs"
 #include "zscript/icarus/weapons/NCT/nct.zs"
 #include "zscript/icarus/weapons/Nyx/nyx.zs"
 #include "zscript/icarus/weapons/PD-42/pd42.zs"

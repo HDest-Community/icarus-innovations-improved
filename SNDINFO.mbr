@@ -1,0 +1,10 @@
+MBR/Fire			MBRFIRE
+MBR/MagIn			MBRMGIN
+MBR/MagOut			MBRMGOT
+MBR/ChamberRound	MBRBOFW
+MBR/BoltPull		MBRBOBK
+
+$alias MBR/GrenadeOpen weapons/grenopen
+$alias MBR/GrenadeClose weapons/grenopen
+$alias MBR/GrenadeLoad weapons/grenreload
+$alias MBR/GrenadeUnload weapons/grenreloads
