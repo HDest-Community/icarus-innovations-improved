@@ -316,35 +316,76 @@ class HDMBR : HDWeapon
 		}
 	}
 	
-	override void DrawSightPicture(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl, bool sightbob, vector2 bob, double fov, bool scopeview, actor hpc, string whichdot)
-	{
+	override void DrawSightPicture(
+		HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl,
+		bool sightbob, vector2 bob, double fov, bool scopeview, actor hpc
+	) {
 		int cx, cy, cw, ch;
 		[cx, cy, cw, ch] = Screen.GetClipRect();
-		sb.SetClipRect(-16 + bob.x, -4 + bob.y, 32, 16, sb.DI_SCREEN_CENTER);
+		sb.SetClipRect(
+			-16 + bob.x,
+			-64 + bob.y,
+			32, 76,
+			sb.DI_SCREEN_CENTER
+		);
+		
 		vector2 bob2 = bob * 2;
 		bob2.y = clamp(bob2.y, -8, 8);
 		sb.DrawImage("MBRGFRNT", bob2, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, alpha: 0.9, scale: (0.6, 0.6));
+
 		sb.SetClipRect(cx, cy, cw, ch);
-		sb.DrawImage("MBRGBACK", bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, scale: (1.0, 0.9));
+		sb.DrawImage("MBRGBACK", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP,
+			alpha: 0.9,
+			scale: (1.0, 0.9)
+		);
 
 		if (hdw.WeaponStatus[BRProp_Flags] & BRF_Scope && scopeview)
 		{
+			int ScaledWidth = 72;
 			int ScaledYOffset = 60;
-			int ScaledWidth = 89;
-			vector2 ScaleHalf = (0.5, 0.5);
 			double Degree = 0.1 * hdw.WeaponStatus[BRProp_Zoom];
 			int cx, cy, cw, ch;
 			[cx, cy, cw, ch] = Screen.GetClipRect();
-			sb.SetClipRect(-44 + bob.x, 16 + bob.y, ScaledWidth, ScaledWidth, sb.DI_SCREEN_CENTER);
-			TexMan.SetCameraToTexture(hpc, "HDXHCAM3", Degree);
-			sb.DrawImage("HDXHCAM3", (0, ScaledYOffset) + bob, sb.DI_SCREEN_CENTER |  sb.DI_ITEM_CENTER, scale: ScaleHalf);
-			sb.DrawImage("reticle2", (0, ScaledYOffset) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: ScaleHalf);
-			sb.DrawImage("scophole", (0, ScaledYOffset) + bob * 5, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (1.5, 1.5));
+			sb.SetClipRect(-36 + bob.x, 24 + bob.y, ScaledWidth, ScaledWidth,
+				sb.DI_SCREEN_CENTER
+			);
+
+			sb.fill(color(255,0,0,0),
+				bob.x-36, ScaledYOffset+bob.y-36,
+				72, 72, sb.DI_SCREEN_CENTER|sb.DI_ITEM_CENTER
+			);
+
+			TexMan.SetCameraToTexture(hpc, "HDXCAM_LIB", Degree);
+			let cam     = TexMan.CheckForTexture("HDXCAM_LIB", TexMan.Type_Any);
+			let reticle = TexMan.CheckForTexture("reticle2", TexMan.Type_Any);
+
+			vector2 frontoffs = (0, ScaledYOffset) + bob * 2;
+
+			double camSize = texman.GetSize(cam);
+			sb.DrawCircle(cam, frontoffs, .08825, usePixelRatio: true);
+			
+			if((bob.y / fov) < 0.4)
+			{
+				let reticleScale = camSize / texman.GetSize(reticle);
+				sb.DrawCircle(reticle, (0, scaledyoffset) + bob, 0.403 * reticleScale, uvScale: 0.52);
+			}
+
 			Screen.SetClipRect(cx,cy,cw,ch);
 
-			sb.DrawImage("libscope", (0, ScaledYOffset) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale:(1.24, 1.24));
-			sb.drawstring(sb.mAmountFont,string.format ("%.1f", degree) , (6 + bob.x, 95 + bob.y), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_BLACK);
-			sb.drawstring(sb.mAmountFont,string.format ("%i", hdw.WeaponStatus[BRProp_DropAdjust]), (6+bob.x,17+bob.y), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_BLACK);
+			sb.DrawImage(
+				"libscope", (0, ScaledYOffset) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER/* ,
+				scale:(1.24, 1.24) */
+			);
+			sb.drawstring(
+				sb.mAmountFont,string.format ("%.1f", degree),
+				(6 + bob.x, 95 + bob.y), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_RIGHT,
+				Font.CR_BLACK
+			);
+			sb.drawstring(
+				sb.mAmountFont,string.format ("%i", hdw.WeaponStatus[BRProp_DropAdjust]),
+				(6+bob.x,17+bob.y), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_RIGHT,
+				Font.CR_BLACK
+			);
 		}
 	}
 
