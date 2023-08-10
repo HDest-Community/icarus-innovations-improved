@@ -124,7 +124,7 @@ class HDFlamethrower : HDWeapon
 	Override string gethelptext()
 	{
 		return
-		WEPHELP_FIRE.."  Throw Flames.\n"
+		WEPHELP_FIRE.."  Throw Flames\n"
 		..WEPHELP_ALTFIRE.."  Airblast\n"
 		..WEPHELP_RELOAD.."  Reload Canister\n"
 		..WEPHELP_UNLOAD.."  Unload Canister\n";
