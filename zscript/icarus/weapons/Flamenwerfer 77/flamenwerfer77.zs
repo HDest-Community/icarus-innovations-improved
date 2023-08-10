@@ -124,8 +124,8 @@ class HDFlamethrower : HDWeapon
 	Override string gethelptext()
 	{
 		return
-		WEPHELP_FIRE.."  Burn the heretic. Kill the mutant. Purge the unclean.\n"
-		..WEPHELP_ALTFIRE.."  Get Back, Xeno Scum!\n"
+		WEPHELP_FIRE.."  Throw Flames.\n"
+		..WEPHELP_ALTFIRE.."  Airblast\n"
 		..WEPHELP_RELOAD.."  Reload Canister\n"
 		..WEPHELP_UNLOAD.."  Unload Canister\n";
 	}
@@ -497,6 +497,7 @@ class HDFireCone : HDActor
 		DamageFunction (0);
 		Alpha 0.5;
 		Scale 0.05;
+		Radius 0.6;
 		RenderStyle "Add";
 		Decal "Scorch";
 		+RIPPER
@@ -512,28 +513,22 @@ class HDFireCone : HDActor
 		Spawn:
 			FLMP ABCDEFGHIJKLMNOP 2
 			{
-				scale.x+=0.1;
-				scale.y+=0.1;
+				scale+=(0.1, 0.1);
 				A_FadeOut(0.05);
 
-				if (!invoker.PrettyLights)
-				{
-					invoker.PrettyLights = CVar.GetCVar('Flamer_PrettyLights');
-				}
-				if (invoker.PrettyLights.GetBool())
-				{
-					A_SpawnItemEx("FireballLight");
-				}
+				if (!invoker.PrettyLights) invoker.PrettyLights = CVar.GetCVar('Flamer_PrettyLights');
 
-				BlockThingsIterator it = BlockThingsIterator.Create(self, HDCONST_ONEMETRE * 2);
+				if (invoker.PrettyLights.GetBool()) A_SpawnItemEx("FireballLight");
+
+				let burnRange = HDCONST_ONEMETRE * 2 * scale.x;
+
+				BlockThingsIterator it = BlockThingsIterator.Create(self, burnRange);
 				while (it.Next())
 				{
-					if (it.thing.Health <= 0 || !it.thing.bISMONSTER || Distance3D(it.thing) > HDCONST_ONEMETRE * 2)
-					{
-						continue;
-					}
-					it.thing.DamageMobj(self, target, random(15, 30), 'Heat', DMG_THRUSTLESS);
-					it.thing.A_GiveInventory("Heat", 100);
+					if (
+						Distance3D(it.thing) <= burnRange
+						&& it.thing.bshootable
+					) A_Immolate(it.thing, target, 20);
 				}
 			}
 			stop;
