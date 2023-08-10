@@ -124,8 +124,8 @@ class HDFlamethrower : HDWeapon
 	Override string gethelptext()
 	{
 		return
-		WEPHELP_FIRE.."  Burn the heretic. Kill the mutant. Purge the unclean.\n"
-		..WEPHELP_ALTFIRE.."  Get Back, Xeno Scum!\n"
+		WEPHELP_FIRE.."  Throw Flames.\n"
+		..WEPHELP_ALTFIRE.."  Airblast\n"
 		..WEPHELP_RELOAD.."  Reload Canister\n"
 		..WEPHELP_UNLOAD.."  Unload Canister\n";
 	}
