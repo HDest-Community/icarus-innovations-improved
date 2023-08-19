@@ -86,6 +86,10 @@ MENU_GFB9_TITLE                         = "------ Gretchenfrage Blaster Mk. 9 Op
 MENU_GFB9_PISTOL_SPAWNTEXT              = "Control the spawn rate of the GFB-9 on Pistols:";
 MENU_GFB9_BACKPACKS                     = "Control whether the GFB-9 spawns in Backpacks:";
 
+// HEV Armour Options Text
+MENU_HEVARMOUR_TITLE                    = "------ HEV Armor Options ------";
+MENU_HEVARMOUR_ARMOUR_SPAWNTEXT         = "Control the spawn rate of the HEV Armor on Garrison and Battle Armour:";
+
 // Modular Battle Rifle Options Text
 MENU_MBR_TITLE                          = "------ Modular Battle Rifle Options ------";
 MENU_MBR_CHAINGUN_SPAWNTEXT             = "Control the spawn rate of the MBR on Vulcanettes:";
@@ -96,10 +100,6 @@ MENU_MBRMAGHEAVY_BACKPACKS              = "Control whether MBR Heavy Magazines s
 
 MENU_MBRMAGLIGHT_SHELLBOX_SPAWNTEXT     = "Control the spawn rate of MBR Light Magazines on Shell Boxes:";
 MENU_MBRMAGLIGHT_BACKPACKS              = "Control whether MBR Light Magazines spawn in Backpacks:";
-
-// HEV Armour Options Text
-MENU_HEVARMOUR_TITLE                    = "------ HEV Armor Options ------";
-MENU_HEVARMOUR_ARMOUR_SPAWNTEXT         = "Control the spawn rate of the HEV Armor on Garrison and Battle Armour:";
 
 // NCT Options Text
 MENU_NCT_TITLE                          = "------ NS3-Cr.Kt Options ------";
@@ -165,6 +165,7 @@ TAG_GASTANK                             = "Fuel Tank";
 TAG_GFB9                                = "Gretchenfrage Blaster Mk. 9";
 TAG_HEVARMOUR                           = "HEV Armor";
 TAG_HEVARMOURSPARE                      = "HEV Armor (spare)";
+TAG_MBR                                 = "Modular Battle Rifle";
 TAG_NCT                                 = "NS3-Cr.Kt";
 TAG_NYX                                 = "CM-3 'Nyx' .355 Burst-Fire Magnum";
 TAG_NYXMAG                              = "Nyx Magazine";
