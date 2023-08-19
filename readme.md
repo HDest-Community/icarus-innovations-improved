@@ -107,6 +107,10 @@ This mod aims to maintain and improve Icarus's Innovations, by updating them to 
 ## Credits
 ---
 
+Original Mod Credits are displayed below.
+- Undead Zeratul, for aggregating weapons into this pack, updating as needed, adding spawning handler & menus.
+- Underqualified_Gunman, for adding brightmaps to UMP-45's glow sights.
+
 ### Barracuda
 ---
 Code:
