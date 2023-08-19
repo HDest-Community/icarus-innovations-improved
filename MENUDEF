@@ -291,12 +291,12 @@ OptionMenu "mbrSpawning" {
  	StaticText ""
 
 	StaticText "$MENU_MAGSPAWNOPTIONS", "Green"
-    StaticText "$MENU_MBRMAGHEAVY_CLIPMAG_SPAWNTEXT", "White"
+    StaticText "$MENU_MBRMAGHEAVY_ROCKETBOX_SPAWNTEXT", "White"
 	Option "$MENU_MAGSPAWNRATE", "mbrmagheavy_rocketbox_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmagheavy_rocketbox_spawn_bias"
  	StaticText ""
 	
-    StaticText "$MENU_MBRMAGLIGHT_CLIPMAG_SPAWNTEXT", "White"
+    StaticText "$MENU_MBRMAGLIGHT_SHELLBOX_SPAWNTEXT", "White"
 	Option "$MENU_MAGSPAWNRATE", "mbrmaglight_shellbox_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmaglight_shellbox_spawn_bias"
  	StaticText ""
