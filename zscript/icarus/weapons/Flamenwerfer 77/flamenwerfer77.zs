@@ -199,7 +199,7 @@ class HDFlamethrower : HDWeapon
 			}
 			Stop;
 		Hold:
-			FLAM B 1 A_JumpIf(invoker.WeaponStatus[FTProp_Gasoline] > 0,"Burn");
+			FLAM B 1 bright A_JumpIf(invoker.WeaponStatus[FTProp_Gasoline] > 0,"Burn");
 			Goto Nope;
 		Burn:
 			FLAF A 1 Bright
@@ -216,7 +216,7 @@ class HDFlamethrower : HDWeapon
 				invoker.WeaponStatus[FTProp_Gasoline]--;
 				A_MuzzleClimb(randompick(-1, 1) * frandom(0.1, 0.1), randompick(-1, 1) * frandom(0.2, 0.2));
 			}
-			FLAF ABCD 1
+			FLAF ABCD 1 bright
 			{
 				player.GetPSprite(PSP_WEAPON).frame;
 				A_FireProjectile("HDFireCone", frandom(-3, 3), spawnheight: (3.5 * cos(-pitch)) * player.crouchfactor);
@@ -511,7 +511,7 @@ class HDFireCone : HDActor
 	States
 	{
 		Spawn:
-			FLMP ABCDEFGHIJKLMNOP 2
+			FLMP ABCDEFGHIJKLMNOP 2 bright
 			{
 				scale+=(0.1, 0.1);
 				A_FadeOut(0.05);
@@ -520,7 +520,7 @@ class HDFireCone : HDActor
 
 				if (invoker.PrettyLights.GetBool()) A_SpawnItemEx("FireballLight");
 
-				let burnRange = HDCONST_ONEMETRE * 2 * scale.x;
+				let burnRange = HDCONST_ONEMETRE * 2 * (scale.x*1.5);
 
 				BlockThingsIterator it = BlockThingsIterator.Create(self, burnRange);
 				while (it.Next())
@@ -533,7 +533,7 @@ class HDFireCone : HDActor
 			}
 			stop;
 		Death:
-			FLMP ABCDEFGHIJKLMNOP 1
+			FLMP ABCDEFGHIJKLMNOP 1 bright
 			{
 				scale.x+=0.05;
 				scale.y+=0.05;
