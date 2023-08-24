@@ -520,7 +520,7 @@ class HDFireCone : HDActor
 
 				if (invoker.PrettyLights.GetBool()) A_SpawnItemEx("FireballLight");
 
-				let burnRange = HDCONST_ONEMETRE * 1.5;
+				let burnRange = HDCONST_ONEMETRE * clamp(max(scale.x, 0.65) * 1.5, 1.0, 3.5);
 
 				BlockThingsIterator it = BlockThingsIterator.Create(self, burnRange);
 				while (it.Next())
