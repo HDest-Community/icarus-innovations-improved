@@ -169,8 +169,10 @@ class IcarusWepsHandler : EventHandler {
         if (!six12_allowBackpacks)         backpackBlacklist.push((Class<Inventory>)('HDSix12'));
         if (!ump45_allowBackpacks)         backpackBlacklist.push((Class<Inventory>)('HDUMP'));
         if (!usp45_allowBackpacks)         backpackBlacklist.push((Class<Inventory>)('HDUSP'));
-		
+
         if (!gastank_allowBackpacks)       backpackBlacklist.push((Class<Inventory>)('HDGasTank'));
+        if (!mbrmagheavy_allowBackpacks)   backpackBlacklist.push((Class<Inventory>)('HDMBRMagHeavy'));
+        if (!mbrmaglight_allowBackpacks)   backpackBlacklist.push((Class<Inventory>)('HDMBRMagLight'));
         if (!nyxmag_allowBackpacks)        backpackBlacklist.push((Class<Inventory>)('HDNyxMag'));
         if (!pd42mag_allowBackpacks)       backpackBlacklist.push((Class<Inventory>)('HDPDFourMag'));
         if (!six12shellmag_allowBackpacks) backpackBlacklist.push((Class<Inventory>)('HDSix12MagShells'));
