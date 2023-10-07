@@ -59,11 +59,12 @@ server bool nct_persistent_spawning = false;
 server bool nyx_allowBackpacks = true;
 server int nyx_pistol_spawn_bias = 19;
 server int nyx_hunter_spawn_bias = 49;
+server int nyx_slayer_spawn_bias = 49;
 server bool nyx_persistent_spawning = false;
 
 // PD-42
 server bool pd42_allowBackpacks = true;
-server int pd42_clipbox_spawn_bias = 14;
+server int pd42_zm66_spawn_bias = 14;
 server bool pd42_persistent_spawning = false;
 
 // Six-12
@@ -74,7 +75,7 @@ server bool six12_persistent_spawning = false;
 
 // UMP
 server bool ump45_allowBackpacks = true;
-server int ump45_clipbox_spawn_bias = 9;
+server int ump45_smg_spawn_bias = 9;
 server bool ump45_persistent_spawning = false;
 
 // USP

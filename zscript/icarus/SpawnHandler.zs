@@ -260,7 +260,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// Bitch LMG
 		Array<IcarusSpawnItemEntry> spawns_bitch;
-		spawns_bitch.push(addItemEntry('Vulcanette', bitch_chaingun_spawn_bias));
+		spawns_bitch.push(addItemEntry('ZM66AssaultRifle', bitch_chaingun_spawn_bias));
 		addItem('BitchRandom', spawns_bitch, bitch_persistent_spawning);
 
 		// Fenris
@@ -278,8 +278,6 @@ class IcarusWepsHandler : EventHandler {
 		Array<IcarusSpawnItemEntry> spawns_frontiersman;
 		spawns_frontiersman.push(addItemEntry('Hunter', frontiersman_hunter_spawn_bias));
 		spawns_frontiersman.push(addItemEntry('Slayer', frontiersman_slayer_spawn_bias));
-		// spawns_frontiersman.push(addItemEntry('HdAmBoxUnarmed', frontiersman_clipbox_spawn_bias));
-		// spawns_frontiersman.push(addItemEntry('HdAmBox', frontiersman_clipbox_spawn_bias));
 		addItem('FrontierSpawner', spawns_frontiersman, frontiersman_persistent_spawning);
 
 		// GFBlaster
@@ -289,7 +287,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// Modular Battle Rifle
 		Array<IcarusSpawnItemEntry> spawns_mbr;
-		spawns_mbr.push(addItemEntry('Vulcanette', mbr_chaingun_spawn_bias));
+		spawns_mbr.push(addItemEntry('ZM66AssaultRifle', mbr_chaingun_spawn_bias));
 		addItem('MBRRandom', spawns_mbr, mbr_persistent_spawning);
 
 		// NCT
@@ -301,12 +299,12 @@ class IcarusWepsHandler : EventHandler {
 		Array<IcarusSpawnItemEntry> spawns_nyx;
 		spawns_nyx.push(addItemEntry('HDPistol', nyx_pistol_spawn_bias));
 		spawns_nyx.push(addItemEntry('Hunter', nyx_hunter_spawn_bias));
+		spawns_nyx.push(addItemEntry('Slayer', nyx_slayer_spawn_bias));
 		addItem('NyxRandom', spawns_nyx, nyx_persistent_spawning);
 
 		// PD-42
 		Array<IcarusSpawnItemEntry> spawns_pd42;
-		spawns_pd42.push(addItemEntry('HDAmBoxUnarmed', pd42_clipbox_spawn_bias));
-		spawns_pd42.push(addItemEntry('HdAmBox', pd42_clipbox_spawn_bias));
+		spawns_pd42.push(addItemEntry('ZM66AssaultRifle', pd42_zm66_spawn_bias));
 		addItem('PDFourRandom', spawns_pd42, pd42_persistent_spawning);
 
 		// Six-12
@@ -317,8 +315,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// UMP
 		Array<IcarusSpawnItemEntry> spawns_ump;
-		spawns_ump.push(addItemEntry('HDAmBoxUnarmed', ump45_clipbox_spawn_bias));
-		spawns_ump.push(addItemEntry('HdAmBox', ump45_clipbox_spawn_bias));
+		spawns_ump.push(addItemEntry('HDSMG', ump45_smg_spawn_bias));
 		addItem('UMPrandom', spawns_ump, ump45_persistent_spawning);
 
 		// USP
@@ -371,7 +368,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// UMP Magazine
 		Array<IcarusSpawnItemEntry> spawns_umpmag;
-		spawns_umpmag.push(addItemEntry('HD4mMag', ump45mag_clipmag_spawn_bias));
+		spawns_umpmag.push(addItemEntry('HD9mMag30', ump45mag_clipmag_spawn_bias));
 		addItem('HDUMPMag', spawns_umpmag, ump45mag_persistent_spawning);
 
 		// USP Magazine

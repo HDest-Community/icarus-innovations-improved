@@ -86,6 +86,12 @@ OptionMenu "nyxSpawning" {
     StaticText "$MENU_NYX_PISTOL_SPAWNTEXT", "White"
 	Option "$MENU_WEPSPAWNRATE", "nyx_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_pistol_spawn_bias"
+    StaticText "$MENU_NYX_HUNTER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "nyx_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_hunter_spawn_bias"
+    StaticText "$MENU_NYX_SLAYER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "nyx_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_slayer_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_NYX_BACKPACKS", "White"
@@ -330,9 +336,9 @@ OptionMenu "pd42Spawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "Green"
-    StaticText "$MENU_PD42_CLIPBOX_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "pd42_clipbox_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar pd42_clipbox_spawn_bias"
+    StaticText "$MENU_PD42_ZM66_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "pd42_zm66_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar pd42_zm66_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_PD42_BACKPACKS", "White"
@@ -369,9 +375,9 @@ OptionMenu "ump45Spawning" {
     StaticText ""
 
 	StaticText "$MENU_WEPSPAWNOPTIONS", "Green"
-    StaticText "$MENU_UMP_CLIPBOX_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "ump45_clipbox_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar ump45_clipbox_spawn_bias"
+    StaticText "$MENU_UMP_SMG_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "ump45_smg_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar ump45_smg_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_UMP_BACKPACKS", "White"

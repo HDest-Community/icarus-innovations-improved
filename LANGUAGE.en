@@ -48,7 +48,7 @@ MENU_BARRACUDA_BACKPACKS                = "Control whether the Barracuda spawns 
 
 // Bitch Options Text
 MENU_BITCH_TITLE                        = "------ 'Bitch' 4.26mm LMG Options ------";
-MENU_BITCH_CHAINGUN_SPAWNTEXT           = "Control the spawn rate of the Bitch on Vulcanettes:";
+MENU_BITCH_CHAINGUN_SPAWNTEXT           = "Control the spawn rate of the Bitch on ZM66 Assault Rifles:";
 MENU_BITCH_BACKPACKS                    = "Control whether the Bitch spawns in Backpacks:";
 
 // Fenris Options Text
@@ -92,7 +92,7 @@ MENU_HEVARMOUR_ARMOUR_SPAWNTEXT         = "Control the spawn rate of the HEV Arm
 
 // Modular Battle Rifle Options Text
 MENU_MBR_TITLE                          = "------ Modular Battle Rifle Options ------";
-MENU_MBR_CHAINGUN_SPAWNTEXT             = "Control the spawn rate of the MBR on Vulcanettes:";
+MENU_MBR_CHAINGUN_SPAWNTEXT             = "Control the spawn rate of the MBR on ZM66 Assault Rifles:";
 MENU_MBR_BACKPACKS                      = "Control whether the MBR spawns in Backpacks:";
 
 MENU_MBRMAGHEAVY_ROCKETBOX_SPAWNTEXT    = "Control the spawn rate of MBR Heavy Magazines on Rocket Boxes:";
@@ -109,6 +109,8 @@ MENU_NCT_BACKPACKS                      = "Control whether the NS3-Cr.Kt spawns 
 // Nyx Options Text
 MENU_NYX_TITLE                          = "------ CM-3 'Nyx' .355 Burst-Fire Magnum Options ------";
 MENU_NYX_PISTOL_SPAWNTEXT               = "Control the spawn rate of the Nyx on Pistols:";
+MENU_NYX_HUNTER_SPAWNTEXT               = "Control the spawn rate of the Nyx on Hunter Shotguns:";
+MENU_NYX_SLAYER_SPAWNTEXT               = "Control the spawn rate of the Nyx on Slayer Shotguns:";
 MENU_NYX_BACKPACKS                      = "Control whether the Nyx spawns in Backpacks:";
 
 MENU_NYXMAG_CLIPMAG_SPAWNTEXT           = "Control the spawn rate of Nyx Magazines on Clip Magazines:";
@@ -117,7 +119,7 @@ MENU_NYXMAG_BACKPACKS                   = "Control whether Nyx Magazines spawn i
 
 // PD-42 Options Text
 MENU_PD42_TITLE                         = "------ PD-42 4.26mm Suppressed PDW Options ------";
-MENU_PD42_CLIPBOX_SPAWNTEXT             = "Control the spawn rate of the PD-42 on Clip Boxes:";
+MENU_PD42_ZM66_SPAWNTEXT                = "Control the spawn rate of the PD-42 on ZM66 Assault Rifles:";
 MENU_PD42_BACKPACKS                     = "Control whether the PD-42 spawns in Backpacks:";
 
 MENU_PD42MAG_CLIPMAG_SPAWNTEXT          = "Control the spawn rate of PD-42 Magazines on Clip Magazines:";
@@ -140,7 +142,7 @@ MENU_SIX12MAG_SLUG_PERSISTENCY          = "Persistent Slug Magazine Spawns: ";
 
 // UMP-45 Options Text
 MENU_UMP_TITLE                          = "------ UMP-45 .45 ACP PDW Options ------";
-MENU_UMP_CLIPBOX_SPAWNTEXT              = "Control the spawn rate of the UMP-45 on Clip Boxes:";
+MENU_UMP_SMG_SPAWNTEXT                  = "Control the spawn rate of the UMP-45 on SMGs:";
 MENU_UMP_BACKPACKS                      = "Control whether the UMP-45 spawns in Backpacks:";
 
 MENU_UMPMAG_CLIPMAG_SPAWNTEXT           = "Control the spawn rate of UMP-45 Magazines on Clip Magazines:";
