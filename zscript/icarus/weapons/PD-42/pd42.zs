@@ -303,7 +303,7 @@ class HDPDFour : HDWeapon {
 				HDBulletActor.FireBullet(self, "HDB_SLUG", speedfactor: 0.65);
 				invoker.weaponStatus[PDS_FLAGS] &= ~PDF_SLUGLOADED;
 				A_AlertMonsters();
-				A_StartSound("weapons/hunter", CHAN_WEAPON);
+				A_StartSound("PD42/SluggerFire", CHAN_WEAPON);
 				A_ZoomRecoil(0.95);
 			}
 			#### # 2 bright
@@ -621,7 +621,7 @@ class HDPDFourMag : HDMagAmmo {
 
 	const MagCapacity = 36;
 	const EncMagEmpty = 6;
-	const EncMagLoaded = EncMagEmpty * 0.8;
+	const EncMagLoaded = EncMagEmpty * 1.2;
 
 	Default {
 		HDMagAmmo.MaxPerUnit MagCapacity;
