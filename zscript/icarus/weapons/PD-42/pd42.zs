@@ -48,7 +48,7 @@ class HDPDFour : HDWeapon {
 			bulk += ENC_SHELLLOADED;
 		}
 
-		return 140 + bulk;
+		return 80 + bulk;
 	}
 
 	override void PostBeginPlay() {
@@ -278,7 +278,7 @@ class HDPDFour : HDWeapon {
 		flash:
 			PDFF A 1
 			{
-				HDBulletActor.FireBullet(self, "HDB_426", speedfactor: 0.65);
+				HDBulletActor.FireBullet(self, "HDB_426", speedfactor: 0.9);
 				A_AlertMonsters(HDCONST_ONEMETRE * 15);
 				A_ZoomRecoil(0.95);
 				A_StartSound("PD42/Fire", CHAN_WEAPON);
@@ -300,7 +300,7 @@ class HDPDFour : HDWeapon {
 			PDFF B 0
 			{
 				A_WeaponOffset(0, 36);
-				HDBulletActor.FireBullet(self, "HDB_SLUG", speedfactor: 0.35);
+				HDBulletActor.FireBullet(self, "HDB_SLUG", speedfactor: 0.65);
 				invoker.weaponStatus[PDS_FLAGS] &= ~PDF_SLUGLOADED;
 				A_AlertMonsters();
 				A_StartSound("PD42/SluggerFire", CHAN_WEAPON);
@@ -311,7 +311,7 @@ class HDPDFour : HDWeapon {
 				HDFlashAlpha(-200);
 				A_Light1();
 			}
-			TNT1 A 0 A_MuzzleClimb(randompick(-1,1)*5,-frandom(5.,8.), randompick(-1,1)*4,-frandom(3.,6.), randompick(-1,1)*3,-frandom(2.,4.), randompick(-1,1)*2,-frandom(1.,2.));
+			TNT1 A 0 A_MuzzleClimb(-frandom(-0.5, 0.5), -frandom(1.5, 2.0), -frandom(-0.6, 0.6), -frandom(1.5, 2.0));
 			goto lightdone; 
 
 		unload:
@@ -620,8 +620,8 @@ class HDPDFourMag : HDMagAmmo {
 	}
 
 	const MagCapacity = 36;
-	const EncMagEmpty = 10;
-	const EncMagLoaded = EncMagEmpty * 2.0;
+	const EncMagEmpty = 6;
+	const EncMagLoaded = EncMagEmpty * 1.2;
 
 	Default {
 		HDMagAmmo.MaxPerUnit MagCapacity;
