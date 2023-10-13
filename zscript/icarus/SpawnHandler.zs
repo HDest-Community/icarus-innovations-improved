@@ -254,30 +254,30 @@ class IcarusWepsHandler : EventHandler {
 
 		// Barracuda
 		Array<IcarusSpawnItemEntry> spawns_barracuda;
-		spawns_barracuda.push(addItemEntry('Hunter', barracuda_hunter_spawn_bias));
-		spawns_barracuda.push(addItemEntry('Slayer', barracuda_slayer_spawn_bias));
+		spawns_barracuda.push(addItemEntry('HunterRandom', barracuda_hunter_spawn_bias));
+		spawns_barracuda.push(addItemEntry('SlayerRandom', barracuda_slayer_spawn_bias));
 		addItem('BarracudaRandom', spawns_barracuda, barracuda_persistent_spawning);
 
 		// Bitch LMG
 		Array<IcarusSpawnItemEntry> spawns_bitch;
-		spawns_bitch.push(addItemEntry('ZM66AssaultRifle', bitch_chaingun_spawn_bias));
+		spawns_bitch.push(addItemEntry('ChaingunReplaces', bitch_chaingun_spawn_bias));
 		addItem('BitchRandom', spawns_bitch, bitch_persistent_spawning);
 
 		// Fenris
 		Array<IcarusSpawnItemEntry> spawns_fenris;
-		spawns_fenris.push(addItemEntry('Thunderbuster', fenris_thunderbuster_spawn_bias));
+		spawns_fenris.push(addItemEntry('ThunderBuster', fenris_thunderbuster_spawn_bias));
 		addItem('FenrisRandom', spawns_fenris, fenris_persistent_spawning);
 
 		// Flamenwerfer77
 		Array<IcarusSpawnItemEntry> spawns_flamenwerfer;
-		spawns_flamenwerfer.push(addItemEntry('HDRL', flamenwerfer_launcher_spawn_bias));
+		spawns_flamenwerfer.push(addItemEntry('RLReplaces', flamenwerfer_launcher_spawn_bias));
 		spawns_flamenwerfer.push(addItemEntry('BFG9K', flamenwerfer_bfg_spawn_bias));
 		addItem('FlamethrowerSpawner', spawns_flamenwerfer, flamenwerfer_persistent_spawning);
 
 		// Frontiersman
 		Array<IcarusSpawnItemEntry> spawns_frontiersman;
-		spawns_frontiersman.push(addItemEntry('Hunter', frontiersman_hunter_spawn_bias));
-		spawns_frontiersman.push(addItemEntry('Slayer', frontiersman_slayer_spawn_bias));
+		spawns_frontiersman.push(addItemEntry('HunterRandom', frontiersman_hunter_spawn_bias));
+		spawns_frontiersman.push(addItemEntry('SlayerRandom', frontiersman_slayer_spawn_bias));
 		addItem('FrontierSpawner', spawns_frontiersman, frontiersman_persistent_spawning);
 
 		// GFBlaster
@@ -287,7 +287,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// Modular Battle Rifle
 		Array<IcarusSpawnItemEntry> spawns_mbr;
-		spawns_mbr.push(addItemEntry('ZM66AssaultRifle', mbr_chaingun_spawn_bias));
+		spawns_mbr.push(addItemEntry('ClipBoxPickup1', mbr_chaingun_spawn_bias));
 		addItem('MBRRandom', spawns_mbr, mbr_persistent_spawning);
 
 		// NCT
@@ -298,24 +298,24 @@ class IcarusWepsHandler : EventHandler {
 		// Nyx
 		Array<IcarusSpawnItemEntry> spawns_nyx;
 		spawns_nyx.push(addItemEntry('HDPistol', nyx_pistol_spawn_bias));
-		spawns_nyx.push(addItemEntry('Hunter', nyx_hunter_spawn_bias));
-		spawns_nyx.push(addItemEntry('Slayer', nyx_slayer_spawn_bias));
+		spawns_nyx.push(addItemEntry('HunterRandom', nyx_hunter_spawn_bias));
+		spawns_nyx.push(addItemEntry('SlayerRandom', nyx_slayer_spawn_bias));
 		addItem('NyxRandom', spawns_nyx, nyx_persistent_spawning);
 
 		// PD-42
 		Array<IcarusSpawnItemEntry> spawns_pd42;
-		spawns_pd42.push(addItemEntry('ZM66AssaultRifle', pd42_zm66_spawn_bias));
+		spawns_pd42.push(addItemEntry('ClipBoxPickup1', pd42_zm66_spawn_bias));
 		addItem('PDFourRandom', spawns_pd42, pd42_persistent_spawning);
 
 		// Six-12
 		Array<IcarusSpawnItemEntry> spawns_six12;
-		spawns_six12.push(addItemEntry('Hunter', six12_hunter_spawn_bias));
-		spawns_six12.push(addItemEntry('Slayer', six12_slayer_spawn_bias));
+		spawns_six12.push(addItemEntry('HunterRandom', six12_hunter_spawn_bias));
+		spawns_six12.push(addItemEntry('SlayerRandom', six12_slayer_spawn_bias));
 		addItem('Six12Random', spawns_six12, six12_persistent_spawning);
 
 		// UMP
 		Array<IcarusSpawnItemEntry> spawns_ump;
-		spawns_ump.push(addItemEntry('HDSMG', ump45_smg_spawn_bias));
+		spawns_ump.push(addItemEntry('ClipBoxPickup2', ump45_smg_spawn_bias));
 		addItem('UMPrandom', spawns_ump, ump45_persistent_spawning);
 
 		// USP
@@ -331,29 +331,29 @@ class IcarusWepsHandler : EventHandler {
 		// Flamenwerfer Gas Tank
 		Array<IcarusSpawnItemEntry> spawns_gastank;
 		spawns_gastank.push(addItemEntry('RocketAmmo', gastank_rocket_spawn_bias));
-		spawns_gastank.push(addItemEntry('RocketBigPickup', gastank_rocketbox_spawn_bias));
-		spawns_gastank.push(addItemEntry('HDBattery', gastank_battery_spawn_bias));
+		spawns_gastank.push(addItemEntry('RocketBoxRandom', gastank_rocketbox_spawn_bias));
+		spawns_gastank.push(addItemEntry('CellRandom', gastank_battery_spawn_bias));
 		addItem('HDGasTank', spawns_gastank, gastank_persistent_spawning);
 
 		// Modular Battle Rifle Heavy Magazine
 		Array<IcarusSpawnItemEntry> spawns_mbrmagheavy;
-		spawns_mbrmagheavy.push(addItemEntry('RocketBigPickup', mbrmagheavy_rocketbox_spawn_bias));
+		spawns_mbrmagheavy.push(addItemEntry('RocketBoxRandom', mbrmagheavy_rocketbox_spawn_bias));
 		addItem('HDMBRMagHeavy', spawns_mbrmagheavy, mbrmagheavy_persistent_spawning);
 
 		// Modular Battle Rifle Light Magazine
 		Array<IcarusSpawnItemEntry> spawns_mbrmaglight;
-		spawns_mbrmaglight.push(addItemEntry('ShellBoxPickup', mbrmaglight_shellbox_spawn_bias));
+		spawns_mbrmaglight.push(addItemEntry('ShellBoxRandom', mbrmaglight_shellbox_spawn_bias));
 		addItem('HDMBRMagLight', spawns_mbrmaglight, mbrmaglight_persistent_spawning);
 
 		// Nyx Magazine
 		Array<IcarusSpawnItemEntry> spawns_nyxmag;
 		spawns_nyxmag.push(addItemEntry('ShellBoxPickup', nyxmag_shellbox_spawn_bias));
-		spawns_nyxmag.push(addItemEntry('HD9mMag15', nyxmag_clipmag_spawn_bias));
+		spawns_nyxmag.push(addItemEntry('ClipBoxPickup2', nyxmag_clipmag_spawn_bias));
 		addItem('HDNyxMag', spawns_nyxmag, nyxmag_persistent_spawning);
 
 		// PD-42 Magazine
 		Array<IcarusSpawnItemEntry> spawns_pd42mag;
-		spawns_pd42mag.push(addItemEntry('HD4mMag', pd42mag_clipmag_spawn_bias));
+		spawns_pd42mag.push(addItemEntry('ClipMagPickup', pd42mag_clipmag_spawn_bias));
 		addItem('HDPDFourMag', spawns_pd42mag, pd42mag_persistent_spawning);
 
 		// Six-12 Shell Magazine
@@ -368,12 +368,12 @@ class IcarusWepsHandler : EventHandler {
 
 		// UMP Magazine
 		Array<IcarusSpawnItemEntry> spawns_umpmag;
-		spawns_umpmag.push(addItemEntry('HD9mMag30', ump45mag_clipmag_spawn_bias));
+		spawns_umpmag.push(addItemEntry('ClipMagPickup', ump45mag_clipmag_spawn_bias));
 		addItem('HDUMPMag', spawns_umpmag, ump45mag_persistent_spawning);
 
 		// USP Magazine
 		Array<IcarusSpawnItemEntry> spawns_uspmag;
-		spawns_uspmag.push(addItemEntry('HD9mMag15', usp45mag_clipmag_spawn_bias));
+		spawns_uspmag.push(addItemEntry('ClipMagPickup', usp45mag_clipmag_spawn_bias));
 		addItem('HDUSPMag', spawns_uspmag, usp45mag_persistent_spawning);
 
 
@@ -400,20 +400,31 @@ class IcarusWepsHandler : EventHandler {
 		return false;
 	}
 
-	// Tries to create the item via random spawning.
-	bool tryCreateItem(Actor thing, string spawnName, int chance, bool rep) {
-		if (giveRandom(chance)) {
-            if (Actor.Spawn(spawnName, thing.pos) && rep) {
-                if (hd_debug) console.printf(thing.getClassName().." -> "..spawnName);
+    // Tries to replace the item during spawning.
+    bool tryReplaceItem(ReplaceEvent e, string spawnName, int chance) {
+        if (giveRandom(chance)) {
+            if (hd_debug) console.printf(e.replacee.getClassName().." -> "..spawnName);
 
-                thing.destroy();
+            e.replacement = spawnName;
 
-				return true;
-			}
+            return true;
 		}
 
 		return false;
 	}
+
+    // Tries to create the item via random spawning.
+    bool tryCreateItem(Actor thing, string spawnName, int chance) {
+        if (giveRandom(chance)) {
+            if (hd_debug) console.printf(thing.getClassName().." + "..spawnName);
+
+            Actor.Spawn(spawnName, thing.pos);
+
+            return true;
+        }
+
+        return false;
+    }
 
 	override void worldLoaded(WorldEvent e) {
 
@@ -427,12 +438,28 @@ class IcarusWepsHandler : EventHandler {
         }
 	}
 
+    override void checkReplacement(ReplaceEvent e) {
+
+        // If there's nothing to replace or if the replacement is final, quit.
+        if (!e.replacee || e.isFinal) return;
+
+        // If thing being replaced is blacklisted, quit.
+        foreach (bl : blacklist) if (e.replacee is bl) return;
+
+        string candidateName = e.replacee.getClassName();
+
+        // If current map is Range, quit.
+        if (level.MapName == 'RANGE') return;
+
+        handleWeaponReplacements(e, candidateName);
+    }
+
 	override void worldThingSpawned(WorldEvent e) {
 
-		// If thing spawned doesn't exist, quit
+        // If thing spawned doesn't exist, quit.
 		if (!e.thing) return;
 
-		// If thing spawned is blacklisted, quit
+        // If thing spawned is blacklisted, quit.
 		foreach (bl : blacklist) if (e.thing is bl) return;
 
 		string candidateName = e.thing.getClassName();
@@ -443,13 +470,13 @@ class IcarusWepsHandler : EventHandler {
 		// If the thing spawned is an ammunition, add any and all items that can use this.
 		if (ammo) handleAmmoUses(ammo, candidateName);
 
-		// Return if range before replacing things.
+        // If current map is Range, quit.
         if (level.MapName == 'RANGE') return;
 
         if (e.thing is 'HDAmBox') {
             handleAmmoBoxLootTable();
         } else {
-        handleWeaponReplacements(e.thing, ammo, candidateName);
+            handleWeaponSpawns(e.thing, ammo, candidateName);
 	}
     }
 
@@ -480,7 +507,27 @@ class IcarusWepsHandler : EventHandler {
         }
 	}
 
-    private void handleWeaponReplacements(Actor thing, HDAmmo ammo, string candidateName) {
+    private void handleWeaponReplacements(ReplaceEvent e, string candidateName) {
+
+        // Checks if the level has been loaded more than 1 tic.
+        bool prespawn = !(level.maptime > 1);
+
+        // Iterates through the list of item candidates for e.thing.
+        foreach (itemSpawn : itemSpawnList) {
+
+            if ((prespawn || itemSpawn.isPersistent) && itemSpawn.replaceItem) {
+                foreach (spawnReplace : itemSpawn.spawnReplaces) {
+                    if (spawnReplace.name ~== candidateName) {
+                        if (hd_debug) console.printf("Attempting to replace "..candidateName.." with "..itemSpawn.spawnName.."...");
+
+                        if (tryReplaceItem(e, itemSpawn.spawnName, spawnReplace.chance)) return;
+                    }
+                }
+            }
+        }
+    }
+
+    private void handleWeaponSpawns(Actor thing, HDAmmo ammo, string candidateName) {
 
 		// Checks if the level has been loaded more than 1 tic.
 		bool prespawn = !(level.maptime > 1);
@@ -491,12 +538,16 @@ class IcarusWepsHandler : EventHandler {
 			// if an item is owned or is an ammo (doesn't retain owner ptr),
 			// do not replace it.
             let item = Inventory(thing);
-            if ((prespawn || itemSpawn.isPersistent) && (!(item && item.owner) && (!ammo || prespawn))) {
+            if (
+                (prespawn || itemSpawn.isPersistent)
+             && (!(item && item.owner) && (!ammo || prespawn))
+             && !itemSpawn.replaceItem
+            ) {
 				foreach (spawnReplace : itemSpawn.spawnReplaces) {
                     if (spawnReplace.name ~== candidateName) {
-						if (hd_debug) console.printf("Attempting to replace "..candidateName.." with "..itemSpawn.spawnName.."...");
+                        if (hd_debug) console.printf("Attempting to spawn "..itemSpawn.spawnName.." with "..candidateName.."...");
 
-                        if (tryCreateItem(thing, itemSpawn.spawnName, spawnReplace.chance, itemSpawn.replaceItem)) return;
+                        if (tryCreateItem(thing, itemSpawn.spawnName, spawnReplace.chance)) return;
 					}
 				}
 			}
