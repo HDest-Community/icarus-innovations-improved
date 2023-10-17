@@ -383,7 +383,8 @@ class IcarusWepsHandler : EventHandler {
 
 		// HEV Armor
 		Array<IcarusSpawnItemEntry> spawns_hevarmour;
-		spawns_hevarmour.push(addItemEntry('HDArmour', hevarmour_spawn_bias));
+		spawns_hevarmour.push(addItemEntry('GarrisonArmour', hevarmour_spawn_bias));
+		spawns_hevarmour.push(addItemEntry('BattleArmour', hevarmour_spawn_bias));
 		addItem('HEVArmour', spawns_hevarmour, hevarmour_persistent_spawning);
 	}
 
