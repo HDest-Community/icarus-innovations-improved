@@ -282,7 +282,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// GFBlaster
 		Array<IcarusSpawnItemEntry> spawns_gfb9;
-		spawns_gfb9.push(addItemEntry('HDPistol', gfb9_pistol_spawn_bias));
+		spawns_gfb9.push(addItemEntry('HDAutoPistol', gfb9_pistol_spawn_bias));
 		addItem('GFBlasterRandom', spawns_gfb9, gfb9_persistent_spawning);
 
 		// Modular Battle Rifle
@@ -297,7 +297,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// Nyx
 		Array<IcarusSpawnItemEntry> spawns_nyx;
-		spawns_nyx.push(addItemEntry('HDPistol', nyx_pistol_spawn_bias));
+		spawns_nyx.push(addItemEntry('HDAutoPistol', nyx_pistol_spawn_bias));
 		spawns_nyx.push(addItemEntry('HunterRandom', nyx_hunter_spawn_bias));
 		spawns_nyx.push(addItemEntry('SlayerRandom', nyx_slayer_spawn_bias));
 		addItem('NyxRandom', spawns_nyx, nyx_persistent_spawning);
@@ -320,7 +320,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// USP
 		Array<IcarusSpawnItemEntry> spawns_usp;
-		spawns_usp.push(addItemEntry('HDPistol', usp45_pistol_spawn_bias));
+		spawns_usp.push(addItemEntry('HDAutoPistol', usp45_pistol_spawn_bias));
 		addItem('USPRandom', spawns_usp, usp45_persistent_spawning);
 
 
