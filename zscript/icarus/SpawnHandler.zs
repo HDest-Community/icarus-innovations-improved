@@ -265,7 +265,7 @@ class IcarusWepsHandler : EventHandler {
 
 		// Fenris
 		Array<IcarusSpawnItemEntry> spawns_fenris;
-		spawns_fenris.push(addItemEntry('ThunderBuster', fenris_thunderbuster_spawn_bias));
+		spawns_fenris.push(addItemEntry('PlasmaReplaces', fenris_thunderbuster_spawn_bias));
 		addItem('FenrisRandom', spawns_fenris, fenris_persistent_spawning);
 
 		// Flamenwerfer77
