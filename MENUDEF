@@ -102,9 +102,6 @@ OptionMenu "nyxSpawning" {
     StaticText "$MENU_NYXMAG_CLIPMAG_SPAWNTEXT", "White"
 	Option "$MENU_MAGSPAWNRATE", "nyxmag_clipmag_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETMAG", "resetcvar nyxmag_clipmag_spawn_bias"
-    StaticText "$MENU_NYXMAG_SHELLBOX_SPAWNTEXT", "White"
-	Option "$MENU_MAGSPAWNRATE", "nyxmag_shellbox_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETMAG", "resetcvar nyxmag_shellbox_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_NYXMAG_BACKPACKS", "White"
@@ -134,6 +131,9 @@ OptionMenu "usp45Spawning" {
     StaticText "$MENU_USP_PISTOL_SPAWNTEXT", "White"
 	Option "$MENU_WEPSPAWNRATE", "usp45_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar usp45_pistol_spawn_bias"
+    StaticText "$MENU_USP_CLIPBOX_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "usp45_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar usp45_clipbox_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_USP_BACKPACKS", "White"
@@ -226,9 +226,9 @@ OptionMenu "six12Spawning" {
 	Option "$MENU_BACKPACKSALLOWED", "six12shellmag_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText "$MENU_SIX12MAG_SLUG_SLUG_SPAWNTEXT", "White"
-	Option "$MENU_MAGSPAWNRATE", "six12slugmag_slug_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETMAG", "resetcvar six12slugmag_slug_spawn_bias"
+    StaticText "$MENU_SIX12MAG_SLUG_SHELL_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "six12slugmag_shell_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar six12slugmag_shell_spawn_bias"
     StaticText ""
 
 	StaticText "$MENU_SIX12MAG_SLUG_BACKPACKS", "White"
@@ -290,6 +290,9 @@ OptionMenu "mbrSpawning" {
     StaticText "$MENU_MBR_CHAINGUN_SPAWNTEXT", "White"
 	Option "$MENU_WEPSPAWNRATE", "mbr_chaingun_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar mbr_chaingun_spawn_bias"
+    StaticText "$MENU_MBR_CLIPBOX_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "mbr_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar mbr_clipbox_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_MBR_BACKPACKS", "White"
@@ -297,14 +300,14 @@ OptionMenu "mbrSpawning" {
  	StaticText ""
 
 	StaticText "$MENU_MAGSPAWNOPTIONS", "Green"
-    StaticText "$MENU_MBRMAGHEAVY_ROCKETBOX_SPAWNTEXT", "White"
-	Option "$MENU_MAGSPAWNRATE", "mbrmagheavy_rocketbox_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmagheavy_rocketbox_spawn_bias"
+    StaticText "$MENU_MBRMAGHEAVY_CLIPMAG_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "mbrmagheavy_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmagheavy_clipmag_spawn_bias"
  	StaticText ""
 	
-    StaticText "$MENU_MBRMAGLIGHT_SHELLBOX_SPAWNTEXT", "White"
-	Option "$MENU_MAGSPAWNRATE", "mbrmaglight_shellbox_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmaglight_shellbox_spawn_bias"
+    StaticText "$MENU_MBRMAGLIGHT_CLIPMAG_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "mbrmaglight_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmaglight_clipmag_spawn_bias"
  	StaticText ""
 
 	StaticText "$MENU_MBRMAGHEAVY_BACKPACKS", "White"
@@ -336,9 +339,12 @@ OptionMenu "pd42Spawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "Green"
-    StaticText "$MENU_PD42_ZM66_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "pd42_zm66_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar pd42_zm66_spawn_bias"
+    StaticText "$MENU_PD42_CHAINGUN_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "pd42_chaingun_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar pd42_chaingun_spawn_bias"
+    StaticText "$MENU_PD42_CLIPBOX_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "pd42_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar pd42_clipbox_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_PD42_BACKPACKS", "White"
@@ -375,9 +381,12 @@ OptionMenu "ump45Spawning" {
     StaticText ""
 
 	StaticText "$MENU_WEPSPAWNOPTIONS", "Green"
-    StaticText "$MENU_UMP_SMG_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "ump45_smg_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar ump45_smg_spawn_bias"
+    StaticText "$MENU_UMP_CHAINGUN_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "ump45_chaingun_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar ump45_chaingun_spawn_bias"
+    StaticText "$MENU_UMP_CLIPBOX_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "ump45_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar ump45_clipbox_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_UMP_BACKPACKS", "White"
@@ -508,8 +517,8 @@ OptionMenu "fenrisSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Cyan"
     StaticText "$MENU_FENRIS_PLASMA_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "fenris_thunderbuster_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar fenris_thunderbuster_spawn_bias"
+	Option "$MENU_WEPSPAWNRATE", "fenris_plasma_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar fenris_plasma_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_FENRIS_BACKPACKS", "White"
@@ -538,6 +547,9 @@ OptionMenu "gfb9Spawning" {
     StaticText "$MENU_GFB9_PISTOL_SPAWNTEXT", "White"
 	Option "$MENU_WEPSPAWNRATE", "gfb9_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar gfb9_pistol_spawn_bias"
+    StaticText "$MENU_GFB9_CLIPBOX_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "gfb9_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar gfb9_clipbox_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_GFB9_BACKPACKS", "White"
@@ -563,6 +575,9 @@ OptionMenu "nctSpawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "Cyan"
+    StaticText "$MENU_NCT_CHAINSAW_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "nct_chainsaw_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar nct_chainsaw_spawn_bias"
     StaticText "$MENU_NCT_BFG_SPAWNTEXT", "White"
 	Option "$MENU_WEPSPAWNRATE", "nct_bfg_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar nct_bfg_spawn_bias"
