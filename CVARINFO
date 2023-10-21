@@ -63,6 +63,7 @@ server bool nyx_allowBackpacks = true;
 server int nyx_pistol_spawn_bias = 19;
 server int nyx_hunter_spawn_bias = 49;
 server int nyx_slayer_spawn_bias = 49;
+server int nyx_clipbox_spawn_bias = 19;
 server bool nyx_persistent_spawning = false;
 
 // PD-42

@@ -303,6 +303,7 @@ class IcarusWepsHandler : EventHandler {
         spawns_nyx.push(addItemEntry('PistolReplaces', nyx_pistol_spawn_bias));
         spawns_nyx.push(addItemEntry('HunterRandom', nyx_hunter_spawn_bias));
         spawns_nyx.push(addItemEntry('SlayerRandom', nyx_slayer_spawn_bias));
+        spawns_nyx.push(addItemEntry('ClipBoxPickup2', nyx_clipbox_spawn_bias));
         addItem('NyxRandom', spawns_nyx, nyx_persistent_spawning);
 
         // PD-42

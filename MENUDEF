@@ -92,6 +92,9 @@ OptionMenu "nyxSpawning" {
     StaticText "$MENU_NYX_SLAYER_SPAWNTEXT", "White"
 	Option "$MENU_WEPSPAWNRATE", "nyx_slayer_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_slayer_spawn_bias"
+    StaticText "$MENU_NYX_CLIPBOX_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "nyx_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_clipbox_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_NYX_BACKPACKS", "White"
