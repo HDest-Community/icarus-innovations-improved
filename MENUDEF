@@ -61,7 +61,7 @@ OptionMenu "IcarusMenu" {
 	StaticText ""
     Submenu "$TAG_NCT", "nctSpawning", 0, 1
 	StaticText ""
-	
+
     StaticText "$MENU_ARMOUR_TITLE", "Sapphire"
     StaticText ""
     Submenu "$TAG_HEVARMOUR", "hevArmourSpawning", 0, 1
@@ -77,6 +77,7 @@ OptionMenu "IcarusMenu" {
 
 OptionMenu "nyxSpawning" {
     Title "$MENU_NYX_TITLE"
+
    	StaticText "$MENU_NOTICE", "Yellow"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -96,7 +97,7 @@ OptionMenu "nyxSpawning" {
 	Option "$MENU_WEPSPAWNRATE", "nyx_clipbox_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_clipbox_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_NYX_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "nyx_allowBackpacks", "OnOff"
  	StaticText ""
@@ -106,7 +107,7 @@ OptionMenu "nyxSpawning" {
 	Option "$MENU_MAGSPAWNRATE", "nyxmag_clipmag_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETMAG", "resetcvar nyxmag_clipmag_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_NYXMAG_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "nyxmag_allowBackpacks", "OnOff"
  	StaticText ""
@@ -125,6 +126,7 @@ OptionMenu "nyxSpawning" {
 
 OptionMenu "usp45Spawning" {
     Title "$MENU_USP_TITLE"
+
    	StaticText "$MENU_NOTICE", "Yellow"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -138,7 +140,7 @@ OptionMenu "usp45Spawning" {
 	Option "$MENU_WEPSPAWNRATE", "usp45_clipbox_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar usp45_clipbox_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_USP_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "usp45_allowBackpacks", "OnOff"
  	StaticText ""
@@ -170,6 +172,7 @@ OptionMenu "usp45Spawning" {
 
 OptionMenu "barracudaSpawning" {
     Title "$MENU_BARRACUDA_TITLE"
+
    	StaticText "$MENU_NOTICE", "Red"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -183,7 +186,7 @@ OptionMenu "barracudaSpawning" {
 	Option "$MENU_WEPSPAWNRATE", "barracuda_slayer_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar barracuda_slayer_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_BARRACUDA_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "barracuda_allowBackpacks", "OnOff"
  	StaticText ""
@@ -201,6 +204,7 @@ OptionMenu "barracudaSpawning" {
 
 OptionMenu "six12Spawning" {
     Title "$MENU_SIX12_TITLE"
+
    	StaticText "$MENU_NOTICE", "Red"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -214,7 +218,7 @@ OptionMenu "six12Spawning" {
 	Option "$MENU_WEPSPAWNRATE", "six12_slayer_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar six12_slayer_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_SIX12_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "six12_allowBackpacks", "OnOff"
  	StaticText ""
@@ -256,6 +260,7 @@ OptionMenu "six12Spawning" {
 
 OptionMenu "bitchSpawning" {
     Title "$MENU_BITCH_TITLE"
+
    	StaticText "$MENU_NOTICE", "Green"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -266,7 +271,7 @@ OptionMenu "bitchSpawning" {
 	Option "$MENU_WEPSPAWNRATE", "bitch_chaingun_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar bitch_chaingun_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_BITCH_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "bitch_allowBackpacks", "OnOff"
  	StaticText ""
@@ -284,6 +289,7 @@ OptionMenu "bitchSpawning" {
 
 OptionMenu "mbrSpawning" {
     Title "$MENU_MBR_TITLE"
+
    	StaticText "$MENU_NOTICE", "Green"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -297,7 +303,7 @@ OptionMenu "mbrSpawning" {
 	Option "$MENU_WEPSPAWNRATE", "mbr_clipbox_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar mbr_clipbox_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_MBR_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "mbr_allowBackpacks", "OnOff"
  	StaticText ""
@@ -306,17 +312,21 @@ OptionMenu "mbrSpawning" {
     StaticText "$MENU_MBRMAGHEAVY_CLIPMAG_SPAWNTEXT", "White"
 	Option "$MENU_MAGSPAWNRATE", "mbrmagheavy_clipmag_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmagheavy_clipmag_spawn_bias"
+    StaticText "$MENU_MBRMAGHEAVY_ROCKET_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "mbrmagheavy_rocket_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmagheavy_rocket_spawn_bias"
  	StaticText ""
-	
     StaticText "$MENU_MBRMAGLIGHT_CLIPMAG_SPAWNTEXT", "White"
 	Option "$MENU_MAGSPAWNRATE", "mbrmaglight_clipmag_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmaglight_clipmag_spawn_bias"
+    StaticText "$MENU_MBRMAGLIGHT_SHELL_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "mbrmaglight_shell_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmaglight_shell_spawn_bias"
  	StaticText ""
 
 	StaticText "$MENU_MBRMAGHEAVY_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "mbrmagheavy_allowBackpacks", "OnOff"
  	StaticText ""
-
 	StaticText "$MENU_MBRMAGLIGHT_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "mbrmaglight_allowBackpacks", "OnOff"
  	StaticText ""
@@ -336,6 +346,7 @@ OptionMenu "mbrSpawning" {
 
 OptionMenu "pd42Spawning" {
     Title "$MENU_PD42_TITLE"
+
    	StaticText "$MENU_NOTICE", "Green"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -349,7 +360,7 @@ OptionMenu "pd42Spawning" {
 	Option "$MENU_WEPSPAWNRATE", "pd42_clipbox_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar pd42_clipbox_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_PD42_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "pd42_allowBackpacks", "OnOff"
  	StaticText ""
@@ -378,6 +389,7 @@ OptionMenu "pd42Spawning" {
 
 OptionMenu "ump45Spawning" {
     Title "$MENU_UMP_TITLE"
+
    	StaticText "$MENU_NOTICE", "Green"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -391,7 +403,7 @@ OptionMenu "ump45Spawning" {
 	Option "$MENU_WEPSPAWNRATE", "ump45_clipbox_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar ump45_clipbox_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_UMP_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "ump45_allowBackpacks", "OnOff"
  	StaticText ""
@@ -427,7 +439,7 @@ OptionMenu "flamenwerferSpawning" {
 
 	Option "$MENU_FLAMENWERFER77_PRETTYLIGHTS", "Flamer_PrettyLights", "YesNo"
     StaticText ""
-	
+
    	StaticText "$MENU_NOTICE", "Brown"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -441,7 +453,7 @@ OptionMenu "flamenwerferSpawning" {
 	Option "$MENU_WEPSPAWNRATE", "flamenwerfer_bfg_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar flamenwerfer_bfg_spawn_bias"
     StaticText ""
-	
+
 	StaticText "$MENU_FLAMENWERFER77_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "flamenwerfer_allowBackpacks", "OnOff"
     StaticText ""
@@ -479,6 +491,7 @@ OptionMenu "flamenwerferSpawning" {
 
 OptionMenu "frontiersmanSpawning" {
     Title "$MENU_FRONTIERSMAN_TITLE"
+
    	StaticText "$MENU_NOTICE", "Orange"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -492,7 +505,7 @@ OptionMenu "frontiersmanSpawning" {
 	Option "$MENU_WEPSPAWNRATE", "frontiersman_slayer_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar frontiersman_slayer_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_FRONTIERSMAN_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "frontiersman_allowBackpacks", "OnOff"
  	StaticText ""
@@ -513,6 +526,7 @@ OptionMenu "frontiersmanSpawning" {
 
 OptionMenu "fenrisSpawning" {
     Title "$MENU_FENRIS_TITLE"
+
    	StaticText "$MENU_NOTICE", "Cyan"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -523,7 +537,7 @@ OptionMenu "fenrisSpawning" {
 	Option "$MENU_WEPSPAWNRATE", "fenris_plasma_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar fenris_plasma_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_FENRIS_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "fenris_allowBackpacks", "OnOff"
  	StaticText ""
@@ -541,6 +555,7 @@ OptionMenu "fenrisSpawning" {
 
 OptionMenu "gfb9Spawning" {
     Title "$MENU_GFB9_TITLE"
+
    	StaticText "$MENU_NOTICE", "Cyan"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -554,7 +569,7 @@ OptionMenu "gfb9Spawning" {
 	Option "$MENU_WEPSPAWNRATE", "gfb9_clipbox_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar gfb9_clipbox_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_GFB9_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "gfb9_allowBackpacks", "OnOff"
  	StaticText ""
@@ -572,6 +587,7 @@ OptionMenu "gfb9Spawning" {
 
 OptionMenu "nctSpawning" {
     Title "$MENU_NCT_TITLE"
+
    	StaticText "$MENU_NOTICE", "Cyan"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -585,7 +601,7 @@ OptionMenu "nctSpawning" {
 	Option "$MENU_WEPSPAWNRATE", "nct_bfg_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar nct_bfg_spawn_bias"
  	StaticText ""
-	
+
 	StaticText "$MENU_NCT_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "nct_allowBackpacks", "OnOff"
  	StaticText ""
@@ -606,15 +622,19 @@ OptionMenu "nctSpawning" {
 
 OptionMenu "hevArmourSpawning" {
     Title "$MENU_HEVARMOUR_TITLE"
+
    	StaticText "$MENU_NOTICE", "Sapphire"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "Sapphire"
-    StaticText "$MENU_HEVARMOUR_ARMOUR_SPAWNTEXT", "White"
-	Option "$MENU_SPAWNRATE", "hevarmour_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETOPTIONS", "resetcvar hevarmour_spawn_bias"
+    StaticText "$MENU_HEVARMOUR_GREENARMOUR_SPAWNTEXT", "White"
+	Option "$MENU_SPAWNRATE", "hevarmour_greenarmour_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETOPTIONS", "resetcvar hevarmour_greenarmour_spawn_bias"
+    StaticText "$MENU_HEVARMOUR_BLUEARMOUR_SPAWNTEXT", "White"
+	Option "$MENU_SPAWNRATE", "hevarmour_bluearmour_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETOPTIONS", "resetcvar hevarmour_bluearmour_spawn_bias"
  	StaticText ""
 
 	StaticText "$MENU_PERSISTENCYOPTIONS", "Sapphire"

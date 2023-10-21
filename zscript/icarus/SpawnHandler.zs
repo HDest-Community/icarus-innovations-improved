@@ -345,11 +345,13 @@ class IcarusWepsHandler : EventHandler {
         // Modular Battle Rifle Heavy Magazine
         Array<IcarusSpawnItemEntry> spawns_mbrmagheavy;
         spawns_mbrmagheavy.push(addItemEntry('ClipMagPickup', mbrmagheavy_clipmag_spawn_bias));
+        spawns_mbrmagheavy.push(addItemEntry('RocketAmmo', mbrmagheavy_rocket_spawn_bias));
         addItem('HDMBRMagHeavy', spawns_mbrmagheavy, mbrmagheavy_persistent_spawning);
 
         // Modular Battle Rifle Light Magazine
         Array<IcarusSpawnItemEntry> spawns_mbrmaglight;
         spawns_mbrmaglight.push(addItemEntry('ClipMagPickup', mbrmaglight_clipmag_spawn_bias));
+        spawns_mbrmaglight.push(addItemEntry('ShellRandom', mbrmaglight_shell_spawn_bias));
         addItem('HDMBRMagLight', spawns_mbrmaglight, mbrmaglight_persistent_spawning);
 
         // Nyx Magazine
@@ -389,8 +391,8 @@ class IcarusWepsHandler : EventHandler {
 
         // HEV Armor
         Array<IcarusSpawnItemEntry> spawns_hevarmour;
-        spawns_hevarmour.push(addItemEntry('GarrisonArmour', hevarmour_spawn_bias));
-        spawns_hevarmour.push(addItemEntry('BattleArmour', hevarmour_spawn_bias));
+        spawns_hevarmour.push(addItemEntry('GarrisonArmour', hevarmour_greenarmour_spawn_bias));
+        spawns_hevarmour.push(addItemEntry('BattleArmour', hevarmour_bluearmour_spawn_bias));
         addItem('HEVArmour', spawns_hevarmour, hevarmour_persistent_spawning);
     }
 
