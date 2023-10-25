@@ -84,31 +84,40 @@ MENU_FRONTIERSMAN_BACKPACKS             = "Control whether the Frontiersman spaw
 // GFB-9 Options Text
 MENU_GFB9_TITLE                         = "------ Gretchenfrage Blaster Mk. 9 Options ------";
 MENU_GFB9_PISTOL_SPAWNTEXT              = "Control the spawn rate of the GFB-9 on Pistols:";
+MENU_GFB9_CLIPBOX_SPAWNTEXT             = "Control the spawn rate of the GFB-9 on Clip Boxes:";
 MENU_GFB9_BACKPACKS                     = "Control whether the GFB-9 spawns in Backpacks:";
 
 // HEV Armour Options Text
 MENU_HEVARMOUR_TITLE                    = "------ HEV Armor Options ------";
-MENU_HEVARMOUR_ARMOUR_SPAWNTEXT         = "Control the spawn rate of the HEV Armor on Garrison and Battle Armour:";
+MENU_HEVARMOUR_GREENARMOUR_SPAWNTEXT    = "Control the spawn rate of the HEV Armor on Garrison Armour:";
+MENU_HEVARMOUR_BLUEARMOUR_SPAWNTEXT     = "Control the spawn rate of the HEV Armor on Battle Armour:";
 
 // Modular Battle Rifle Options Text
 MENU_MBR_TITLE                          = "------ Modular Battle Rifle Options ------";
 MENU_MBR_CHAINGUN_SPAWNTEXT             = "Control the spawn rate of the MBR on Vulcanettes:";
+MENU_MBR_CLIPBOX_SPAWNTEXT              = "Control the spawn rate of the MBR on Clip Boxes:";
 MENU_MBR_BACKPACKS                      = "Control whether the MBR spawns in Backpacks:";
 
-MENU_MBRMAGHEAVY_ROCKETBOX_SPAWNTEXT    = "Control the spawn rate of MBR Heavy Magazines on Rocket Boxes:";
+MENU_MBRMAGHEAVY_CLIPMAG_SPAWNTEXT      = "Control the spawn rate of MBR Heavy Magazines on Clip Magazines:";
+MENU_MBRMAGHEAVY_ROCKET_SPAWNTEXT       = "Control the spawn rate of MBR Heavy Magazines on Rockets:";
 MENU_MBRMAGHEAVY_BACKPACKS              = "Control whether MBR Heavy Magazines spawn in Backpacks:";
 
-MENU_MBRMAGLIGHT_SHELLBOX_SPAWNTEXT     = "Control the spawn rate of MBR Light Magazines on Shell Boxes:";
+MENU_MBRMAGLIGHT_CLIPMAG_SPAWNTEXT      = "Control the spawn rate of MBR Light Magazines on Clip Magazines:";
+MENU_MBRMAGLIGHT_SHELL_SPAWNTEXT        = "Control the spawn rate of MBR Light Magazines on Shells:";
 MENU_MBRMAGLIGHT_BACKPACKS              = "Control whether MBR Light Magazines spawn in Backpacks:";
 
 // NCT Options Text
 MENU_NCT_TITLE                          = "------ NS3-Cr.Kt Options ------";
+MENU_NCT_CHAINSAW_SPAWNTEXT             = "Control the spawn rate of the NS3-Cr.Kt on Chainsaws:";
 MENU_NCT_BFG_SPAWNTEXT                  = "Control the spawn rate of the NS3-Cr.Kt on BFG-9000s:";
 MENU_NCT_BACKPACKS                      = "Control whether the NS3-Cr.Kt spawns in Backpacks:";
 
 // Nyx Options Text
 MENU_NYX_TITLE                          = "------ CM-3 'Nyx' .355 Burst-Fire Magnum Options ------";
 MENU_NYX_PISTOL_SPAWNTEXT               = "Control the spawn rate of the Nyx on Pistols:";
+MENU_NYX_HUNTER_SPAWNTEXT               = "Control the spawn rate of the Nyx on Hunter Shotguns:";
+MENU_NYX_SLAYER_SPAWNTEXT               = "Control the spawn rate of the Nyx on Slayer Shotguns:";
+MENU_NYX_CLIPBOX_SPAWNTEXT              = "Control the spawn rate of the Nyx on Clip Boxes:";
 MENU_NYX_BACKPACKS                      = "Control whether the Nyx spawns in Backpacks:";
 
 MENU_NYXMAG_CLIPMAG_SPAWNTEXT           = "Control the spawn rate of Nyx Magazines on Clip Magazines:";
@@ -117,6 +126,7 @@ MENU_NYXMAG_BACKPACKS                   = "Control whether Nyx Magazines spawn i
 
 // PD-42 Options Text
 MENU_PD42_TITLE                         = "------ PD-42 4.26mm Suppressed PDW Options ------";
+MENU_PD42_CHAINGUN_SPAWNTEXT            = "Control the spawn rate of the PD-42 on Vulcanettes:";
 MENU_PD42_CLIPBOX_SPAWNTEXT             = "Control the spawn rate of the PD-42 on Clip Boxes:";
 MENU_PD42_BACKPACKS                     = "Control whether the PD-42 spawns in Backpacks:";
 
@@ -132,7 +142,7 @@ MENU_SIX12_BACKPACKS                    = "Control whether the Six-12 spawns in 
 MENU_SIX12MAG_SHELL_SHELL_SPAWNTEXT     = "Control the spawn rate of Six-12 Shell Magazines on Shell Pickups:";
 MENU_SIX12MAG_SHELL_BACKPACKS           = "Control whether Six-12 Shell Magazines spawn in Backpacks:";
 
-MENU_SIX12MAG_SLUG_SLUG_SPAWNTEXT       = "Control the spawn rate of Six-12 Slug Magazines on Slug Pickups:";
+MENU_SIX12MAG_SLUG_SHELL_SPAWNTEXT      = "Control the spawn rate of Six-12 Slug Magazines on Shell Pickups:";
 MENU_SIX12MAG_SLUG_BACKPACKS            = "Control whether Six-12 Slug Magazines spawn in Backpacks:";
 
 MENU_SIX12MAG_SHELL_PERSISTENCY         = "Persistent Shell Magazine Spawns: ";
@@ -140,6 +150,7 @@ MENU_SIX12MAG_SLUG_PERSISTENCY          = "Persistent Slug Magazine Spawns: ";
 
 // UMP-45 Options Text
 MENU_UMP_TITLE                          = "------ UMP-45 .45 ACP PDW Options ------";
+MENU_UMP_CHAINGUN_SPAWNTEXT             = "Control the spawn rate of the UMP-45 on Vulcanettes:";
 MENU_UMP_CLIPBOX_SPAWNTEXT              = "Control the spawn rate of the UMP-45 on Clip Boxes:";
 MENU_UMP_BACKPACKS                      = "Control whether the UMP-45 spawns in Backpacks:";
 
@@ -149,6 +160,7 @@ MENU_UMPMAG_BACKPACKS                   = "Control whether UMP-45 Magazines spaw
 // USP-45 Options Text
 MENU_USP_TITLE                          = "------ USP-45 .45 ACP Handgun Options ------";
 MENU_USP_PISTOL_SPAWNTEXT               = "Control the spawn rate of the USP-45 on Pistols:";
+MENU_USP_CLIPBOX_SPAWNTEXT              = "Control the spawn rate of the USP-45 on Clip Boxes:";
 MENU_USP_BACKPACKS                      = "Control whether the USP-45 spawns in Backpacks:";
 
 MENU_USPMAG_CLIPMAG_SPAWNTEXT           = "Control the spawn rate of USP-45 Magazines on Clip Magazines:";

@@ -25,7 +25,7 @@ server bool bitch_persistent_spawning = false;
 
 // Fenris
 server bool fenris_allowBackpacks = true;
-server int fenris_thunderbuster_spawn_bias = 9;
+server int fenris_plasma_spawn_bias = 9;
 server bool fenris_persistent_spawning = false;
 
 // Flamenwerfer-77
@@ -43,15 +43,18 @@ server bool frontiersman_persistent_spawning = false;
 // GFBlaster
 server bool gfb9_allowBackpacks = true;
 server int gfb9_pistol_spawn_bias = 9;
+server int gfb9_clipbox_spawn_bias = 9;
 server bool gfb9_persistent_spawning = false;
 
 // Modular Battle Rifle
 server bool mbr_allowBackpacks = true;
 server int mbr_chaingun_spawn_bias = 49;
+server int mbr_clipbox_spawn_bias = 49;
 server bool mbr_persistent_spawning = false;
 
 // NCT
 server bool nct_allowBackpacks = true;
+server int nct_chainsaw_spawn_bias = 24;
 server int nct_bfg_spawn_bias = 24;
 server bool nct_persistent_spawning = false;
 
@@ -59,10 +62,13 @@ server bool nct_persistent_spawning = false;
 server bool nyx_allowBackpacks = true;
 server int nyx_pistol_spawn_bias = 19;
 server int nyx_hunter_spawn_bias = 49;
+server int nyx_slayer_spawn_bias = 49;
+server int nyx_clipbox_spawn_bias = 19;
 server bool nyx_persistent_spawning = false;
 
 // PD-42
 server bool pd42_allowBackpacks = true;
+server int pd42_chaingun_spawn_bias = 14;
 server int pd42_clipbox_spawn_bias = 14;
 server bool pd42_persistent_spawning = false;
 
@@ -74,12 +80,14 @@ server bool six12_persistent_spawning = false;
 
 // UMP
 server bool ump45_allowBackpacks = true;
+server int ump45_chaingun_spawn_bias = 9;
 server int ump45_clipbox_spawn_bias = 9;
 server bool ump45_persistent_spawning = false;
 
 // USP
 server bool usp45_allowBackpacks = true;
 server int usp45_pistol_spawn_bias = 9;
+server int usp45_clipbox_spawn_bias = 9;
 server bool usp45_persistent_spawning = false;
 
 
@@ -96,17 +104,18 @@ server bool gastank_persistent_spawning = false;
 
 // Modular Battle Rifle Heavy Magazine
 server bool mbrmagheavy_allowBackpacks = true;
-server int mbrmagheavy_rocketbox_spawn_bias = 24;
+server int mbrmagheavy_clipmag_spawn_bias = 24;
+server int mbrmagheavy_rocket_spawn_bias = 24;
 server bool mbrmagheavy_persistent_spawning = false;
 
 // Modular Battle Rifle light Magazine
 server bool mbrmaglight_allowBackpacks = true;
-server int mbrmaglight_shellbox_spawn_bias = 24;
+server int mbrmaglight_clipmag_spawn_bias = 24;
+server int mbrmaglight_shell_spawn_bias = 24;
 server bool mbrmaglight_persistent_spawning = false;
 
 // Nyx Magazine
 server bool nyxmag_allowBackpacks = true;
-server int nyxmag_shellbox_spawn_bias = 24;
 server int nyxmag_clipmag_spawn_bias = 14;
 server bool nyxmag_persistent_spawning = false;
 
@@ -122,7 +131,7 @@ server bool six12shellmag_persistent_spawning = false;
 
 // Six-12 Slug Magazine
 server bool six12slugmag_allowBackpacks = true;
-server int six12slugmag_slug_spawn_bias = 9;
+server int six12slugmag_shell_spawn_bias = 9;
 server bool six12slugmag_persistent_spawning = false;
 
 // UMP Magazine
@@ -141,5 +150,6 @@ server bool usp45mag_persistent_spawning = false;
 //------------
 
 // HEV Armour
-server int hevarmour_spawn_bias = 19;
+server int hevarmour_greenarmour_spawn_bias = 19;
+server int hevarmour_bluearmour_spawn_bias = 19;
 server bool hevarmour_persistent_spawning = false;
