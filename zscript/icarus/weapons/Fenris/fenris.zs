@@ -190,8 +190,10 @@ class HDFenris : HDCellWeapon
 			}
 			Goto Nope;
 		Full:
-			#### B 2 Bright Offset(0, 36)
+			#### B 2 Offset(0, 36)
 			{
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				A_Light0();
 				A_StartSound("Fenris/Fire", CHAN_WEAPON);
 				int Charges = invoker.WeaponStatus[FNProp_Charge];
@@ -205,8 +207,10 @@ class HDFenris : HDCellWeapon
 			#### A 1 Offset(0, 32);
 			Goto Ready;
 		Semi:
-			#### B 2 Bright Offset(0, 38)
+			#### B 2 Offset(0, 38)
 			{
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				A_Light0();
 				A_StartSound("Fenris/Fire", CHAN_WEAPON);
 				int Charges = invoker.WeaponStatus[FNProp_Charge];
@@ -230,19 +234,30 @@ class HDFenris : HDCellWeapon
 			}
 			Goto Nope;
 		Charge:
-			FNRC A 0 A_StartSound ("Fenris/SBCharge", CHAN_WEAPON | CHANF_OVERLAP);
-			FNRC ####### 3 Bright
+			FNRS A 0 A_StartSound ("Fenris/SBCharge", CHAN_WEAPON | CHANF_OVERLAP);
+			FNRS AAAAAAA 3
 			{
 				A_Light0();
 				A_SpawnItemEx("ColdLight");
-				player.GetPSprite(PSP_WEAPON).frame = random[fenrand](0, 3);
+
+				switch(random[fenrand](0,3)) {
+					case 0: A_Overlay(PSP_FLASH, 'ChargeFlashA'); break;
+					case 1: A_Overlay(PSP_FLASH, 'ChargeFlashB'); break;
+					case 2: A_Overlay(PSP_FLASH, 'ChargeFlashC'); break;
+					case 3: A_Overlay(PSP_FLASH, 'ChargeFlashD'); break;
+					default: break;
+				}
+
 				A_WeaponBusy(False);
 			}
 			Goto Snow;
 		Snow:
-			FNRS B 1 Bright Offset(0, 36);
-			#### B 1 Bright Offset(0, 42);
-			#### B 1 Bright Offset(0, 46)
+			FNRS B 1 Offset(0, 36)
+			{
+				A_Overlay(PSP_FLASH, 'SnowFlash');
+			}
+			#### B 1 Offset(0, 42);
+			#### B 1 Offset(0, 46)
 			{
 				A_Light0();
 				A_StartSound("Fenris/SBFire", CHAN_WEAPON);
@@ -260,6 +275,43 @@ class HDFenris : HDCellWeapon
 			#### A 1 Offset(0, 36);
 			#### A 1 Offset(0, 32);
 			Goto Nope;
+
+		Flash:
+			FNRF A 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+		SnowFlash:
+			FNRF A 3 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+		ChargeFlashA:
+			FNRC A 3 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+		ChargeFlashB:
+			FNRC B 3 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+		ChargeFlashC:
+			FNRC C 3 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+		ChargeFlashD:
+			FNRC D 3 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
 
 		FireMode:
 			FNRS A 1 offset(1,32) A_WeaponBusy();
