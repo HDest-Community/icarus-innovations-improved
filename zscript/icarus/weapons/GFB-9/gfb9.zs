@@ -165,8 +165,10 @@ class HDGFBlaster : HDHandgun
 			Stop;
 		Shoot:
 			#### A 2 Offset(0, 36);
-			#### B 2 Bright Offset(0, 44)
+			#### B 2 Offset(0, 44)
 			{
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				A_Light0();
 				A_StartSound("GFBlaster/Fire", CHAN_WEAPON);
 				A_FireBullets(0, 0, 0, 0, "GFBBlastImpact", FBF_NORANDOM | FBF_NORANDOMPUFFZ, HDCONST_ONEMETRE * 50);
@@ -175,6 +177,20 @@ class HDGFBlaster : HDHandgun
 				invoker.WeaponStatus[GBProp_Charge] -= 1;
 			}
 			Goto Hold;
+
+		Flash:
+			GFBF A 2 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+		ChargeFlash:
+			GFBF B 4 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+
 		Hold:
 			#### A 0;
 			Goto Nope;
@@ -183,8 +199,10 @@ class HDGFBlaster : HDHandgun
 			#### D 4;
 			#### E 4;
 		ActualCharge:
-			#### F 4
+			#### E 4
 			{
+				A_Overlay(PSP_FLASH, 'ChargeFlash');
+
 				if (PressingReload()||invoker.WeaponStatus[GBProp_Charge] >= invoker.GetMaxCharge())
 				{
 					invoker.WeaponStatus[GBProp_Timer] = 0;
