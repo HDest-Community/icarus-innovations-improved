@@ -221,8 +221,10 @@ class HDSix12 : HDWeapon
 			Goto Nope;
 		RealFire:
 			STLG A 2;
-			STLF A 1 Offset(0, 35) Bright
+			STLG B 1 Offset(0, 35)
 			{
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				int MType = invoker.WeaponStatus[STProp_MagType];
 				if (MType == 0)
 				{
@@ -252,6 +254,13 @@ class HDSix12 : HDWeapon
 				}
 			}
 			Goto Hold;
+		Flash:
+			STLF A 1 Bright
+			{
+				HDFlashAlpha(64);
+			}
+			goto lightdone;
+
 		Hold:
 			STLG A 1;
 			STLG A 0 A_Refire();
