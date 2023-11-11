@@ -192,9 +192,10 @@ class HDUMP : HDWeapon
 			}
 			Goto Nope;
 		Shoot:
-			UMPF A 2
+			UMPG B 2
 			{
-				HDFlashAlpha(128);
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				A_Light1();
 				A_StartSound("UMP/Fire", CHAN_WEAPON);
 				HDBulletActor.FireBullet(self, "HDB_45ACP", spread: 1.0, speedfactor: 1.1);
@@ -236,6 +237,12 @@ class HDUMP : HDWeapon
 				}
 			}
 			Goto Nope;
+		Flash:
+			UMPF A 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
 
 		Unload:
 			#### # 0
@@ -351,8 +358,8 @@ class HDUMP : HDWeapon
 
 		ChamberManual:
 			UMPG A 2 Offset(2, 34) A_UpdateChamberFrame();
-			UMPG B 2 Offset(3, 38);
-			UMPG B 3 Offset(4, 44)
+			UMPG C 2 Offset(3, 38);
+			UMPG C 3 Offset(4, 44)
 			{
 				if (invoker.WeaponStatus[UMProp_Chamber] > 0)
 				{
