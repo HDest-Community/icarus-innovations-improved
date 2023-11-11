@@ -288,8 +288,10 @@ class HDBitch : HDWeapon
 					A_SetTics(0);
 				}
 			}
-			BCHF A 2 Bright Offset(0, 34)
+			BCHG B 2 Offset(0, 34)
 			{
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				if (invoker.WeaponStatus[BTProp_Mode] == 1 || invoker.WeaponStatus[BTProp_Mode] == 3)
 				{
 					A_SetTics(1);
@@ -345,8 +347,10 @@ class HDBitch : HDWeapon
 
 		AltFire:
 			BCHG A 0 A_JumpIf(!(invoker.WeaponStatus[BTProp_Flags] & BTF_GrenadeLoaded), 'Nope');
-			BCHF B 2 Bright
+			BCHG A 2
 			{
+				// A_Overlay(PSP_FLASH, 'AltFlash');
+
 				A_FireHDGL();
 				invoker.WeaponStatus[BTProp_Flags] &= ~BTF_GrenadeLoaded;
 				A_StartSound("weapons/grenadeshot", CHAN_WEAPON);
@@ -354,6 +358,20 @@ class HDBitch : HDWeapon
 			}
 			BCHG A 2 A_MuzzleClimb(0, 0, 0, 0, -1.2, -3.0, -1.0, -2.8);
 			Goto Nope;
+
+		Flash:
+			BCHF A 1 Bright
+			{
+				HDFlashAlpha(-16);
+			}
+			goto lightdone;
+		// [UZ] UBGL weapons don't seem to have a flash frame?
+		// AltFlash:
+		// 	BCHF B 1
+		// 	{
+		// 		HDFlashAlpha(-16);
+		// 	}
+		// 	goto lightdone;
 
 		Reload:
 		ChamberManual:
