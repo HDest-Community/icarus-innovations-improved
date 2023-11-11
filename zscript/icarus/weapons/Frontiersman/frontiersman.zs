@@ -346,9 +346,11 @@ class HDFrontier : HDWeapon
 			#### # 0 A_Refire();
 			goto Ready;
 		Shoot:
-			FRMG # 2;
-			FRMF # 1 Offset (0, 36)
+			FRMG A 2;
+			FRMG B 1 Offset (0, 36)
 			{
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				A_ZoomRecoil(1.05);
 				A_Light1();
 				if(invoker.WeaponStatus[FMProp_Mode] == 1 && CountInv("HealingMagic") > 0)
@@ -365,8 +367,14 @@ class HDFrontier : HDWeapon
 				invoker.WeaponStatus[FMProp_Chamber] = 1;
 				A_MuzzleClimb(-frandom(-0.6, 0.6), -frandom(1.2, 2.1));
 			}
-			FRMG # 1 A_UpdateHammerFrame();
+			FRMG A 1 A_UpdateHammerFrame();
 			goto Ready;
+		Flash:
+			FRMF A 1 Bright
+			{
+				HDFlashAlpha(72);
+			}
+			goto lightdone;
 
 		AltFire:
 		Chamber:
