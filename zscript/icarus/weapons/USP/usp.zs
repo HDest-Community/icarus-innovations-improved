@@ -186,9 +186,10 @@ class HDUSP : HDHandgun
 			}
 			Goto Nope;
 		Shoot:
-			USPF A 1
+			USPG B 1
 			{
-				HDFlashAlpha(128);
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				A_Light1();
 				A_StartSound("USP/Fire", CHAN_WEAPON);
 				HDBulletActor.FireBullet(self, "HDB_45ACP", spread: 1.0);
@@ -197,7 +198,7 @@ class HDUSP : HDHandgun
 				A_MuzzleClimb(-frandom(0.1, 0.5), -frandom(1.0, 2.5));
 				invoker.WeaponStatus[USProp_Chamber] = 1;
 			}
-			USPG B 1
+			USPG C 1
 			{
 				if (invoker.WeaponStatus[USProp_Chamber] == 1)
 				{
@@ -222,6 +223,12 @@ class HDUSP : HDHandgun
 			}
 			USPG A 1;
 			Goto Nope;
+		Flash:
+			USPF A 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
 
 		Reload:
 			#### # 0
