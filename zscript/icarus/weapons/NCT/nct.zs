@@ -106,9 +106,12 @@ class HDNCT : HDCellWeapon
 			Goto Ready;
 		Fire:
 			NCTG A 0 A_JumpIf(invoker.WeaponStatus[NCProp_Battery] < 20, 'Nope');
-			NCTF A 2 Bright Offset(0, 36);
-			NCTF B 2 Bright Offset(0, 44);
-			NCTF A 2 Offset(0, 38)
+			NCTG A 2 Offset(0, 36)
+			{
+				A_Overlay(PSP_FLASH, 'Flash');
+			}
+			NCTG A 2 Offset(0, 44);
+			NCTG A 2 Offset(0, 38)
 			{
 				if (invoker.WeaponStatus[NCProp_Battery] >= 20)
 				{
@@ -118,6 +121,11 @@ class HDNCT : HDCellWeapon
 				return ResolveState("Nope");
 			}
 			Goto Nope;
+		Flash:
+			NCTF A 2 Bright;
+			NCTF B 2 Bright;
+			NCTF A 2 Bright;
+			goto lightdone;
 		Reload:
 			NCTG A 0
 			{
