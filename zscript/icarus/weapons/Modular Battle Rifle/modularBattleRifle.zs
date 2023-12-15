@@ -535,8 +535,14 @@ class HDMBR : HDWeapon
 			}
 			Goto Nope;
 		RealFire:
-			#### B 1 Offset(0, 33) Bright
+			#### B 1 Offset(0, 33)
 			{
+				if (invoker.WeaponStatus[BRProp_Flags] & BRF_Scope) {
+					A_Overlay(PSP_FLASH, 'ScopeFlash');
+				} else {
+					A_Overlay(PSP_FLASH, 'Flash');
+				}
+
 				int MType = invoker.WeaponStatus[BRProp_MagType];
 				int Chamber = invoker.WeaponStatus[BRProp_Chamber];
 
@@ -603,6 +609,19 @@ class HDMBR : HDWeapon
 		Hold:
 			#### A 0 A_JumpIf(invoker.WeaponStatus[BRProp_Firemode] == 0, "Nope");
 			Goto RealFire;
+
+		Flash:
+			DMRF A 1 Bright
+			{
+				HDFlashAlpha(72);
+			}
+			goto lightdone;
+		ScopeFlash:
+			DMRF B 1 Bright
+			{
+				HDFlashAlpha(72);
+			}
+			goto lightdone;
 			
 		Unload:
 			#### A 0

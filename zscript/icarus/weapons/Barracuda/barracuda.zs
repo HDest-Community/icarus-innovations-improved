@@ -181,10 +181,12 @@ class HDBarracuda : HDSix12
 		A_Light1();
 		A_ZoomRecoil(0.995);	
 		DistantNoise.Make(self, "world/shotgunfar");
-		let psp = player.GetPSprite(PSP_WEAPON);
+		
+		int flashFrame = -1;
+
 		if (barrel & 1)
 		{
-			psp.frame = 0;
+			flashFrame = 0;
 			A_MuzzleClimb(-frandom(1.15, 1.4), -frandom(1.7, 2.2), -frandom(1.15, 1.4), -frandom(1.7, 2.2));
 			if (invoker.WeaponStatus[BRProp_MagType] & 1)
 			{
@@ -202,7 +204,7 @@ class HDBarracuda : HDSix12
 		}
 		if (barrel & 2)
 		{
-			psp.frame = 1;
+			flashFrame = 1;
 			A_MuzzleClimb(frandom(1.15, 1.4), -frandom(1.7, 2.2), frandom(1.15, 1.4), -frandom(1.7, 2.2));
 			if (invoker.WeaponStatus[BRProp_MagType] & 2)
 			{
@@ -219,7 +221,21 @@ class HDBarracuda : HDSix12
 		}
 		if (barrel & 1 && barrel & 2)
 		{
-			psp.frame = 2;
+			flashFrame = 2;
+		}
+
+		switch (flashFrame) {
+			case 0:
+				A_Overlay(10, 'FlashLeft');
+				break;
+			case 1:
+				A_Overlay(10, 'FlashRight');
+				break;
+			case 2:
+				A_Overlay(11, 'FlashBoth');
+				break;
+			default:
+				break;
 		}
 	}
 	
@@ -270,18 +286,18 @@ class HDBarracuda : HDSix12
 			BRCG A 1 A_WeaponReady(WRF_ALLOWRELOAD | WRF_ALLOWUSER3 | WRF_ALLOWUSER1 | WRF_ALLOWUSER4);
 			Goto ReadyEnd;
 		Select0:
-			BRCG A 0;
+			BRCG # 0;
 			Goto Select0Big;
 		Deselect0:
-			BRCG A 0;
+			BRCG # 0;
 			Goto Deselect0Big;
 		User3:
-			BRCG A 0 A_MagManager(PressingUse() ? "HDSix12MagSlugs" : "HDSix12MagShells");
+			BRCG # 0 A_MagManager(PressingUse() ? "HDSix12MagSlugs" : "HDSix12MagShells");
 			Goto Ready;
 
 		Fire:
 		AltFire:
-			BRCG # 0 A_ClearRefire();
+			#### # 0 A_ClearRefire();
 		Ready:
 			BRCG # 1
 			{
@@ -346,20 +362,39 @@ class HDBarracuda : HDSix12
 			}
 			Goto ReadyEnd;
 		ShootLeft:
-			BRCF # 2 Bright A_BarracudaFire(1);
-			BRCG A 2 Offset(0, 40);
+			#### # 2 A_BarracudaFire(1);
+			#### # 2 Offset(0, 40);
 			Goto Ready;
 		ShootRight:
-			BRCF # 2 Bright A_BarracudaFire(2);
-			BRCG A 2 Offset(0, 40);
+			#### # 2 A_BarracudaFire(2);
+			#### # 2 Offset(0, 40);
 			Goto Ready;
 		ShootBoth:
-			BRCF # 2 Bright A_BarracudaFire(3);
-			BRCG A 2 Offset(0, 48);
+			#### # 2 A_BarracudaFire(3);
+			#### # 2 Offset(0, 48);
 			Goto Ready;
+		
+		FlashLeft:
+			BRCF A 1 Bright
+			{
+				HDFlashAlpha(64);
+			}
+			goto lightdone;
+		FlashRight:
+			BRCF B 1 Bright
+			{
+				HDFlashAlpha(64);
+			}
+			goto lightdone;
+		FlashBoth:
+			BRCF C 1 Bright
+			{
+				HDFlashAlpha(64);
+			}
+			goto lightdone;
 
 		Unload:
-			BRCG A 0
+			#### # 0
 			{
 				invoker.WeaponStatus[BRProp_Flags] |= BRF_JustUnload;
 				if (!PressingUse() && invoker.WeaponStatus[BRProp_MagLeft] >= 0)
@@ -379,7 +414,7 @@ class HDBarracuda : HDSix12
 
 		Reload:
 		AltReload:
-			BRCG A 0
+			#### # 0
 			{
 				invoker.WeaponStatus[BRProp_Flags] &= ~BRF_JustUnload;
 				
@@ -398,17 +433,17 @@ class HDBarracuda : HDSix12
 			Goto UnMag;
 
 		UnMag:
-			BRCG A 2 Offset(0, 34);
-			#### A 2 Offset(5, 38);
-			#### A 2 Offset(10, 42);
-			#### A 4 Offset(20, 46)
+			#### # 2 Offset(0, 34);
+			#### # 2 Offset(5, 38);
+			#### # 2 Offset(10, 42);
+			#### # 4 Offset(20, 46)
 			{
 				A_StartSound("Six12/MagOut", 8);
 				A_MuzzleClimb(0.3, 0.4);
 			}
-			#### A 2 Offset(26, 52) A_MuzzleClimb(0.3, 0.4);
-			#### A 2 Offset(26, 54) A_MuzzleClimb(0.3, 0.4);
-			#### A 0
+			#### # 2 Offset(26, 52) A_MuzzleClimb(0.3, 0.4);
+			#### # 2 Offset(26, 54) A_MuzzleClimb(0.3, 0.4);
+			#### # 0
 			{
 				int Side = invoker.WeaponStatus[BRProp_OpSide];
 				int MagAmount = invoker.WeaponStatus[BRProp_MagLeft + Side];
@@ -442,9 +477,9 @@ class HDBarracuda : HDSix12
 				}
 			}
 		PocketMag:
-			BRCG AAAAAA 5 Offset(30, 54) A_MuzzleClimb(frandom(0.2, -0.8),frandom(-0.2, 0.4));
+			#### AAAAAA 5 Offset(30, 54) A_MuzzleClimb(frandom(0.2, -0.8),frandom(-0.2, 0.4));
 		MagOut:
-			BRCG A 0
+			#### # 0
 			{
 				if (invoker.WeaponStatus[BRProp_Flags] & BRF_JustUnload)
 				{
@@ -452,11 +487,11 @@ class HDBarracuda : HDSix12
 				}
 			}
 		LoadMag:
-			BRCG A 0 A_StartSound("weapons/pocket", 9);
-			#### A 6 Offset(32, 55) A_MuzzleClimb(frandom(0.2, -0.8), frandom(-0.2, 0.4));
-			#### A 7 Offset(32, 52) A_MuzzleClimb(frandom(0.2, -0.8), frandom(-0.2, 0.4));
-			#### A 10 Offset(30, 50);
-			#### A 3 Offset(30, 49)
+			#### # 0 A_StartSound("weapons/pocket", 9);
+			#### # 6 Offset(32, 55) A_MuzzleClimb(frandom(0.2, -0.8), frandom(-0.2, 0.4));
+			#### # 7 Offset(32, 52) A_MuzzleClimb(frandom(0.2, -0.8), frandom(-0.2, 0.4));
+			#### # 10 Offset(30, 50);
+			#### # 3 Offset(30, 49)
 			{
 				int Side = invoker.WeaponStatus[BRProp_OpSide];
 				bool LoadSlugs = invoker.WeaponStatus[BRProp_LoadType];
@@ -473,11 +508,11 @@ class HDBarracuda : HDSix12
 			Goto ReloadEnd;
 
 		ReloadEnd:
-			BRCG A 4 Offset(30, 52);
-			#### A 3 Offset(20, 46);
-			#### A 2 Offset(10, 42);
-			#### A 2 Offset(5, 38);
-			#### A 1 Offset(0, 34);
+			#### # 4 Offset(30, 52);
+			#### # 3 Offset(20, 46);
+			#### # 2 Offset(10, 42);
+			#### # 2 Offset(5, 38);
+			#### # 1 Offset(0, 34);
 			Goto Ready;
 	}
 }

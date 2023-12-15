@@ -192,9 +192,10 @@ class HDNyx : HDHandgun
 		Pull:
 			NYXG B 1;
 		Shoot:
-			NYXG C 1 Bright Offset(0, 38)
+			NYXG B 1 Offset(0, 38)
 			{
-				HDFlashAlpha(128);
+				A_Overlay(PSP_FLASH, 'Flash');
+				
 				A_Light1();
 				A_StartSound("Nyx/Fire", CHAN_WEAPON);
 				HDBulletActor.FireBullet(self, "HDB_355", spread: 1.0, speedfactor: frandom(1.10, 1.15));
@@ -246,6 +247,12 @@ class HDNyx : HDHandgun
 				}
 			}
 			Goto Nope;
+		Flash:
+			NYXG C 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
 
 		Reload:
 			#### # 0
