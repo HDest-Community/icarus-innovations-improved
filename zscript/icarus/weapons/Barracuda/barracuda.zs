@@ -167,8 +167,8 @@ class HDBarracuda : HDSix12
 		int cx, cy, cw, ch;
 		[cx, cy, cw, ch] = Screen.GetClipRect();
 		sb.SetClipRect(-16 + bob.x, -8 + bob.y, 32, 16, sb.DI_SCREEN_CENTER);
-		vector2 bob2 = bob * 2;
-		bob2.y = clamp(bob2.y, -8, 8);
+		vector2 bob2 = bob * 1.18;
+		//bob2.y = clamp(bob2.y, -8, 8);
 		sb.DrawImage("FRNTSITE", bob2, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, alpha: 0.9, scale: (1.0, 0.6));
 		sb.SetClipRect(cx, cy, cw, ch);
 		sb.DrawImage("STLVBACK", bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, scale: (0.7, 0.7));

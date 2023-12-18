@@ -125,7 +125,7 @@ class HDFrontier : HDWeapon
 		int cx, cy, cw, ch;
 		[cx, cy, cw, ch] = Screen.GetClipRect();
 		sb.SetClipRect(-16 + bob.x, -32 + bob.y, 32, 40, sb.DI_SCREEN_CENTER);
-		vector2 bobb = bob * 2;
+		vector2 bobb = bob * 1.18;
 		sb.DrawImage("FRNTSITE", (0, 0) + bobb, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP);
 		sb.SetClipRect(cx, cy, cw, ch);
 		sb.DrawImage("SGBAKSIT", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP);

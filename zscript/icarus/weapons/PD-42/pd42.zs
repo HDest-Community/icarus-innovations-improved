@@ -141,9 +141,9 @@ class HDPDFour : HDWeapon {
 
 		if (weaponStatus[PDS_FLAGS] & PDF_REFLEXSIGHT) {
 			double dotoff = max(abs(bob.x), abs(bob.y));
-			if (dotoff < 6) {
+			if (dotoff < 40) {
 				string whichdot = sb.ChooseReflexReticle(hdw.weaponStatus[PDS_DOT]);
-				sb.DrawImage(whichdot, (0, 0) + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha : 0.8 - dotoff * 0.04, col:0xFF000000 | sb.crosshaircolor.GetInt());
+				sb.DrawImage(whichdot, (0, 0) + bob * 1.18, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha : 0.8 - dotoff * 0.01, col:0xFF000000 | sb.crosshaircolor.GetInt());
 			}
 			sb.DrawImage("PDWBACK", (0, -18) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, scale: (0.8, 0.8));
 		} else {
@@ -153,7 +153,7 @@ class HDPDFour : HDWeapon {
 				-16+bob.x,-4+bob.y,32,16,
 				sb.DI_SCREEN_CENTER
 			);
-			bobb.y=clamp(bobb.y,-8,8);
+			//bobb.y=clamp(bobb.y,-8,8);
 			sb.drawimage(
 				"PDFNTSIT",(0,0)+bobb,sb.DI_SCREEN_CENTER|sb.DI_ITEM_TOP
 			);
