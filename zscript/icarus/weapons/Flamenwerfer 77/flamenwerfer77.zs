@@ -523,13 +523,7 @@ class HDFireCone : HDActor
 				let burnRange = HDCONST_ONEMETRE * clamp(max(scale.x, 0.65) * 1.5, 1.0, 3.5);
 
 				BlockThingsIterator it = BlockThingsIterator.Create(self, burnRange);
-				while (it.Next())
-				{
-					if (
-						Distance3D(it.thing) <= burnRange
-						&& it.thing.bshootable
-					) A_Immolate(it.thing, target, 20);
-				}
+				while (it.Next()) if (Distance3D(it.thing) <= burnRange && it.thing.bshootable) A_Immolate(it.thing, target);
 			}
 			stop;
 		Death:
