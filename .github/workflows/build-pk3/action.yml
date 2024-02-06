@@ -1,0 +1,9 @@
+name: Build PK3
+description: Builds the PK3
+runs:
+  using: "composite"
+  steps:
+  - uses: actions/checkout@v4
+  - uses: montudor/action-zip@v1
+    with:
+      args: zip -r "icarus-innovations-improved-${{ env.SUFFIX }}.pk3" . -i graphics/* patches/* sounds/* sprites/* zscript/* CVARINFO DECALDEF.* GLDEFS.* KEYCONF LANGUAGE.* LICENSE MAPINFO MENUDEF README.* SNDINFO.* TEXTURES.* zscript.zs
