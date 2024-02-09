@@ -73,18 +73,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Initial Release.  Originally made by D2Icarus, now maintained by the community.
 -   Currently Contains the following weapons:
-  -   Barracuda
-  -   Bitch
-  -   Fenris
-  -   Flamenwerfer-77
-  -   Frontiersman
-  -   GFB-9
-  -   NS3-Cr.Kt
-  -   Nyx
-  -   PD-42
-  -   Six-12
-  -   UMP-45
-  -   USP-45
+    -   Barracuda
+    -   Bitch
+    -   Fenris
+    -   Flamenwerfer-77
+    -   Frontiersman
+    -   GFB-9
+    -   NS3-Cr.Kt
+    -   Nyx
+    -   PD-42
+    -   Six-12
+    -   UMP-45
+    -   USP-45
 -   Spawning has been revamped to allow more configurability with all weapons included
 -   PD-42 has been updated to more closely match the SMG class definition, as well as including a new ironsights variant.
 
