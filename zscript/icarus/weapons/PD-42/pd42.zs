@@ -44,7 +44,7 @@ class HDPDFour : HDWeapon {
 			bulk += 5;
 		}
 
-		if (weaponStatus[PDS_FLAGS] & PDF_SLUGLOADED) {
+		if (weaponStatus[PDS_SLUGCHAMBER]) {
 			bulk += ENC_SHELLLOADED;
 		}
 
@@ -60,11 +60,18 @@ class HDPDFour : HDWeapon {
 	override void Tick() {
 		Super.Tick();
 
-		if (!(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER) && weaponStatus[PDS_FLAGS] & PDF_SLUGLOADED) {
-			weaponStatus[PDS_FLAGS] &= ~PDF_SLUGLOADED;
+		if (!(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER) && weaponStatus[PDS_SLUGCHAMBER]) {
+			weaponStatus[PDS_SLUGCHAMBER] = 0;
+
 			Actor ptr = owner ? owner : Actor(self);
-			ptr.A_SpawnItemEx('HDSlugAmmo', cos(ptr.pitch) * 10, 0, ptr.height - 10 - 10 * sin(ptr.pitch), ptr.vel.x, ptr.vel.y, ptr.vel.z, 0, SXF_ABSOLUTEMOMENTUM | SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH);
-			ptr.A_StartSound("weapons/huntrackdown", CHAN_WEAPON, CHANF_OVERLAP);
+			ptr.A_StartSound("weapons/huntrackup", CHAN_WEAPON, CHANF_OVERLAP);
+			ptr.A_SpawnItemEx(
+				weaponStatus[PDS_SLUGCHAMBER] > 1 ? 'HDFumblingSlug' : 'HDSpentSlug',
+				cos(ptr.pitch) * 10, 0, ptr.height - 10 - 10 * sin(ptr.pitch),
+				ptr.vel.x, ptr.vel.y, ptr.vel.z,
+				0,
+				SXF_ABSOLUTEMOMENTUM | SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH
+			);
 		}
 	}
 
@@ -115,18 +122,23 @@ class HDPDFour : HDWeapon {
 			sb.DrawRect(-19, -11, 3, 1);
 		}
 		
-		if (hdw.weaponStatus[PDS_FLAGS] & PDF_SLUGLOADED) {
-			sb.DrawRect(-20, -15, 4, 2.6);
+		if (hdw.weaponStatus[PDS_SLUGCHAMBER]) {
+			sb.DrawRect(-18, -15, 2, 3);
+
+			if (hdw.weaponStatus[PDS_SLUGCHAMBER] > 1) {
+				sb.DrawRect(-23, -15, 4, 3);
+				sb.DrawRect(-24, -14, 1, 1);
+			}
 		}
 
-		sb.DrawWepCounter(hdw.weaponStatus[PDS_FIREMODE], -22, -10, "RBRSA3A7", "STBURAUT", "STFULAUT");
+		sb.DrawWepCounter(hdw.weaponStatus[PDS_FIREMODE], -25, -10, "RBRSA3A7", "STBURAUT", "STFULAUT");
 	}
 
 	override string GetHelpText() {
 		return WEPHELP_FIRESHOOT
 		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? WEPHELP_ALTFIRE.. "  Fire Slug Thrower\n" : "")
 		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? WEPHELP_ALTRELOAD.. "  Load Slug Thrower\n" : "")
-		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? WEPHELP_FIREMODE.."+"..WEPHELP_UNLOAD.. "  Unload Slug Thrower\n" : "")
+		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? WEPHELP_USE.."+"..WEPHELP_UNLOAD.. "  Unload Slug Thrower\n" : "")
 		..WEPHELP_RELOAD.."  Reload mag\n"
 		..WEPHELP_UNLOADUNLOAD
 		..WEPHELP_FIREMODE.."  Semi Auto/Double Tap/Full Auto\n"
@@ -219,11 +231,11 @@ class HDPDFour : HDWeapon {
 			goto readyend;
 		
 		user3:
-			---- A 0 A_MagManager("HDPDFourMag");
+			#### A 0 A_MagManager("HDPDFourMag");
 			goto ready;
 
 		firemode:
-			---- A 1
+			#### A 1
 			{
 				++invoker.weaponStatus[PDS_FIREMODE] %= 3;
 			}
@@ -271,7 +283,7 @@ class HDPDFour : HDWeapon {
 			goto nope;
 
 		altfire:
-			#### # 0 A_JumpIf(!(invoker.weaponStatus[PDS_FLAGS] & PDF_SLUGLOADED), 'nope');
+			#### # 0 A_JumpIf(invoker.weaponStatus[PDS_SLUGCHAMBER] < 2, 'nope');
 			#### # 2 A_Overlay(PSP_FLASH, "AltFlash");
 			goto nope;
 
@@ -301,7 +313,7 @@ class HDPDFour : HDWeapon {
 			{
 				A_WeaponOffset(0, 36);
 				HDBulletActor.FireBullet(self, "HDB_SLUG", speedfactor: 0.65);
-				invoker.weaponStatus[PDS_FLAGS] &= ~PDF_SLUGLOADED;
+				invoker.weaponStatus[PDS_SLUGCHAMBER] = 1;
 				A_AlertMonsters();
 				A_StartSound("PD42/SluggerFire", CHAN_WEAPON);
 				A_ZoomRecoil(0.95);
@@ -318,7 +330,7 @@ class HDPDFour : HDWeapon {
 			#### A 0
 			{
 				invoker.weaponStatus[PDS_FLAGS] |= PDF_JUSTUNLOAD;
-				if (PressingFiremode() && invoker.weaponStatus[PDS_FLAGS] & PDF_SLUGLOADED) {
+				if (PressingUse() && invoker.weaponStatus[PDS_SLUGCHAMBER]) {
 					SetWeaponState('unloadst');
 					Return;
 				}
@@ -345,12 +357,38 @@ class HDPDFour : HDWeapon {
 			}
 			#### A 2 Offset(0, 34);
 			goto readyend;
+		loadchamber:
+			#### A 0 A_JumpIf(invoker.weaponstatus[PDS_CHAMBER] > 0, "nope");
+			#### A 0 A_JumpIf(!countinv("FourMilAmmo"),"nope");
+			#### A 1 offset(0,34) A_StartSound("weapons/pocket",9);
+			#### A 1 offset(2,36);
+			#### A 1 offset(2,44);
+			#### B 1 offset(5,58);
+			#### B 2 offset(7,70);
+			#### B 6 offset(8,80);
+			#### A 10 offset(8,87) {
+				if (countinv("FourMilAmmo")) {
+					A_TakeInventory("FourMilAmmo", 1, TIF_NOTAKEINFINITE);
+					invoker.weaponstatus[PDS_CHAMBER] = 1;
+					A_StartSound("weapons/smgchamber",8);
+				} else {
+					A_SetTics(4);
+				}
+			}
+			#### A 3 offset(9,76);
+			#### A 2 offset(5,70);
+			#### A 1 offset(5,64);
+			#### A 1 offset(5,52);
+			#### A 1 offset(5,42);
+			#### A 1 offset(2,36);
+			#### A 2 offset(0,34);
+			goto nope;
 
 		altreload:
 			#### A 0
 			{
 				invoker.weaponStatus[PDS_FLAGS] &= ~PDF_JUSTUNLOAD;
-				if (invoker.weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER && !(invoker.weaponStatus[PDS_FLAGS] & PDF_SLUGLOADED) && CheckInventory('HDSlugAmmo', 1))
+				if (invoker.weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER && invoker.weaponStatus[PDS_SLUGCHAMBER] < 2 && CheckInventory('HDSlugAmmo', 1))
 				{
 					SetWeaponState('unloadst');
 				}
@@ -367,33 +405,41 @@ class HDPDFour : HDWeapon {
 			#### A 1 Offset(4, 38) A_MuzzleClimb(-0.3,-0.3);
 			#### A 2 Offset(8, 48)
 			{
-				A_StartSound("weapons/huntrackdown", CHAN_WEAPON, CHANF_OVERLAP);
+				A_StartSound("weapons/huntrackup", CHAN_WEAPON, CHANF_OVERLAP);
 				A_MuzzleClimb(-0.3, -0.3);
-
-				if (invoker.weaponStatus[PDS_FLAGS] & PDF_SLUGLOADED) {
+			}
+			#### A 2 Offset(8, 48)
+			{
+				if (invoker.weaponStatus[PDS_SLUGCHAMBER]) {
 					A_StartSound("weapons/huntreload", CHAN_WEAPON);
 				}
 			}
-			#### A 4 Offset(10, 49)
+			#### A 2 Offset(10, 49)
 			{
-				if (!(invoker.weaponStatus[PDS_FLAGS] & PDF_SLUGLOADED)) {
-					if (invoker.weaponStatus[PDS_FLAGS] & PDF_JUSTUNLOAD) 					{
+				if (!(invoker.weaponStatus[PDS_SLUGCHAMBER])) {
+					if (invoker.weaponStatus[PDS_FLAGS] & PDF_JUSTUNLOAD) {
 						A_SetTics(3);
 					}
 
 					return;
 				}
 				
-				invoker.weaponStatus[PDS_FLAGS] &= ~PDF_SLUGLOADED;
-
-				if(!PressingUnload() || A_JumpIfInventory('HDSlugAmmo', 0, 'Null')) {
-					A_SpawnItemEx('HDSlugAmmo', cos(pitch) * 10, 0, height - 10 - 10 * sin(pitch), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEMOMENTUM | SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH);
+				if(!PressingUnload() || invoker.weaponStatus[PDS_SLUGCHAMBER] < 2 || A_JumpIfInventory('HDSlugAmmo', 0, 'Null')) {
+					A_SpawnItemEx(
+						invoker.weaponStatus[PDS_SLUGCHAMBER] > 1 ? 'HDFumblingSlug' : 'HDSpentSlug',
+						cos(pitch) * 10, 0, height - 10 - 10 * sin(pitch),
+						vel.x, vel.y, vel.z,
+						0,
+						SXF_ABSOLUTEMOMENTUM | SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH
+					);
 				} else {
 					A_SetTics(20);
 					A_StartSound("weapons/pocket", CHAN_WEAPON, CHANF_OVERLAP);
 					A_GiveInventory('HDSlugAmmo', 1);
 					A_MuzzleClimb(frandom(0.8, -0.2), frandom(0.4, -0.2));
 				}
+
+				invoker.weaponStatus[PDS_SLUGCHAMBER] = 0;
 			}
 			#### A 0 A_JumpIf(invoker.weaponStatus[PDS_FLAGS] & PDF_JUSTUNLOAD, 'ReloadEndST');
 
@@ -403,7 +449,7 @@ class HDPDFour : HDWeapon {
 			#### A 10 Offset(8, 50)
 			{
 				A_TakeInventory('HDSlugAmmo', 1, TIF_NOTAKEINFINITE);
-				invoker.weaponStatus[PDS_FLAGS] |= PDF_SLUGLOADED;
+				invoker.weaponStatus[PDS_SLUGCHAMBER] = 2;
 				A_StartSound("weapons/huntreload", CHAN_WEAPON);
 			}
 
@@ -419,7 +465,15 @@ class HDPDFour : HDWeapon {
 				invoker.weaponStatus[PDS_FLAGS] &= ~PDF_JUSTUNLOAD;
 				bool noMags = HDMagAmmo.NothingLoaded(self, "HDPDFourMag");
 				int mag = invoker.weaponStatus[PDS_MAG];
-				if (mag >= HDPDFourMag.MagCapacity || mag < HDPDFourMag.MagCapacity && noMags) {
+				if (mag >= HDPDFourMag.MagCapacity) {
+					SetWeaponState("nope");
+				} else if (mag < 1 && (PressingUse() || noMags)) {
+					if (CountInv('FourMilAmmo')) {
+						SetWeaponState('loadchamber');
+					} else {
+						SetWeaponState("nope");
+					}
+				} else if (noMags) {
 					SetWeaponState("nope");
 				}
 			}
@@ -493,7 +547,7 @@ class HDPDFour : HDWeapon {
 
 		chamber_manual:
 			#### A 0 A_JumpIf(
-					invoker.weaponStatus[PDS_MAG] <= 0
+					invoker.weaponStatus[PDS_MAG] < 1
 					|| invoker.weaponStatus[PDS_CHAMBER] == 1,
 				"nope");
 			#### A 2 Offset(2, 34);
@@ -531,7 +585,7 @@ class HDPDFour : HDWeapon {
 		weaponStatus[PDS_CHAMBER] = 1;
 		
 		if (weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER) {
-			weaponStatus[PDS_FLAGS] |= PDF_SLUGLOADED;
+			weaponStatus[PDS_SLUGCHAMBER] = 2;
 		}
 	}
 
@@ -560,15 +614,15 @@ class HDPDFour : HDWeapon {
 
 enum PDFourStatus {
 	PDF_JUSTUNLOAD = 1,
-	PDF_SLUGLOADED = 2,
-	PDF_SLUGLAUNCHER = 4,
-	PDF_REFLEXSIGHT = 8,
+	PDF_SLUGLAUNCHER = 2,
+	PDF_REFLEXSIGHT = 4,
 
 	PDS_FLAGS = 0,
 	PDS_MAG = 1,
 	PDS_CHAMBER = 2,
 	PDS_FIREMODE = 3, //0 semi, 1 burst, 2 auto
-	PDS_DOT = 4
+	PDS_DOT = 4,
+	PDS_SLUGCHAMBER = 5
 }
 
 class PDFourRandom : IdleDummy {
