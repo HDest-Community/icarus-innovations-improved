@@ -117,7 +117,7 @@ class HDFenris : HDCellWeapon
 			sb.DrawString(sb.pSmallFont, Col..BatPercent.."%\c-", (-14, -12), sb.DI_TEXT_ALIGN_RIGHT | sb.DI_SCREEN_CENTER_BOTTOM, Font.CR_DARKGRAY);
 		}
 
-		else if (BatteryCharge == 0)
+		else if (BatteryCharge <= 0)
 		{
 			sb.DrawString(sb.mAmountFont, "00000", (-14, -10), sb.DI_TEXT_ALIGN_RIGHT | sb.DI_TRANSLATABLE | sb.DI_SCREEN_CENTER_BOTTOM, Font.CR_DARKGRAY);
 		}
