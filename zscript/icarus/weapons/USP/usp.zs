@@ -122,7 +122,7 @@ class HDUSP : HDHandgun
 	private action void A_UpdateSlideFrame()
 	{
 		let psp = player.GetPSprite(PSP_WEAPON);
-		psp.frame = invoker.WeaponStatus[USProp_Chamber] == 0 ? 1 : 0;
+		psp.frame = invoker.WeaponStatus[USProp_Chamber] == 0 ? 2 : 0;
 	}
 
 	private action void A_UpdateReloadSprite()
