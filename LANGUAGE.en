@@ -34,6 +34,12 @@ MENU_PERSISTENCY                        = "Persistent Spawns: ";
 MENU_WEPPERSISTENCY                     = "Persistent Weapon Spawns: ";
 MENU_MAGPERSISTENCY                     = "Persistent Magazine Spawns: ";
 
+// Menu Option Values
+MENU_ENABLED                            = "Enabled";
+MENU_DISABLED                           = "Disabled";
+MENU_REPLACEALL                         = "Replace All";
+MENU_WITHALL                            = "With All";
+
 // Menu Command Text
 MENU_RESETWEP                           = "Reset Weapon Options";
 MENU_RESETMAG                           = "Reset Magazine Options";
