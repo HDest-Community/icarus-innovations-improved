@@ -184,48 +184,39 @@ class HDFlamethrower : HDWeapon
 			Goto Ready;
 
 		Fire:
-			FLAM B 3 Bright
+		Hold:
+			FLAM B 3
 			{
-				if (invoker.WeaponStatus[FTProp_Gasoline] > 0)
-				{
-					A_StartSound ("Flamer/Start", CHAN_WEAPON);
-					return ResolveState("Burn");
-				}
-				else
-				{
-					A_StartSound ("Weapons/FlamerEmpty", CHAN_WEAPON);
-					return ResolveState("Nope");
+				if (invoker.WeaponStatus[FTProp_Gasoline] > 0) {
+					A_StartSound("Flamer/Start", CHAN_WEAPON);
+					A_Overlay(PSP_FLASH, "Burn");
+				} else {
+					A_StartSound("Weapons/FlamerEmpty", CHAN_WEAPON);
+					A_Jump(256, "Nope");
 				}
 			}
-			Stop;
-		Hold:
-			FLAM B 1 bright A_JumpIf(invoker.WeaponStatus[FTProp_Gasoline] > 0,"Burn");
-			Goto Nope;
-		Burn:
-			FLAF A 1 Bright
-			{				
-				if (!invoker.PrettyLights)
-				{
-					invoker.PrettyLights = CVar.GetCVar('Flamer_PrettyLights');
-				}
-				if (invoker.PrettyLights.GetBool())
-				{
-					A_SpawnItemEx("FlamerLight");
-				}
+			FLAM B 1
+			{
+				if (!invoker.PrettyLights) invoker.PrettyLights = CVar.GetCVar('Flamer_PrettyLights');
+				if (invoker.PrettyLights.GetBool()) A_SpawnItemEx("FlamerLight");
+
 				A_AlertMonsters();
 				invoker.WeaponStatus[FTProp_Gasoline]--;
 				A_MuzzleClimb(randompick(-1, 1) * frandom(0.1, 0.1), randompick(-1, 1) * frandom(0.2, 0.2));
 			}
-			FLAF ABCD 1 bright
+			FLAM B 0
 			{
-				player.GetPSprite(PSP_WEAPON).frame;
-				A_FireProjectile("HDFireCone", frandom(-3, 3), spawnheight: (3.5 * cos(-pitch)) * player.crouchfactor);
+				if (invoker.WeaponStatus[FTProp_Gasoline] > 0) A_Refire();
 			}
-			FLAF D 1 A_Refire();
-			Goto Sad;
-		Sad:
 			FLAM B 1 A_StartSound ("Flamer/Stop", CHAN_WEAPON);
-			Goto ReadyEnd;
+			Goto Nope;
+		Burn:
+			FLAF A 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			FLAF ABCD 1 Bright A_FireProjectile("HDFireCone", frandom(-3, 3), spawnheight: (3.5 * cos(-pitch)) * player.crouchfactor);
+			goto lightdone;
 		
 		AltFire:
 			FLAB A 3
@@ -276,18 +267,17 @@ class HDFlamethrower : HDWeapon
 			{
 				int magamt = invoker.WeaponStatus[FTProp_Gasoline];
 				invoker.WeaponStatus[FTProp_Gasoline] = -1;
-				if(magamt < 0)setweaponstate("MagOut");
-				else if((!PressingUnload() && !PressingReload()) || A_JumpIfInventory("HDGasTank", 0, "null"))
-					{
-						HDMagAmmo.SpawnMag(self, "HDGasTank", magamt);
-						SetWeaponState("MagOut");
-					}
-				else
-					{
-						HDMagAmmo.GiveMag(self,"HDGasTank",magamt);
-						A_StartSound("weapons/pocket",9);
-						setweaponstate("pocketmag");
-					}
+				
+				if(magamt < 0) {
+					setweaponstate("MagOut");
+				} else if((!PressingUnload() && !PressingReload()) || A_JumpIfInventory("HDGasTank", 0, "null")) {
+					HDMagAmmo.SpawnMag(self, "HDGasTank", magamt);
+					SetWeaponState("MagOut");
+				} else {
+					HDMagAmmo.GiveMag(self,"HDGasTank",magamt);
+					A_StartSound("weapons/pocket",9);
+					setweaponstate("pocketmag");
+				}
 			}
 
 		DropMag:
