@@ -26,9 +26,10 @@ class HDBitch : HDWeapon
 	{
         super.tick();
         drainheat(BTProp_Heat, 1);
-		if(WeaponStatus[BTProp_Heat] > 50 && !(level.time % 35))
+
+		if(owner && WeaponStatus[BTProp_Heat] > 50 && !(Level.time % TICRATE))
 		{
-			if(owner)owner.damagemobj(owner, owner, random(1, 3), "electrical");
+			owner.damagemobj(owner, owner, random(1, 3), "electrical");
 		}
 		
 		if (!(WeaponStatus[BTProp_Flags] & BTF_GL) && WeaponStatus[BTProp_Flags] & BTF_GrenadeLoaded)
