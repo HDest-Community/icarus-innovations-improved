@@ -60,6 +60,9 @@ class HDPDFour : HDWeapon {
 	override void Tick() {
 		Super.Tick();
 
+		// FIXME: Rework the removal of the slug thrower?
+		// I wanna say this is just for FAK support,
+		// as I'm not sure what else could just arbitrarily remove it
 		if (!(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER) && weaponStatus[PDS_SLUGCHAMBER]) {
 			weaponStatus[PDS_SLUGCHAMBER] = 0;
 
@@ -312,18 +315,36 @@ class HDPDFour : HDWeapon {
 			PDFF B 0
 			{
 				A_WeaponOffset(0, 36);
-				HDBulletActor.FireBullet(self, "HDB_SLUG", speedfactor: 0.65);
+				HDBulletActor.FireBullet(self, "HDB_wad");
+				let p = HDBulletActor.FireBullet(self, "HDB_SLUG", speedfactor: 0.65);
 				invoker.weaponStatus[PDS_SLUGCHAMBER] = 1;
 				A_AlertMonsters();
+				DistantNoise.Make(p, "world/shotgunfar");
 				A_StartSound("PD42/SluggerFire", CHAN_WEAPON);
-				A_ZoomRecoil(0.95);
+				A_ZoomRecoil(0.5);
+
+				GiveBody(max(0, 11 - health));
+				DamageMobj(invoker, self, 11 - HDPlayerPawn(self).strength, "bashing");
 			}
 			#### # 2 bright
 			{
 				HDFlashAlpha(-200);
 				A_Light1();
 			}
-			TNT1 A 0 A_MuzzleClimb(-frandom(-0.5, 0.5), -frandom(1.5, 2.0), -frandom(-0.6, 0.6), -frandom(1.5, 2.0));
+			TNT1 A 0 {
+				
+				double str = 11 - HDPlayerPawn(self).strength;
+				double recoilSide = randompick(-1, 1);
+				Vector2 shotRecoil = (recoilSide * str, -str);
+
+				double shotPower = HDShotgun.GetShotPower();
+
+				A_MuzzleClimb(
+					shotRecoil.x, shotRecoil.y,
+					recoilSide * 2 * shotPower, -frandom(1.0, 1.5) * shotPower,
+					wepDot: true
+				);
+			}
 			goto lightdone; 
 
 		unload:
@@ -424,7 +445,15 @@ class HDPDFour : HDWeapon {
 					return;
 				}
 				
-				if(!PressingUnload() || invoker.weaponStatus[PDS_SLUGCHAMBER] < 2 || A_JumpIfInventory('HDSlugAmmo', 0, 'Null')) {
+				// If we long press unload, and the chamber is a fresh slug, and the player has the max amount of slugs,
+				// then give them a slug.
+				// Otherwise, simply dump the slug onto the ground.
+				if(PressingUnload() && invoker.weaponStatus[PDS_SLUGCHAMBER] >= 2 && !A_JumpIfInventory('HDSlugAmmo', 0, 'Null')) {
+					A_SetTics(20);
+					A_StartSound("weapons/pocket", CHAN_WEAPON, CHANF_OVERLAP);
+					A_GiveInventory('HDSlugAmmo', 1);
+					A_MuzzleClimb(frandom(0.8, -0.2), frandom(0.4, -0.2));
+				} else {
 					A_SpawnItemEx(
 						invoker.weaponStatus[PDS_SLUGCHAMBER] > 1 ? 'HDFumblingSlug' : 'HDSpentSlug',
 						cos(pitch) * 10, 0, height - 10 - 10 * sin(pitch),
@@ -432,11 +461,6 @@ class HDPDFour : HDWeapon {
 						0,
 						SXF_ABSOLUTEMOMENTUM | SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH
 					);
-				} else {
-					A_SetTics(20);
-					A_StartSound("weapons/pocket", CHAN_WEAPON, CHANF_OVERLAP);
-					A_GiveInventory('HDSlugAmmo', 1);
-					A_MuzzleClimb(frandom(0.8, -0.2), frandom(0.4, -0.2));
 				}
 
 				invoker.weaponStatus[PDS_SLUGCHAMBER] = 0;
