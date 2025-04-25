@@ -60,6 +60,8 @@ class HDPDFour : HDWeapon {
 	override void Tick() {
 		Super.Tick();
 
+		DrainHeat(PDS_HEAT, 10);
+
 		// FIXME: Rework the removal of the slug thrower?
 		// I wanna say this is just for FAK support,
 		// as I'm not sure what else could just arbitrarily remove it
@@ -273,7 +275,7 @@ class HDPDFour : HDWeapon {
 			{
 				switch (invoker.weaponStatus[PDS_FIREMODE]) {
 					case 1:
-						if (invoker.BurstIndex < 2) {
+						if (invoker.BurstIndex < 1) {
 							invoker.BurstIndex++;
 							A_Refire('fire');
 						}
@@ -293,11 +295,17 @@ class HDPDFour : HDWeapon {
 		flash:
 			PDFF A 1
 			{
-				HDBulletActor.FireBullet(self, "HDB_426", speedfactor: 0.9);
-				A_AlertMonsters(HDCONST_ONEMETRE * 15);
+				int heat = min(50, invoker.weaponStatus[PDS_HEAT]);
+
+				HDBulletActor.FireBullet(self, "HDB_426", spread: heat > 20 ? heat * 0.2 : 0, speedfactor: 0.9);
+				A_AlertMonsters(HDCONST_ONEMETRE * (15 + heat));
+
 				A_ZoomRecoil(0.95);
 				A_StartSound("PD42/Fire", CHAN_WEAPON);
+				
 				invoker.weaponStatus[PDS_CHAMBER] = 0;
+				invoker.weaponStatus[PDS_HEAT] += random(3, 5) * (invoker.weaponStatus[PDS_FIREMODE] == 1 ? 2 : 1);
+				
 				HDFlashAlpha(-200);
 				A_Light1();
 			}
@@ -312,13 +320,17 @@ class HDPDFour : HDWeapon {
 			goto lightdone;
 
 		altflash:
-			PDFF B 0
+			PDFF B 1 bright
 			{
 				A_WeaponOffset(0, 36);
+
 				HDBulletActor.FireBullet(self, "HDB_wad");
 				let p = HDBulletActor.FireBullet(self, "HDB_SLUG", speedfactor: 0.65);
-				invoker.weaponStatus[PDS_SLUGCHAMBER] = 1;
 				A_AlertMonsters();
+				
+				invoker.weaponStatus[PDS_SLUGCHAMBER] = 1;
+				invoker.weaponStatus[PDS_HEAT] += random(12, 20);
+				
 				DistantNoise.Make(p, "world/shotgunfar");
 				A_StartSound("PD42/SluggerFire", CHAN_WEAPON);
 
@@ -330,11 +342,10 @@ class HDPDFour : HDWeapon {
 			}
 			#### # 1 bright
 			{
-				A_ZoomRecoil(GunBraced() ? 0.666 : 0.333);
+				A_ZoomRecoil(GunBraced() ? 0.75 : 0.5);
 				HDFlashAlpha(-200);
 				A_Light1();
 			}
-			TNT1 A 1 A_Light0();
 			TNT1 A 0 {
 				
 				double str = clamp(10 - HDPlayerPawn(self).strength, 0, 10);
@@ -650,7 +661,8 @@ enum PDFourStatus {
 	PDS_CHAMBER = 2,
 	PDS_FIREMODE = 3, //0 semi, 1 burst, 2 auto
 	PDS_DOT = 4,
-	PDS_SLUGCHAMBER = 5
+	PDS_SLUGCHAMBER = 5,
+	PDS_HEAT = 6
 }
 
 class PDFourRandom : IdleDummy {
