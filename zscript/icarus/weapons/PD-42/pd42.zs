@@ -300,21 +300,30 @@ class HDPDFour : HDWeapon {
 				HDBulletActor.FireBullet(self, "HDB_426", spread: heat > 20 ? heat * 0.2 : 0, speedfactor: 0.9);
 				A_AlertMonsters(HDCONST_ONEMETRE * (15 + heat));
 
-				A_ZoomRecoil(0.95);
 				A_StartSound("PD42/Fire", CHAN_WEAPON);
 				
 				invoker.weaponStatus[PDS_CHAMBER] = 0;
 				invoker.weaponStatus[PDS_HEAT] += random(3, 5) * (invoker.weaponStatus[PDS_FIREMODE] == 1 ? 2 : 1);
 				
+				A_ZoomRecoil(0.95);
 				HDFlashAlpha(-200);
 				A_Light1();
-			}
-			TNT1 A 0
-			{
+				
 				if (invoker.weaponStatus[PDS_FIREMODE] == 1) {
-					A_MuzzleClimb(-frandom(-0.7, 0.7), -frandom(0.8, 1.2));
+					// Hyperburst (totals: -[1.6 - 2.6], -[2.5 - 4.8])
+					A_MuzzleClimb(
+						0, 0,
+						-frandom(1.2, 1.4), -frandom(1.6, 3.0),
+						-frandom(0.4, 1.2), -frandom(0.9, 1.8)
+					);
 				} else {
-					A_MuzzleClimb(-frandom(-0.5, 0.5), -frandom(0.6, 0.8), -frandom(-0.5, 0.5), -frandom(0.6, 0.8));
+					// Semi/Full Auto (totals: -[1.2 - 2.6], -[2.4 - 4.8])
+					A_MuzzleClimb(
+						0, 0,
+						-frandom(0.6, 0.8), -frandom(0.8, 1.6),
+						-frandom(0.4, 1.2), -frandom(0.8, 1.6),
+						-frandom(0.2, 0.6), -frandom(0.8, 1.6)
+					);
 				}
 			}
 			goto lightdone;
@@ -342,22 +351,19 @@ class HDPDFour : HDWeapon {
 			}
 			#### # 1 bright
 			{
-				A_ZoomRecoil(GunBraced() ? 0.75 : 0.5);
+				A_ZoomRecoil(GunBraced() ? 0.75 : 0.65);
 				HDFlashAlpha(-200);
 				A_Light1();
-			}
-			TNT1 A 0 {
 				
-				double str = clamp(10 - HDPlayerPawn(self).strength, 0, 10);
-				double recoilSide = randompick(-1, 1);
-				Vector2 shotRecoil = (recoilSide * 0.1 * str, -(0.25 * str));
+				let str = clamp(10 - HDPlayerPawn(self).strength, 0, 10);
+				let shotPower = HDShotgun.GetShotPower();
 
-				double shotPower = HDShotgun.GetShotPower();
-
+				// Totals (1 Strength):   -[5.40 - 7.575], -[4.05 - 7.275]
+				// Totals (10+ Strength): -[1.44 - 3.360], -[2.16 - 5.040]
 				A_MuzzleClimb(
 					0, 0,
-					shotRecoil.x, shotRecoil.y,
-					recoilSide * 0.1 * shotPower, -0.1 * shotPower
+					-frandom(0.45 * str, 0.55 * str), -frandom(0.2 * str, 0.4 * str),
+					-frandom(1.6 * shotPower, 3.2 * shotPower), -frandom(2.4 * shotPower, 4.8 * shotPower)
 				);
 			}
 			goto lightdone; 
