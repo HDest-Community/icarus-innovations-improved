@@ -321,28 +321,32 @@ class HDPDFour : HDWeapon {
 				A_AlertMonsters();
 				DistantNoise.Make(p, "world/shotgunfar");
 				A_StartSound("PD42/SluggerFire", CHAN_WEAPON);
-				A_ZoomRecoil(0.5);
 
-				GiveBody(max(0, 11 - health));
-				DamageMobj(invoker, self, 11 - HDPlayerPawn(self).strength, "bashing");
+				let str = clamp(10 - HDPlayerPawn(self).strength, 0, 10);
+				if (!GunBraced() && str > 0) {
+					GiveBody(max(0, 11 - health));
+					DamageMobj(invoker, self, str, "bashing");
+				}
 			}
-			#### # 2 bright
+			#### # 1 bright
 			{
+				A_ZoomRecoil(GunBraced() ? 0.666 : 0.333);
 				HDFlashAlpha(-200);
 				A_Light1();
 			}
+			TNT1 A 1 A_Light0();
 			TNT1 A 0 {
 				
-				double str = 11 - HDPlayerPawn(self).strength;
+				double str = clamp(10 - HDPlayerPawn(self).strength, 0, 10);
 				double recoilSide = randompick(-1, 1);
-				Vector2 shotRecoil = (recoilSide * str, -str);
+				Vector2 shotRecoil = (recoilSide * 0.1 * str, -(0.25 * str));
 
 				double shotPower = HDShotgun.GetShotPower();
 
 				A_MuzzleClimb(
+					0, 0,
 					shotRecoil.x, shotRecoil.y,
-					recoilSide * 2 * shotPower, -frandom(1.0, 1.5) * shotPower,
-					wepDot: true
+					recoilSide * 0.1 * shotPower, -0.1 * shotPower
 				);
 			}
 			goto lightdone; 
