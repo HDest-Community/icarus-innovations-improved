@@ -1,0 +1,116 @@
+// Weapon Backpack Spawn Pool Filters
+addBPSpawnPoolFilter => { "name": "HDBarracuda", "allowed": "#barracuda_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDBitch", "allowed": "#bitch_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDFenris", "allowed": "#fenris_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDFlamethrower", "allowed": "#flamenwerfer_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDFrontier", "allowed": "#frontiersman_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDGFBlaster", "allowed": "#gfb9_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDMBR", "allowed": "#mbr_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDNCT", "allowed": "#nct_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDNyx", "allowed": "#nyx_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDPDFour", "allowed": "#pd42_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDSix12", "allowed": "#six12_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDUMP", "allowed": "#ump45_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDUSP", "allowed": "#usp45_allowBackpacks" }
+
+// Ammo Backpack Spawn Pool Filters
+addBPSpawnPoolFilter => { "name": "HDGasTank", "allowed": "#gastank_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDMBRMagHeavy", "allowed": "#mbrmagheavy_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDMBRMagLight", "allowed": "#mbrmaglight_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDNyxMag", "allowed": "#nyxmag_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDPDFourMag", "allowed": "#pd42mag_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDSix12MagShells", "allowed": "#six12shellmag_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDSix12MagSlugs", "allowed": "#six12slugmag_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDUMPMag", "allowed": "#ump45mag_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "HDUSPMag", "allowed": "#usp45mag_allowBackpacks" }
+
+// Weapon Spawn Pools
+addSpawnTableSingleEntry => { "tableName": "ShotgunReplaces", "name": "BarracudaRandom", "weight": "#barracuda_hunter_spawn_bias", "persists": "#barracuda_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "SuperShotgunReplaces", "name": "BarracudaRandom", "weight": "#barracuda_slayer_spawn_bias", "persists": "#barracuda_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ChaingunReplaces", "name": "BitchRandom", "weight": "#bitch_chaingun_spawn_bias", "persists": "#bitch_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "PlasmaRifleReplaces", "name": "FenrisRandom", "weight": "#fenris_plasma_spawn_bias", "persists": "#fenris_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "RocketLauncherReplaces", "name": "FlamethrowerSpawner", "weight": "#flamenwerfer_launcher_spawn_bias", "persists": "#flamenwerfer_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "BFG9000Replaces", "name": "FlamethrowerSpawner", "weight": "#flamenwerfer_bfg_spawn_bias", "persists": "#flamenwerfer_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ShotgunReplaces", "name": "FrontierSpawner", "weight": "#frontiersman_hunter_spawn_bias", "persists": "#frontiersman_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "SuperShotgunReplaces", "name": "FrontierSpawner", "weight": "#frontiersman_slayer_spawn_bias", "persists": "#frontiersman_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "PistolReplaces", "name": "GFBlasterRandom", "weight": "#gfb9_pistol_spawn_bias", "persists": "#gfb9_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipBoxReplaces", "name": "GFBlasterRandom", "weight": "#gfb9_clipbox_spawn_bias", "persists": "#gfb9_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ChaingunReplaces", "name": "MBRRandom", "weight": "#mbr_chaingun_spawn_bias", "persists": "#mbr_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipBoxReplaces", "name": "MBRRandom", "weight": "#mbr_clipbox_spawn_bias", "persists": "#mbr_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ChainsawReplaces", "name": "NCTRandom", "weight": "#nct_chainsaw_spawn_bias", "persists": "#nct_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "PistolReplaces", "name": "NCTRandom", "weight": "#nct_pistol_spawn_bias", "persists": "#nct_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "BFG9000Replaces", "name": "NCTRandom", "weight": "#nct_bfg_spawn_bias", "persists": "#nct_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "PistolReplaces", "name": "NyxRandom", "weight": "#nyx_pistol_spawn_bias", "persists": "#nyx_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ShotgunReplaces", "name": "NyxRandom", "weight": "#nyx_hunter_spawn_bias", "persists": "#nyx_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "SuperShotgunReplaces", "name": "NyxRandom", "weight": "#nyx_slayer_spawn_bias", "persists": "#nyx_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipBoxReplaces", "name": "NyxRandom", "weight": "#nyx_clipbox_spawn_bias", "persists": "#nyx_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ChaingunReplaces", "name": "PDFourRandom", "weight": "#pd42_chaingun_spawn_bias", "persists": "#pd42_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipBoxReplaces", "name": "PDFourRandom", "weight": "#pd42_clipbox_spawn_bias", "persists": "#pd42_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ShotgunReplaces", "name": "Six12Random", "weight": "#six12_hunter_spawn_bias", "persists": "#six12_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "SuperShotgunReplaces", "name": "Six12Random", "weight": "#six12_slayer_spawn_bias", "persists": "#six12_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ChaingunReplaces", "name": "UMPRandom", "weight": "#ump45_chaingun_spawn_bias", "persists": "#ump45_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipBoxReplaces", "name": "UMPRandom", "weight": "#ump45_clipbox_spawn_bias", "persists": "#ump45_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "PistolReplaces", "name": "USPRandom", "weight": "#usp45_pistol_spawn_bias", "persists": "#usp45_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipBoxReplaces", "name": "USPRandom", "weight": "#usp45_clipbox_spawn_bias", "persists": "#usp45_persistent_spawning" }
+
+// Handgun Drop Table
+addSpawnTableSingleEntry => { "tableName": "HDHandgunRandomDrop", "name": "HDGFBlaster", "weight": "#gfb9_pistol_spawn_bias", "chance": "16", "persists": "#gfb9_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "HDHandgunRandomDrop", "name": "HDNCT", "weight": "#nct_pistol_spawn_bias", "chance": "16", "persists": "#nct_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "HDHandgunRandomDrop", "name": "HDNyx", "weight": "#nyx_pistol_spawn_bias", "chance": "16", "persists": "#nyx_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "HDHandgunRandomDrop", "name": "HDUSP", "weight": "#usp45_pistol_spawn_bias", "chance": "16", "persists": "#usp45_persistent_spawning" }
+
+// Ammo Spawn Pools
+addSpawnTableSingleEntry => { "tableName": "RocketReplaces", "name": "HDGasTank", "weight": "#gastank_rocket_spawn_bias", "persists": "#gastank_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "RocketBoxReplaces", "name": "HDGasTank", "weight": "#gastank_rocketbox_spawn_bias", "persists": "#gastank_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "CellReplaces", "name": "HDGasTank", "weight": "#gastank_battery_spawn_bias", "persists": "#gastank_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDMBRMagHeavy", "weight": "#mbrmagheavy_clipmag_spawn_bias", "persists": "#mbrmagheavy_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "RocketReplaces", "name": "HDMBRMagHeavy", "weight": "#mbrmagheavy_rocket_spawn_bias", "persists": "#mbrmagheavy_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDMBRMagLight", "weight": "#mbrmaglight_clipmag_spawn_bias", "persists": "#mbrmaglight_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ShellReplaces", "name": "HDMBRMagLight", "weight": "#mbrmaglight_rocket_spawn_bias", "persists": "#mbrmaglight_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDNyxMag", "weight": "#nyxmag_clipmag_spawn_bias", "persists": "#nyxmag_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDPDFourMag", "weight": "#pd42mag_clipmag_spawn_bias", "persists": "#pd42mag_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ShellReplaces", "name": "HDSix12MagShells", "weight": "#six12shellmag_shell_spawn_bias", "persists": "#six12shellmag_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ShellReplaces", "name": "HDSix12MagSlugs", "weight": "#six12slugmag_shell_spawn_bias", "persists": "#six12slugmag_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDUMPMag", "weight": "#ump45mag_clipmag_spawn_bias", "persists": "#ump45mag_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDUSPMag", "weight": "#usp45mag_clipmag_spawn_bias", "persists": "#usp45mag_persistent_spawning" }
+
+// Item Spawn Pools
+addSpawnTableSingleEntry => { "tableName": "GreenArmorReplaces", "name": "HEVArmour", "weight": "#hevarmour_greenarmour_spawn_bias", "persists": "#hevarmour_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "BlueArmorReplaces", "name": "HEVArmour", "weight": "#hevarmour_bluearmour_spawn_bias", "persists": "#hevarmour_persistent_spawning" }
+
+// Ammo Usages
+addAmmoUser => { "ammoName": "HDRevolverAmmo", "name": "HDNyx" }
+addAmmoUser => { "ammoName": "HD45ACPAmmo", "name": "HDUMP" }
+addAmmoUser => { "ammoName": "HD45ACPAmmo", "name": "HDUSP" }
+addAmmoUser => { "ammoName": "HD500SWHeavyAmmo", "name": "HDMBR" }
+addAmmoUser => { "ammoName": "HD500SWLightAmmo", "name": "HDMBR" }
+addAmmoUser => { "ammoName": "HDShellAmmo", "name": "HDBarracuda" }
+addAmmoUser => { "ammoName": "HDShellAmmo", "name": "HDSix12" }
+addAmmoUser => { "ammoName": "HDSlugAmmo", "name": "HDBarracuda" }
+addAmmoUser => { "ammoName": "HDSlugAmmo", "name": "HDPDFour" }
+addAmmoUser => { "ammoName": "HDSlugAmmo", "name": "HDSix12" }
+addAmmoUser => { "ammoName": "FourMilAmmo", "name": "HDBitch" }
+addAmmoUser => { "ammoName": "FourMilAmmo", "name": "HDPDfour" }
+addAmmoUser => { "ammoName": "HDRocketAmmo", "name": "HDBitch" }
+addAmmoUser => { "ammoName": "HDRocketAmmo", "name": "HDMBR" }
+addAmmoUser => { "ammoName": "HDBattery", "name": "HDFenris" }
+addAmmoUser => { "ammoName": "HDBattery", "name": "HDNCT" }
+addAmmoUser => { "ammoName": "SevenMilAmmo", "name": "HDFrontiersman" }
+
+newAmmo => { "ammoName": "HDGasTank" }
+addAmmoUser => { "ammoName": "HDGasTank", "name": "HDFlamethrower" }
+
+// AceCorp Weapon Crate Filters
+addWeaponCrateFilter => { "name": "HDBarracuda", "allowed": "#barracuda_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDBitch", "allowed": "#bitch_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDFenris", "allowed": "#fenris_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDFlamethrower", "allowed": "#flamenwerfer_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDFrontier", "allowed": "#frontiersman_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDGFBlaster", "allowed": "#gfb9_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDMBR", "allowed": "#mbr_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDNCT", "allowed": "#nct_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDNyx", "allowed": "#nyx_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDPDFour", "allowed": "#pd42_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDSix12", "allowed": "#six12_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDUMP", "allowed": "#ump45_allowBackpacks" }
+addWeaponCrateFilter => { "name": "HDUSP", "allowed": "#usp45_allowBackpacks" }

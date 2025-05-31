@@ -22,8 +22,6 @@ const HDLD_UMPMAG         = "umm";
 const HDLD_USP            = "usp";
 const HDLD_USPMAG         = "usm";
 
-#include "zscript/icarus/SpawnHandler.zs"
-
 #include "zscript/icarus/items/HEV Armor/hevArmor.zs"
 
 #include "zscript/icarus/weapons/Barracuda/barracuda.zs"

@@ -115,6 +115,7 @@ MENU_MBRMAGLIGHT_BACKPACKS              = "Control whether MBR Light Magazines s
 // NCT Options Text
 MENU_NCT_TITLE                          = "------ NS3-Cr.Kt Options ------";
 MENU_NCT_CHAINSAW_SPAWNTEXT             = "Control the spawn rate of the NS3-Cr.Kt on Chainsaws:";
+MENU_NCT_PISTOL_SPAWNTEXT               = "Control the spawn rate of the NS3-Cr.Kt on Pistols:";
 MENU_NCT_BFG_SPAWNTEXT                  = "Control the spawn rate of the NS3-Cr.Kt on BFG-9000s:";
 MENU_NCT_BACKPACKS                      = "Control whether the NS3-Cr.Kt spawns in Backpacks:";
 
