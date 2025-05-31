@@ -78,16 +78,16 @@ OptionMenu "nyxSpawning" {
 
 	StaticText "$MENU_WEPSPAWNOPTIONS", "Yellow"
     StaticText "$MENU_NYX_PISTOL_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "nyx_pistol_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "nyx_pistol_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_pistol_spawn_bias"
     StaticText "$MENU_NYX_HUNTER_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "nyx_hunter_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "nyx_hunter_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_hunter_spawn_bias"
     StaticText "$MENU_NYX_SLAYER_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "nyx_slayer_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "nyx_slayer_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_slayer_spawn_bias"
     StaticText "$MENU_NYX_CLIPBOX_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "nyx_clipbox_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "nyx_clipbox_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar nyx_clipbox_spawn_bias"
  	StaticText ""
 
@@ -97,7 +97,7 @@ OptionMenu "nyxSpawning" {
 
 	StaticText "$MENU_MAGSPAWNOPTIONS", "Yellow"
     StaticText "$MENU_NYXMAG_CLIPMAG_SPAWNTEXT", "White"
-	Slider "$MENU_MAGSPAWNRATE", "nyxmag_clipmag_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_MAGSPAWNRATE", "nyxmag_clipmag_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETMAG", "resetcvar nyxmag_clipmag_spawn_bias"
  	StaticText ""
 
@@ -127,10 +127,10 @@ OptionMenu "usp45Spawning" {
 
 	StaticText "$MENU_WEPSPAWNOPTIONS", "Yellow"
     StaticText "$MENU_USP_PISTOL_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "usp45_pistol_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "usp45_pistol_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar usp45_pistol_spawn_bias"
     StaticText "$MENU_USP_CLIPBOX_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "usp45_clipbox_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "usp45_clipbox_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar usp45_clipbox_spawn_bias"
  	StaticText ""
 
@@ -140,7 +140,7 @@ OptionMenu "usp45Spawning" {
 
 	StaticText "$MENU_MAGSPAWNOPTIONS", "Yellow"
     StaticText "$MENU_USPMAG_CLIPMAG_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "usp45mag_clipmag_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "usp45mag_clipmag_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar usp45mag_clipmag_spawn_bias"
     StaticText ""
 
@@ -173,10 +173,10 @@ OptionMenu "barracudaSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Red"
     StaticText "$MENU_BARRACUDA_HUNTER_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "barracuda_hunter_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "barracuda_hunter_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar barracuda_hunter_spawn_bias"
     StaticText "$MENU_BARRACUDA_SLAYER_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "barracuda_slayer_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "barracuda_slayer_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar barracuda_slayer_spawn_bias"
  	StaticText ""
 
@@ -205,10 +205,10 @@ OptionMenu "six12Spawning" {
 
 	StaticText "$MENU_WEPSPAWNOPTIONS", "Red"
     StaticText "$MENU_SIX12_HUNTER_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "six12_hunter_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "six12_hunter_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar six12_hunter_spawn_bias"
     StaticText "$MENU_SIX12_SLAYER_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "six12_slayer_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "six12_slayer_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar six12_slayer_spawn_bias"
  	StaticText ""
 
@@ -218,7 +218,7 @@ OptionMenu "six12Spawning" {
 
 	StaticText "$MENU_MAGSPAWNOPTIONS", "Red"
     StaticText "$MENU_SIX12MAG_SHELL_SHELL_SPAWNTEXT", "White"
-	Slider "$MENU_MAGSPAWNRATE", "six12shellmag_shell_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_MAGSPAWNRATE", "six12shellmag_shell_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETMAG", "resetcvar six12shellmag_shell_spawn_bias"
     StaticText ""
 
@@ -227,7 +227,7 @@ OptionMenu "six12Spawning" {
  	StaticText ""
 
     StaticText "$MENU_SIX12MAG_SLUG_SHELL_SPAWNTEXT", "White"
-	Slider "$MENU_MAGSPAWNRATE", "six12slugmag_shell_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_MAGSPAWNRATE", "six12slugmag_shell_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETMAG", "resetcvar six12slugmag_shell_spawn_bias"
     StaticText ""
 
@@ -261,7 +261,7 @@ OptionMenu "bitchSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Green"
     StaticText "$MENU_BITCH_CHAINGUN_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "bitch_chaingun_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "bitch_chaingun_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar bitch_chaingun_spawn_bias"
  	StaticText ""
 
@@ -290,10 +290,10 @@ OptionMenu "mbrSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Green"
     StaticText "$MENU_MBR_CHAINGUN_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "mbr_chaingun_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "mbr_chaingun_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar mbr_chaingun_spawn_bias"
     StaticText "$MENU_MBR_CLIPBOX_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "mbr_clipbox_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "mbr_clipbox_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar mbr_clipbox_spawn_bias"
  	StaticText ""
 
@@ -303,17 +303,17 @@ OptionMenu "mbrSpawning" {
 
 	StaticText "$MENU_MAGSPAWNOPTIONS", "Green"
     StaticText "$MENU_MBRMAGHEAVY_CLIPMAG_SPAWNTEXT", "White"
-	Slider "$MENU_MAGSPAWNRATE", "mbrmagheavy_clipmag_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_MAGSPAWNRATE", "mbrmagheavy_clipmag_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmagheavy_clipmag_spawn_bias"
     StaticText "$MENU_MBRMAGHEAVY_ROCKET_SPAWNTEXT", "White"
-	Slider "$MENU_MAGSPAWNRATE", "mbrmagheavy_rocket_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_MAGSPAWNRATE", "mbrmagheavy_rocket_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmagheavy_rocket_spawn_bias"
  	StaticText ""
     StaticText "$MENU_MBRMAGLIGHT_CLIPMAG_SPAWNTEXT", "White"
-	Slider "$MENU_MAGSPAWNRATE", "mbrmaglight_clipmag_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_MAGSPAWNRATE", "mbrmaglight_clipmag_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmaglight_clipmag_spawn_bias"
     StaticText "$MENU_MBRMAGLIGHT_SHELL_SPAWNTEXT", "White"
-	Slider "$MENU_MAGSPAWNRATE", "mbrmaglight_shell_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_MAGSPAWNRATE", "mbrmaglight_shell_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETMAG", "resetcvar mbrmaglight_shell_spawn_bias"
  	StaticText ""
 
@@ -347,10 +347,10 @@ OptionMenu "pd42Spawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Green"
     StaticText "$MENU_PD42_CHAINGUN_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "pd42_chaingun_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "pd42_chaingun_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar pd42_chaingun_spawn_bias"
     StaticText "$MENU_PD42_CLIPBOX_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "pd42_clipbox_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "pd42_clipbox_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar pd42_clipbox_spawn_bias"
  	StaticText ""
 
@@ -360,7 +360,7 @@ OptionMenu "pd42Spawning" {
 
 	StaticText "$MENU_MAGSPAWNOPTIONS", "Green"
     StaticText "$MENU_PD42MAG_CLIPMAG_SPAWNTEXT", "White"
-	Slider "$MENU_MAGSPAWNRATE", "pd42mag_clipmag_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_MAGSPAWNRATE", "pd42mag_clipmag_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETMAG", "resetcvar pd42mag_clipmag_spawn_bias"
  	StaticText ""
 
@@ -390,10 +390,10 @@ OptionMenu "ump45Spawning" {
 
 	StaticText "$MENU_WEPSPAWNOPTIONS", "Green"
     StaticText "$MENU_UMP_CHAINGUN_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "ump45_chaingun_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "ump45_chaingun_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar ump45_chaingun_spawn_bias"
     StaticText "$MENU_UMP_CLIPBOX_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "ump45_clipbox_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "ump45_clipbox_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar ump45_clipbox_spawn_bias"
  	StaticText ""
 
@@ -403,7 +403,7 @@ OptionMenu "ump45Spawning" {
 
 	StaticText "$MENU_MAGSPAWNOPTIONS", "Green"
     StaticText "$MENU_UMPMAG_CLIPMAG_SPAWNTEXT", "White"
-	Slider "$MENU_MAGSPAWNRATE", "ump45mag_clipmag_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_MAGSPAWNRATE", "ump45mag_clipmag_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETMAG", "resetcvar ump45mag_clipmag_spawn_bias"
  	StaticText ""
 
@@ -440,10 +440,10 @@ OptionMenu "flamenwerferSpawning" {
 
 	StaticText "$MENU_WEPSPAWNOPTIONS", "Brown"
     StaticText "$MENU_FLAMENWERFER77_LAUNCHER_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "flamenwerfer_launcher_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "flamenwerfer_launcher_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar flamenwerfer_launcher_spawn_bias"
     StaticText "$MENU_FLAMENWERFER77_BFG_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "flamenwerfer_bfg_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "flamenwerfer_bfg_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar flamenwerfer_bfg_spawn_bias"
     StaticText ""
 
@@ -453,13 +453,13 @@ OptionMenu "flamenwerferSpawning" {
 
 	StaticText "$MENU_GASTANK_SPAWNOPTIONS", "Brown"
     StaticText "$MENU_GASTANK_ROCKET_SPAWNTEXT", "White"
-	Slider "$MENU_GASTANK_SPAWNRATE", "gastank_rocket_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_GASTANK_SPAWNRATE", "gastank_rocket_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETGASTANK", "resetcvar gastank_rocket_spawn_bias"
     StaticText "$MENU_GASTANK_ROCKETBOX_SPAWNTEXT", "White"
-	Slider "$MENU_GASTANK_SPAWNRATE", "gastank_rocketbox_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_GASTANK_SPAWNRATE", "gastank_rocketbox_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETGASTANK", "resetcvar gastank_rocketbox_spawn_bias"
     StaticText "$MENU_GASTANK_BATTERY_SPAWNTEXT", "White"
-	Slider "$MENU_GASTANK_SPAWNRATE", "gastank_battery_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_GASTANK_SPAWNRATE", "gastank_battery_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETGASTANK", "resetcvar gastank_battery_spawn_bias"
  	StaticText ""
 
@@ -492,10 +492,10 @@ OptionMenu "frontiersmanSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Orange"
     StaticText "$MENU_FRONTIERSMAN_HUNTER_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "frontiersman_hunter_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "frontiersman_hunter_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar frontiersman_hunter_spawn_bias"
     StaticText "$MENU_FRONTIERSMAN_SLAYER_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "frontiersman_slayer_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "frontiersman_slayer_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar frontiersman_slayer_spawn_bias"
  	StaticText ""
 
@@ -527,7 +527,7 @@ OptionMenu "fenrisSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Cyan"
     StaticText "$MENU_FENRIS_PLASMA_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "fenris_plasma_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "fenris_plasma_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar fenris_plasma_spawn_bias"
  	StaticText ""
 
@@ -556,10 +556,10 @@ OptionMenu "gfb9Spawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Cyan"
     StaticText "$MENU_GFB9_PISTOL_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "gfb9_pistol_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "gfb9_pistol_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar gfb9_pistol_spawn_bias"
     StaticText "$MENU_GFB9_CLIPBOX_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "gfb9_clipbox_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "gfb9_clipbox_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar gfb9_clipbox_spawn_bias"
  	StaticText ""
 
@@ -588,13 +588,13 @@ OptionMenu "nctSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Cyan"
     StaticText "$MENU_NCT_CHAINSAW_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "nct_chainsaw_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "nct_chainsaw_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar nct_chainsaw_spawn_bias"
     StaticText "$MENU_NCT_PISTOL_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "nct_pistol_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "nct_pistol_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar nct_pistol_spawn_bias"
     StaticText "$MENU_NCT_BFG_SPAWNTEXT", "White"
-	Slider "$MENU_WEPSPAWNRATE", "nct_bfg_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_WEPSPAWNRATE", "nct_bfg_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETWEP", "resetcvar nct_bfg_spawn_bias"
  	StaticText ""
 
@@ -626,10 +626,10 @@ OptionMenu "hevArmourSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Sapphire"
     StaticText "$MENU_HEVARMOUR_GREENARMOUR_SPAWNTEXT", "White"
-	Slider "$MENU_SPAWNRATE", "hevarmour_greenarmour_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_SPAWNRATE", "hevarmour_greenarmour_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETOPTIONS", "resetcvar hevarmour_greenarmour_spawn_bias"
     StaticText "$MENU_HEVARMOUR_BLUEARMOUR_SPAWNTEXT", "White"
-	Slider "$MENU_SPAWNRATE", "hevarmour_bluearmour_spawn_bias",  0.0, 1000, .01, 3
+	Slider "$MENU_SPAWNRATE", "hevarmour_bluearmour_spawn_bias", 0.0, 100, .01, 2
 	SafeCommand "$MENU_RESETOPTIONS", "resetcvar hevarmour_bluearmour_spawn_bias"
  	StaticText ""
 
