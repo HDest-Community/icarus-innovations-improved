@@ -438,7 +438,7 @@ class HDMBR : HDWeapon
 		HDWeapon.BarrelSize 32, 1, 3;
 		Inventory.Icon "MBR5A0";
 		Scale 0.5;
-		Tag "Modular Battle Rifle";
+		Tag "$TAG_MBR";
 		HDWeapon.Refid "mbr";
 		HDWeapon.Loadoutcodes "
 			\cuheavy - Loaded with Heavy Mags
