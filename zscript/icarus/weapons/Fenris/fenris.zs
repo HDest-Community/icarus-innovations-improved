@@ -71,12 +71,7 @@ class HDFenris : HDCellWeapon
 	override string GetHelpText()
 	{
 		LocalizeHelp();
-		return 
-		/*WEPHELP_FIRE.."  Shoot\n"
-		..WEPHELP_ALTFIRE.." Launch Snowball\n"
-		..WEPHELP_FIREMODE.."  Change Firemode\n"
-		..WEPHELP_RELOAD.."  Load battery\n"
-		..WEPHELP_UNLOAD.."  Unload battery";*/
+		return
 		LWPHELP_FIRE..Stringtable.Localize("$FENRIS_HELPTEXT_1")
 		..LWPHELP_ALTFIRE..Stringtable.Localize("$FENRIS_HELPTEXT_2")
 		..LWPHELP_FIREMODE..Stringtable.Localize("$FENRIS_HELPTEXT_3")

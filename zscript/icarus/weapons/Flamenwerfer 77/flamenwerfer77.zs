@@ -124,13 +124,6 @@ class HDFlamethrower : HDWeapon
 	Override string gethelptext()
 	{
 		LocalizeHelp();
-		/*
-		return
-		WEPHELP_FIRE.."  Throw Flames\n"
-		..WEPHELP_ALTFIRE.."  Airblast\n"
-		..WEPHELP_RELOAD.."  Reload Canister\n"
-		..WEPHELP_UNLOAD.."  Unload Canister\n";
-		*/
 		return
 		LWPHELP_FIRE..Stringtable.Localize("$FLAMWERF_HELPTEXT_1")
 		..LWPHELP_ALTFIRE..Stringtable.Localize("$FLAMWERF_HELPTEXT_2")
