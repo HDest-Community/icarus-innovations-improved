@@ -246,3 +246,12 @@ PICKUP_USP_PREFIX                       = "You got the ";
 PICKUP_USP_SUFFIX                       = ".";
 PICKUP_USPMAG_PREFIX                    = "You got a ";
 PICKUP_USPMAG_SUFFIX                    = ".";
+
+
+// Help Text - [Ted]
+
+// Flamenwerfer
+FLAMWERF_HELPTEXT_1 = " Throw Flames\n";
+FLAMWERF_HELPTEXT_2 = " Airblast\n";
+FLAMWERF_HELPTEXT_3 = " Reload Canister\n";
+FLAMWERF_HELPTEXT_4 = " Unload Canister\n";
