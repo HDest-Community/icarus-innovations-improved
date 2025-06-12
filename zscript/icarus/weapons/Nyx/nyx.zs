@@ -74,11 +74,13 @@ class HDNyx : HDHandgun
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRESHOOT
-		..WEPHELP_FIREMODE.."  Semi Auto/Burst\n"
-		..WEPHELP_RELOAD.."  Reload mag\n"
-		..WEPHELP_USE.."+"..WEPHELP_RELOAD.."  Reload chamber\n"
-		..WEPHELP_MAGMANAGER;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRESHOOT
+		..LWPHELP_FIREMODE..Stringtable.Localize("$NYX_HELPTEXT_1")
+		..LWPHELP_RELOAD..Stringtable.Localize("$NYX_HELPTEXT_2")
+		..LWPHELP_USE.."+"..LWPHELP_RELOAD..Stringtable.Localize("$NYX_HELPTEXT_3")
+		..LWPHELP_MAGMANAGER;
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)

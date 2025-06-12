@@ -255,3 +255,82 @@ FLAMWERF_HELPTEXT_1 = " Throw Flames\n";
 FLAMWERF_HELPTEXT_2 = " Airblast\n";
 FLAMWERF_HELPTEXT_3 = " Reload Canister\n";
 FLAMWERF_HELPTEXT_4 = " Unload Canister\n";
+
+// Fenris
+FENRIS_HELPTEXT_1 = " Shoot\n";
+FENRIS_HELPTEXT_2 = " Launch Snowball\n";
+FENRIS_HELPTEXT_3 = " Change Firemode\n";
+FENRIS_HELPTEXT_4 = " Load battery\n";
+FENRIS_HELPTEXT_5 = " Unload battery";
+
+// Bitch
+BITCH_HELPTEXT_1 = " Fire GL\n";
+BITCH_HELPTEXT_2 = " Load GL\n";
+BITCH_HELPTEXT_3 = " Unload GL\n";
+BITCH_HELPTEXT_4 = " Reload chamber\n";
+
+// Barracuda
+BARRACUDA_HELPTEXT_1 = " Fire Weapon\n";
+BARRACUDA_HELPTEXT_2 = " Hold to force double shot\n";
+BARRACUDA_HELPTEXT_3 = " Load Shell Magazine (Left Side)\n";
+BARRACUDA_HELPTEXT_4 = " Load Slug Magazine (Left Side)\n";
+BARRACUDA_HELPTEXT_5 = " Load Shell Magazine (Right Side)\n";
+BARRACUDA_HELPTEXT_6 = " Load Slug Magazine (Right Side)\n";
+BARRACUDA_HELPTEXT_7 = " Unload Left Magazine\n";
+BARRACUDA_HELPTEXT_8 = " Unload Right Magazine\n";
+BARRACUDA_HELPTEXT_9 = " Mag Manager (Shell Mags)\n";
+BARRACUDA_HELPTEXT_10 = " Mag Manager (Slug Mags)";
+
+// Frontiersman
+FRONTIERSMAN_HELPTEXT_1 = " Cycle Action\n";
+FRONTIERSMAN_HELPTEXT_2 = " Reload (Side Saddles First)\n";
+FRONTIERSMAN_HELPTEXT_3 = " Reload (Pockets Only)\n";
+FRONTIERSMAN_HELPTEXT_4 = " Use Holy Rounds (requires blues)\n";
+FRONTIERSMAN_HELPTEXT_5 = " Load side saddles\n";
+
+// GFB-9
+GFB_HELPTEXT_1 = " Fire\n";
+GFB_HELPTEXT_2 = " Charge Capacitor\n";
+
+// MBR
+MBR_HELPTEXT_1 = " Fire GL\n";
+MBR_HELPTEXT_2 = " Load GL\n";
+MBR_HELPTEXT_3 = " Unload GL\n";
+MBR_HELPTEXT_4 = " Zoom\n";
+MBR_HELPTEXT_5 = " Load factory mag\n";
+MBR_HELPTEXT_6 = " Load heavy mag\n";
+MBR_HELPTEXT_7 = " Unload loaded mag\n";
+MBR_HELPTEXT_8 = " Load chamber\n";
+
+// Noisy Cricket
+NCT_HELPTEXT_1 = " Shoot\n";
+NCT_HELPTEXT_2 = " Reload battery\n";
+
+// Nyx
+NYX_HELPTEXT_1 = " Semi Auto/Burst\n";
+NYX_HELPTEXT_2 = " Reload mag\n";
+NYX_HELPTEXT_3 = " Reload chamber\n";
+
+// PD-42
+PD42_HELPTEXT_1 = " Fire Slug Thrower\n";
+PD42_HELPTEXT_2 = " Load Slug Thrower\n";
+PD42_HELPTEXT_3 = " Unload Slug Thrower\n";
+PD42_HELPTEXT_4 = " Reload mag\n";
+PD42_HELPTEXT_5 = " Semi Auto/Double Tap/Full Auto\n";
+
+// Six-12
+SIX12_HELPTEXT_1 = " Fire Weapon\n";
+SIX12_HELPTEXT_2 = " Load Shell Magazine\n";
+SIX12_HELPTEXT_3 = " Load Slug Magazine\n";
+SIX12_HELPTEXT_4 = " Unload loaded Magazine\n";
+SIX12_HELPTEXT_5 = " Shell Mags\n";
+SIX12_HELPTEXT_6 = " Slug Mags\n";
+
+// UMP
+UMP_HELPTEXT_1 = " Semi Auto/Full Auto\n";
+UMP_HELPTEXT_2 = " Reload mag\n";
+UMP_HELPTEXT_3 = " Reload chamber\n";
+
+// USP
+USP_HELPTEXT_1 = " Reload mag\n";
+USP_HELPTEXT_2 = " Reload chamber\n";

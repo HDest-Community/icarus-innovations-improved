@@ -178,16 +178,18 @@ class HDMBR : HDWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRESHOOT
-		..(WeaponStatus[BRProp_Flags] & BRF_GL ? WEPHELP_ALTFIRE.. "  Fire GL\n" : "")
-		..(WeaponStatus[BRProp_Flags] & BRF_GL ? WEPHELP_ALTRELOAD.. "  Load GL\n" : "")
-		..(WeaponStatus[BRProp_Flags] & BRF_GL ? WEPHELP_FIREMODE.."+"..WEPHELP_UNLOAD.. "  Unload GL\n" : "")
-		..(WeaponStatus[BRProp_Flags] & BRF_Scope ? WEPHELP_ZOOM.."+"..WEPHELP_FIREMODE.."+"..WEPHELP_UPDOWN.."  Zoom\n" : "")
-		..WEPHELP_RELOAD.."  Load factory mag\n"
-		..WEPHELP_USE.."+"..WEPHELP_RELOAD.."  Load heavy mag\n"
-		..WEPHELP_UNLOAD.. "  Unload loaded mag\n"
-		.."("..WEPHELP_USE..")+"..WEPHELP_FIREMODE.."+"..WEPHELP_RELOAD.. "  Load chamber\n"
-		.."("..WEPHELP_USE..")+"..WEPHELP_MAGMANAGER;
+		LocalizeHelp();
+		return
+		LWPHELP_FIRESHOOT
+		..(WeaponStatus[BRProp_Flags] & BRF_GL ? LWPHELP_ALTFIRE.. Stringtable.Localize("$MBR_HELPTEXT_1") : "")
+		..(WeaponStatus[BRProp_Flags] & BRF_GL ? LWPHELP_ALTRELOAD.. Stringtable.Localize("$MBR_HELPTEXT_2") : "")
+		..(WeaponStatus[BRProp_Flags] & BRF_GL ? LWPHELP_FIREMODE.."+"..LWPHELP_UNLOAD.. Stringtable.Localize("$MBR_HELPTEXT_3") : "")
+		..(WeaponStatus[BRProp_Flags] & BRF_Scope ? LWPHELP_ZOOM.."+"..LWPHELP_FIREMODE.."+"..LWPHELP_UPDOWN..Stringtable.Localize("$MBR_HELPTEXT_4") : "")
+		..LWPHELP_RELOAD..Stringtable.Localize("$MBR_HELPTEXT_5")
+		..LWPHELP_USE.."+"..LWPHELP_RELOAD..Stringtable.Localize("$MBR_HELPTEXT_6")
+		..LWPHELP_UNLOAD.. Stringtable.Localize("$MBR_HELPTEXT_7")
+		.."("..LWPHELP_USE..")+"..LWPHELP_FIREMODE.."+"..LWPHELP_RELOAD.. Stringtable.Localize("$MBR_HELPTEXT_8")
+		.."("..LWPHELP_USE..")+"..LWPHELP_MAGMANAGER;
 	}
 
 	// [Ace] Returns sprite + frame.

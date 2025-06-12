@@ -74,10 +74,12 @@ class HDUSP : HDHandgun
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRESHOOT
-		..WEPHELP_RELOAD.."  Reload mag\n"
-		..WEPHELP_USE.."+"..WEPHELP_RELOAD.."  Reload chamber\n"
-		..WEPHELP_MAGMANAGER;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRESHOOT
+		..LWPHELP_RELOAD..Stringtable.Localize("$USP_HELPTEXT_1")
+		..LWPHELP_USE.."+"..LWPHELP_RELOAD..Stringtable.Localize("$USP_HELPTEXT_2")
+		..LWPHELP_MAGMANAGER;
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)

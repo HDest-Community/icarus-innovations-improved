@@ -109,12 +109,14 @@ class HDBitch : HDWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRESHOOT
-		..(WeaponStatus[BTProp_Flags] & BTF_GL ? WEPHELP_ALTFIRE.. "  Fire GL\n" : "")
-		..(WeaponStatus[BTProp_Flags] & BTF_GL ? WEPHELP_ALTRELOAD.. "  Load GL\n" : "")
-		..(WeaponStatus[BTProp_Flags] & BTF_GL ? WEPHELP_FIREMODE.."+"..WEPHELP_UNLOAD.. "  Unload GL\n" : "")
-		..WEPHELP_RELOAD.."  Reload chamber\n"
-		..WEPHELP_MAGMANAGER;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRESHOOT
+		..(WeaponStatus[BTProp_Flags] & BTF_GL ? LWPHELP_ALTFIRE.. Stringtable.Localize("$BITCH_HELPTEXT_1") : "")
+		..(WeaponStatus[BTProp_Flags] & BTF_GL ? LWPHELP_ALTRELOAD.. Stringtable.Localize("$BITCH_HELPTEXT_2") : "")
+		..(WeaponStatus[BTProp_Flags] & BTF_GL ? LWPHELP_FIREMODE.."+"..LWPHELP_UNLOAD.. Stringtable.Localize("$BITCH_HELPTEXT_3") : "")
+		..LWPHELP_RELOAD..Stringtable.Localize("$BITCH_HELPTEXT_4")
+		..LWPHELP_MAGMANAGER;
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)

@@ -111,13 +111,15 @@ class HDFrontier : HDWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRESHOOT
-		..WEPHELP_ALTFIRE.."  Cycle Action\n"
-		..WEPHELP_RELOAD.."  Reload (Side Saddles First)\n"
-		..WEPHELP_ALTRELOAD.."  Reload (Pockets Only)\n"
-		..WEPHELP_FIREMODE.."  Use Holy Rounds (requires blues)\n"
-		..WEPHELP_FIREMODE.."+"..WEPHELP_RELOAD.."  Load side saddles\n"
-		..WEPHELP_UNLOADUNLOAD;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRESHOOT
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$FRONTIERSMAN_HELPTEXT_1")
+		..LWPHELP_RELOAD..Stringtable.Localize("$FRONTIERSMAN_HELPTEXT_2")
+		..LWPHELP_ALTRELOAD..Stringtable.Localize("$FRONTIERSMAN_HELPTEXT_3")
+		..LWPHELP_FIREMODE..Stringtable.Localize("$FRONTIERSMAN_HELPTEXT_4")
+		..LWPHELP_FIREMODE.."+"..LWPHELP_RELOAD..Stringtable.Localize("$FRONTIERSMAN_HELPTEXT_5")
+		..LWPHELP_UNLOADUNLOAD;
 	}
 
 	override void DrawSightPicture(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl, bool sightbob, vector2 bob, double fov, bool scopeview, actor hpc, string whichdot)

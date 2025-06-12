@@ -66,12 +66,14 @@ class HDSix12 : HDWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.. "  Fire Weapon\n"
-		..WEPHELP_RELOAD.."  Load Shell Magazine\n"
-		..WEPHELP_ALTRELOAD.."  Load Slug Magazine\n"
-		..WEPHELP_UNLOAD.. "  Unload loaded Magazine\n"
-		..WEPHELP_MAGMANAGER.. "  Shell Mags\n"
-		.."("..WEPHELP_USE..")+"..WEPHELP_MAGMANAGER.. "  Slug Mags\n";
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE.. Stringtable.Localize("$SIX12_HELPTEXT_1")
+		..LWPHELP_RELOAD..Stringtable.Localize("$SIX12_HELPTEXT_2")
+		..LWPHELP_ALTRELOAD..Stringtable.Localize("$SIX12_HELPTEXT_3")
+		..LWPHELP_UNLOAD.. Stringtable.Localize("$SIX12_HELPTEXT_4")
+		..LWPHELP_MAGMANAGER.. Stringtable.Localize("$SIX12_HELPTEXT_5")
+		.."("..LWPHELP_USE..")+"..LWPHELP_MAGMANAGER.. Stringtable.Localize("$SIX12_HELPTEXT_6");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)

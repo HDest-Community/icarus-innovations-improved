@@ -101,16 +101,18 @@ class HDBarracuda : HDSix12
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.. "  Fire Weapon\n"
-		..WEPHELP_FIREMODE.."  Hold to force double shot\n"
-		..WEPHELP_RELOAD.."  Load Shell Magazine (Left Side)\n"
-		..WEPHELP_ALTRELOAD.."  Load Slug Magazine (Left Side)\n"
-		..WEPHELP_USE.."+"..WEPHELP_RELOAD.."  Load Shell Magazine (Right Side)\n"
-		..WEPHELP_USE.."+"..WEPHELP_ALTRELOAD.."  Load Slug Magazine (Right Side)\n"
-		..WEPHELP_UNLOAD.. "  Unload Left Magazine\n"
-		..WEPHELP_USE.."+"..WEPHELP_UNLOAD.."  Unload Right Magazine\n"
-		..WEPHELP_USER3.. "  Mag Manager (Shell Mags)\n"
-		..WEPHELP_USE.."+"..WEPHELP_USER3.. "  Mag Manager (Slug Mags)";
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE.. Stringtable.Localize("$BARRACUDA_HELPTEXT_1")
+		..LWPHELP_FIREMODE..Stringtable.Localize("$BARRACUDA_HELPTEXT_2")
+		..LWPHELP_RELOAD..Stringtable.Localize("$BARRACUDA_HELPTEXT_3")
+		..LWPHELP_ALTRELOAD..Stringtable.Localize("$BARRACUDA_HELPTEXT_4")
+		..LWPHELP_USE.."+"..LWPHELP_RELOAD..Stringtable.Localize("$BARRACUDA_HELPTEXT_5")
+		..LWPHELP_USE.."+"..LWPHELP_ALTRELOAD..Stringtable.Localize("$BARRACUDA_HELPTEXT_6")
+		..LWPHELP_UNLOAD.. Stringtable.Localize("$BARRACUDA_HELPTEXT_7")
+		..LWPHELP_USE.."+"..LWPHELP_UNLOAD..Stringtable.Localize("$BARRACUDA_HELPTEXT_8")
+		..LWPHELP_USER3.. Stringtable.Localize("$BARRACUDA_HELPTEXT_9")
+		..LWPHELP_USE.."+"..LWPHELP_USER3.. Stringtable.Localize("$BARRACUDA_HELPTEXT_10");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
