@@ -29,9 +29,11 @@ class HDNCT : HDCellWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.."  Shoot\n"
-		..WEPHELP_RELOAD.."  Reload battery\n"
-		..WEPHELP_UNLOADUNLOAD;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$NCT_HELPTEXT_1")
+		..LWPHELP_RELOAD..Stringtable.Localize("$NCT_HELPTEXT_2")
+		..LWPHELP_UNLOADUNLOAD;
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)

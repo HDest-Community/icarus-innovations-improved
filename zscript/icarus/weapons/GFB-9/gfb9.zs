@@ -64,8 +64,10 @@ class HDGFBlaster : HDHandgun
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.."  Fire\n"
-		..WEPHELP_ALTFIRE.."/"..WEPHELP_RELOAD.."  Charge Capacitor\n";
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$GFB_HELPTEXT_1")
+		..LWPHELP_ALTFIRE.."/"..LWPHELP_RELOAD..Stringtable.Localize("$GFB_HELPTEXT_2");
 	}
 
 	override string PickupMessage()

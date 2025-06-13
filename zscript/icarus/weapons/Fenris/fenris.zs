@@ -70,11 +70,13 @@ class HDFenris : HDCellWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.."  Shoot\n"
-		..WEPHELP_ALTFIRE.." Launch Snowball\n"
-		..WEPHELP_FIREMODE.."  Change Firemode\n"
-		..WEPHELP_RELOAD.."  Load battery\n"
-		..WEPHELP_UNLOAD.."  Unload battery";
+		LocalizeHelp();
+		return
+		LWPHELP_FIRE..Stringtable.Localize("$FENRIS_HELPTEXT_1")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$FENRIS_HELPTEXT_2")
+		..LWPHELP_FIREMODE..Stringtable.Localize("$FENRIS_HELPTEXT_3")
+		..LWPHELP_RELOAD..Stringtable.Localize("$FENRIS_HELPTEXT_4")
+		..LWPHELP_UNLOAD..Stringtable.Localize("$FENRIS_HELPTEXT_5");
 	}
 
 	protected clearscope int GetRealBatteryCharge(bool useUpper)

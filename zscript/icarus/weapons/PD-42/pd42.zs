@@ -140,14 +140,16 @@ class HDPDFour : HDWeapon {
 	}
 
 	override string GetHelpText() {
-		return WEPHELP_FIRESHOOT
-		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? WEPHELP_ALTFIRE.. "  Fire Slug Thrower\n" : "")
-		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? WEPHELP_ALTRELOAD.. "  Load Slug Thrower\n" : "")
-		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? WEPHELP_USE.."+"..WEPHELP_UNLOAD.. "  Unload Slug Thrower\n" : "")
-		..WEPHELP_RELOAD.."  Reload mag\n"
-		..WEPHELP_UNLOADUNLOAD
-		..WEPHELP_FIREMODE.."  Semi Auto/Double Tap/Full Auto\n"
-		..WEPHELP_MAGMANAGER;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRESHOOT
+		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? LWPHELP_ALTFIRE.. Stringtable.Localize("$PD42_HELPTEXT_1") : "")
+		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? LWPHELP_ALTRELOAD.. Stringtable.Localize("$PD42_HELPTEXT_2") : "")
+		..(weaponStatus[PDS_FLAGS] & PDF_SLUGLAUNCHER ? LWPHELP_USE.."+"..LWPHELP_UNLOAD.. Stringtable.Localize("$PD42_HELPTEXT_3") : "")
+		..LWPHELP_RELOAD..Stringtable.Localize("$PD42_HELPTEXT_4")
+		..LWPHELP_UNLOADUNLOAD
+		..LWPHELP_FIREMODE..Stringtable.Localize("$PD42_HELPTEXT_5")
+		..LWPHELP_MAGMANAGER;
 	}
 
 	override void DrawSightPicture(
