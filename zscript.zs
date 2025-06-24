@@ -21,6 +21,7 @@ const HDLD_UMP            = "ump";
 const HDLD_UMPMAG         = "umm";
 const HDLD_USP            = "usp";
 const HDLD_USPMAG         = "usm";
+const HDLD_FOG            = "fog";
 
 #include "zscript/icarus/SpawnHandler.zs"
 
@@ -39,3 +40,4 @@ const HDLD_USPMAG         = "usm";
 #include "zscript/icarus/weapons/Six12/six12.zs"
 #include "zscript/icarus/weapons/UMP/ump.zs"
 #include "zscript/icarus/weapons/USP/usp.zs"
+#include "zscript/icarus/weapons/Finger of God/fog.zs"
