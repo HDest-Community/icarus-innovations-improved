@@ -95,7 +95,7 @@ addAmmoUser => { "ammoName": "HDRocketAmmo", "name": "HDBitch" }
 addAmmoUser => { "ammoName": "HDRocketAmmo", "name": "HDMBR" }
 addAmmoUser => { "ammoName": "HDBattery", "name": "HDFenris" }
 addAmmoUser => { "ammoName": "HDBattery", "name": "HDNCT" }
-addAmmoUser => { "ammoName": "SevenMilAmmo", "name": "HDFrontiersman" }
+addAmmoUser => { "ammoName": "SevenMilAmmo", "name": "HDFrontier" }
 
 newAmmo => { "ammoName": "HDGasTank" }
 addAmmoUser => { "ammoName": "HDGasTank", "name": "HDFlamethrower" }
