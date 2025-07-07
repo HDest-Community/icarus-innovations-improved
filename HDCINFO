@@ -60,11 +60,11 @@ addSpawnTableSingleEntry => { "tableName": "HDHandgunRandomDrop", "name": "HDNyx
 addSpawnTableSingleEntry => { "tableName": "HDHandgunRandomDrop", "name": "HDUSP", "weight": "#usp45_pistol_spawn_bias", "chance": "16", "persists": "#usp45_persistent_spawning" }
 
 // Ammo Spawn Pools
-addSpawnTableSingleEntry => { "tableName": "RocketReplaces", "name": "HDGasTank", "weight": "#gastank_rocket_spawn_bias", "persists": "#gastank_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "RocketAmmoReplaces", "name": "HDGasTank", "weight": "#gastank_rocket_spawn_bias", "persists": "#gastank_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "RocketBoxReplaces", "name": "HDGasTank", "weight": "#gastank_rocketbox_spawn_bias", "persists": "#gastank_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "CellReplaces", "name": "HDGasTank", "weight": "#gastank_battery_spawn_bias", "persists": "#gastank_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDMBRMagHeavy", "weight": "#mbrmagheavy_clipmag_spawn_bias", "persists": "#mbrmagheavy_persistent_spawning" }
-addSpawnTableSingleEntry => { "tableName": "RocketReplaces", "name": "HDMBRMagHeavy", "weight": "#mbrmagheavy_rocket_spawn_bias", "persists": "#mbrmagheavy_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "RocketAmmoReplaces", "name": "HDMBRMagHeavy", "weight": "#mbrmagheavy_rocket_spawn_bias", "persists": "#mbrmagheavy_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDMBRMagLight", "weight": "#mbrmaglight_clipmag_spawn_bias", "persists": "#mbrmaglight_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "ShellReplaces", "name": "HDMBRMagLight", "weight": "#mbrmaglight_rocket_spawn_bias", "persists": "#mbrmaglight_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDNyxMag", "weight": "#nyxmag_clipmag_spawn_bias", "persists": "#nyxmag_persistent_spawning" }
