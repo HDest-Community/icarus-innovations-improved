@@ -63,16 +63,16 @@ addSpawnTableSingleEntry => { "tableName": "HDHandgunRandomDrop", "name": "HDUSP
 addSpawnTableSingleEntry => { "tableName": "RocketAmmoReplaces", "name": "HDGasTank", "weight": "#gastank_rocket_spawn_bias", "persists": "#gastank_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "RocketBoxReplaces", "name": "HDGasTank", "weight": "#gastank_rocketbox_spawn_bias", "persists": "#gastank_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "CellReplaces", "name": "HDGasTank", "weight": "#gastank_battery_spawn_bias", "persists": "#gastank_persistent_spawning" }
-addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDMBRMagHeavy", "weight": "#mbrmagheavy_clipmag_spawn_bias", "persists": "#mbrmagheavy_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipReplaces", "name": "HDMBRMagHeavy", "weight": "#mbrmagheavy_clipmag_spawn_bias", "persists": "#mbrmagheavy_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "RocketAmmoReplaces", "name": "HDMBRMagHeavy", "weight": "#mbrmagheavy_rocket_spawn_bias", "persists": "#mbrmagheavy_persistent_spawning" }
-addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDMBRMagLight", "weight": "#mbrmaglight_clipmag_spawn_bias", "persists": "#mbrmaglight_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipReplaces", "name": "HDMBRMagLight", "weight": "#mbrmaglight_clipmag_spawn_bias", "persists": "#mbrmaglight_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "ShellReplaces", "name": "HDMBRMagLight", "weight": "#mbrmaglight_rocket_spawn_bias", "persists": "#mbrmaglight_persistent_spawning" }
-addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDNyxMag", "weight": "#nyxmag_clipmag_spawn_bias", "persists": "#nyxmag_persistent_spawning" }
-addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDPDFourMag", "weight": "#pd42mag_clipmag_spawn_bias", "persists": "#pd42mag_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipReplaces", "name": "HDNyxMag", "weight": "#nyxmag_clipmag_spawn_bias", "persists": "#nyxmag_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipReplaces", "name": "HDPDFourMag", "weight": "#pd42mag_clipmag_spawn_bias", "persists": "#pd42mag_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "ShellReplaces", "name": "HDSix12MagShells", "weight": "#six12shellmag_shell_spawn_bias", "persists": "#six12shellmag_persistent_spawning" }
 addSpawnTableSingleEntry => { "tableName": "ShellReplaces", "name": "HDSix12MagSlugs", "weight": "#six12slugmag_shell_spawn_bias", "persists": "#six12slugmag_persistent_spawning" }
-addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDUMPMag", "weight": "#ump45mag_clipmag_spawn_bias", "persists": "#ump45mag_persistent_spawning" }
-addSpawnTableSingleEntry => { "tableName": "ClipMagReplaces", "name": "HDUSPMag", "weight": "#usp45mag_clipmag_spawn_bias", "persists": "#usp45mag_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipReplaces", "name": "HDUMPMag", "weight": "#ump45mag_clipmag_spawn_bias", "persists": "#ump45mag_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "ClipReplaces", "name": "HDUSPMag", "weight": "#usp45mag_clipmag_spawn_bias", "persists": "#usp45mag_persistent_spawning" }
 
 // Item Spawn Pools
 addSpawnTableSingleEntry => { "tableName": "GreenArmorReplaces", "name": "HEVArmour", "weight": "#hevarmour_greenarmour_spawn_bias", "persists": "#hevarmour_persistent_spawning" }
