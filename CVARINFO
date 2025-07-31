@@ -149,3 +149,35 @@ server bool usp45mag_persistent_spawning = false;
 server float hevarmour_greenarmour_spawn_bias = 0.05;
 server float hevarmour_bluearmour_spawn_bias = 0.05;
 server bool hevarmour_persistent_spawning = false;
+
+
+//------------
+// Merchant Store Filters
+//------------
+
+server bool hdm_enable_barracuda = true;
+server bool hdm_enable_bitch = true;
+server bool hdm_enable_fenris = true;
+server bool hdm_enable_flamenwerfer = true;
+server bool hdm_enable_fog = true;
+server bool hdm_enable_frontiersman = true;
+server bool hdm_enable_gastank = true;
+server bool hdm_enable_gfb9 = true;
+server bool hdm_enable_hevarmour = true;
+server bool hdm_enable_mbr = true;
+server bool hdm_enable_mbrmagheavy = true;
+server bool hdm_enable_mbrmaglight = true;
+server bool hdm_enable_nct = true;
+server bool hdm_enable_nyx = true;
+server bool hdm_enable_nyxmag = true;
+server bool hdm_enable_pd42 = true;
+server bool hdm_enable_pd42mag = true;
+server bool hdm_enable_repairspray = true;
+server bool hdm_enable_six12 = true;
+server bool hdm_enable_six12magshell = true;
+server bool hdm_enable_six12magslug = true;
+server bool hdm_enable_ump45 = true;
+server bool hdm_enable_umpmag = true;
+server bool hdm_enable_usp45 = true;
+server bool hdm_enable_uspmag = true;
+server bool hdm_enable_wallet = true;

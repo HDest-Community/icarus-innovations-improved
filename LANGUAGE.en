@@ -339,3 +339,136 @@ UMP_HELPTEXT_3 = " Reload chamber\n";
 // USP
 USP_HELPTEXT_1 = " Reload mag\n";
 USP_HELPTEXT_2 = " Reload chamber\n";
+
+
+// Merchant Store Entries
+
+// Barracuda
+MERCH_CAT_BARRACUDA               = "Icarus Innovations";
+MERCH_TAG_BARRACUDA               = "Barracuda";
+MERCH_FLAVOR_BARRACUDA            = "The time for vengeance is now.";
+
+// Bitch
+MERCH_CAT_BITCH                   = "Icarus Innovations";
+MERCH_TAG_BITCH                   = "The Bitch";
+MERCH_FLAVOR_BITCH                = "Pour Your Little Heart Out.";
+
+// Fenris
+MERCH_CAT_FENRIS                  = "Icarus Innovations";
+MERCH_TAG_FENRIS                  = "Fenris";
+MERCH_FLAVOR_FENRIS               = "It's a cold day in hell.";
+
+// Finger of God
+MERCH_CAT_FOG                     = "Icarus Innovations";
+MERCH_TAG_FOG                     = "Finger of God";
+MERCH_FLAVOR_FOG                  = "Now go and touch some Viles.";
+
+// Flamenwerfer 77
+MERCH_CAT_FLAMENWERFER            = "Icarus Innovations";
+MERCH_TAG_FLAMENWERFER            = "Flamenwerfer 77";
+MERCH_FLAVOR_FLAMENWERFER         = "It werfs flammen.";
+
+// Frontiersman
+MERCH_CAT_FRONTIERSMAN            = "Icarus Innovations";
+MERCH_TAG_FRONTIERSMAN            = "Frontiersman";
+MERCH_FLAVOR_FRONTIERSMAN         = "A bare-bones gun for a bare-bones man.";
+
+// GFB-9
+MERCH_CAT_GFB9                    = "Icarus Innovations";
+MERCH_TAG_GFB9                    = "GFB-9 'Backup Plan'";
+MERCH_FLAVOR_GFB9                 = "For when all else fails.";
+
+// Modular Battle Rifle
+MERCH_CAT_MBR                     = "Icarus Innovations";
+MERCH_TAG_MBR                     = "Modular Battle Rifle";
+MERCH_FLAVOR_MBR                  = "The Liberator's better, bigger brother.";
+
+// Modular Battle Rifle Heavy Mag
+MERCH_CAT_MBRMAGHEAVY             = "Icarus Innovations";
+MERCH_TAG_MBRMAGHEAVY             = "MBR .500 S&W Heavy Magazine";
+MERCH_FLAVOR_MBRMAGHEAVY          = "";
+
+// Modular Battle Rifle Light Mag
+MERCH_CAT_MBRMAGLIGHT             = "Icarus Innovations";
+MERCH_TAG_MBRMAGLIGHT             = "MBR .500 S&W Light Magazine";
+MERCH_FLAVOR_MBRMAGLIGHT          = "";
+
+// NS3-Cr.Kt
+MERCH_CAT_NCT                     = "Icarus Innovations";
+MERCH_TAG_NCT                     = "NS3-Cr.Kt";
+MERCH_FLAVOR_NCT                  = "It's some sort of weird tiny... gun? thing?";
+
+// Nyx
+MERCH_CAT_NYX                     = "Icarus Innovations";
+MERCH_TAG_NYX                     = "CM-3 'Nyx'";
+MERCH_FLAVOR_NYX                  = "The Queen of Thicc.";
+
+// Nyx Mag
+MERCH_CAT_NYXMAG                  = "Icarus Innovations";
+MERCH_TAG_NYXMAG                  = "Nyx .355 Magazine";
+MERCH_FLAVOR_NYXMAG               = "";
+
+// PD-42
+MERCH_CAT_PD42                    = "Icarus Innovations";
+MERCH_TAG_PD42                    = "PD-42";
+MERCH_FLAVOR_PD42                 = "Silent and deadlier.";
+
+// PD-42 Mag
+MERCH_CAT_PD42MAG                 = "Icarus Innovations";
+MERCH_TAG_PD42MAG                 = "PD-42 4.26mm Magazine";
+MERCH_FLAVOR_PD42MAG              = "";
+
+// Six-12
+MERCH_CAT_SIX12                   = "Icarus Innovations";
+MERCH_TAG_SIX12                   = "Six-12";
+MERCH_FLAVOR_SIX12                = "The magazine! It spins!";
+
+// Six-12 Shell Mag
+MERCH_CAT_SIX12MAGSHELL           = "Icarus Innovations";
+MERCH_TAG_SIX12MAGSHELL           = "Six-12 Shell Magazine";
+MERCH_FLAVOR_SIX12MAGSHELL        = "";
+
+// Six-12 Slug Mag
+MERCH_CAT_SIX12MAGSLUG            = "Icarus Innovations";
+MERCH_TAG_SIX12MAGSLUG            = "Six-12 Slug Magazine";
+MERCH_FLAVOR_SIX12MAGSLUG         = "";
+
+// UMP-45
+MERCH_CAT_UMP45                   = "Icarus Innovations";
+MERCH_TAG_UMP45                   = "UMP-45";
+MERCH_FLAVOR_UMP45                = "Doesn't sit at home plate all day.";
+
+// UMP-45 Mag
+MERCH_CAT_UMPMAG                = "Icarus Innovations";
+MERCH_TAG_UMPMAG                = "UMP-45 .45 ACP Magazine";
+MERCH_FLAVOR_UMPMAG             = "";
+
+// USP-45
+MERCH_CAT_USP45                   = "Icarus Innovations";
+MERCH_TAG_USP45                   = "USP-45";
+MERCH_FLAVOR_USP45                = "When you want modern performance and MUH TWO WORLD WARS.";
+
+// USP-45 Mag
+MERCH_CAT_USPMAG                = "Icarus Innovations";
+MERCH_TAG_USPMAG                = "USP-45 .45 ACP Magazine";
+MERCH_FLAVOR_USPMAG             = "";
+
+// Wallet
+MERCH_CAT_WALLET                  = "Icarus Innovations";
+MERCH_TAG_WALLET                  = "A Wallet";
+MERCH_FLAVOR_WALLET               = "Look at this broke bitch thinking they got money.";
+
+// Weapon Repair Spray
+MERCH_CAT_REPAIRSPRAY             = "Icarus Innovations";
+MERCH_TAG_REPAIRSPRAY             = "Weapon Repair Spray";
+MERCH_FLAVOR_REPAIRSPRAY          = "If this doesn't get it working again, nothing will.";
+
+// Fuel Tank
+MERCH_CAT_GASTANK                 = "Icarus Innovations";
+MERCH_TAG_GASTANK                 = "Fuel Tank";
+MERCH_FLAVOR_GASTANK              = "Fire up the BBQ!";
+
+// HEV Armour
+MERCH_CAT_HEVARMOUR               = "Icarus Innovations";
+MERCH_TAG_HEVARMOUR               = "Hazardous Environment Armor";
+MERCH_FLAVOR_HEVARMOUR            = "Why does it have Greek letters all over it?";
