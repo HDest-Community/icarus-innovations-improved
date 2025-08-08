@@ -960,8 +960,8 @@ class HDMBRMagLight : HDMagAmmo
 		HDMagAmmo.RoundType 'HD500SWLightAmmo';
 		HDMagAmmo.RoundBulk ENC_50SW_LOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "MBR Light Magazine";
-		Inventory.PickupMessage "Picked up a MBR Light Magazine.";
+		Tag "$TAG_MBRMAGLIGHT";
+		Inventory.PickupMessage "$PICKUP_MBRMAGLIGHT";
 		HDPickup.RefId "mbm";
 		Scale 0.5;
 	}
@@ -992,8 +992,8 @@ class HDMBRMagHeavy : HDMBRMagLight
 	Default
 	{
 		HDMagAmmo.RoundType 'HD500SWHeavyAmmo';
-		Tag "MBR Heavy Magazine";
-		Inventory.PickupMessage "Picked up a MBR Heavy Magazine";
+		Tag "$TAG_MBRMAGHEAVY";
+		Inventory.PickupMessage "$PICKUP_MBRMAGHEAVY";
 		HDPickup.RefId "mbh";
 	}
 
