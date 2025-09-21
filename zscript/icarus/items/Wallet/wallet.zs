@@ -3,12 +3,13 @@ class HDWallet : HDBackpack
     default
     {
         HDBackpack.MaxCapacity 1000000;
-        tag "Wallet";
+        tag "$TAG_WALLET";
         Inventory.Icon "WLLTA0";
-        Inventory.PickupMessage "Picked up a wallet! ... The fuck good is this gonna do?";
+        Inventory.PickupMessage "$PICKUP_WALLET";
         scale 0.6;
         hdweapon.wornlayer 0;
-        hdweapon.refid "wlt";
+        hdweapon.refid HDLD_WLT;
+        -hdweapon.FITSINBACKPACK;
     }
 
     override string, double GetPickupSprite() { return "WLLTA0", 1.0; }
@@ -21,6 +22,8 @@ class HDWallet : HDBackpack
     }
     
     override double WeaponBulk() { return max((Storage ? Storage.TotalBulk * 0.1 : 0), 30); }
+
+    override bool IsBeingWorn() { return false; }
 
     override inventory CreateTossable(int amt)
     {
@@ -40,15 +43,15 @@ class HDWallet : HDBackpack
     {
         int BaseOffset = -80;
 
-        sb.DrawString(sb.pSmallFont, "\cq$ $ $ \cdWallet\cq $ $ $", (0, BaseOffset), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
-        string BulkString = "Total Bulk: \cf"..int(Storage.TotalBulk).."\c-";
+        sb.DrawString(sb.pSmallFont, Stringtable.Localize("$WALLET_TEXT1"), (0, BaseOffset), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
+        string BulkString = Stringtable.Localize("$WALLET_TEXT2")..int(Storage.TotalBulk).."\c-";
         sb.DrawString(sb.pSmallFont, BulkString, (0, BaseOffset + 10), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
 
         int ItemCount = Storage.Items.Size();
 
         if (ItemCount == 0)
         {
-            sb.DrawString(sb.pSmallFont, "\cfHa ha! You're \cgPOOR!", (0, BaseOffset + 30), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_DARKGRAY);
+            sb.DrawString(sb.pSmallFont, Stringtable.Localize("$WALLET_TEXT3"), (0, BaseOffset + 30), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_DARKGRAY);
             return;
         }
 
@@ -83,16 +86,17 @@ class HDWallet : HDBackpack
         sb.DrawString(sb.pSmallFont, SelItem.NiceName, (0, BaseOffset + 60), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_FIRE);
 
         int AmountInBackpack = SelItem.ItemClass is 'HDMagAmmo' ? SelItem.Amounts.Size() : (SelItem.Amounts.Size() > 0 ? SelItem.Amounts[0] : 0);
-        sb.DrawString(sb.pSmallFont, "In wallet:  "..sb.FormatNumber(AmountInBackpack, 1, 6), (0, BaseOffset + 70), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, AmountInBackpack > 0 ? Font.CR_BROWN : Font.CR_DARKBROWN);
+        sb.DrawString(sb.pSmallFont, Stringtable.Localize("$WALLET_TEXT4")..sb.FormatNumber(AmountInBackpack, 1, 6), (0, BaseOffset + 70), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, AmountInBackpack > 0 ? Font.CR_BROWN : Font.CR_DARKBROWN);
 
         int AmountOnPerson = GetAmountOnPerson(hpl.FindInventory(SelItem.ItemClass));
-        sb.DrawString(sb.pSmallFont, "On person:  "..sb.FormatNumber(AmountOnPerson, 1, 6), (0, BaseOffset + 78), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, AmountOnPerson > 0 ?  Font.CR_WHITE : Font.CR_DARKGRAY);
+        sb.DrawString(sb.pSmallFont, Stringtable.Localize("$WALLET_TEXT5")..sb.FormatNumber(AmountOnPerson, 1, 6), (0, BaseOffset + 78), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, AmountOnPerson > 0 ?  Font.CR_WHITE : Font.CR_DARKGRAY);
 
     }
     
     override int GetSbarNum()
     {
-        return Storage.GetAmount('MercenaryBucks');
+        name bux = "MercenaryBucks";
+        return Storage.GetAmount(bux);
     }
 
     States
@@ -121,9 +125,10 @@ class HDWallet : HDBackpack
 class Wallet_ItemStorage : ItemStorage
 {	
     override int CheckConditions(Inventory item, class<Inventory> cls) {
+        name bux = "MercenaryBucks";
         bool valid = (
-            (item && (item is 'MercenaryBucks')) ||
-            (cls  && (cls  is 'MercenaryBucks'))
+            (item && (item is bux)) ||
+            (cls  && (cls  is bux))
         );
 
         if (!valid) { return IType_Invalid; }
@@ -133,7 +138,7 @@ class Wallet_ItemStorage : ItemStorage
     override int GetOperationSpeed(class<Inventory> item, int operation) {
         switch (clamp(operation, 0, 2))
         {
-            case 0: return 3; break;	//extract
+            case 0: return 1; break;	//extract
             case 1: return 1; break;	//pocket
             case 2: return 1; break;	//insert
         }

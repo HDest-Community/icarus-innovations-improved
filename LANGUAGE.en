@@ -196,6 +196,7 @@ TAG_UMP                                 = "UMP-45 .45 ACP PDW";
 TAG_UMPMAG                              = "UMP Magazine";
 TAG_USP                                 = "USP-45 .45 ACP Handgun";
 TAG_USPMAG                              = "USP Magazine";
+TAG_WALLET                              = "Wallet";
 
 // Obituaries
 OB_FLAMENWERFER77                       = "%o was deep fried by %k.";
@@ -246,6 +247,7 @@ PICKUP_USP_PREFIX                       = "You got the ";
 PICKUP_USP_SUFFIX                       = ".";
 PICKUP_USPMAG_PREFIX                    = "You got a ";
 PICKUP_USPMAG_SUFFIX                    = ".";
+PICKUP_WALLET                           = "Picked up a wallet! ... The fuck good is this gonna do?";
 
 
 // Help Text - [Ted]
@@ -334,3 +336,10 @@ UMP_HELPTEXT_3 = " Reload chamber\n";
 // USP
 USP_HELPTEXT_1 = " Reload mag\n";
 USP_HELPTEXT_2 = " Reload chamber\n";
+
+// Misc
+WALLET_TEXT1 = "\cq$ $ $ \cdWallet\cq $ $ $";
+WALLET_TEXT2 = "Total Bulk: \cf";
+WALLET_TEXT3 = "\cfHa ha! You're \cgPOOR!";
+WALLET_TEXT4 = "In wallet:  ";
+WALLET_TEXT5 = "On person:  ";
