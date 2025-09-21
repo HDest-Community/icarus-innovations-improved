@@ -1,0 +1,24 @@
+Sprite "WLLTA0", 28, 24
+{
+    XScale 1.800
+    YScale 1.800
+    Offset 14, 24
+    Patch "RICH", 0, 0
+}
+
+Sprite "WLLTB0", 28, 24
+{
+    XScale 1.800
+    YScale 1.800
+    Offset 14, 24
+    Patch "POOR", 0, 0
+}
+
+Sprite "WLLTC0", 28, 24
+{
+    XScale 1.800
+    YScale 1.800
+    Offset 14, 24
+    Patch "RICH", 0, 0
+    Patch "STASQGR", 23, 19
+}
