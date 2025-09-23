@@ -222,3 +222,30 @@ Sprites:
 Sounds:
 - Firing Sound: https://gamebanana.com/skins/124930
 - Mag Sound: https://gamebanana.com/sounds/39196
+
+### Finger of God
+---
+
+### Lore
+After years of research into the Gretchenfrage phenomenon and losing countless battles to the Tyrant command creatures known only as "Archviles" We at Icarus Innovations have finally made a breakthrough.
+Unable to completely nullify the effects of Gretchenfrage, we have devised a weapon capable of annihilating combatants with mass amounts of Gretchenfrage contained within themselves.
+Using a newly developed energy wavelength that is directly inverse to Gretchenfrage, simply called "Anti-Frag", we can now send special teams to combat these Archviles directly, eliminate them and begin tearing down the Tyrant's command structure.
+The weapon is still early in the development phase and is still quite heavy and uses a mass amount of power, usually consuming about half an entire power cell in a single burst after a short charge time but it has been yielding significant results.
+
+Now comes with an efficiency upgrade which increases the total shots from 2 per battery to 4.
+### Notes
+---
+- The Finger of God is a battery powered, energy cannon that can be found naturally in the world.
+- The loadout code is `fog`.
+- Loadcout Config code is `efficiency`.
+
+Code:
+- Accensus, Icarus
+
+Sprites:
+- GAA1992, Banjo Software, Craneo, TSF, Metalman, Icarus
+
+Sounds:
+Reload Sounds: https://gamebanana.com/mods/181293
+Firing/Charing Sounds: https://gamebanana.com/sounds/23364
+Explosion Sound: https://gamebanana.com/sounds/4933
