@@ -30,6 +30,7 @@ const HDLD_WLT            = "wlt";
 
 #include "zscript/icarus/weapons/Barracuda/barracuda.zs"
 #include "zscript/icarus/weapons/Bitch/bitch.zs"
+#include "zscript/icarus/weapons/Deagle/deagle.zs"
 #include "zscript/icarus/weapons/Fenris/fenris.zs"
 #include "zscript/icarus/weapons/Flamenwerfer 77/flamenwerfer77.zs"
 #include "zscript/icarus/weapons/Frontiersman/frontiersman.zs"

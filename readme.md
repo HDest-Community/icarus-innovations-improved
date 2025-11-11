@@ -34,6 +34,15 @@ This mod aims to maintain and improve Icarus's Innovations, by updating them to 
 	- `plat`: Increased energy efficiency.
 ---
 
+### Desert Eagle Mk.XIX
+---
+- The loadout codes are `dgl`, `dem` for weapon and mag, respectively.
+- Loadout Configuration codes are:
+	- `trigger`: Lighter trigger. Reduces pre-shot recoil.
+	- `hframe`: Heavier frame. Gun weighs more but has less recoil.
+	- `extended`: Extended barrel. Higher projectile velocity but heavier gun.
+---
+
 ### Flamenwerfer-77
 - The loadout code is `fw7` and `gas` for the weapon and fuel tanks, respectively.
 ---
@@ -128,6 +137,18 @@ Code:
 
 Sprites:
 - Pillowblaster, DoomNukem (From [FinalDoomer](https://forum.zdoom.org/viewtopic.php?t=55061))
+
+### Deagle
+---
+Code:
+- Icarus, Accensus
+
+Sprites:
+- Weapon Sprites from Doom64, edits by AdianoTMO69 and a1337spy. Personal edits.
+- Pickup Sprites from [Arachnocide, probably Dr. Cosmobyte](https://forum.zdoom.org/viewtopic.php?t=50299)
+
+Sounds:
+- Sounds from various sources, compiled by [Navaro](https://gamebanana.com/sounds/33280).
 
 ### Fenris
 ---
