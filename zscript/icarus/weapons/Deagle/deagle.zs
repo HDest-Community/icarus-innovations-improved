@@ -128,10 +128,11 @@ class HDDEagle : HDHandgun
 
 	override string PickupMessage()
 	{
-		string HFrameStr = WeaponStatus[DEProp_Flags] & DEF_HeavyFrame ? " heavy-framed" : "";
-		string ExBarrelStr = WeaponStatus[DEProp_Flags] & DEF_ExtendedBarrel ? " extended" : "";
-		string LTriggerStr = WeaponStatus[DEProp_Flags] & DEF_LightTrigger ? " with a lighter trigger" : "";
-		return String.Format("You got the%s%s Desert Eagle Mk.XIX%s. Blast 'em.", HFrameStr, ExBarrelStr, LTriggerStr);
+		string HFrameStr   = WeaponStatus[DEProp_Flags] & DEF_HeavyFrame ? Stringtable.localize("$PICKUP_DEAGLE_FRAME") : "";
+		string ExBarrelStr = WeaponStatus[DEProp_Flags] & DEF_ExtendedBarrel ? Stringtable.localize("$PICKUP_DEAGLE_BARREL") : "";
+		string LTriggerStr = WeaponStatus[DEProp_Flags] & DEF_LightTrigger ? Stringtable.localize("$PICKUP_DEAGLE_TRIGGER") : "";
+
+		return Stringtable.localize("$PICKUP_DEAGLE_PREFIX")..HFrameStr..ExBarrelStr..Stringtable.localize("$TAG_DEAGLE")..LTriggerStr..Stringtable.localize("$PICKUP_DEAGLE_SUFFIX");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -181,8 +182,8 @@ class HDDEagle : HDHandgun
 		Weapon.SlotPriority 3;
 		HDWeapon.BarrelSize 13, 0.35, 0.5;
 		Scale 0.5;
-		Tag "Desert Eagle Mk.XIX";
-		HDWeapon.Refid "dgl";
+		Tag "$TAG_DEAGLE";
+		HDWeapon.Refid HDLD_DEAGLE;
 	}
 
 	States
@@ -531,9 +532,9 @@ class HDDEagleMag : HDMagAmmo
 		HDMagAmmo.RoundType "HDRevolverAmmo";
 		HDMagAmmo.RoundBulk ENC_355_LOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "Mk.XIX .355 Magazine";
-		Inventory.PickupMessage "Picked up a Mk.XIX .355 magazine.";
-		HDPickup.RefId "dem";
+		Tag "$TAG_DEAGLEMAG";
+		Inventory.PickupMessage "$PICKUP_DEAGLEMAG";
+		HDPickup.RefId HDLD_DEAGLEMAG;
 		Scale 0.5;
 	}
 
