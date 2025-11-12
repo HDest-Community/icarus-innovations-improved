@@ -2,6 +2,8 @@ version "4.10"
 
 const HDLD_BARRACUDA      = "ace";
 const HDLD_BITCH          = "bch";
+const HDLD_DEAGLE         = "dgl";
+const HDLD_DEAGLEMAG      = "dem";
 const HDLD_FENRIS         = "cfl";
 const HDLD_FLAMENWERFER77 = "fw7";
 const HDLD_FRONTIERSMAN   = "fm7";
@@ -30,6 +32,7 @@ const HDLD_WLT            = "wlt";
 
 #include "zscript/icarus/weapons/Barracuda/barracuda.zs"
 #include "zscript/icarus/weapons/Bitch/bitch.zs"
+#include "zscript/icarus/weapons/Deagle/deagle.zs"
 #include "zscript/icarus/weapons/Fenris/fenris.zs"
 #include "zscript/icarus/weapons/Flamenwerfer 77/flamenwerfer77.zs"
 #include "zscript/icarus/weapons/Frontiersman/frontiersman.zs"
