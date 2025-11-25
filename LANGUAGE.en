@@ -370,6 +370,16 @@ MERCH_CAT_BITCH                   = "Icarus Innovations";
 MERCH_TAG_BITCH                   = "The Bitch";
 MERCH_FLAVOR_BITCH                = "Pour Your Little Heart Out.";
 
+// Desert Eagle Mk.XIX
+MERCH_CAT_DEAGLE                  = "Icarus Innovations";
+MERCH_TAG_DEAGLE                  = "Desert Eagle Mk.XIX";
+MERCH_FLAVOR_DEAGLE               = "Blast 'em.";
+
+// Desert Eagle Mk.XIX Mag
+MERCH_CAT_DEAGLEMAG               = "Icarus Innovations";
+MERCH_TAG_DEAGLEMAG               = "Mk.XIX .355 Magazine";
+MERCH_FLAVOR_DEAGLEMAG            = "";
+
 // Fenris
 MERCH_CAT_FENRIS                  = "Icarus Innovations";
 MERCH_TAG_FENRIS                  = "Fenris";
