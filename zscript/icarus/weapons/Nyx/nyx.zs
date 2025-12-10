@@ -53,7 +53,7 @@ class HDNyx : HDHandgun
 	{
 		owner.A_TakeInventory("HDRevolverAmmo");
 		owner.A_TakeInventory("HDNyxMag");
-		owner.A_GiveInventory("HDNyxMag");
+		ForceOneBasicAmmo("HDNyxMag");
 	}
 
 	override void DropOneAmmo(int amt)

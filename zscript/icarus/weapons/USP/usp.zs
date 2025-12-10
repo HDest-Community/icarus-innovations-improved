@@ -53,7 +53,7 @@ class HDUSP : HDHandgun
 	{
 		owner.A_TakeInventory("HD45ACPAmmo");
 		owner.A_TakeInventory("HDUSPMag");
-		owner.A_GiveInventory("HDUSPMag");
+		ForceOneBasicAmmo("HDUSPMag");
 	}
 
 	override void DropOneAmmo(int amt)

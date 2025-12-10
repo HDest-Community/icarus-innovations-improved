@@ -98,7 +98,7 @@ class HDDEagle : HDHandgun
 	{
 		owner.A_TakeInventory("HDRevolverAmmo");
 		owner.A_TakeInventory("HDDEagleMag");
-		owner.A_GiveInventory("HDDEagleMag");
+		ForceOneBasicAmmo("HDDEagleMag");
 	}
 
 	override void DropOneAmmo(int amt)

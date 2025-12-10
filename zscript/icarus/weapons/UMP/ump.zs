@@ -60,7 +60,7 @@ class HDUMP : HDWeapon
 	{
 		owner.A_TakeInventory("HD45ACPAmmo");
 		owner.A_TakeInventory("HDUMPMag");
-		owner.A_GiveInventory("HDUMPMag");
+		ForceOneBasicAmmo("HDUMPMag");
 	}
 
 	override void DropOneAmmo(int amt)
