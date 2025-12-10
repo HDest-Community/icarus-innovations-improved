@@ -748,7 +748,7 @@ class HDB_776_Holy : HDBulletActor
 		if (hitactor.bSHOOTABLE)
 		{
 			hitactor.damagemobj(self ,target, int(impact) << 2, "holy", DMG_NO_ARMOR);
-			hitactor.A_GiveInventory("Heat", 500);
+			HDF.give(hitactor, "Heat", 500);
 		}
 		Super.OnHitActor(hitactor, hitpos, vu, flags);
 	}
