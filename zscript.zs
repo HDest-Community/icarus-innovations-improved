@@ -26,8 +26,6 @@ const HDLD_USPMAG         = "usm";
 const HDLD_FOG            = "fog";
 const HDLD_WLT            = "wlt";
 
-#include "zscript/icarus/SpawnHandler.zs"
-
 #include "zscript/icarus/items/HEV Armor/hevArmor.zs"
 
 #include "zscript/icarus/weapons/Barracuda/barracuda.zs"

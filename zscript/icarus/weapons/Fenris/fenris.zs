@@ -267,11 +267,7 @@ class HDFenris : HDCellWeapon
 				A_FireProjectile("Snowball", spawnheight: (-10.0 * cos(-pitch)) * player.crouchfactor);
 				A_AlertMonsters();
 				A_MuzzleClimb(-frandom(-0.4, 0.4), -frandom(1.5, 1.8), -frandom(-0.6, 0.6), -frandom(1.8, 2.0));
-				if (BackupSynergy.CheckForItem(self, "HDGFBlaster"))
-				{
-					invoker.WeaponStatus[FNProp_Battery] -= 12;
-				}
-				else invoker.WeaponStatus[FNProp_Battery] -= 20;
+				invoker.WeaponStatus[FNProp_Battery] -= HDCore.CheckForItem(self, 'HDGFBlaster') ? 12 : 20;
 			}
 			#### A 1 Offset(0, 42);
 			#### A 1 Offset(0, 36);
@@ -601,14 +597,5 @@ class SnowballLight : PointLight
 			if(target.bmissile)args[3] = random(28,44);
 			else args[3] = random(32,64);
 		}
-	}
-}
-
-class BackupSynergy play
-{
-	static clearscope bool CheckForItem(Actor other, Name item, int amt = 1)
-	{
-		class<HDWeapon> cls = item;
-		return cls && other && other.CountInv(cls) >= amt;
 	}
 }

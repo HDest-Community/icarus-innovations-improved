@@ -217,7 +217,7 @@ class HDGFBlaster : HDHandgun
 					SetWeaponState("EndCharge");
 				}
 
-				if (++invoker.WeaponStatus[GBProp_Timer] > 3 - (Synergy.CheckForItem(self, "HDFenris") ? 1 : 0))
+				if (invoker.WeaponStatus[GBProp_Timer]++ > 3 - (HDCore.CheckForItem(self, 'HDFenris') ? 1 : 0))
 				{
 					invoker.WeaponStatus[GBProp_Timer] = 0;
 					invoker.WeaponStatus[GBProp_Charge]++;
@@ -311,14 +311,5 @@ class GFBBlastImpact : HDActor
 				}
 			}
 			Stop;
-	}
-}
-
-class Synergy play
-{
-	static clearscope bool CheckForItem(Actor other, Name item, int amt = 1)
-	{
-		class<HDWeapon> cls = item;
-		return cls && other && other.CountInv(cls) >= amt;
 	}
 }
