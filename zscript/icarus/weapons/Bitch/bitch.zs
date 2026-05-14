@@ -179,22 +179,20 @@ class HDBitch : HDWeapon
 		sb.DrawImage("BCHBACK", (0, 2) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, scale: (0.8, 0.8));
 	}
 
-	private action void A_TryLoadChamber()
-	{
-		if (invoker.Storage && invoker.Storage.owner == invoker.owner && invoker.Storage.Storage)
-		{
-			if (invoker.WeaponStatus[BTProp_Chamber] == 0)
-			{
-				if (invoker.AmmoReserve && invoker.AmmoReserve.Amounts.Size() > 0 && invoker.AmmoReserve.Amounts[0] > 0)
-				{
-					invoker.Storage.Storage.RemoveItem(invoker.AmmoReserve, null, null, 1);
-					invoker.WeaponStatus[BTProp_Chamber] = 1;
-				}
-				else
-				{
-					invoker.AmmoReserve = null;
-					if (A_FindStorage())
-					{
+	private action void A_TryLoadChamber() {
+		if (invoker.Storage && invoker.Storage.owner == invoker.owner) {
+			if (invoker.WeaponStatus[BTProp_Chamber] == 0) {
+				if (invoker.Storage.count("FourMilAmmo") > 0) {
+					// TODO: Figure out better way to silently extract ammo
+					let rnd = invoker.Storage.Extract(invoker.storage.IndexOf("FourMilAmmo"));
+					if (rnd) {
+						invoker.WeaponStatus[BTProp_Chamber] = 1;
+
+						rnd.destroy();
+					}
+				} else {
+					// invoker.AmmoReserve = null;
+					if (A_FindStorage()) {
 						A_TryLoadChamber();
 					}
 				}
@@ -211,14 +209,12 @@ class HDBitch : HDWeapon
 	{
 		for (Inventory Next = Inv; Next; Next = Next.Inv)
 		{
-			let bp = HDBackpack(Next);
-			if (bp && bp.Storage)
-			{
-				let nma = bp.Storage.Find('FourMilAmmo');
-				if (nma && nma.Amounts.Size() > 0 && nma.Amounts[0] > 0)
-				{
-					invoker.AmmoReserve = nma;
+			let bp = HDStorageItem(Next);
+			if (bp) {
+				// let nma = bp.count("FourMilAmmo");
+				if (bp.count("FourMilAmmo") > 0) {
 					invoker.Storage = bp;
+					// invoker.AmmoReserve = bp.;
 					return true;
 				}
 			}
@@ -226,8 +222,8 @@ class HDBitch : HDWeapon
 		return false;
 	}
 
-	private HDBackpack Storage;
-	private StorageItem AmmoReserve;
+	private HDStorageItem Storage;
+	// private StorageItem AmmoReserve;
 	private int BurstIndex;
 	transient int OldFireMode;
 
