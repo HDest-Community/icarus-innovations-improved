@@ -7,11 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.3.0] - 2026-05-15
+
+### Added
+
+-   Added Changelog (#24, #25).
+-   Added USP brightmaps.
+-   Added Finger of God, Wallet (#36).
 
 ### Changed
 
 -   Flamenwerfer Tweaks (#20).
--   Update Build Scripts (#21, #22, #23).
+-   Update Build Scripts (#21, #22, #23, #26).
+-   PD-42 Refinements (#27, #31, #32).
+-   Update Empty Battery HUD logic (#28).
+-   Update Flamenwerfer HUD sprites, USP Pickup sprites (#29).
+-   Convert Spawn Config Menus to use sliders (#29).
+-   Fixed Tags, Localizations (#33, #34, #37).
+-   Implement HDCoreLib (#38).
 
 ## [v1.2.1] - 2023-12-18
 
@@ -88,7 +101,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Spawning has been revamped to allow more configurability with all weapons included
 -   PD-42 has been updated to more closely match the SMG class definition, as well as including a new ironsights variant.
 
-[Unreleased]: https://github.com/HDest-Community/icarus-innovations-improved/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/HDest-Community/icarus-innovations-improved/compare/v1.3.0...HEAD
+
+[v1.3.0]: https://github.com/HDest-Community/icarus-innovations-improved/compare/v1.2.1...v1.3.0
 
 [v1.2.1]: https://github.com/HDest-Community/icarus-innovations-improved/compare/v1.2.0..v1.2.1
 
