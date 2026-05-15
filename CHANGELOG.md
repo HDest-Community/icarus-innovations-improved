@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.3.0] - 2026-05-15
 
 ### Changed
 
@@ -88,7 +89,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Spawning has been revamped to allow more configurability with all weapons included
 -   PD-42 has been updated to more closely match the SMG class definition, as well as including a new ironsights variant.
 
-[Unreleased]: https://github.com/HDest-Community/icarus-innovations-improved/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/HDest-Community/icarus-innovations-improved/compare/v1.3.0...HEAD
+
+[v1.3.0]: https://github.com/HDest-Community/icarus-innovations-improved/compare/v1.2.1...v1.3.0
 
 [v1.2.1]: https://github.com/HDest-Community/icarus-innovations-improved/compare/v1.2.0..v1.2.1
 
