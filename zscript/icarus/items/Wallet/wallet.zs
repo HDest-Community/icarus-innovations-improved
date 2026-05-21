@@ -16,6 +16,7 @@ class HDWallet : HDStorageItem {
         tag "$TAG_WALLET";
         Inventory.Icon "WLLTA0";
         Inventory.PickupMessage "$PICKUP_WALLET";
+		Inventory.PickupSound "weapons/pocket";
         scale 0.6;
         
         // Not worn at all.
