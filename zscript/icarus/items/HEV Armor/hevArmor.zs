@@ -97,7 +97,8 @@ Class HDHEVArmourWorn : HDArmourWorn {
 		return super.HandleDamage(damage, mod, flags, inflictor, source, towound, toburn, tostun, tobreak);
 	}
 
-	override int,int,double,int,int,int,int,int HandleDamageType(
+// FIXME: made virtual to stop VM Aborts
+	virtual int,int,double,int,int,int,int,int HandleDamageType(
 		name mod,
 		int alv,
 		int damage,
