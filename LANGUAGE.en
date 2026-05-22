@@ -358,14 +358,6 @@ WALLET_TEXT4 = "In wallet:  ";
 WALLET_TEXT5 = "On person:  ";
 
 
-// HEV Armour Text
-HEVARMOUR_DURABILITY_1            = "Just don't get hit.";
-HEVARMOUR_DURABILITY_3            = "You cover your shameful nakedness with your filthy rags.";
-HEVARMOUR_DURABILITY_6            = "It's better than nothing.";
-HEVARMOUR_DURABILITY_75           = "This armour has definitely seen better days.";
-HEVARMOUR_DURABILITY_95           = "This armour does not pass certification.";
-
-
 // Merchant Store Entries
 
 // Barracuda

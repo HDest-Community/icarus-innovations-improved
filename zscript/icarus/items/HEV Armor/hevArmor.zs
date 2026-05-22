@@ -14,24 +14,6 @@ Class HDHEVArmour : HDArmour {
 		HDMagAmmo.MagBulk ENC_HEVARMOUR;
 	}
 
-	void WearArmourHelpText(Actor wearer, double durability) {
-		if (!HDWeapon.CheckDoHelpText(wearer)) return;
-
-		string opinion = "";
-		double qual = durability / maxperunit;
-		if (qual < 0.1)       opinion = "$HEVARMOUR_DURABILITY_1";
-		else if (qual < 0.3)  opinion = "$HEVARMOUR_DURABILITY_3";
-		else if (qual < 0.6)  opinion = "$HEVARMOUR_DURABILITY_6";
-		else if (qual < 0.75) opinion = "$HEVARMOUR_DURABILITY_75";
-		else if (qual < 0.95) opinion = "$HEVARMOUR_DURABILITY_95";
-		wearer.A_Log(
-			Stringtable.Localize("$ARMOUR_PUTON")
-			..gettag()
-			..Stringtable.Localize("$HD_SENTENCEBREAK")
-			..Stringtable.Localize(opinion)
-		,true);
-	}
-
 	States {
 		Spawn:
 			HEVA A -1;
@@ -40,13 +22,12 @@ Class HDHEVArmour : HDArmour {
 }
 
 Class HDHEVArmourWorn : HDArmourWorn {
-	
+
 	default {
 		Tag "$TAG_HEVARMOUR";
 
 		HDPickup.bulk ENC_HEVARMOUR * 0.13;
-		hdpickup.refId HDLD_HEVARMOUR;
-		HDPickup.wornLayer STRIP_ARMOUR;
+		HDPickup.refId HDLD_HEVARMOUR;
 
 		HDArmourWorn.armoursprite "HEVAA0";
 		HDArmourWorn.armourback "HEVAB0";
@@ -56,51 +37,37 @@ Class HDHEVArmourWorn : HDArmourWorn {
 		HDArmourWorn.thickness 2;
 	}
 
-	Override Void DoEffect() {
+	override void DoEffect() {
 		super.DoEffect();
 
 		HDF.Give(owner, "HDFireDouse", 13);
 		owner.A_TakeInventory("Heat");
 	}
 
-	Override Void DetachFromOwner()
-	{
+	override void DetachFromOwner() {
 		super.DetachFromOwner();
+
 		owner.A_TakeInventory("HDFireDouse", 13);
 	}
 
-	Override int,name,int,double,int,int,int HandleDamage(
-		int damage,
-		name mod,
-		int flags,
-		actor inflictor,
-		actor source,
-		double towound,
-		int toburn,
-		int tostun,
-		int tobreak
-	) {
-		// TODO: refactor check
-		if (
-			(flags & DMG_NO_ARMOR)
-			|| mod == "staples"
-			|| mod == "maxhpdrain"
-			|| mod == "internal"
-			|| mod == "jointlock"
-			|| mod == "falling"
-			|| mod == "bleedout"
-			|| mod == "invisiblebleedout"
-			|| mod == "drowning"
-			|| mod == "poison"
-		) return damage, mod, flags, towound, toburn, tostun, tobreak;
-
-		return super.HandleDamage(damage, mod, flags, inflictor, source, towound, toburn, tostun, tobreak);
+	override bool isDamageIgnored(name mod, int flags, int durThresh) {
+		return (flags&DMG_NO_ARMOR)
+				|| mod == 'staples'
+				|| mod == 'maxhpdrain'
+				|| mod == 'internal'
+				|| mod == 'jointlock'
+				|| mod == 'falling'
+				|| mod == 'bleedout'
+				|| mod == 'invisiblebleedout'
+				|| mod == 'drowning'
+				|| mod == 'poison';
 	}
 
 // FIXME: made virtual to stop VM Aborts
 	virtual int,int,double,int,int,int,int,int HandleDamageType(
 		name mod,
 		int alv,
+		actor inflictor,
 		int damage,
 		int armourdamage,
 		double towound,
@@ -114,10 +81,9 @@ Class HDHEVArmourWorn : HDArmourWorn {
 		switch (mod) {
 			case 'slime':
 				resist += 10 * (alv + 1);
-				if(resist > 0)
-				{
+				if (resist > 0) {
 					damage -= resist;
-					toburn = min(originaldamage, resist) >> 1;
+					toburn = min(damage, resist) >> 1;
 				}
 				armourdamage = 0;
 				break;
@@ -125,44 +91,42 @@ Class HDHEVArmourWorn : HDArmourWorn {
 			case 'cold':
 			case 'balefire':
 				resist += 10 * (alv + 1);
-				if(resist > 0)
-				{
-					toburn = min(originaldamage, resist) >> 3;
-					if(damage > 21)
-					{
+				if (resist > 0) {
+					toburn = min(damage, resist) >> 3;
+					if (damage > 21) {
 						int olddamage = damage >> 2;
 						damage = olddamage >> 3;
-						if(!damage && random(0, olddamage))damage = 1;
-						armourdamage = random(0, originaldamage >> 2);
+						if (!damage && random(0, olddamage)) damage = 1;
+						armourdamage = random(0, damage >> 2);
+					} else {
+						damage = 0;
 					}
-					else damage = 0;
 				}
 				break;
 			case 'electrical':
 				resist += 10 * (alv + 1);
-				if(resist > 0)
-				{
-					toburn = min(originaldamage, resist) >> 3;
-					if(damage > 60)
-					{
+				if (resist > 0) {
+					toburn = min(damage, resist) >> 3;
+					if (damage > 60) {
 						int olddamage = damage >> 2;
 						damage = olddamage >> 3;
-						if(!damage && random(0, olddamage))damage = 1;
-						armourdamage = random(0, originaldamage >> 3);
+						if (!damage && random(0, olddamage))damage = 1;
+						armourdamage = random(0, damage >> 3);
+					} else {
+						damage = 0;
 					}
-					else damage = 0;
 				}
 				break;
 			case 'piercing':
 				resist += 25 * (alv + 1);
 				if(resist > 0) {
 					damage -= resist;
-					tobash = min(originaldamage, resist) >> 3;
+					tobash = min(damage, resist) >> 3;
 				}
-				armourdamage = random(0, originaldamage >> 2);
+				armourdamage = random(0, damage >> 2);
 				break;
 			default:
-				return super.HandleDamageType(mod, alv, damage, armourdamage, towound, tobash, toburn, tostun, tobreak, resist);
+				return super.HandleDamageType(mod, alv, inflictor, damage, armourdamage, towound, tobash, toburn, tostun, tobreak, resist);
 		}
 
 		return damage, armourdamage, towound, tobash, toburn, tostun, tobreak, resist;
