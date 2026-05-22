@@ -110,6 +110,7 @@ Class HDHEVArmourWorn : HDArmourWorn {
 		int tobreak,
 		int resist
 	) {
+  let originaldamage = damage;
 		switch (mod) {
 			case 'slime':
 				resist += 10 * (alv + 1);
