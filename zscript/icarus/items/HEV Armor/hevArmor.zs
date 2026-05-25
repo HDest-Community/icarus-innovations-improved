@@ -64,7 +64,7 @@ Class HDHEVArmourWorn : HDArmourWorn {
 	}
 
 // FIXME: made virtual to stop VM Aborts
-	virtual int,int,double,int,int,int,int,int HandleDamageType(
+	override int,int,double,int,int,int,int,int HandleDamageType(
 		name mod,
 		int alv,
 		actor inflictor,
@@ -77,7 +77,6 @@ Class HDHEVArmourWorn : HDArmourWorn {
 		int tobreak,
 		int resist
 	) {
-  let originaldamage = damage;
 		switch (mod) {
 			case 'slime':
 				resist += 10 * (alv + 1);
