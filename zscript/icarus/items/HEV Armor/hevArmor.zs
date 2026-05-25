@@ -32,6 +32,7 @@ Class HDHEVArmourWorn : HDArmourWorn {
 		HDArmourWorn.armoursprite "HEVAA0";
 		HDArmourWorn.armourback "HEVAB0";
 
+		HDArmourWorn.coverage ARMOUR_TORSO|ARMOUR_ARMS|ARMOUR_LEGS;
 		HDArmourWorn.durability HDCONST_HEVARMOUR;
 		HDArmourWorn.hindrance 2.5;
 		HDArmourWorn.thickness 2;
