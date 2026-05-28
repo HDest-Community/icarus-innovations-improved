@@ -1,30 +1,30 @@
 // Weapon Backpack Spawn Pool Filters
-addBPSpawnPoolFilter => { "name": "HDBarracuda", "allowed": "#barracuda_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDBitch", "allowed": "#bitch_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDDEagle", "allowed": "#deagle_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDFenris", "allowed": "#fenris_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDFlamethrower", "allowed": "#flamenwerfer_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDFrontier", "allowed": "#frontiersman_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDGFBlaster", "allowed": "#gfb9_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDMBR", "allowed": "#mbr_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDNCT", "allowed": "#nct_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDNyx", "allowed": "#nyx_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDPDFour", "allowed": "#pd42_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDSix12", "allowed": "#six12_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDUMP", "allowed": "#ump45_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDUSP", "allowed": "#usp45_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDBarracuda", "allowed": "#barracuda_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDBitch", "allowed": "#bitch_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDDEagle", "allowed": "#deagle_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDFenris", "allowed": "#fenris_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDFlamethrower", "allowed": "#flamenwerfer_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDFrontier", "allowed": "#frontiersman_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDGFBlaster", "allowed": "#gfb9_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDMBR", "allowed": "#mbr_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDNCT", "allowed": "#nct_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDNyx", "allowed": "#nyx_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDPDFour", "allowed": "#pd42_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDSix12", "allowed": "#six12_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDUMP", "allowed": "#ump45_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDUSP", "allowed": "#usp45_allowBackpacks" }
 
 // Ammo Backpack Spawn Pool Filters
-addBPSpawnPoolFilter => { "name": "HDDEagleMag", "allowed": "#deaglemag_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDGasTank", "allowed": "#gastank_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDMBRMagHeavy", "allowed": "#mbrmagheavy_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDMBRMagLight", "allowed": "#mbrmaglight_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDNyxMag", "allowed": "#nyxmag_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDPDFourMag", "allowed": "#pd42mag_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDSix12MagShells", "allowed": "#six12shellmag_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDSix12MagSlugs", "allowed": "#six12slugmag_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDUMPMag", "allowed": "#ump45mag_allowBackpacks" }
-addBPSpawnPoolFilter => { "name": "HDUSPMag", "allowed": "#usp45mag_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDDEagleMag", "allowed": "#deaglemag_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDGasTank", "allowed": "#gastank_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDMBRMagHeavy", "allowed": "#mbrmagheavy_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDMBRMagLight", "allowed": "#mbrmaglight_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDNyxMag", "allowed": "#nyxmag_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDPDFourMag", "allowed": "#pd42mag_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDSix12MagShells", "allowed": "#six12shellmag_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDSix12MagSlugs", "allowed": "#six12slugmag_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDUMPMag", "allowed": "#ump45mag_allowBackpacks" }
+addStorageItemListFilter => { "name": "HDUSPMag", "allowed": "#usp45mag_allowBackpacks" }
 
 // Weapon Spawn Pools
 addSpawnTableSingleEntry => { "tableName": "ShotgunReplaces", "name": "BarracudaRandom", "weight": "#barracuda_hunter_spawn_bias", "persists": "#barracuda_persistent_spawning" }
