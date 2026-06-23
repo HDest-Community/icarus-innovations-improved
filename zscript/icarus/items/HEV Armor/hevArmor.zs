@@ -24,7 +24,7 @@ Class HDHEVArmour : HDArmour {
 Class HDHEVArmourWorn : HDArmourWorn {
 
 	default {
-		Tag "$TAG_HEVARMOUR";
+		Tag "$TAG_HEVARMOURWORN";
 
 		HDPickup.bulk ENC_HEVARMOUR * 0.13;
 		HDPickup.refId HDLD_HEVARMOURWORN;
