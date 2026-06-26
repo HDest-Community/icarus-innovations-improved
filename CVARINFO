@@ -192,4 +192,3 @@ server bool hdm_enable_ump45 = true;
 server bool hdm_enable_umpmag = true;
 server bool hdm_enable_usp45 = true;
 server bool hdm_enable_uspmag = true;
-server bool hdm_enable_wallet = true;

@@ -185,7 +185,7 @@ TAG_FRONTIERSMAN                        = "'Frontiersman' 7.76mm Lever-Action Ri
 TAG_GASTANK                             = "Fuel Tank";
 TAG_GFB9                                = "Gretchenfrage Blaster Mk. 9";
 TAG_HEVARMOUR                           = "HEV Armor";
-TAG_HEVARMOURSPARE                      = "HEV Armor (spare)";
+TAG_HEVARMOURWORN                       = "HEV Armor (worn)";
 TAG_MBR                                 = "Modular Battle Rifle";
 TAG_MBRMAGHEAVY                         = "MBR Heavy Magazine";
 TAG_MBRMAGLIGHT                         = "MBR Light Magazine";
@@ -201,7 +201,6 @@ TAG_UMP                                 = "UMP-45 .45 ACP PDW";
 TAG_UMPMAG                              = "UMP Magazine";
 TAG_USP                                 = "USP-45 .45 ACP Handgun";
 TAG_USPMAG                              = "USP Magazine";
-TAG_WALLET                              = "Wallet";
 
 // Obituaries
 OB_FLAMENWERFER77                       = "%o was deep fried by %k.";
@@ -260,7 +259,6 @@ PICKUP_USP_PREFIX                       = "You got the ";
 PICKUP_USP_SUFFIX                       = ".";
 PICKUP_USPMAG_PREFIX                    = "You got a ";
 PICKUP_USPMAG_SUFFIX                    = ".";
-PICKUP_WALLET                           = "Picked up a wallet! ... The fuck good is this gonna do?";
 
 
 // Help Text - [Ted]
@@ -349,13 +347,6 @@ UMP_HELPTEXT_3 = " Reload chamber\n";
 // USP
 USP_HELPTEXT_1 = " Reload mag\n";
 USP_HELPTEXT_2 = " Reload chamber\n";
-
-// Misc
-WALLET_TEXT1 = "\cq$ $ $ \cdWallet\cq $ $ $";
-WALLET_TEXT2 = "Total Bulk: \cf";
-WALLET_TEXT3 = "\cfHa ha! You're \cgPOOR!";
-WALLET_TEXT4 = "In wallet:  ";
-WALLET_TEXT5 = "On person:  ";
 
 
 // Merchant Store Entries
@@ -479,11 +470,6 @@ MERCH_FLAVOR_USP45                = "When you want modern performance and MUH TW
 MERCH_CAT_USPMAG                = "Icarus Innovations";
 MERCH_TAG_USPMAG                = "USP-45 .45 ACP Magazine";
 MERCH_FLAVOR_USPMAG             = "";
-
-// Wallet
-MERCH_CAT_WALLET                  = "Icarus Innovations";
-MERCH_TAG_WALLET                  = "A Wallet";
-MERCH_FLAVOR_WALLET               = "Look at this broke bitch thinking they got money.";
 
 // Weapon Repair Spray
 MERCH_CAT_REPAIRSPRAY             = "Icarus Innovations";

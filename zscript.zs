@@ -9,8 +9,8 @@ const HDLD_FLAMENWERFER77 = "fw7";
 const HDLD_FRONTIERSMAN   = "fm7";
 const HDLD_GASTANK        = "gas";
 const HDLD_GFB9           = "gfb";
-const HDLD_HEVARMOUR      = "hve";
-const HDLD_HEVARMOURSPARE = "hva";
+const HDLD_HEVARMOUR      = "hva";
+const HDLD_HEVARMOURWORN  = "hve";
 const HDLD_NCT            = "tny";
 const HDLD_NYX            = "nyx";
 const HDLD_NYX_MAG        = "nxm";
@@ -24,7 +24,6 @@ const HDLD_UMPMAG         = "umm";
 const HDLD_USP            = "usp";
 const HDLD_USPMAG         = "usm";
 const HDLD_FOG            = "fog";
-const HDLD_WLT            = "wlt";
 
 #include "zscript/icarus/items/HEV Armor/hevArmor.zs"
 
@@ -43,4 +42,3 @@ const HDLD_WLT            = "wlt";
 #include "zscript/icarus/weapons/UMP/ump.zs"
 #include "zscript/icarus/weapons/USP/usp.zs"
 #include "zscript/icarus/weapons/Finger of God/fog.zs"
-#include "zscript/icarus/items/Wallet/wallet.zs"

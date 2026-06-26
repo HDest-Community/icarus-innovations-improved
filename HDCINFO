@@ -141,7 +141,6 @@ newMerchantStoreItem => { "enabled": "#hdm_enable_usp45", "type": "weapon", "cat
 newMerchantStoreItem => { "enabled": "#hdm_enable_gastank", "type": "ammo", "category": "$MERCH_CAT_GASTANK", "item": "HDGasTank", "storeAmount": "@Multiply", "storeAmount.valueA": "@Random", "storeAmount.valueA.min": "1", "storeAmount.valueA.max": "4", "storeAmount.valueB": "#hdm_stock_ammo", "icon": "AGASA0", "displayName": "$MERCH_TAG_GASTANK", "basePrice": "35", "flavorText": "$MERCH_FLAVOR_GASTANK" }
 
 newMerchantStoreItem => { "enabled": "#hdm_enable_fog", "type": "weapon", "category": "$MERCH_CAT_FOG", "item": "HDFoG", "icon": "FOGPA0", "displayName": "$MERCH_TAG_FOG", "basePrice": "1200", "flavorText": "$MERCH_FLAVOR_FOG" }
-newMerchantStoreItem => { "enabled": "#hdm_enable_wallet", "type": "item", "category": "$MERCH_CAT_WALLET", "item": "HDWallet", "icon": "WLLTB0", "displayName": "$MERCH_TAG_WALLET", "basePrice": "50", "flavorText": "$MERCH_FLAVOR_WALLET" }
 newMerchantStoreItem => { "enabled": "#hdm_enable_repairspray", "type": "item", "category": "$MERCH_CAT_REPAIRSPRAY", "item": "HDWD40", "icon": "SPRAY0", "displayName": "$MERCH_TAG_REPAIRSPRAY", "basePrice": "150", "flavorText": "$MERCH_FLAVOR_REPAIRSPRAY" }
 newMerchantStoreItem => { "enabled": "#hdm_enable_hevarmour", "type": "item", "category": "$MERCH_CAT_HEVARMOUR", "item": "HEVArmour", "icon": "HEVAA0", "displayName": "$MERCH_TAG_HEVARMOUR", "basePrice": "230", "flavorText": "$MERCH_FLAVOR_HEVARMOUR" }
 

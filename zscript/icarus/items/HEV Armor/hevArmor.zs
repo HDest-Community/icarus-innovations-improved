@@ -8,7 +8,7 @@ Class HDHEVArmour : HDArmour {
 		Inventory.Icon "HEVAA0";
 		Inventory.PickupMessage "$PICKUP_HEVARMOUR";
 		
-		HDPickup.refid HDLD_HEVARMOURSPARE;
+		HDPickup.refid HDLD_HEVARMOUR;
 
 		HDMagAmmo.MaxPerUnit HDCONST_HEVARMOUR;
 		HDMagAmmo.MagBulk ENC_HEVARMOUR;
@@ -24,10 +24,10 @@ Class HDHEVArmour : HDArmour {
 Class HDHEVArmourWorn : HDArmourWorn {
 
 	default {
-		Tag "$TAG_HEVARMOUR";
+		Tag "$TAG_HEVARMOURWORN";
 
 		HDPickup.bulk ENC_HEVARMOUR * 0.13;
-		HDPickup.refId HDLD_HEVARMOUR;
+		HDPickup.refId HDLD_HEVARMOURWORN;
 
 		HDArmourWorn.armoursprite "HEVAA0";
 		HDArmourWorn.armourback "HEVAB0";
