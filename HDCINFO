@@ -80,8 +80,8 @@ addSpawnTableSingleEntry => { "tableName": "ClipReplaces", "name": "HDUMPMag", "
 addSpawnTableSingleEntry => { "tableName": "ClipReplaces", "name": "HDUSPMag", "weight": "#usp45mag_clipmag_spawn_bias", "persists": "#usp45mag_persistent_spawning" }
 
 // Item Spawn Pools
-addSpawnTableSingleEntry => { "tableName": "GreenArmorReplaces", "name": "HEVArmour", "weight": "#hevarmour_greenarmour_spawn_bias", "persists": "#hevarmour_persistent_spawning" }
-addSpawnTableSingleEntry => { "tableName": "BlueArmorReplaces", "name": "HEVArmour", "weight": "#hevarmour_bluearmour_spawn_bias", "persists": "#hevarmour_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "GreenArmorReplaces", "name": "HDHEVArmour", "weight": "#hevarmour_greenarmour_spawn_bias", "persists": "#hevarmour_persistent_spawning" }
+addSpawnTableSingleEntry => { "tableName": "BlueArmorReplaces", "name": "HDHEVArmour", "weight": "#hevarmour_bluearmour_spawn_bias", "persists": "#hevarmour_persistent_spawning" }
 
 // Ammo Usages
 addAmmoUser => { "ammoName": "HDRevolverAmmo", "name": "HDDEagle" }
@@ -142,7 +142,7 @@ newMerchantStoreItem => { "enabled": "#hdm_enable_gastank", "type": "ammo", "cat
 
 newMerchantStoreItem => { "enabled": "#hdm_enable_fog", "type": "weapon", "category": "$MERCH_CAT_FOG", "item": "HDFoG", "icon": "FOGPA0", "displayName": "$MERCH_TAG_FOG", "basePrice": "1200", "flavorText": "$MERCH_FLAVOR_FOG" }
 newMerchantStoreItem => { "enabled": "#hdm_enable_repairspray", "type": "item", "category": "$MERCH_CAT_REPAIRSPRAY", "item": "HDWD40", "icon": "SPRAY0", "displayName": "$MERCH_TAG_REPAIRSPRAY", "basePrice": "150", "flavorText": "$MERCH_FLAVOR_REPAIRSPRAY" }
-newMerchantStoreItem => { "enabled": "#hdm_enable_hevarmour", "type": "item", "category": "$MERCH_CAT_HEVARMOUR", "item": "HEVArmour", "icon": "HEVAA0", "displayName": "$MERCH_TAG_HEVARMOUR", "basePrice": "230", "flavorText": "$MERCH_FLAVOR_HEVARMOUR" }
+newMerchantStoreItem => { "enabled": "#hdm_enable_hevarmour", "type": "item", "category": "$MERCH_CAT_HEVARMOUR", "item": "HDHEVArmour", "icon": "HEVAA0", "displayName": "$MERCH_TAG_HEVARMOUR", "basePrice": "230", "flavorText": "$MERCH_FLAVOR_HEVARMOUR" }
 
 newMerchantStoreItem => { "enabled": "#hdm_enable_deaglemag", "type": "mag", "category": "$MERCH_CAT_DEAGLEMAG", "item": "HDDEagleMag", "icon": "DGLMA0", "displayName": "$MERCH_TAG_DEAGLEMAG", "basePrice": "4", "flavorText": "$MERCH_FLAVOR_DEAGLEMAG" }
 newMerchantStoreItem => { "enabled": "#hdm_enable_mbrmagheavy", "type": "mag", "category": "$MERCH_CAT_MBRMAGHEAVY", "item": "HDMBRMagHeavy", "icon": "5HMGA0", "displayName": "$MERCH_TAG_MBRMAGHEAVY", "basePrice": "40", "flavorText": "$MERCH_FLAVOR_MBRMAGHEAVY" }
